@@ -1,2 +1,6 @@
 # TDMorph
-A repository with TDMorph Toolbox, a library for easy parametric exploration
+TDMorph Toolbox is a library for easy parametric exploration with nodes in the TouchDesigner platform.
+
+## Methods
+
+
