@@ -24,7 +24,18 @@ There are two main approaches you may take:
 
 ## Ok, I want to use it!
 
-Great! Please check the following tutorials to learn all the features in a structured manner:
+Great! See here a quick overview of the general controls. Here I briefly explain what the elements in the UI do, even though the UI is self-explanatory (or at least I hope so)
+
+### Controls overview
+
+![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SliderControls.png)
+
+
+
+
+### Tutorials
+
+Please check the following tutorials to learn all the features in a structured manner:
 
 ## No UI, I just want to code! 
 
