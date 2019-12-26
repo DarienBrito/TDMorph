@@ -124,3 +124,6 @@ and by the brilliant philosophy of Derivative, as creators of the TouchDesigner 
 Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence, meaning that if at some point you would like to use this tool in a commercial project, you will get in touch first :)
 
 Enjoy!
+
+Darien Brito
+https://darienbrito.com/
