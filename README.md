@@ -121,10 +121,9 @@ Feel free to look around and please suggest improvements if you see something th
 The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has, 
 and by the brilliant philosophy of Derivative, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues, and that this small contribution helps you in expanding your capabilities as a maker. 
 
-Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence, meaning that if at some point you would like to use this tool in a commercial project, you will get in touch first :)
+Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence, meaning that if at some point you would like to use this tool in a commercial endeavour, you will get in touch first :)
 
 Enjoy!
 
 Darien Brito
 https://darienbrito.com/
-info@darienbrito.com
