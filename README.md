@@ -73,8 +73,36 @@ The last method returns the targeted slider. Like with the container, you may ge
 slider1 = sliderContainer.GetSlider(1) 
 ```
 
+Then, if you would like to change the slider value for instance, you need to do:
+
+```python
+slider1.SetUISliderValue(SomeValue)
+```
+
 ### Sliders Methods
 
 Here all the methods available for sliders:
+
+```python
+SetUISliderValue(float)     # Sets the value for the slider
+SetUISliderRandomize(int)   # Triggers slider's randomization
+SetUISliderInterpolate(int) # Triggers slider's morphing
+SetUISliderLock(int)        # Sets lock status
+SetUISliderReveal(int)      # Enables deep parameters reveal
+SetUISliderDestroy(int)     # Destroys slider
+SetUISliderDistribution(int)  # Sets random distribution
+SetUISliderInterpolation(int) # Sets morphing curve
+SetUISliderTime(float)        # Sets morphing time
+```
+
+### Deeper methods
+
+It is fair to assume that If you have the need to access lower level methods, you are proficient enough to figure out for yourself the inner structure of the Classes. A node in TDMorph in general has always 2 extensions:
+
++ Core extension (Core UI-less functionality)
++ UI extension (deals exclusively with operations with UI elements)
+
+Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing (which is more than probable to be the case) 
+
 
 
