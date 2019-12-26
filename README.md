@@ -26,7 +26,7 @@ There are two main approaches you may take:
 
 Great! Please check the following tutorials to learn all the features in a structured manner:
 
-## Nah, no UI, I just want to code! 
+## No UI, I just want to code! 
 
 Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a high level set of commands that you can pass to control the UI using Python. In order to access those, you first need to locate a sliders container and then target a specific element of the UI you want to control, that being a button, a parameter or a slider.
 
