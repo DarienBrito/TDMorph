@@ -24,13 +24,15 @@ There are two main approaches you may take:
 
 ## Ok, I want to use it!
 
-Great! See here a quick overview of the general controls, where I briefly hint at what the more misterious elements in the UI do. Hopefully the rest is self-explanatory. For a proper step by step explanation, refer to the video tutorials below.
+Great! Here a quick overview of the general controls. I hint here to what the more misterious elements in the UI do, hopefully the rest is self-explanatory. For a proper step by step explanation, refer to the video tutorials below.
 
 ### Controls overview
 
 ![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SliderControls.png)
 
 ![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphSlidersControls.png)
+
+![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphPrestManagerControls.png)
 
 ### Tutorials
 
@@ -113,6 +115,8 @@ It is fair to assume that If you have the need to access lower level methods, yo
 + UI extension (deals exclusively with operations with UI elements)
 
 Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing (which is more than probable to be the case) 
+
+## Final thoughts
 
 
 
