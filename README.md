@@ -46,20 +46,20 @@ sliderContainer.SetUITime(SomeTimeValue)
 Here all the methods available for a sliders container:
 
 ```python
-SetUIDistribution(int)    
-SetUIInterpolation(int)
-SetUIGlobal(bool)
-SetUISync(bool)
-SetUIAuto(bool)
-SetUIMorphs(int)
-SetUITime(float)
-SetUISequence(int)
-SetUIRandomize(int)
-SetUIMorph(int)
-SetUIImport(int)
-SetUIExport(int)
-SetUISubPreset(int)
-SetUINumPresets(int)      # 
+SetUIDistribution(int)    # Changes the random distribution
+SetUIInterpolation(int)   # Changes the moprhing curve
+SetUIGlobal(bool)         # Enables local/global behaviour
+SetUISync(bool)           # Enables local/global clock syncing 
+SetUIAuto(bool)           # Enables automatic behaviour
+SetUIMorphs(int)          # Sets the amount of morphings
+SetUITime(float)          # Sets the morphing time
+SetUISequence(int)        # Triggers preset sequence
+SetUIRandomize(int)       # Triggers randomization
+SetUIMorph(int)           # Triggers morphing
+SetUIImport(int)          # Triggers importing a preset
+SetUIExport(int)          # Adds a preset slot
+SetUISubPreset(int)       # Deletes one preset slot
+SetUINumPresets(int)      # Changes the number of preset slots
 SetUIClearPresets(int)    # Clears all presets
 SetUISetPreset(int)       # Sets a preset (morphing)
 SetUIStorePreset(int)     # Stores a preset in a slot
@@ -67,14 +67,14 @@ SetUIUnstorePreset(int)   # Removes a preset from a slot
 
 GetSlider(int)            # Returns a slider from the container
 ```
-
-
-
-here documentation of all relevant methods
+The last method returns the targeted slider. Like with the container, you may get a slider by asking for a slider number. Assuming you have only 1 slider in your container, you may access it like:
 
 ```python
-print(x) 
+slider1 = sliderContainer.GetSlider(1) 
 ```
 
+### Sliders Methods
+
+Here all the methods available for sliders:
 
 
