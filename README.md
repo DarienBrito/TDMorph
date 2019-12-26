@@ -24,7 +24,7 @@ There are two main approaches you may take:
 
 ## Ok, I want to use it!
 
-Great! See here a quick overview of the general controls. Here I briefly explain what the elements in the UI do, even though the UI is self-explanatory (or at least I hope so)
+Great! See here a quick overview of the general controls. Here I briefly explain what the more misterious elements in the UI do, hopefully the rest is self-explanatory.
 
 ### Controls overview
 
