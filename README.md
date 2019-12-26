@@ -12,7 +12,7 @@ TDMorph is a toolbox for enhanced parametric exploration in the TouchDesigner pl
 4) Control of parameters with an automatically generated UI.
 5) Automatic storing, randomization and transformation of all parameters of arbitrary nodes.
 6) Auto-learn MIDI and OSC for every control in the generated UI.
-7) Fulls scripting control of all features via high-level commands.
+7) Full scripting control of all features via high-level commands.
 8) Global and local controls for every single parameter.
 
 ## How does it work?
