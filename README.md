@@ -24,14 +24,13 @@ There are two main approaches you may take:
 
 ## Ok, I want to use it!
 
-Great! See here a quick overview of the general controls. Here I briefly explain what the more misterious elements in the UI do, hopefully the rest is self-explanatory.
+Great! See here a quick overview of the general controls, where I briefly hint at what the more misterious elements in the UI do. Hopefully the rest is self-explanatory. For a proper step by step explanation, refer to the video tutorials below.
 
 ### Controls overview
 
 ![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SliderControls.png)
 
-
-
+![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphSlidersControls.png)
 
 ### Tutorials
 
