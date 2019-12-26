@@ -2,6 +2,8 @@
 
 TDMorph is a toolbox for enhanced parametric exploration in the TouchDesigner platform. It is meant to help in creating generative content via various methods and sharing of interesting parameter configurations among users using a JSON format.  
 
+![alt text](https://github.com/DarienBrito/TDMorph/blob/master/CaptureUI.PNG)
+
 ## How does it work?
 
 There are two main approaches you may take
