@@ -9,10 +9,6 @@ There are two main approaches you may take
 1) You can create a UI from where to control your parameters, using sliders and a set of buttons that perform various functions.
 2) You can create a UI-less parameters and presets manager, which does everything the UI does, but via scripting and with a different paradigm.
 
-## Which one is better?
-
-This depends on the use case.
-
 
 
 
