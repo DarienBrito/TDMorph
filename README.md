@@ -22,7 +22,15 @@ b) You can create a Preset Manager node, which does everything the UI does but w
 
 ## Ok, I want to use it!
 
-Great! 
+Great! Please check the following tutorials to learn all the features in a structured manner:
+
+## Screw that, I just want to code! 
+
+Fair enough, in that case here documentation on all relevant methods:
+
+```python
+print(x) 
+```
 
 
 
