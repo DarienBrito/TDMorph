@@ -24,13 +24,17 @@ There are two main approaches you may take:
 
 ## Ok, I want to use it!
 
-Great! Here a quick overview of the general controls. I hint here to what the more misterious elements in the UI do, hopefully the rest is self-explanatory. For a proper step by step explanation, refer to the video tutorials below.
+Great! Here a quick overview of the general controls. I hint here at what the more misterious elements in the UI do, hopefully the rest is self-explanatory. For a proper step by step explanation, refer to the video tutorials below.
 
 ### Controls overview
 
-![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SliderControls.png)
+#### UI
 
 ![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphSlidersControls.png)
+
+![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SliderControls.png)
+
+#### Preset Manager
 
 ![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphPrestManagerControls.png)
 
