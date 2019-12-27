@@ -113,11 +113,11 @@ Here all the methods available for sliders:
 
 ```python
 SetUISliderValue(float)     # Sets the value for the slider
-SetUISliderRandomize(int)   # Triggers slider's randomization
-SetUISliderInterpolate(int) # Triggers slider's morphing
-SetUISliderLock(int)        # Sets lock status
-SetUISliderReveal(int)      # Enables deep parameters reveal
-SetUISliderDestroy(int)     # Destroys slider
+ClickUISliderRandomize()    # Triggers slider's randomization
+ClickUISliderInterpolate()  # Triggers slider's morphing
+SetUISliderLock(bool)       # Sets lock status
+SetUISliderReveal(bool)     # Enables deep parameters reveal
+ClickUISliderDestroy()      # Destroys slider
 SetUISliderDistribution(int)  # Sets random distribution
 SetUISliderInterpolation(int) # Sets morphing curve
 SetUISliderTime(float)        # Sets morphing time
