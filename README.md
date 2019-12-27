@@ -130,7 +130,7 @@ It is fair to assume that If you have the need to access lower level methods, yo
 + Core extension (Core UI-less functionality)
 + UI extension (deals exclusively with operations with UI elements)
 
-Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing (which is more than probable to be the case) 
+Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing somewhere (which is bount to be the case) 
 
 ## Final thoughts
 
