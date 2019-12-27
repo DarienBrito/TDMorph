@@ -76,10 +76,10 @@ ClickUISequence()         # Clicks the preset sequence button
 SetUISequence(bool)       # Sets the preset sequence button on/off
 
 ClickUIRandomize()        # Clicks the randomize button
-SetUIRandomize(int)       # Sets the randomize button on/off
+SetUIRandomize(bool)      # Sets the randomize button on/off
 
 ClickUIMorph()            # Clicks the morph button
-SetUIMorph(int)           # Sets the morph button on/off
+SetUIMorph(bool)          # Sets the morph button on/off
 
 ClickUIImport()           # Triggers importing a preset
 ClickUIExport()           # Triggers exporting a preset
