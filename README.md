@@ -64,22 +64,34 @@ Here all the methods available for a sliders container:
 ```python
 SetUIDistribution(int)    # Changes the random distribution
 SetUIInterpolation(int)   # Changes the moprhing curve
+
 SetUIGlobal(bool)         # Enables local/global behaviour
 SetUISync(bool)           # Enables local/global clock syncing 
 SetUIAuto(bool)           # Enables automatic behaviour
+
 SetUIMorphs(int)          # Sets the amount of morphings
 SetUITime(float)          # Sets the morphing time
-SetUISequence(int)        # Triggers preset sequence
-SetUIRandomize(int)       # Triggers randomization
-SetUIMorph(int)           # Triggers morphing
-SetUIImport(int)          # Triggers importing a preset
-SetUIExport(int)          # Adds a preset slot
-SetUISubPreset(int)       # Deletes one preset slot
+
+ClickUISequence()         # Clicks the preset sequence button
+SetUISequence(bool)       # Sets the preset sequence button on/off
+
+ClickUIRandomize()        # Clicks the randomize button
+SetUIRandomize(int)       # Sets the randomize button on/off
+
+ClickUIMorph()            # Clicks the morph button
+SetUIMorph(int)           # Sets the morph button on/off
+
+ClickUIImport()           # Triggers importing a preset
+ClickUIExport()           # Triggers exporting a preset
+
+ClickUISubPreset()        # Substracts one preset slot
+ClickUIAddPreset()        # Adds one preset slot
 SetUINumPresets(int)      # Changes the number of preset slots
-SetUIClearPresets(int)    # Clears all presets
-SetUISetPreset(int)       # Sets a preset (morphing)
-SetUIStorePreset(int)     # Stores a preset in a slot
-SetUIUnstorePreset(int)   # Removes a preset from a slot 
+ClickUIClearPresets()     # Clears all presets
+
+SetUISetPreset(int)       # Sets preset n 
+SetUIStorePreset(int)     # Stores a preset in n slot
+SetUIUnstorePreset(int)   # Removes a preset from n slot 
 
 GetSlider(int)            # Returns a slider from the container
 ```
