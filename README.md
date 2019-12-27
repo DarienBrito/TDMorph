@@ -139,7 +139,7 @@ and by the brilliant philosophy of Derivative, as creators of the TouchDesigner 
 
 ## About the license
 
-Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence (GNU General Public License v3 aka GPL-3), meaning that if at some point you would like to use this tool in a commercial endeavour for which you do not want to disclose the source code, you will get in touch first :) 
+Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). This means that if at some point you would like to use this tool in a commercial endeavour for which you do not want to disclose the source code, you will get in touch first, so a fair arrangement can be made. 
 
 Enjoy!
 
