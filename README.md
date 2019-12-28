@@ -1,18 +1,18 @@
 # TDMorph
 
-TDMorph is a toolbox for enhanced parametric exploration in the TouchDesigner platform. It is meant to help in creating generative content via various methods and sharing of interesting parameter configurations among users using a JSON format.  
+TDMorph is a toolbox for enhanced parametric exploration in the TouchDesigner platform. It is meant to help in creating generative content via various methods and sharing of interesting parameter configurations among users, using a JSON format.  
 
 ![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphCapture.PNG)
 
 ## What can I do with it?
 
-1) Random search of states for parameters on any node using various different distributions.
+1) Random search of states for parameters on any node, using various different distributions.
 2) Random morphing between states using various different interpolation curves.
 3) Storing and retrieval of any arbitrary number of presets.
 4) Control of parameters with an automatically generated UI.
 5) Automatic storing, randomization and transformation of all parameters of arbitrary nodes.
-6) Auto-learn MIDI and OSC for every control in the generated UI.
-7) Full scripting control of all features via high-level commands.
+6) Auto-learn MIDI and OSC for every slider in the generated UI.
+7) Full scripting control of all UI features via high-level commands.
 8) Global and local controls for every single parameter.
 
 ## How does it work?
@@ -44,9 +44,11 @@ Please check the following tutorials to learn all the features in a structured m
 
 ## No UI, I just want to code! 
 
-Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a high level set of commands that you can pass to control the UI using Python. In order to access those, you first need to locate a sliders container and then target a specific element of the UI you want to control, that being a button, a parameter or a slider.
+Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a high level set of commands that you can pass to control the UI using Python. 
 
-To access a sliders container, you need to invoke it by number, so assuming you have only 1 slider container in your TDMorph workspace, you can invoke that element using:
+In order to access those, you first need to locate a *sliders container* and then target a specific element of the UI you want to control, that being a button, a parameter or a slider.
+
+To access a *sliders container* you need to invoke it by number (counting from 1), so assuming you have only 1 slider container in your TDMorph workspace, you can invoke that element using:
 
 ```python
 sliderContainer = op('TDMorph').GetContainer(1)
@@ -57,9 +59,9 @@ Now, you can control all the UI elements of that object. So if you would like to
 sliderContainer.SetUITime(SomeTimeValue)
 ```
 
-### Sliders Container Methods
+### *Sliders Container* Methods
 
-Here all the methods available for a sliders container:
+Here all the methods available for a *sliders container*:
 
 ```python
 SetUIDistribution(int)    # Changes the random distribution
@@ -95,13 +97,13 @@ SetUIUnstorePreset(int)   # Removes a preset from n slot
 
 GetSlider(int)            # Returns a slider from the container
 ```
-The last method returns the targeted slider. Like with the container, you may get a slider by asking for a slider number. Assuming you have only 1 slider in your container, you may access it like:
+The last method in the list returns the targeted slider. Like with the container, you may get a slider by asking for a slider number. Assuming you have only 1 slider in your container, you may access it like:
 
 ```python
 slider1 = sliderContainer.GetSlider(1) 
 ```
 
-Then, if you would like to change the slider value for instance, you need to do:
+Thus, if you would like to change the slider value for instance, you need to do:
 
 ```python
 slider1.SetUISliderValue(SomeValue)
@@ -130,16 +132,16 @@ It is fair to assume that If you have the need to access lower level methods, yo
 + Core extension (Core UI-less functionality)
 + UI extension (deals exclusively with operations with UI elements)
 
-Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing somewhere (which is bount to be the case) 
+Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing somewhere (which is bound to be the case) 
 
 ## Final thoughts
 
 The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has, 
-and by the brilliant philosophy of Derivative, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues, and that this small contribution helps you in expanding your capabilities as a maker. 
+and by the brilliant philosophy of Derivative https://derivative.ca/, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues, and that this small contribution helps you in expanding your capabilities as a maker. 
 
 ## About the license
 
-Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). This means that if at some point you would like to use this tool in a commercial endeavour for which you do not want to disclose the source code you will get in touch first, so a fair arrangement can be made. 
+Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). This means that if at some point you would like to use this tool in a commercial endeavour for which you do not want to disclose the source code, you will get in touch first, so a fair arrangement can be made. 
 
 Enjoy!
 
