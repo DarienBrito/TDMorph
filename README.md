@@ -134,7 +134,11 @@ It is fair to assume that If you have the need to access lower level methods, yo
 + Core extension (Core UI-less functionality)
 + UI extension (deals exclusively with operations with UI elements)
 
-Feel free to look around and please suggest improvements if you see something that could be done better, or if I did some stupid thing somewhere (which is bound to be the case) 
+## Bug reports
+
+Feel free to look around and please suggest improvements if you see something that could be done better in the code, or if I did some stupid thing somewhere (which is bound to be the case). To report these , please use the issue tracker in the Github repo:
+
+https://github.com/DarienBrito/TDMorph/issues
 
 ## Final thoughts
 
