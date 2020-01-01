@@ -42,6 +42,8 @@ Great! Here a quick overview of the general controls. I hint here at what the mo
 
 Please check the following tutorials to learn all the features in a structured manner:
 
+https://vimeo.com/showcase/6682501
+
 ## No UI, I just want to code! 
 
 Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a high level set of commands that you can pass to control the UI using Python. 
