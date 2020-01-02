@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for menu parameters, where range of slider is the number of items in menu
 - Refactoring of SliderUI class to use properties (like it should)
 - Deletion of unnecessary methods in SliderContainer and SliderUI classes
+- Syncing affects also random distribution and interpolation curves
 
 ## [Released]
 
