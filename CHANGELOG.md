@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.1] - 2017-06-20
+## [1.0.1] - 2020-01-06
 ### Added
 - Support for menu parameters, where range of slider is the number of items in menu
 - Refactoring of SliderUI class to use properties (like it should)
