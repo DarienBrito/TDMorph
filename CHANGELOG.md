@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Enhancements
 
+- Now possible to rename parameters by double-clicking on the name
 - To save a preset shift-lclick, to delete it shift-rclick on the preset button
 - Got rid of unnecesary  buttons for recall and save of presets
 - Got rid of global shortcut for Lib. This allows for multiple instances of TDMorph in the same patch
