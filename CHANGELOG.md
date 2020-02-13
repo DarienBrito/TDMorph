@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.1] - 2020-02-10
 ### Added
 
+- Fine control for mappings via a table
 - Marker to show preset storage within the preset buttons
 - Implemented a "pin" button, to collapse menu to just preset control for workflow enhancement
 - Now its possible to change range of sliders to any arbitrary set of values
@@ -22,6 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Enhancements
 
+- Infrastructure for lfo and patterns support implemented (will not be yet released however)
+- Sliders sub menu redesigned and optimized
+- Robust system for auto-learn and mapping editing for OSC
+- Less space taken by curve viewer
 - Now possible to rename parameters by double-clicking on the name
 - To save a preset shift-lclick, to delete it shift-rclick on the preset button
 - Got rid of unnecesary  buttons for recall and save of presets
