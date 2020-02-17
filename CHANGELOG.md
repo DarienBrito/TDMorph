@@ -9,13 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.1] - 2020-02-10
 ### Added
 
+- Infrastructure for lfo and patterns support implemented (will not be yet fully released however)
 - Fine control for mappings via a table
 - Marker to show preset storage within the preset buttons
 - Implemented a "pin" button, to collapse menu to just preset control for workflow enhancement
 - Now its possible to change range of sliders to any arbitrary set of values
 - Non interpolating parameters such as menus will change on start of trigger
-- On completion signal for morphings is now exposed to the user
-- Clocks for each slider are now exposed to the user
+- On completion signal for morphings can now be exported by the user
+- Clocks for each slider can now be exported by the user
 - Support for menu parameters, where range of slider is the number of items in menu
 - Refactoring of SliderUI class to use properties (like it should)
 - Deletion of unnecessary methods in SliderContainer and SliderUI classes
@@ -23,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Enhancements
 
-- Infrastructure for lfo and patterns support implemented (will not be yet released however)
 - Sliders sub menu redesigned and optimized
 - Robust system for auto-learn and mapping editing for OSC
 - Less space taken by curve viewer
