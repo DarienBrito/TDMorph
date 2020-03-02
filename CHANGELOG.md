@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.1] - 2020-02-10
+## [1.0.1] - 2020-03-01
 ### Added
 
 - Infrastructure for lfo and patterns support implemented (will not be yet fully released however)
