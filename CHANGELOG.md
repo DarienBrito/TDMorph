@@ -6,10 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.0]
+## [2.0.0] (2nd quarter of 2020)
 
 - Major upgrades and changes
-- Many new node additions, stay tuned! (later in 2020)
+- Many new node additions, stay tuned!
+
+## [Released]
 
 ## [1.1.2] - 2020-03-09
 ### Fixes
