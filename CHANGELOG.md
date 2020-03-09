@@ -6,7 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.1] - 2020-03-01
+## [2.0.0]
+
+- Major upgrades and changes
+- Many new node additions, stay tuned! (later in 2020)
+
+## [1.1.2] - 2020-03-09
+### Fixes
+
+- Renamed Parameters now persist across export/import 
+- LFO mode now follows range on creation and persists when inspector is closed
+- Launching presets and other python commands that got broken have been fixed
+- Custom morph time issues after TD update are now fixed
+- When reimporting from Json, parameters now preserver order
+- Renaming TDmorph now causes no errors
+
+## [1.1.0] - 2020-03-01
 ### Added
 
 - Infrastructure for lfo and patterns support implemented (will not be yet fully released however)
