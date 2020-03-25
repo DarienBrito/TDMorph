@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Major upgrades and changes
 - Many new node additions, stay tuned!
 
+## [Released]
+
 ## [1.1.3] - 2020-03-01
 ### Fixes
 - Fixed an issue that caused strange parameters in slider on param drop
@@ -22,8 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Enhancements
 - Changed logic of a couple elements for cleaner code
 - Deleted unnecessary code
-
-## [Released]
 
 ## [1.1.2] - 2020-03-09
 ### Fixes
