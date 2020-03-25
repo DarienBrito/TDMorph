@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
-## [1.1.3] - 2020-03-01
+## [1.1.3] - 2020-03-25
 ### Fixes
 - Fixed an issue that caused strange parameters in slider on param drop
 - Fixed an inconsistecy on index to set/store/delete presets. All begin now from 1
