@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released]
 
 ## [1.1.4] - 2020-7-04
+
+### Added
+- New node: PresetGrabber. Allows for accessing presets in tables that update on any preset change
+  
 ### Fixes
 - Fixed problem with clamping values in sliders
 
