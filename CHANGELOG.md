@@ -8,13 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] (2nd quarter of 2020)
 
-- Major UI re-design 
-- Major upgrades and changes
+### New features
+- UI re-design and architecture improvement, a great contribution of Roy Gerritsen!
 - Many new node additions, stay tuned!
+
+### Enhancements
+- Hovering on preset now displays stored time
 
 ## [Released]
 
-## [1.1.3] - 2020-03-25
+## [1.1.4] - 2020-7-04
+### Fixes
+- Fixed problem with clamping values in sliders
+
+### Enhancements
+- Presets are now an attribute in PresetManager and are dependable
+- Presets can be accessed as PresetManager.Presets
+- Deleted unnecessary code
+
+## [1.1.3] - 2020-25-03
 ### Fixes
 - Fixed an issue that caused strange parameters in slider on param drop
 - Fixed an inconsistecy on index to set/store/delete presets. All begin now from 1
@@ -25,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed logic of a couple elements for cleaner code
 - Deleted unnecessary code
 
-## [1.1.2] - 2020-03-09
+## [1.1.2] - 2020-09-03
 ### Fixes
 
 - Renamed Parameters now persist across export/import 
@@ -35,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - When reimporting from Json, parameters now preserver order
 - Renaming TDmorph now causes no errors
 
-## [1.1.0] - 2020-03-01
+## [1.1.0] - 2020-01-03
 ### Added
 
 - Infrastructure for lfo and patterns support implemented (will not be yet fully released however)
