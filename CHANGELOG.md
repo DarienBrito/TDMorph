@@ -9,11 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] (2nd quarter of 2020)
 
 ### New features
-- UI re-design and architecture improvement, a great contribution of Roy Gerritsen!
-- Many new node additions, stay tuned!
+- New node: PresetsAnimator - to convert stored presets to Animation COMP
+- Possibility to "Freeze" a given parameter, to avoid editing things by accident
+- Two new interpolation modes (snapIn, snapOut)
+- Jump to preset with Ctrl+left click (no interpolation)
+- Morph to preset with Ctrl+right click (arbitrary "quick check" time, disregard of stored preset time)
+- Cancel morphing wiht Ctrl+middle click
+- Now is possible to Stop/Play/Pause a current morphing in PresetManager
 
 ### Enhancements
-- Hovering on preset now displays stored time
+- UI architecture and re-design, a great contribution by Roy Gerritsen from y=f(x) lab
+- Hovering on preset now displays stored time and curve
+- Optimized architecture, warrantied to not cook when idle
+- New optional argument in SetPreset(morphTime=[some value]) allows to override stored preset time with arbitrary value
+
+## Fixes
+- Fixed problem on updating state of preset on opening/closing a project
 
 ## [Released]
 
@@ -27,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Enhancements
 - Presets are now an attribute in PresetManager and are dependable
-- Presets can be accessed as PresetManager.Presets
+- Presets can be accessed as PresetManager.Presets.getRaw()
 - Deleted unnecessary code
 
 ## [1.1.3] - 2020-25-03
