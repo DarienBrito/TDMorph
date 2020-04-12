@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New features
 - New node: PresetsAnimator - to convert stored presets to Animation COMP
+- new node: ExposeChannels, lets you grab all channels for each slider in a SlidersContainer
 - Possibility to "Freeze" a given parameter, to avoid editing things by accident
 - Two new interpolation modes (snapIn, snapOut)
 - Jump to preset with Ctrl+left click (no interpolation)
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cancel morphing wiht Ctrl+middle click
 - Now is possible to Stop/Play/Pause a current morphing in PresetManager
 - Integration with Master clocks via the Beat and Ableton Link, for LFO's and Patterns per slider
+- Shift left-click over slider name to reset slider to original values. 
 
 ### Enhancements
 - UI architecture and re-design, a great contribution by Roy Gerritsen from y=f(x) lab
@@ -24,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Optimized architecture, warrantied to not cook when idle
 - New optional argument in SetPreset(morphTime=[some value]) allows to override stored preset time with arbitrary value
 - Clean up and enhancemente of data flow for external signals in sliders
+- Shift right-click over slider name to edit it (instead of double clicking)
 
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
