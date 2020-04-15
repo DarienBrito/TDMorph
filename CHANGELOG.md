@@ -16,9 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Jump to preset with Ctrl+left click (no interpolation)
 - Morph to preset with Ctrl+right click (arbitrary "quick check" time, disregard of stored preset time)
 - Cancel morphing wiht Ctrl+middle click
+- Shift left-click over slider name to reset slider to original default value. 
 - Now is possible to Stop/Play/Pause a current morphing in PresetManager
 - Integration with Master clocks via the Beat and Ableton Link, for LFO's and Patterns per slider
-- Shift left-click over slider name to reset slider to original values. 
+- Now possible to re-bind data using a bindings table
 
 ### Enhancements
 - UI architecture and re-design, a great contribution by Roy Gerritsen from y=f(x) lab
@@ -27,9 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New optional argument in SetPreset(morphTime=[some value]) allows to override stored preset time with arbitrary value
 - Clean up and enhancemente of data flow for external signals in sliders
 - Shift right-click over slider name to edit it (instead of double clicking)
+-  Sync is now a momentary button that writes the time value to all sliders, on any mode.
 
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
+- Deleted unnecessary code and improved comments for some methods
+- 
 
 ## [Released]
 
