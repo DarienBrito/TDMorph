@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Now is possible to Stop/Play/Pause a current morphing in PresetManager
 - Integration with Master clocks via the Beat and Ableton Link, for LFO's and Patterns per slider
 - Now possible to re-bind data using a bindings table
+- New Universal "ElementsContainer" can host most parameter types
+- All parameter types with corresponding UI's, except for File and Python supported.
 
 ### Enhancements
 - UI architecture and re-design, a great contribution by Roy Gerritsen from y=f(x) lab
@@ -34,7 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
 - Deleted unnecessary code and improved comments for some methods
-- 
 
 ## [Released]
 
