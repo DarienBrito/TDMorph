@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Now possible to re-bind data using a bindings table
 - New Universal "ElementsContainer" can host most parameter types
 - All parameter types with corresponding UI's, except for File and Python supported.
+- Blending of arbitary presets is now possible.
 
 ### Enhancements
 - UI architecture and re-design, a great contribution by Roy Gerritsen from y=f(x) lab
@@ -32,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Shift right-click over slider name to edit it (instead of double clicking)
 - Sync is now a momentary button that writes the time value to all sliders, on any mode.
 - Enhanced architecture to add ad-hoc modules
+- 
 
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
