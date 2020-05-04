@@ -32,8 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Clean up and enhancemente of data flow for external signals in sliders
 - Shift right-click over slider name to edit it (instead of double clicking)
 - Sync is now a momentary button that writes the time value to all sliders, on any mode.
-- Enhanced architecture to add ad-hoc modules
-- 
+- Enhanced suite of tools to add ad-hoc modules
+- TDMorph is now more efficient, with less unnecessary nodes
 
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
