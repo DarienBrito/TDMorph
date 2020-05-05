@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sync is now a momentary button that writes the time value to all sliders, on any mode.
 - Enhanced suite of tools to add ad-hoc modules
 - TDMorph is now more efficient, with less unnecessary nodes
+- Removed redundant comments and renamed functions to make code more readable
 
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
