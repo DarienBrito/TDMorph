@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Blending of arbitary presets is now possible.
 
 ### Enhancements
+- TDMorph is now faster when morphing, with architecture optimizations
 - UI architecture and re-design, a great contribution by Roy Gerritsen from y=f(x) lab
 - Hovering on preset now displays stored time and curve
 - Optimized architecture, warrantied to not cook when idle
