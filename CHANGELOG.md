@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] (2nd quarter of 2020)
 
 ### New features
+- Now its possible to blend between two arbitrary parameters (experimental)
 - Now its possible to drag and drop to re-order presets in the UI
 - New node: PresetsAnimator - to convert stored presets to Animation COMP
 - new node: ExposeChannels, lets you grab all channels for each slider in a SlidersContainer
