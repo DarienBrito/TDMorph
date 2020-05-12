@@ -66,27 +66,24 @@ sliderContainer.SetUITime(SomeTimeValue)
 Here all the methods available for a *sliders container*:
 
 ```python
-SetUIDistribution(int)    # Changes the random distribution
-SetUIInterpolation(int)   # Changes the moprhing curve
+SetUIDistribution(str)    # Changes the random distribution (Uniform, Normal, Beta)
+SetUIInterpolation(str)   # Changes the moprhing curve (Linear, Scurve, Exponential, etc)
 
 SetUIGlobal(bool)         # Enables local/global behaviour
-SetUISync(bool)           # Enables local/global clock syncing 
+ClickUISync()             # Enables local/global clock syncing 
 SetUIAuto(bool)           # Enables automatic behaviour
 
 SetUIMorphs(int)          # Sets the amount of morphings
 SetUITime(float)          # Sets the morphing time
 
 ClickUISequence()         # Clicks the preset sequence button
-SetUISequence(bool)       # Sets the preset sequence button on/off
 
 ClickUIRandomize()        # Clicks the randomize button
-SetUIRandomize(bool)      # Sets the randomize button on/off
 
 ClickUIMorph()            # Clicks the morph button
-SetUIMorph(bool)          # Sets the morph button on/off
 
-ClickUIImport()           # Triggers importing a preset
-ClickUIExport()           # Triggers exporting a preset
+UIImportPreset()           # Triggers importing a preset
+UIExportPreset()           # Triggers exporting a preset
 
 ClickUISubPreset()        # Substracts one preset slot
 ClickUIAddPreset()        # Adds one preset slot
@@ -120,11 +117,12 @@ SetUISliderValue(float)     # Sets the value for the slider
 ClickUISliderRandomize()    # Triggers slider's randomization
 ClickUISliderInterpolate()  # Triggers slider's morphing
 SetUISliderLock(bool)       # Sets lock status
-SetUISliderReveal(bool)     # Enables deep parameters reveal
+SetUISliderReveal()     	# Enables deep parameters reveal
 ClickUISliderDestroy()      # Destroys slider
-SetUISliderDistribution(int)  # Sets random distribution
-SetUISliderInterpolation(int) # Sets morphing curve
+SetUISliderDistribution(str)  # Sets random distribution (Uniform, Normal, Beta)
+SetUISliderInterpolation(int) # Sets morphing curve (Linear, Scurve, Exponential, etc)
 SetUISliderTime(float)        # Sets morphing time
+SetUISnap(int) 				# Sets the snapping action for non-interpolatable parameters
 ```
 
 ### Deeper methods
