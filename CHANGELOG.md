@@ -9,18 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] (2nd quarter of 2020)
 
 ### New features
-- Now its possible to blend between two arbitrary parameters (experimental)
-- Now its possible to drag and drop to re-order presets in the UI
-- New node: PresetsAnimator - to convert stored presets to Animation COMP
-- new node: ExposeChannels, lets you grab all channels for each slider in a SlidersContainer
+- New node: PresetComposer, allows for fine detail control for preset launching and sequencing
+- Possible to select change on start/end of morphing for parameters that are non-interpolatable
+- Possible to use patterns via code (experimental)
+- New patterns library created
+- Integration with master clocks via the Beat and Ableton Link CHOPs, for LFO's and Patterns per slider
+- Blending between two arbitrary parameters (experimental)
+- Possible to drag and drop to re-order presets in the UI
+- New node: PresetsAnimator, to convert stored presets to Animation COMP automatically
+- New node: ExposeChannels, lets you grab all channels for each slider in a SlidersContainer
 - Possibility to "Freeze" a given parameter, to avoid editing things by accident
 - Two new interpolation modes (snapIn, snapOut)
 - Jump to preset with Ctrl+left click (no interpolation)
 - Morph to preset with Ctrl+right click (arbitrary "quick check" time, disregard of stored preset time)
 - Cancel morphing wiht Ctrl+middle click
 - Shift left-click over slider name to reset slider to original default value. 
-- Now is possible to Stop/Play/Pause a current morphing in PresetManager
-- Integration with Master clocks via the Beat and Ableton Link, for LFO's and Patterns per slider
+- Now its possible to Stop/Play/Pause a current morphing in PresetManager
 - Now possible to re-bind data using a bindings table
 - New Universal "ElementsContainer" can host most parameter types
 - All parameter types with corresponding UI's, except for File and Python supported.
