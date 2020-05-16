@@ -116,17 +116,17 @@ Stores a preset in the local storage of this component. It does so with given da
 which grabs current parameters state.
 
 ```python
-GetPreset(name=str)
+GetPreset(name) 
 ```
 Returns a specific preset as a list of lists of python dicts. 
 
 ```python
-JumpToPreset(name=str)
+JumpToPreset(name) 
 ```
 Move to the specified preset immediately (no interpolation).
 
 ```python
-DeletePreset(name=str)
+DeletePreset(name)
 ```
 Delete the specified preset.
 
@@ -136,17 +136,17 @@ ClearPresets()
 Destroys all stored presets.
 
 ```python
-OverwritePresetsValue(element=str, parameter=str, item=str, val=float/int)
+OverwritePresetsValue(element, parametert, item, val)
 ```
 Used to overwrite a specific item in the parameter list. Will overwrite the given value for all presets.
 
 ```python
-OverwriteSinglePresetValue(name=str, item=str, val=float/int)
+OverwriteSinglePresetValue(name, item, val)
 ```
 Used to overwrite a specific preset's value. Will overwrite the value for all parameters only in that preset.
 
 ```python
-AddDataToPreset(presetName=str, group=int, item=int, dataName=str, data=dict)
+AddDataToPreset(presetName, group, item, dataName, data)
 ```
 This method is to allow the addition of data points that are not supported in the core version of the PresetManager.
 This is for example data from UI components, suchs LFO rate. Notice that the valid data structure for presets is:
@@ -165,7 +165,7 @@ StopMorphing()
 Stops the morphing clock.
 
 ```python
-PlayMorphing(play=bool)
+PlayMorphing(bool)
 ```
 Play/Pauses the morphing clock.
 
@@ -180,14 +180,14 @@ ImportPresets()
 Imports preset from a JSON file in disk. Files for this object must not contain bindings information (UI less).
 
 ```python
-InjectPresets(data=dict)
+InjectPresets(data)
 ```
 This method can be used to inject data from a compound file, for instance with bindings information. 
 
 ## Wrappers
 
 ```python
-SetPreset(presetName=str, morphTime=int)
+SetPreset(presetName, morphTime=int)
 ```
 Sets the speficied preset. Calls the same method in the inner PresetMorpher.
 
@@ -209,16 +209,16 @@ it will perform the sequence in the order of the list. If sort keys is true, it 
 of the sorted keys.
 
 ```python
-SetBlendingPresets(presetName=str, targetName=str)
+SetBlendingPresets(presetName, targetName=str)
 ```
 Sets the blending for the specified presets. Calls the same method in the inner PresetMorpher.
 
 ```python
-RandomizeParameter(name=str)
+RandomizeGivenParameters(operatorIndex, names, mode=str)
 ```
-Randomizes the specified parameter only. Calls the same method in the inner PresetMorpher.
+Randomizes the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
 
 ```python
-MorphParameter(name=str)
+MorphGivenParameters(operatorIndex, names, mode=str)
 ```
-Morphs the specified parameter only. Calls the same method in the inner PresetMorpher.
+Morphs the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
