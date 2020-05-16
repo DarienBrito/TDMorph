@@ -51,7 +51,7 @@ https://vimeo.com/showcase/6682501
 
 Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a combination of high and lower level set of commands that you can pass to control all objects in TDMorph, using Python. 
 
-## UI-level commands
+### UI-level commands
 
 The first category of commands are to set things in TDMorph via the UI. These do not talk with the core nodes in the system but with the widgets. To give an example: you could locate an *ElementsContainer* in TDMorph and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
 
@@ -66,7 +66,7 @@ Now, you can control all the UI elements of that object. So if you would like to
 elementsContainer.SetUITime(SomeTimeValue)
 ```
 
-## Core-level commands
+### Core-level commands
 
 The second category of commands are to communicate directly with the objects, not with the UI. These methods are the ones used by the system under the hood, so you can do much more. To give an example: you could locate an *ElementsContainer* and then delete it, by doing this:
 
@@ -75,6 +75,8 @@ The second category of commands are to communicate directly with the objects, no
 elementsContainer = op('TDMorph').GetContainer(1)
 elementsContainer.Delete()
 ```
+
+### Commands documentation
 
 For a list of all available methods for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/ElementsContainer.md)
 
