@@ -49,11 +49,11 @@ https://vimeo.com/showcase/6682501
 
 ## No UI, I just want to code! 
 
-Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a high level set of commands that you can pass to control it, using Python. 
+Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a combination of high and lower level set of commands that you can pass to control all objects in TDMorph, using Python. 
 
 ## UI-level commands
 
-The first category of commands are to control UI elements. These do not talk with the core nodes in the system but with the widgets. In order to access these, you first need to locate an *ElementsContainer* and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
+The first category of commands are to set things in TDMorph via the UI. These do not talk with the core nodes in the system but with the widgets. To give an example: you could locate an *ElementsContainer* in TDMorph and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
 
 To access an *ElementsContainer* you need to invoke it by number (counting from 1), so assuming you have only 1 *ElementsContainer* in your TDMorph workspace, you can invoke that element using:
 
@@ -65,79 +65,18 @@ Now, you can control all the UI elements of that object. So if you would like to
 ```python
 elementsContainer.SetUITime(SomeTimeValue)
 ```
-### *Elements Container* Methods
 
-Here all the methods available for an *ElementsContainer*:
+## Core-level commands
 
-```python
-SetUIDistribution(str)    # Changes the random distribution (Uniform, Normal, Beta)
-SetUIInterpolation(str)   # Changes the moprhing curve (Linear, Scurve, etc)
+The second category of commands are to communicate directly with the objects, not with the UI. These methods are the ones used by the system under the hood, so you can do much more. To give an example: you could locate an *ElementsContainer* and then delete it, by doing this:
 
-SetUIGlobal(bool)         # Enables local/global behaviour
-ClickUISync()             # Enables local/global clock syncing 
-SetUIAuto(bool)           # Enables automatic behaviour
-
-SetUIMorphs(int)          # Sets the amount of morphings
-SetUITime(float)          # Sets the morphing time
-
-ClickUISequence()         # Clicks the preset sequence button
-
-ClickUIRandomize()        # Clicks the randomize button
-
-ClickUIMorph()            # Clicks the morph button
-
-UIImportPreset()           # Triggers importing a preset
-UIExportPreset()           # Triggers exporting a preset
-
-ClickUISubPreset()        # Substracts one preset slot
-ClickUIAddPreset()        # Adds one preset slot
-SetUINumPresets(int)      # Changes the number of preset slots
-ClickUIClearPresets()     # Clears all presets
-
-SetUISetPreset(int)       # Sets preset n 
-SetUIStorePreset(int)     # Stores a preset in n slot
-SetUIUnstorePreset(int)   # Removes a preset from n slot 
-
-GetElement(int)            # Returns a widget from the container
-```
-The last method in the list returns the targeted widget. Like with the container, you may get a widget by asking for a slider number. Assuming you want to get the first widget in your container, you may access it like:
 
 ```python
-element = elementsContainer.GetElement(1) 
+elementsContainer = op('TDMorph').GetContainer(1)
+elementsContainer.Delete()
 ```
 
-Then, if you would like to change the element you need to do:
-
-```python
-element.SetUIElementValue(SomeValue)
-```
-
-### Element Methods
-
-Here all the methods available for elements:
-
-```python
-SetUIElementValue(float)     # Sets the value for the widget
-ClickUIElementRandomize()    # Triggers widget's randomization
-ClickUIElementInterpolate()  # Triggers widget's morphing
-SetUIElementLock(bool)       # Sets lock status
-SetUIElementReveal()     	   # Enables deep parameters reveal
-ClickUIElementDestroy()      # Destroys widget
-SetUIElementDistribution(str)  # Sets random distribution (Uniform, Normal, Beta)
-SetUIElementInterpolation(int) # Sets morphing curve (Linear, Scurve, Exponential, etc)
-SetUIElementTime(float)        # Sets morphing time
-SetUISnap(int) 				         # Sets the snapping action for non-interpolatable parameters
-```
-
-## Object level commands
-
-When doing more advanced tasks it is perhaps necessary to access the methods from objects direcly, for instance if you are working with a *PresetManager* or if you want to interact and retrieve information from the level of the inner classes of the objects. There are numerous things you can do with the objects, I describe here only the most common:
-
-### ElementsContainer
-
-### PresetManager
-
-### PresetCompoer
+For a list of all available methods for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/ElementsContainer.md)
 
 ### Patterns
 
