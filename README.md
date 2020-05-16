@@ -2,8 +2,6 @@
 
 TDMorph is a toolbox for enhanced parametric exploration, preset storage, composition and cueing in the TouchDesigner platform. It is meant to help in creating and performing generative content via various methods and archiving of interesting parameter configurations using a JSON format. Furthermore, the library provides a set of tools that developers can use to create their own custom systems. 
 
-![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphCapture.PNG)
-
 ## What can I do with it?
 
 1) Random search of states for parameters on any node or number of nodes.
@@ -33,19 +31,32 @@ Great! Here a quick overview of the general controls. I hint here at what the mo
 
 #### UI
 
-![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphSlidersControls.png)
-
-![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SliderControls.png)
 
 #### Preset Manager
 
-![alt text](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorphPrestManagerControls.png)
 
 ### Tutorials
 
 Please check the following tutorials to learn all the features in a structured manner:
 
 https://vimeo.com/showcase/6682501
+
+### Shortcuts
+
+#### ElementsContainer
+
+##### When pressing over a preset slot
+
+* shift + left click = store a preset
+* shift + right click = delete a preset
+* shift + middle click = freeze a preset
+* ctrl + left click = jump to preset (no interpolation)
+* ctrl + righ click = morph to preset in 1 second (check transition)
+
+##### When pressing over an element name 
+
+* shift + left click = set the element to value found on creation
+* shift + right click = change element's name
 
 ## No UI, I just want to code! 
 
