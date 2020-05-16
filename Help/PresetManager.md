@@ -1,6 +1,6 @@
 # Preset Manager
 
-This is the heart of TDMorph. This class is in charge of executing and manage all presets storage and retrieval as well as 
+The heart of TDMorph. This class is in charge of executing and manage all presets storage and retrieval as well as 
 communicating with the morpher and random distribution nodes.
 
 ## Properties
