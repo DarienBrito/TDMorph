@@ -51,7 +51,12 @@ https://vimeo.com/showcase/6682501
 
 Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a combination of high and lower level set of commands that you can pass to control all objects in TDMorph, using Python. 
 
-### UI-level commands
+In general, a node in TDMorph has always 2 extensions:
+
++ Core extension (Core UI-less functionality)
++ UI extension (deals exclusively with operations for UI elements)
+
+### UI extension methods
 
 The first category of commands are to set things in TDMorph via the UI. These do not talk with the core nodes in the system but with the widgets. To give an example: you could locate an *ElementsContainer* in TDMorph and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
 
@@ -66,10 +71,9 @@ Now, you can control all the UI elements of that object. So if you would like to
 elementsContainer.SetUITime(SomeTimeValue)
 ```
 
-### Core-level commands
+### Core extension methods
 
 The second category of commands are to communicate directly with the objects, not with the UI. These methods are the ones used by the system under the hood, so you can do much more. To give an example: you could locate an *ElementsContainer* and then delete it, by doing this:
-
 
 ```python
 elementsContainer = op('TDMorph').GetContainer(1)
@@ -80,20 +84,13 @@ elementsContainer.Delete()
 
 For a list of all available methods for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/ElementsContainer.md)
 
+Please read carefully the instructions about architecture in the source code, so you create programs that adhere to the philosophy of TDMorph.
+
 ### Patterns
 
-TDMorph comes with a "Patterns" library, which I wrote based on the homonimus library in the SuperCollider language. Patterns were conceived in the SuperCollider programming language as a "rich and concise score language for music". See: https://doc.sccode.org/Tutorials/A-Practical-Guide/ 
+Since version 2, TDMorph comes with a "Patterns" library, which I wrote based on the homonimus library in the SuperCollider language. Patterns were conceived in the SuperCollider programming language as a "rich and concise score language for music". See: https://doc.sccode.org/Tutorials/A-Practical-Guide/ 
 
-The need for values generation in TouchDesigner moved me to embrace this idea and further create this library for the TDMorph toolkit and TouchDesigner in General. Mine is not a port per se, but more of a reverse engineering of the original, since Python's support for generators and lazy evaluation is so nice :) 
-
-### Deeper methods
-
-It is fair to assume that If you have the need to access lower level methods, you are proficient enough to figure out for yourself the inner structure of the Classes. In general, a node in TDMorph has always 2 extensions:
-
-+ Core extension (Core UI-less functionality)
-+ UI extension (deals exclusively with operations for UI elements)
-
-Please read carefully the instructions about architecture in the source code, so you create programs that adhere to the philosophy of TDMorph.
+The need for values generation in TouchDesigner moved me to embrace this idea and further create this library for the TDMorph toolkit and TouchDesigner in General. It is not a port of the original version per se, but more of a reverse engineering, using Python's great support for generators and lazy evaluation.
 
 ## Bug reports
 
@@ -103,6 +100,7 @@ https://github.com/DarienBrito/TDMorph/issues
 
 ## Contributions
 
+You are more than welcome to propose additions to the toolkit. Feel free to build your own tools based on TDMorph and get in touch if you want to propose making them part of the official distribution. Please make sure to check carefully the obligations in the license if you plan to make your work available to others.
 
 ## Final thoughts
 
