@@ -3,7 +3,7 @@
 ## Properties
 
 ```python
-Name
+Name(str)
 ```
 The container name
 
@@ -172,7 +172,7 @@ ExportPresetManager()
 Creates a copy of the local preset manager on the level of TDMorph for independent use, for instance with a preset composer or animator.
 
 ```python
-ImportPresetsJSON(…)
+ImportPresetsJSON()
 ```
 Import stored presets to a JSON file in disk. Notice that this is a special method of SlidersContainer, since it can have bindings
 
