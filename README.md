@@ -80,9 +80,9 @@ elementsContainer = op('TDMorph').GetContainer(1)
 elementsContainer.Delete()
 ```
 
-### Commands documentation
+### Methods documentation
 
-For a **list of all available methods** for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/).
+For a list of all available methods for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/).
 
 Please read carefully the instructions about architecture in the source code, so you create programs that adhere to the philosophy of TDMorph.
 
