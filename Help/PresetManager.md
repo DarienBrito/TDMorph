@@ -222,3 +222,94 @@ Randomizes the specified parameters only. First argument is the row index from t
 MorphGivenParameters(operatorIndex, names, mode=str)
 ```
 Morphs the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
+
+## UI level methods
+
+### Properties
+
+```python
+UIGlobalStatus = bool
+```
+Get/Set global status for the manager.
+
+### Methods
+
+```python
+UISetElementTime(time)
+```
+Sets the time via the UI, so that change is visible to the user. Only works if there's an associated widget.
+
+```python
+UIClearPresets()
+```
+Destroy all presets
+
+```python
+UIRandomizeLocal(mode=None)
+```
+Randomizes the parameters with defined ranges in the UI.
+
+```python
+UIRandomLocalMorph(mode=None)
+```
+Morphs the parameters with defined ranges in the UI.
+
+```python
+UISetPresetLocally(presetName)
+```
+Sets the given presets values locally. Only works if there are associated Widgets.
+
+```python
+UIPresetsLocalSequence(sortKeys=False, keysSequence=None)
+```
+Sets the given presets sequence locally. Only works if there are associated Widgets.
+
+```python
+UIAutoRandomLocal(mode=None)
+```
+Sets automatic randomization locally. Only works if there are associated Widgets.
+
+```python
+UIAutoRandomMorphLocal(mode=None)
+```
+Sets automatic morphing locally. Only works if there are associated Widgets.
+
+```python
+UISyncClocks()
+```
+Syncs all the inner clocks in the Container.
+
+```python
+UIStorePreset(name=None)
+```
+Stores a preset with the given name.
+
+```python
+UIGetCurveLabels()
+```
+Get the curves names from the UI menu.
+
+```python
+UIGetPresetValue(address, key)
+```
+Get specified preset's values.
+
+```python
+UISetPreset(presetName, morphTime=None)
+```
+Set specified preset from the UI.
+
+```python
+UIRandomize(mode=None)
+```
+Randomize parameters from the UI.
+
+```python
+UIRandomMorph(mode=None)
+```
+Morph parameters from the UI.
+
+```python
+UIPresetsSequence(sortKeys=False, keysSequence=None)
+```
+Sequence parameters from the UI.
