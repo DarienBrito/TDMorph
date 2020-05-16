@@ -26,8 +26,14 @@ Creates a node that contains par CHOPS to the inner parameter channles of each c
 CreateFromLibrary(item, x=250, y=150, viewer=False)
 ```
 Creates "item" object in the given coordinates. Enables the viewer if viewer=True. Possible items are:
-"PresetManager", "PresetGrabber", "PresetAnimator", "ElementsContainer", "MorphingTimers", "MorphingChannels", "Patterns", "PresetComposer"
-
+  * PresetManager
+  * PresetGrabber
+  * PresetAnimator
+  * ElementsContainer
+  * MorphingTimers
+  * MorphingChannels
+  * Patterns
+  * PresetComposer
 
 ```python
 SelectObject(name, x=250, y=0)
