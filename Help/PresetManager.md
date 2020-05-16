@@ -107,10 +107,10 @@ This function gets called inside Preset manager every time there is a change in 
 ```python
 StorePreset(name=str)
 ```
-Stores a preset with the given name.
+Stores a preset with the given name. If no name is supplied the one found in the custom parameters of PresetManager will be used.
 
 ```python
-StorePresetWithData(name=str, data=dict)
+StorePresetWithData(name, data)
 ```
 Stores a preset in the local storage of this component. It does so with given data, unlike the StorePreset method,
 which grabs current parameters state.
@@ -121,14 +121,14 @@ GetPreset(name)
 Returns a specific preset as a list of lists of python dicts. 
 
 ```python
-JumpToPreset(name) 
+JumpToPreset(name=None) 
 ```
-Move to the specified preset immediately (no interpolation).
+Move to the specified preset immediately (no interpolation). If no name is supplied the one found in the custom parameters of PresetManager will be used.
 
 ```python
-DeletePreset(name)
+DeletePreset(name=None)
 ```
-Delete the specified preset.
+Delete the specified preset. If no name is supplied the one found in the custom parameters of PresetManager will be used.
 
 ```python
 ClearPresets()
@@ -136,7 +136,7 @@ ClearPresets()
 Destroys all stored presets.
 
 ```python
-OverwritePresetsValue(element, parametert, item, val)
+OverwritePresetsValue(element, parameter, item, val)
 ```
 Used to overwrite a specific item in the parameter list. Will overwrite the given value for all presets.
 
@@ -165,7 +165,7 @@ StopMorphing()
 Stops the morphing clock.
 
 ```python
-PlayMorphing(bool)
+PlayMorphing(play=True)
 ```
 Play/Pauses the morphing clock.
 
