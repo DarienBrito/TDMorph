@@ -87,6 +87,55 @@ SetUIElementBarFactor()
 ```
 Change the factor for the syncing to occur as bars.
 
+```python
+SetUIElementPseq(sequence=[0.25, 0.5, 1.0])
+```
+Sets the sequence for the Pseq pattern.
+
+```python
+SetUIElementPrand(sequence=[0.25, 0.5, 1.0])
+```
+Sets the sequence for the Prand pattern.
+
+```python
+SetUIElementPxrand(sequence=[0.25, 0.5, 1.0])
+```
+Sets the sequence for the Pxrand pattern.
+
+```python
+SetUIElementPshuffle(sequence=[0.25, 0.5, 1.0])
+```
+Sets the sequence for the Pshuffle pattern.
+
+```python
+SetUIElementPwrandsequence=[0.25, 0.5, 1.0], weights=[0.33, 0.33, 0.33])
+```
+Sets the sequence and weights for the Pwrand pattern.
+
+
+```python
+SetUIElementPseries(start, step=1, length=10)
+```
+Sets the start, step and length for the Pseries pattern.
+
+
+```python
+SetUIElementPgeom(start, grow=1, length=10)
+```
+Sets the start, grow and length for the Pgeom pattern.
+
+```python
+SetUIElementPwhite(lo=0.0, hi=1.0)
+```
+Sets the lo and hi boundaries for the Pwthite pattern.
+
+
+```python
+SetUIElementPbrown(lo=0.0, hi=0.0, step=0.01)
+```
+Sets the lo, hi and step for the Pbrown pattern.
+
+
 ## Core-level properties
 
 ```python
