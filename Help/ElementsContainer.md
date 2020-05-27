@@ -105,6 +105,11 @@ SetUIUnstorePreset(int)
 Removes a preset from n slot.
 
 ```python
+SetUIHardSyncLFOs
+```
+Hard-syncs all LFO's in the container.
+
+```python
 GetElement(int)   
 ```
 Returns a widget from the container.
