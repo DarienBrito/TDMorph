@@ -68,7 +68,7 @@ SetUIElementSignalSource(source='LFO')
 Select the signal type (LFO or Pattern)
 
 ```python
-SetUIElementSyncMode(mode='Interna')
+SetUIElementSyncMode(mode='Internal')
 ```
 Select the syncing mode (Internal, Manual, Beat or Bar)
 
