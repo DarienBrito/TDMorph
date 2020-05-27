@@ -3,7 +3,7 @@
 ## UI-level Methods
 
 ```python
-SetUIElementValue()
+SetUIElementValue(float)
 ```
 Sets the element to the given value.
 
@@ -18,12 +18,12 @@ ClickUIElementInterpolate()
 Trigger a random interpolation.
 
 ```python
-SetUIElementLock()
+SetUIElementLock(bool)
 ```
 Lock the element.
 
 ```python
-SetUIElementReveal()
+SetUIElementReveal(bool)
 ```
 Show all functions.
 
@@ -33,44 +33,44 @@ ClickUIElementDestroy()
 Destroy the element.
 
 ```python
-SetUIElementDistribution()
+SetUIElementDistribution(int)
 ```
 Change the random distribution.
 
 ```python
-SetUIElementInterpolation()
+SetUIElementInterpolation(int)
 ```
 Change the interpolation curve.
 
 ```python
-SetUIElementTime()
+SetUIElementTime(float)
 ```
 Change the interpolation curve.
 
 ```python
-SetUISnap()
+SetUISnap(int)
 ```
 Chnage the snapping action.
 
 ```python
-SetUIElementRange()
+SetUIElementRange(minVal=0, maxVal=1)
 ```
 Change the range of the element.
 
 ```python
-SetUIElementSignalEnable()
+SetUIElementSignalEnable(bool)
 ```
 Enable/Disable the signal control.
 
 ```python
-SetUIElementSignalSource()
+SetUIElementSignalSource(source='LFO')
 ```
-Select the signal type.
+Select the signal type (LFO or Pattern)
 
 ```python
-SetUIElementSyncMode()
+SetUIElementSyncMode(mode='Interna')
 ```
-Select the syncing mode.
+Select the syncing mode (Internal, Manual, Beat or Bar)
 
 ```python
 ClickUIElementManualTrigger()
@@ -78,12 +78,12 @@ ClickUIElementManualTrigger()
 Trigger a manual syncing.
 
 ```python
-SetUIElementBeatFactor()
+SetUIElementBeatFactor(float)
 ```
 Change the factor for the syncing to occur as beats.
 
 ```python
-SetUIElementBarFactor()
+SetUIElementBarFactor(float)
 ```
 Change the factor for the syncing to occur as bars.
 
