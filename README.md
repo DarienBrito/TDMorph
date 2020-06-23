@@ -7,25 +7,30 @@ TDMorph is a toolbox for enhanced parametric exploration, preset storage, compos
 1) Random search of states for parameters on any node or number of nodes.
 2) Random morphing between states using various different interpolation curves.
 3) Storing and retrieval of any arbitrary number of presets.
-4) Control of parameters with an automatically generated UI.
-6) Auto-learn MIDI and OSC for every slider in the generated UI.
+4) Control of parameters and transitions with automatically generated UIs.
+5) Automatic storing, randomization and transformation of all parameters of arbitrary nodes.
+6) Auto-learn MIDI and OSC for every control in the generated UI.
 7) Full scripting control of all UI features via high-level commands.
 8) Global and local timing controls for every single parameter.
 9) Automatic creation of animations from stored presets.
 10) Flexible cueing system with follow actions and quantization.
 11) Pattern generation via scripting with the Patterns library
+12) Scripting cueing,
+
+And much more!
 
 ## How does it work?
 
-There various approaches you may take interchangeably. Here the most common:
+
+The architecture of TDMorph is fully modular in the sense that you can access the core functionality building blocks separately or as a whole. There are therefore various approaches you may take, which can be also interchangeably used. Here the most common:
 
 + You can create an *ElementsContainer* UI, from where to control your parameters, using widgets and a set of buttons to perform various functions.
-+ You can create a *PresetManager* node, which is a UI-less object that allows you to control any arbitrary amount of nodes at once.
-+ You can create a *PresetComposer* node, which is a UI that lets you create and control presets with follow actions.
++ You can create a *PresetManager* node, which is a UI-less object that allows you to control any arbitrary amount of nodes at once and is the backbone of the engine, suitable for advanced developers who want to make their own systems.
++ You can create a *SceneLauncher* node, which is a UI that lets you create and control presets with follow actions.
 
 ## Ok, I want to use it!
 
-Great! Here a quick overview of the general controls. I hint here at what the more misterious elements in the UI do, hopefully the rest is self-explanatory. For a proper step by step explanation, refer to the video tutorials below.
+Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-evident (I hope). Here a quick overview of the general controls to help you get started, if you cannot wait. For a proper step by step explanation of all features, please refer to the [video tutorials](https://vimeo.com/showcase/6682501).
 
 ### Controls overview
 
@@ -37,11 +42,13 @@ Great! Here a quick overview of the general controls. I hint here at what the mo
 
 ### Tutorials
 
-Please check the following tutorials to learn all the features in a structured manner:
+If you want to learn everything TDMorph has to offer in a structured manner, please check the following tutorials:
 
 https://vimeo.com/showcase/6682501
 
 ### Shortcuts
+
+There are various shortcuts in the TDMorph ecosystem. I have tried to keep them as simple as possible, so the only keys you will ever have to remember are shift, control and some mouse button.
 
 #### ElementsContainer
 
@@ -51,16 +58,38 @@ https://vimeo.com/showcase/6682501
 * shift + right click = delete a preset
 * shift + middle click = freeze a preset
 * ctrl + left click = jump to preset (no interpolation)
-* ctrl + righ click = morph to preset in 1 second (check transition)
+* ctrl + righ click = morph to preset in 1 second (meant for quick transition check)
 
-##### When pressing over an element name 
+##### When pressing over an element's name 
 
 * shift + left click = set the element to value found on creation
 * shift + right click = change element's name
 
+##### When pressing over an container's name 
+
+* shift + right click = change element's name
+
+##### When pressing on an element's container empty space
+
+* right click = reveal menu with various actions to take
+
+#### ScenesLauncher
+
+##### When pressing on a Scenes Launhcer empty space
+
+* right click = reveal menu with various actions to take
+
+#### MIDI and OSC
+
+##### When either is enabled
+
+* left click = activate auto-learning (expects a MIDI or OSC change to map it)
+* right click = sets the parameter to the learned MIDI or OSC signal
+* middle click = deletes the MIDI or OSC mapping
+
 ## No UI, I just want to code! 
 
-Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from the core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a combination of high and lower level set of commands that you can pass to control all objects in TDMorph, using Python. 
+Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a plethora of higher and lower level set of commands that you can pass to control all objects in TDMorph, using Python. 
 
 In general, a node in TDMorph has always 2 extensions:
 
@@ -84,7 +113,7 @@ elementsContainer.SetUITime(SomeTimeValue)
 
 ### Core extension methods
 
-The second category of commands are to communicate directly with the objects, not with the UI. These methods are the ones used by the system under the hood, so you can do much more. To give an example: you could locate an *ElementsContainer* and then delete it, by doing this:
+The second category of commands are to communicate directly with the objects, not with the UI. These methods are the ones used by the system under the hood, so you can do much more with them. These are meant for more advanced developers that want to build  systems on top of the toolbox. To give an example: you could locate an *ElementsContainer* and then delete it, by doing this:
 
 ```python
 elementsContainer = op('TDMorph').GetContainer(1)
@@ -95,13 +124,13 @@ elementsContainer.Delete()
 
 For a list of all available methods for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/).
 
-Please read carefully the instructions about architecture in the source code, so you create programs that adhere to the philosophy of TDMorph.
+Please read carefully the instructions about architecture in the source code, so you create programs that adhere to the philosophy of TDMorph. This is important because it will be easier to mantain as TDMorph evolves.
 
 ### Patterns
 
 Since version 2, TDMorph comes with a "Patterns" library, which I wrote based on the homonimus library in the SuperCollider language. Patterns were conceived in the SuperCollider programming language as a "rich and concise score language for music". See: https://doc.sccode.org/Tutorials/A-Practical-Guide/ 
 
-The need for values generation in TouchDesigner moved me to embrace this idea and further create this library for the TDMorph toolkit and TouchDesigner in General. It is not a port of the original version per se, but more of a reverse engineering, using Python's great support for generators and lazy evaluation.
+The need for values generation in TouchDesigner moved me to embrace this idea and further create this library for the TDMorph toolkit and TouchDesigner in General. It is not a port of the original SuperCollider version per se, but more of a reverse engineering, using Python's great support for generators and lazy evaluation.
 
 ## Bug reports
 
@@ -120,7 +149,7 @@ and by the brilliant philosophy of Derivative https://derivative.ca/, as creator
 
 ## About the license
 
-Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this [link with common questions](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered) if you wonder what it implies. This means that if at some point you would like to use this tool in a commercial endeavour for which you do not want to disclose the source code, you will get in touch first, so a fair arrangement can be made. 
+Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this [link with common questions](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered) if you wonder what it implies. This means that if at some point you would like to use this tool in a _commercial endeavour for which you do not want to disclose the source code_, you will get in touch first, so a fair arrangement can be made. 
 
 Enjoy!
 
