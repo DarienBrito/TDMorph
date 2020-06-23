@@ -198,7 +198,16 @@ UpdatePresetsMenu()
 ```
 This function gets called inside Preset manager every time there is a change in the dependable Presets dictionary. 
 
-## UI level methods
+## Private
+
+### Properties
+
+```python
+UIGlobalStatus = v
+```
+v is global or local status.
+
+### Properties
 
 ```python
 fitWildcard(pattern)
