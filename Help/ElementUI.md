@@ -1,166 +1,178 @@
-# ElementUI 
+# Element UI
 
-## UI-level Methods
+## Core-level methods
 
-```python
-SetUIElementValue(float)
-```
-Sets the element to the given value.
+### Promoted
 
 ```python
-ClickUIElementRandomize()
+DestroyElement()
 ```
-Trigger a randomization.
+Destroys the Widget.
 
 ```python
-ClickUIElementInterpolate()
+EditCustomName(name)
 ```
-Trigger a random interpolation.
+Change the name of the slider in the custom entry (maintains original name intact).
 
 ```python
-SetUIElementLock(bool)
+GetPresetsManager()
 ```
-Lock the element.
+Returns the deply dependable dictionary that holds presets.
 
 ```python
-SetUIElementReveal(bool)
+GetRandomDistribution()
 ```
-Show all functions.
+Returns current random distribution.
+
+```python
+HardSync()
+```
+Resync the LFO using a high level control.
+
+```python
+Reorder(name, source, receiver)
+```
+Reorder widgets.
+
+```python
+SetDefaultValue()
+```
+Set the slider to the range and value found on creation (original value on dragging of parameter).
+
+```python
+SetSliderDecimalPoints(val)
+```
+Sets the floating point precision for sliders.
+
+### Private
+
+## UI-level methods
+
+All following methods set the elements on the UI level. These should be self explanatory.
+
+### Promoted
 
 ```python
 ClickUIElementDestroy()
 ```
-Destroy the element.
 
 ```python
-SetUIElementDistribution(int)
+ClickUIElementInterpolate()
 ```
-Change the random distribution.
-
-```python
-SetUIElementInterpolation(int)
-```
-Change the interpolation curve.
-
-```python
-SetUIElementTime(float)
-```
-Change the interpolation curve.
-
-```python
-SetUISnap(int)
-```
-Chnage the snapping action.
-
-```python
-SetUIElementRange(minVal=0, maxVal=1)
-```
-Change the range of the element.
-
-```python
-SetUIElementSignalEnable(bool)
-```
-Enable/Disable the signal control.
-
-```python
-SetUIElementSignalSource(source='LFO')
-```
-Select the signal type (LFO or Pattern)
-
-```python
-SetUIElementSyncMode(mode='Internal')
-```
-Select the syncing mode (Internal, Manual, Beat or Bar)
 
 ```python
 ClickUIElementManualTrigger()
 ```
-Trigger a manual syncing.
 
 ```python
-SetUIElementBeatFactor(float)
+ClickUIElementRandomize()
 ```
-Change the factor for the syncing to occur as beats.
 
 ```python
-SetUIElementBarFactor(float)
+SetUIElementBarFactor(int)
 ```
-Change the factor for the syncing to occur as bars.
 
 ```python
-SetUIElementPseq(sequence=[0.25, 0.5, 1.0])
+SetUIElementBeatFactor(int)
 ```
-Sets the sequence for the Pseq pattern.
+
+```python
+SetUIElementDistribution(str)
+```
+
+```python
+SetUIElementInterpolation(str)
+```
+
+```python
+SetUIElementLock(bool)
+```
+
+```python
+SetUIElementPbrown(lo=0.0, hi=1.0, step=0.01)
+```
+
+```python
+SetUIElementPgeom(start, grow=2, length=10)
+```
 
 ```python
 SetUIElementPrand(sequence=[0.25, 0.5, 1.0])
 ```
-Sets the sequence for the Prand pattern.
 
 ```python
-SetUIElementPxrand(sequence=[0.25, 0.5, 1.0])
+SetUIElementPseq(sequence=[0.25, 0.5, 1.0])
 ```
-Sets the sequence for the Pxrand pattern.
-
-```python
-SetUIElementPshuffle(sequence=[0.25, 0.5, 1.0])
-```
-Sets the sequence for the Pshuffle pattern.
-
-```python
-SetUIElementPwrandsequence=[0.25, 0.5, 1.0], weights=[0.33, 0.33, 0.33])
-```
-Sets the sequence and weights for the Pwrand pattern.
-
 
 ```python
 SetUIElementPseries(start, step=1, length=10)
 ```
-Sets the start, step and length for the Pseries pattern.
-
 
 ```python
-SetUIElementPgeom(start, grow=1, length=10)
+SetUIElementPshuffle(sequence=[0.25, 0.5, 1.0])
 ```
-Sets the start, grow and length for the Pgeom pattern.
 
 ```python
 SetUIElementPwhite(lo=0.0, hi=1.0)
 ```
-Sets the lo and hi boundaries for the Pwthite pattern.
-
 
 ```python
-SetUIElementPbrown(lo=0.0, hi=0.0, step=0.01)
+SetUIElementPwrand(sequence=[0.25, 0.5, 1.0], weights=[0.33, 0.33, 0.33])
 ```
-Sets the lo, hi and step for the Pbrown pattern.
-
-
-## Core-level properties
 
 ```python
-Name()
+SetUIElementPxrand(sequence=[0.25, 0.5, 1.0])
 ```
-Get/set stored element name.
 
 ```python
-Interpolatable()
+SetUIElementRange(minVal, maxVal)
 ```
-Get/set interpolation capability of element.
 
 ```python
-Range()
+SetUIElementReveal()
 ```
-Get/set stored range for element.
 
 ```python
-LockStatus()
+SetUIElementSignalEnable()
 ```
-Get/set locked status.
 
 ```python
-Value()
+SetUIElementSignalSource(source='LFO')
 ```
-Get/Set element's value
 
-## Core-level Methods
+```python
+SetUIElementSyncMode(mode='Internal')
+```
+
+```python
+SetUIElementTime(float)
+```
+
+```python
+SetUIElementValue(float)
+```
+
+```python
+SetUISnap(int)
+```
+
+### Private
+
+```python
+clickUIWidgetButton()
+```
+
+```python
+getUIElement(name)
+```
+Returns element with given name.
+
+```python
+getUIWidgetCheckbox(name)
+```
+Returns checkbox with given name.
+
+```python
+setUIWidgetValue(name, float)
+```
+Sets given widget with value.
