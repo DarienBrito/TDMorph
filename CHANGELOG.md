@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] (2nd quarter of 2020)
 
 ### New features
-- New node: PresetComposer, allows for fine detail control for preset launching and sequencing
+- Scripts are now possible in ElementsContainer and SceneLauncher
+- New node: SceneLauncher, allows for fine detail control for preset launching and sequencing
 - Possible to select change on start/end of morphing for parameters that are non-interpolatable
 - Possible to use patterns via code (experimental)
 - New patterns library created
