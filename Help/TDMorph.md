@@ -13,14 +13,14 @@ Creates an empty container for elements in the TDMorph node.
 CreateFromLibrary(item, x=250, y=150, viewer=False)
 ```
 Creates "item" object in the given coordinates. Enables the viewer if viewer=True. Possible items are:
-  * PresetManager
-  * PresetGrabber
-  * PresetAnimator
-  * ElementsContainer
-  * MorphingTimers
-  * MorphingChannels
-  * Patterns
-  * PresetComposer
+  * 'PresetManager'
+  * 'PresetGrabber'
+  * 'PresetAnimator'
+  * 'ElementsContainer'
+  * 'MorphingTimers'
+  * 'MorphingChannels'
+  * 'Patterns'
+  * 'SceneLauncher'
 
 ```python
 ExposeChannels(x=0, y=0)
