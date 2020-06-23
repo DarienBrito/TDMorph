@@ -200,15 +200,6 @@ This function gets called inside Preset manager every time there is a change in 
 
 ## Private
 
-### Properties
-
-```python
-UIGlobalStatus = v
-```
-v is global or local status.
-
-### Properties
-
 ```python
 fitWildcard(pattern)
 ```
@@ -255,6 +246,13 @@ parseSelection()
 Parsing of user input in relation to what parameters to grab from targeted operators.
 
 ## UI level methods
+
+### Properties
+
+```python
+UIGlobalStatus = v
+```
+v is global or local status.
 
 ### Promoted
 
