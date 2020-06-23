@@ -214,39 +214,48 @@ Generates random values according to selected random distribution, in random mor
 ### Promoted
 
 ```python
-AutoRandomMorphWithStoredRanges()
+AutoRandomMorphWithStoredRanges(mode=None)
 ```
+Move to N random states using morphing.
 
 ```python
-AutoRandomizeWithStoredRanges()
+AutoRandomizeWithStoredRanges(mode=None)
 ```
+Move to N random states jumping.
 
 ```python
-RandomMorphWithStoredRanges()
+RandomMorphWithStoredRanges(mode=None)
 ```
+Move to a random state using morphing GLOBALLY using a defined set of ranges (useful for dynamic UI's).
 
 ```python
-RandomizeWithStoredRanges()
+RandomizeWithStoredRanges(mode=None)
 ```
+Move to a random state GLOBALLY, using a define set of ranges (useful for dynamic UI's).
 
 ### Private
 
 ```python
-getParameterValue()
+getParameterValue(master, data, decimals=8)
 ```
+Unlike the core version, this functions gets the minMax ranges from the found UI operator. This is an important distinction. It also reads from the master operator to fetch some data.
 
 ```python
-setAttributeParameterProperties()
+setAttributeParameterProperties(master, states, decimals=8)
 ```
+Set UI's local properties states.
 
 ```python
-setComputedParameterProperties()
+setComputedParameterProperties(master, states, target=None, decimals=8)
 ```
+Set UI's local computed properties.
 
 ```python
 setRandomValsWithStoredRanges()
 ```
+Randomizes values using a defined random distribution. This method writes directly to the parameters. It is used by UI's with dynamic ranges.
 
 ```python
 writeRandomValsWithStoredRanges()
 ```
+Generates random values according to selected random distribution to be used by random morphing. It is used by RandomMorph(). To see the function used by the method Randomize() see "setRandomVals".
