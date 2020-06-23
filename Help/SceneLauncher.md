@@ -1,6 +1,8 @@
 # SceneLauncher
 
-## Properties (read/write)
+## Core level methods
+
+### Properties (read/write)
 
 ```python
 Source = v
@@ -27,7 +29,7 @@ Target = v
 ```
 v is current target
 
-## Promoted
+### Promoted
 
 ```python
 ClearActions()
@@ -125,7 +127,7 @@ WriteScenes()
 ```
 Write the found scenes into the table in this component. This gets recalled automatically everytime the scenes changed.
 
-## Private
+### Private
 
 ```python
 assembleLaunchInfo()
@@ -202,16 +204,16 @@ updateTimeInfo(totalDuration)
 ```
 Updates the COMP with total duration calculated from the sum of all scenes, including delays.
 
-# UI level methods
+## UI level methods
 
-## Promoted
+### Promoted
 
 ```python
 CreateAnimation()
 ```
 Creates an animation from the set of scenes in the SceneLauncher.
 
-## Private
+### Private
 
 ```python
 createAnimationCOMP( x=250, y=0, viewer=True)
