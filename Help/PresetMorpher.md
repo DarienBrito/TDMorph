@@ -2,7 +2,7 @@
 
 ## Core-level methods
 
-# Properties
+### Properties
 
 ```python
 ActivityStatus = bool (read only) 
