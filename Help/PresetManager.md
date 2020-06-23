@@ -250,9 +250,9 @@ Parsing of user input in relation to what parameters to grab from targeted opera
 ### Properties
 
 ```python
-UIGlobalStatus = v
+UIGlobalStatus = bool
 ```
-v is global or local status.
+Global is true, local false.
 
 ### Promoted
 
