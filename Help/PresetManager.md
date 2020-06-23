@@ -3,7 +3,9 @@
 The heart of TDMorph. This class is in charge of executing and manage all presets storage and retrieval as well as 
 communicating with the morpher and random distribution nodes.
 
-## Properties
+## Core level methods
+
+### Properties
 
 ```python
 AutoMode = bool
@@ -11,9 +13,9 @@ AutoMode = bool
 Changes the behaviour of "randomize" and "morph" to be automatic, based on an N number of morphs.
 
 ```python
-LockedStatus = bool
+CurrentMorphCounter = int
 ```
-Locks or opens the manager for randomization or morphing.
+The current morphing when automatic morphing is used.
 
 ```python
 CurrentPresetName = str
@@ -21,109 +23,25 @@ CurrentPresetName = str
 The currently selected preset. Used only as information, it does not set the preset.
 
 ```python
-CurrentMorphCounter = int
+LockedStatus = bool
 ```
-The current morphing when automatic morphing is used.
+Locks or opens the manager for randomization or morphing.
 
-### Wrappers
+### Promoted
 
 ```python
-NumMorphs()
+AddDataToPreset(presetName, group, item, dataName, data)
 ```
-The amount of morphings to occur in the inner PresetMorpher object.
+This method is to allow the addition of data points that are not supported in the core version of the PresetManager.
+This is for example data from UI components, suchs LFO rate. Notice that the valid data structure for presets is:
+		
+```(DependableDict)(list)(list)(dict) = data```
+```Presets[presetName][group][items][key] = data```
 
 ```python
-RandomDistribution()
+ClearPresets()
 ```
-The random distribution used in the inner PresetMorpher object.
-
-```python
-MorphTime()
-```
-The morphing time in the PresetMorpher inner object.
-
-```python
-MorphCurve()
-```
-The morphing curve used in the PresetMorpher inner object.
-
-```python
-ActivityStatus()
-```
-The idle/busy state of the PresetMorpher inner object.
-
-```python
-MorphingType() (read only)
-```
-The type of morpher used in the inner PresetMorpher object. 
-
-```python
-Blend = bool
-```
-Amount of blending in the inner PresetMorpher object.
-
-```python
-BlendingActive()
-```
-Blending status in the inner PresetMorpher object.
-
-## Core level Methods
-
-```python
-GetEssentialStates()
-```
-Go over all target operators and get their essential states for morphing.
-
-```python
-GetStates()
-```
-Go over all target operators and get their states, including range, morph, time, etc information.
-
-```python
-GetElementsPaths()
-```
-Returns paths to all objects associated with the manager.
-
-```python
-GetStoredPresetsNum()
-```
-Returns the amount of stored presets.
-
-```python
-GetSavedStatesKeys()
-```
-Returns the names of the presets.
-
-```python
-GetPresetsDictionary()
-```
-Returns the presets dictionary (dependable dict, use .getRaw() to get normal dict from it)
-
-```python
-UpdatePresetsMenu()
-```
-This function gets called inside Preset manager every time there is a change in the dependable Presets dictionary. 
-
-```python
-StorePreset(name=str)
-```
-Stores a preset with the given name. If no name is supplied the one found in the custom parameters of PresetManager will be used.
-
-```python
-StorePresetWithData(name, data)
-```
-Stores a preset in the local storage of this component. It does so with given data, unlike the StorePreset method,
-which grabs current parameters state.
-
-```python
-GetPreset(name) 
-```
-Returns a specific preset as a list of lists of python dicts. 
-
-```python
-JumpToPreset(name=None) 
-```
-Move to the specified preset immediately (no interpolation). If no name is supplied the one found in the custom parameters of PresetManager will be used.
+Destroys all stored presets.
 
 ```python
 DeletePreset(name=None)
@@ -131,9 +49,84 @@ DeletePreset(name=None)
 Delete the specified preset. If no name is supplied the one found in the custom parameters of PresetManager will be used.
 
 ```python
-ClearPresets()
+GeneratePresetsJSON()
 ```
-Destroys all stored presets.
+Export all stored presets to a JSON file in disk
+
+```python
+GetElementsPaths()
+```
+Returns paths to all objects associated with the manager.
+
+```python
+GetEssentialStates()
+```
+Go over all target operators and get their essential states for morphing.
+
+```python
+GetEssentialStatesFromParameters()
+```
+This is used when one wants to target specifc parameters from specific operators in morphing.
+
+```python
+GetMorphCurvesNames()
+```
+Returns all available morphing curve names.
+
+```python
+GetPreset(name) 
+```
+Returns a specific preset as a list of lists of python dicts.
+
+```python
+GetPresetsDictionary()
+```
+Returns the presets dictionary (dependable dict, use .getRaw() to get normal dict from it)
+
+```python
+GetRandomDistributionNames()
+```
+Returns the possible names for random distributions.
+
+```python
+GetSavedStatesKeys()
+```
+Returns the names of the presets.
+
+```python
+GetStates()
+```
+Go over all target operators and get their states, including range, morph, time, etc information.
+
+```python
+GetStatesFromParameters(parameters)
+```
+This is used when one wants to target specifc parameters from specific operators in randomization.
+
+```python
+GetStoredPresetsNum()
+```
+Returns the amount of stored presets
+
+```python
+ImportPresets()
+```
+Imports preset from a JSON file in disk. Files for this object must not contain bindings information (UI less).
+
+```python
+InjectPresets(data)
+```
+This method can be used to inject data from a compound file, for instance with bindings information. 
+
+```python
+JumpToPreset(name=None)
+```
+Move to the specified preset immediately (no interpolation). If no name is supplied the one found in the custom parameters of PresetManager will be used.
+
+```python
+MorphGivenParameters(operatorIndex, names, mode=str)
+```
+Morphs the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
 
 ```python
 OverwritePresetsValue(element, parameter, item, val)
@@ -146,18 +139,44 @@ OverwriteSinglePresetValue(name, item, val)
 Used to overwrite a specific preset's value. Will overwrite the value for all parameters only in that preset.
 
 ```python
-AddDataToPreset(presetName, group, item, dataName, data)
+PlayMorphing(play=True)
 ```
-This method is to allow the addition of data points that are not supported in the core version of the PresetManager.
-This is for example data from UI components, suchs LFO rate. Notice that the valid data structure for presets is:
-		
-```(DependableDict)(list)(list)(dict) = data```
-```Presets[presetName][group][items][key] = data```
+Play/Pauses the morphing clock.
 
 ```python
-GetMorphCurvesNames()
+PresetsSequence(sortKeys=False, keysSequence=None)
 ```
-Returns all available morphing curve names.
+Performs the sequence of store presets. Calls the same method in the inner PresetMorpher. If a keys sequence is provided it will perform the sequence in the order of the list. If sort keys is true, it will perform the sequence in the order of the sorted keys.
+
+```python
+RandomMorph(mode='Uniform')
+```
+Performs a random morph of parameters. Calls the same method in the inner PresetMorpher.
+
+```python
+Randomize(mode=None)
+```
+Performs a randomization of parameters with given mode. Calls the same method in the inner PresetMorpher.
+
+```python
+RandomizeGivenParameters(operatorIndex, names, mode=None)
+```
+Randomizes the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
+
+```python
+ReportResult(msg, title)
+```
+Launches a TDMorph-formatted pop up window with the given message and title.
+
+```python
+SetBlendingPresets(presetName, targetName)
+```
+Sets the blending for the specified presets. Calls the same method in the inner PresetMorpher.
+
+```python
+SetPreset(presetName, morphTime=1)
+```
+Sets the speficied preset. Calls the same method in the inner PresetMorpher.
 
 ```python
 StopMorphing()
@@ -165,104 +184,70 @@ StopMorphing()
 Stops the morphing clock.
 
 ```python
-PlayMorphing(play=True)
+StorePreset(name='Preset0')
 ```
-Play/Pauses the morphing clock.
+Stores a preset with the given name. If no name is supplied the one found in the custom parameters of PresetManager will be used.
 
 ```python
-GeneratePresetsJSON()
+StorePresetWithData(name, data)
 ```
-Export all stored presets to a JSON file in disk
+Stores a preset in the local storage of this component. It does so with given data, unlike the StorePreset method, which grabs current parameters state.
 
 ```python
-ImportPresets()
+UpdatePresetsMenu()
 ```
-Imports preset from a JSON file in disk. Files for this object must not contain bindings information (UI less).
-
-```python
-InjectPresets(data)
-```
-This method can be used to inject data from a compound file, for instance with bindings information. 
-
-## Wrappers
-
-```python
-SetPreset(presetName, morphTime=int)
-```
-Sets the speficied preset. Calls the same method in the inner PresetMorpher.
-
-```python
-Randomize(mode=str) # modes can be "Uniform", "Normal", "Beta"
-```
-Performs a randomization of parameters with given mode. Calls the same method in the inner PresetMorpher.
-
-```python
-RandomMorph(mode=str)  # modes can be "Uniform", "Normal", "Beta"
-```
-Performs a random morph of parameters. Calls the same method in the inner PresetMorpher.
-
-```python
-PresetsSequence(sortKeys=bool, keysSequence=list)
-```
-Performs the sequence of store presets. Calls the same method in the inner PresetMorpher. If a keys sequence is provided
-it will perform the sequence in the order of the list. If sort keys is true, it will perform the sequence in the order
-of the sorted keys.
-
-```python
-SetBlendingPresets(presetName, targetName=str)
-```
-Sets the blending for the specified presets. Calls the same method in the inner PresetMorpher.
-
-```python
-RandomizeGivenParameters(operatorIndex, names, mode=str)
-```
-Randomizes the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
-
-```python
-MorphGivenParameters(operatorIndex, names, mode=str)
-```
-Morphs the specified parameters only. First argument is the row index from the table with supplied operators paths. Names are the names of the targeted parameters. Mode is random type. Uses the current one if not specified.
+This function gets called inside Preset manager every time there is a change in the dependable Presets dictionary. 
 
 ## UI level methods
 
-### Properties
+```python
+fitWildcard(pattern)
+```
+Add support for the ^ wildcard used in TD.
 
 ```python
-UIGlobalStatus = bool
+getEsssentialState(target, parameters=None)
 ```
-Get/Set global status for the manager.
-
-### Methods
+Grabs only essential elements to interpolate across tables.
 
 ```python
-UISetElementTime(time)
+getLockFromUI(path)
 ```
-Sets the time via the UI, so that change is visible to the user. Only works if there's an associated widget.
+Check if there's an embedded UI to get locked status from, otherwise grab the status from self.
 
 ```python
-UIClearPresets()
+getParameterSelection(target, parsSelection, scope)
 ```
-Destroy all presets
+Parse parameters to returb based on pattern matching from the selected flags in the node.
 
 ```python
-UIRandomizeLocal(mode=None)
+getParameterValue(parameter)
 ```
-Randomizes the parameters with defined ranges in the UI.
+Grabs the source value based on certain conditions. There are some parameters, such as menu, that may require special treatment. This method is meant to handle that.
 
 ```python
-UIRandomLocalMorph(mode=None)
+getParams(target)
 ```
-Morphs the parameters with defined ranges in the UI.
+Filters the parameters to be selected based.
 
 ```python
-UISetPresetLocally(presetName)
+getState(target, parameters=None)
 ```
-Sets the given presets values locally. Only works if there are associated Widgets.
+Get the parameters current state. Takes useful information for morphing and parametric setting. We include here curve and time information.
 
 ```python
-UIPresetsLocalSequence(sortKeys=False, keysSequence=None)
+parseScope(pattern)
 ```
-Sets the given presets sequence locally. Only works if there are associated Widgets.
+Add suport for multiple wildcard in parameter one liner, as in TD. i.e x* yy* zzz*.
+
+```python
+parseSelection()
+```
+Parsing of user input in relation to what parameters to grab from targeted operators.
+
+## UI level methods
+
+### Promoted
 
 ```python
 UIAutoRandomLocal(mode=None)
@@ -275,34 +260,34 @@ UIAutoRandomMorphLocal(mode=None)
 Sets automatic morphing locally. Only works if there are associated Widgets.
 
 ```python
-UISyncClocks()
+UIClearPresets()
 ```
-Syncs all the inner clocks in the Container.
-
-```python
-UIStorePreset(name=None)
-```
-Stores a preset with the given name.
+Destroy all presets.
 
 ```python
 UIGetCurveLabels()
 ```
-Get the curves names from the UI menu.
+Gets all names of curves.
 
 ```python
 UIGetPresetValue(address, key)
 ```
-Get specified preset's values.
+Returns a specific presets time, reading from a list of lists of python dicts, stored in Presets. This is specific for UI usage.
 
 ```python
-UISetPreset(presetName, morphTime=None)
+UIPresetsLocalSequence(sortKeys=False, keysSequence=None)
 ```
-Set specified preset from the UI.
+Sets the given presets sequence locally. Only works if there are associated Widgets.
 
 ```python
-UIRandomize(mode=None)
+UIPresetsSequence(sortKeys=False, keysSequence=None)
 ```
-Randomize parameters from the UI.
+Sequence parameters from the UI.
+
+```python
+UIRandomLocalMorph(mode=None)
+```
+Morphs the parameters with defined ranges in the UI.
 
 ```python
 UIRandomMorph(mode=None)
@@ -310,6 +295,36 @@ UIRandomMorph(mode=None)
 Morph parameters from the UI.
 
 ```python
-UIPresetsSequence(sortKeys=False, keysSequence=None)
+UIRandomize(mode=None)
 ```
-Sequence parameters from the UI.
+Randomize parameters from the UI.
+
+```python
+UIRandomizeLocal(mode=None)
+```
+Randomizes the parameters with defined ranges in the UI.
+
+```python
+UISetPreset(presetName, morphTime=None)
+```
+Set specified preset from the UI.
+
+```python
+UISetPresetLocally(presetName)
+```
+Sets the given presets values locally. Only works if there are associated Widgets.
+
+```python
+UISetElementTime()
+```
+Sets the time via the UI, so that change is visible to the user. Only works if there's an associated element.
+
+```python
+UIStorePreset(name=None)
+```
+Stores a preset with the given name.
+
+```python
+UISyncClocks()
+```
+Syncs all the inner clocks in the Container.
