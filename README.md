@@ -14,8 +14,8 @@ TDMorph is a toolbox for enhanced parametric exploration, preset storage, compos
 8) Global and local timing controls for every single parameter.
 9) Automatic creation of animations from stored presets.
 10) Flexible cueing system with follow actions and quantization.
-11) Pattern generation via scripting with the Patterns library
-12) Scripting cueing,
+11) Pattern generation via scripting with the Patterns library.
+12) Algorithmic cueing via scripts.
 
 And much more!
 
