@@ -112,10 +112,12 @@ https://github.com/DarienBrito/TDMorph/issues
 
 You are more than welcome to propose additions to the toolkit. Feel free to build your own tools based on TDMorph and get in touch if you want to propose making them part of the official distribution. Please make sure to check carefully the obligations in the license if you plan to make your work available to others.
 
-## Final thoughts
+## Final thoughts and support
 
 The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has, 
 and by the brilliant philosophy of Derivative https://derivative.ca/, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues, and that this system helps you in expanding your capabilities as a maker. 
+
+You can [support this project](https://darienbrito.com/support/) by making a donation. Any contribution is appreciated!
 
 ## About the license
 
