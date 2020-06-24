@@ -46,7 +46,7 @@ Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-e
 
 The most fundamental and powerful object in the whole of TDMorph. Please refer to the tutorial to learn how this works and what you can do with it.
 
- <img src="https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/PresetManager.PNG" width="600">
+ <img src="https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/PresetManager.PNG" width="800">
 ### Tutorials
 
 If you want to learn everything TDMorph has to offer in a structured manner, please check the following tutorials:
