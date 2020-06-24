@@ -2,6 +2,13 @@
 
 ## Core-level methods
 
+### Properties
+
+```python
+Name = str
+```
+Get/set container name
+
 ### Promoted
 
 ```python
