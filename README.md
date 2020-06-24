@@ -48,7 +48,7 @@ https://vimeo.com/showcase/6682501
 
 ### Shortcuts
 
-Please refer to the [https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md](full list of shortcuts) to operate TDMorph.
+Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
 
 ## No UI, I just want to code! 
 
