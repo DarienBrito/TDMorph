@@ -44,6 +44,8 @@ Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-e
 
 #### Preset Manager
 
+The most fundamental and powerful object in the whole of TDMorph. Please refer to the tutorial to learn how this works and what you can do with it.
+
 ![Header](https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/PresetManager.PNG)
 
 ### Tutorials
