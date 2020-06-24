@@ -34,9 +34,11 @@ Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-e
 
 ### Controls overview
 
-#### UI
+#### TDMorph basic UI
 
-![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorph%20header.png)
+![Header](https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/TDMorph%20header.svg)
+
+#### Scene launcher UI
 
 
 #### Preset Manager
