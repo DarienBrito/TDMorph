@@ -150,7 +150,7 @@ Rebind passed slider to target, this is used when editing a bindings table.
 
 ## UI-level methods
 
-All following methods set the elements on the UI level. These should be self explanatory.
+All following methods set the elements on the UI level. These should be self explanatory if not described.
 
 ### Promoted
 
