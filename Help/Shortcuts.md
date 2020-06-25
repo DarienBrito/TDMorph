@@ -1,6 +1,6 @@
 # Shortcuts
 
-There are various shortcuts in the TDMorph ecosystem. I have tried to keep them as simple as possible, so the only keys you will ever have to remember are shift, control and some mouse button.
+There are various shortcuts in the TDMorph ecosystem. I have tried to keep them as simple as possible, so the only keys you will ever have to remember are `shift`, `control` and some `mouse button`.
 
 ## ElementsContainer
 
