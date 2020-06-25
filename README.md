@@ -21,8 +21,7 @@ And much more!
 
 ## How does it work?
 
-
-The architecture of TDMorph is fully modular in the sense that you can access the core functionality building blocks separately or as a whole. There are therefore various approaches you may take, which can be also interchangeably used. Here the most common:
+The architecture of TDMorph is fully modular, allowing you to access the core functionality building blocks separately or as a whole. There are therefore various approaches you may take, which can be also interchangeably used. Here the most obvious:
 
 + You can create an **ElementsContainer** UI, from where to control your parameters, using widgets and a set of buttons to perform various functions.
 + You can create a **PresetManager** node, which is a UI-less object that allows you to control any arbitrary amount of nodes at once and is the backbone of the engine, suitable for advanced developers who want to make their own systems.
@@ -30,7 +29,7 @@ The architecture of TDMorph is fully modular in the sense that you can access th
 
 ## Ok, I want to use it!
 
-Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-evident (I hope). Here a quick overview of the general controls to help you get started, if you cannot wait. For a proper step by step explanation of all features, please refer to the [video tutorials](https://vimeo.com/showcase/6682501).
+Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-evident (I hope). Here a quick overview of the general controls to give you an idea. For a proper step by step explanation of all features please refer to the [video tutorials](https://vimeo.com/showcase/6682501).
 
 ### Controls overview
 
@@ -44,18 +43,15 @@ Great! TDMorph is a rather deep tool, alhtough the basic functionality is self-e
 
 #### Preset Manager
 
-The most fundamental and powerful object in the whole of TDMorph. Please refer to the tutorial to learn how this works and what you can do with it.
-
  <img src="https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/PresetManager.PNG" width="800">
+
 ### Tutorials
 
-If you want to learn everything TDMorph has to offer in a structured manner, please check the following tutorials:
-
-https://vimeo.com/showcase/6682501
+Check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner.
 
 ### Shortcuts
 
-Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
+TDMorph uses a number of shortcuts to perform various actions which you need to be aware of. Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
 
 ## No UI, I just want to code! 
 
@@ -90,11 +86,11 @@ elementsContainer = op('TDMorph').GetContainer(1)
 elementsContainer.Delete()
 ```
 
-### Methods documentation
+### Documentation
 
-For a list of all available methods for all the objects in TDMorph, please refer to the node documentation in the [help files](https://github.com/DarienBrito/TDMorph/blob/master/Help/).
-
-Please read carefully the instructions about architecture in the source code, so you create programs that adhere to the philosophy of TDMorph. This is important because it will be easier to mantain as TDMorph evolves.
+Please refer to the [help files with all available methods](https://github.com/DarienBrito/TDMorph/blob/master/Help/) in the archive.
+ 
+If you plan to extend or use TDMorph as a bedrock for your own implementations, please read carefully the instructions about architecture in the source code, so you create programs that adhere to its philosophy. This is important because will make things easier to mantain as TDMorph evolves.
 
 ### Patterns
 
@@ -112,16 +108,18 @@ https://github.com/DarienBrito/TDMorph/issues
 
 You are more than welcome to propose additions to the toolkit. Feel free to build your own tools based on TDMorph and get in touch if you want to propose making them part of the official distribution. Please make sure to check carefully the obligations in the license if you plan to make your work available to others.
 
-## Final thoughts and support
+## Final thoughts
 
 The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has, 
 and by the brilliant philosophy of Derivative https://derivative.ca/, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues, and that this system helps you in expanding your capabilities as a maker. 
 
-You can [support this project](https://darienbrito.com/support/) by making a donation. Any contribution is appreciated!
-
 ## About the license
 
 Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this [link with common questions](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered) if you wonder what it implies. This means that if at some point you would like to use this toolbox in a **commercial endeavour for which you do not want to disclose the source code**, you will get in touch first, so a fair arrangement can be made. 
+
+## Support
+
+You can [support this project](https://darienbrito.com/support/) by making a donation. Any contribution is appreciated!
 
 Enjoy!
 
