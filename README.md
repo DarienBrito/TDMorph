@@ -55,7 +55,7 @@ TDMorph uses a number of shortcuts to perform various actions which you need to 
 
 ## No UI, I just want to code! 
 
-Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is therefore a plethora of higher and lower level set of commands that you can pass to control all objects in TDMorph, using Python. 
+Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is a plethora of high and low level set of commands that you can pass to control all objects in TDMorph, using Python. 
 
 In general, a node in TDMorph has always 2 extensions:
 
