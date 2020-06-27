@@ -47,7 +47,7 @@ Great! TDMorph is a rather deep tool and requires some exploration to master but
 
 ### Tutorials
 
-Please check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner. This is the best way to get on speed with it.
+Please check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner.
 
 ### Shortcuts
 
