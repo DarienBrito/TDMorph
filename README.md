@@ -64,7 +64,7 @@ In general, a node in TDMorph has always 2 extensions:
 
 ### UI extension methods
 
-The first category of commands are to set things in TDMorph via the UI. These do not talk with the core nodes in the system but with the widgets. To give an example: you could locate an *ElementsContainer* in TDMorph and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
+This category of commands are to control TDMorph via the UI. These do not talk with the core nodes in the system but with the widgets. To give an example: you could locate an *ElementsContainer* in TDMorph and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
 
 To access an *ElementsContainer* you need to invoke it by number (counting from 1), so assuming you have only 1 *ElementsContainer* in your TDMorph workspace, you can invoke that element using:
 
@@ -96,7 +96,7 @@ If you plan to extend or use TDMorph as a bedrock for your own implementations, 
 
 Since version 2, TDMorph comes with a "Patterns" library, which I wrote based on the homonimus library in the SuperCollider language. Patterns were conceived in the SuperCollider programming language as a "rich and concise score language for music". See: https://doc.sccode.org/Tutorials/A-Practical-Guide/ 
 
-The need for values generation in TouchDesigner moved me to embrace this idea and further create this library for the TDMorph toolkit and TouchDesigner in General. It is not a port of the original SuperCollider version per se, but more of a reverse engineering, using Python's great support for generators and lazy evaluation.
+The need for values generation in TouchDesigner moved me to embrace this idea and further create this library for the TDMorph toolkit and TouchDesigner in General. It is not a port but a reverse engineering of the original SuperCollider version, using Python's great support for generators and lazy evaluation.
 
 ## Bug reports
 
@@ -110,8 +110,8 @@ You are more than welcome to propose additions to the toolkit. Feel free to buil
 
 ## Final thoughts
 
-The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has, 
-and by the brilliant philosophy of Derivative https://derivative.ca/, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues, and that this system helps you in expanding your capabilities as a maker. 
+The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has
+and by the brilliant philosophy of Derivative https://derivative.ca/, as creators of the TouchDesigner software. I hope that the *ethos* that characterizes TD continues and that this system helps you in expanding your capabilities as a maker. 
 
 ## About the license
 
