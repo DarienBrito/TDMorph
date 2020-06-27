@@ -29,7 +29,7 @@ The architecture of TDMorph is fully modular, allowing you to access the core fu
 
 ## Ok, I want to use it!
 
-Great! TDMorph is a rather deep tool and requires some exploration to master but the basic functionality should be self-evident. Here a quick overview of the general controls to give you an idea. For a proper step by step explanation of all features please refer to the [video tutorials](https://vimeo.com/showcase/6682501).
+Great! TDMorph is a rather deep tool and requires some exploration to master but the basic functionality should be self-evident. Here a quick overview of the general controls to give you an idea. 
 
 ### Controls overview
 
@@ -47,7 +47,7 @@ Great! TDMorph is a rather deep tool and requires some exploration to master but
 
 ### Tutorials
 
-Check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner.
+Please check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner. This is the best way to get on speed with it.
 
 ### Shortcuts
 
