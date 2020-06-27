@@ -21,7 +21,7 @@ And much more!
 
 ## How does it work?
 
-The architecture of TDMorph is fully modular, allowing you to access the core functionality building blocks separately or as a whole. There are therefore various approaches you may take, which can be also interchangeably used. Here the most obvious:
+The architecture of TDMorph is fully modular, allowing you to access the core functionality as a whole or as separate building blocks. There are therefore various approaches you may take, which can be also interchangeably used. Here the most obvious:
 
 + You can create an **ElementsContainer** UI, from where to control your parameters, using widgets and a set of buttons to perform various functions.
 + You can create a **PresetManager** node, which is a UI-less object that allows you to control any arbitrary amount of nodes at once and is the backbone of the engine, suitable for advanced developers who want to make their own systems.
