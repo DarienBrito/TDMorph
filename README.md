@@ -45,11 +45,11 @@ Great! TDMorph is a rather deep tool and requires some exploration to master but
 
  <img src="https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/PresetManager.PNG" width="800">
 
-### Tutorials
+## Tutorials
 
 Please check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner.
 
-### Shortcuts
+## Shortcuts
 
 TDMorph uses a number of shortcuts to perform various actions which you need to be aware of. Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
 
