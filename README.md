@@ -53,9 +53,9 @@ Please check the [full collection of tutorials](https://vimeo.com/showcase/66825
 
 TDMorph uses a number of shortcuts to perform various actions which you need to be aware of. Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
 
-## No UI, I just want to code! 
+## Code architecture  
 
-Fair enough :) The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is a plethora of high and low level set of commands that you can pass to control all objects in TDMorph, using Python. 
+The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is a plethora of high and low level set of commands that you can pass to control all objects in TDMorph, using Python. 
 
 In general, a node in TDMorph has always 2 extensions:
 
@@ -86,13 +86,13 @@ elementsContainer = op('TDMorph').GetContainer(1)
 elementsContainer.Delete()
 ```
 
-### Documentation
+## Documentation
 
 Please refer to the [help files with all available methods](https://github.com/DarienBrito/TDMorph/blob/master/Help/) in the archive.
  
 If you plan to extend or use TDMorph as a bedrock for your own implementations, please read carefully the instructions about architecture in the source code, so you create programs that adhere to its philosophy. This is important because will make things easier to mantain as TDMorph evolves.
 
-### Patterns
+## Patterns
 
 Since version 2, TDMorph comes with a "Patterns" library, which I wrote based on the homonimus library in the SuperCollider language. Patterns were conceived in the SuperCollider programming language as a "rich and concise score language for music". See: https://doc.sccode.org/Tutorials/A-Practical-Guide/ 
 
@@ -115,7 +115,7 @@ and by the brilliant philosophy of Derivative https://derivative.ca/, as creator
 
 ## About the license
 
-Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this [link with common questions](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered) if you wonder what it implies. This means that if at some point you would like to use this toolbox in a **commercial endeavour for which you do not want to disclose the source code**, you will get in touch first, so a fair arrangement can be made. 
+Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this [link with common questions](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered) if you wonder what it implies. This means that if at some point you would like to use any part of this toolbox in a **commercial endeavour for which you do not want to disclose the source code**, you will get in touch first, so a fair arrangement can be made. 
 
 ## Support
 
