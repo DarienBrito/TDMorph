@@ -10,7 +10,7 @@ There are various shortcuts in the TDMorph ecosystem. I have tried to keep them 
 * <kbd>shift</kbd> + <kbd>right click</kbd> = delete a preset
 * <kbd>shift</kbd> + <kbd>middle click</kbd> = freeze a preset
 * <kbd>ctrl</kbd> + <kbd>left click</kbd> = jump to preset (no interpolation)
-* <kbd>ctrl</kbd> + righ click = morph to preset in 1 second (meant for quick transition check)
+* <kbd>ctrl</kbd> + <kbd>righ click</kbd> = morph to preset in 1 second (meant for quick transition check)
 
 ### When pressing over an element's name 
 
