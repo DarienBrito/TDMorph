@@ -62,6 +62,11 @@ GetBindedKeys()
 Returns the keys in the bindings deeply dependable dictionary.
 
 ```python
+GetElementsValues()
+```
+Returns the elements properties as a dictionary o name: value, range
+
+```python
 GetPresetManager()
 ```
 Returns the internal preset manager for this ElementsContainer.
