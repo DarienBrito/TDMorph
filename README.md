@@ -119,7 +119,7 @@ Since we are artists/programmers and not lawyers, I trust you will give credit w
 
 ## Support
 
-You can [support this project](https://darienbrito.com/support/) by making a donation. Any contribution is appreciated!
+You can [support this project by making a donation](https://darienbrito.com/support/). Any contribution is appreciated!
 
 Enjoy!
 
