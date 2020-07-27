@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+# [Released]
 
 ## [2.0.0] (2nd quarter of 2020)
 
@@ -47,8 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Fixes
 - Fixed problem on updating state of preset on opening/closing a project
 - Deleted unnecessary code and improved comments for some methods
-
-## [Released]
 
 ## [1.1.4] - 2020-7-04
 
