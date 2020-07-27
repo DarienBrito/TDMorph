@@ -35,15 +35,15 @@ Great! TDMorph is a rather deep tool and requires some exploration to master but
 
 #### TDMorph basic UI
 
-![Header](https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/TDMorph%20header.svg)
+![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorph%20header.svg)
 
 #### Scene launcher UI
 
-![Header](https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/SceneLauncher.svg)
+![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.svg)
 
 #### Preset Manager
 
- <img src="https://github.com/DarienBrito/TDMorph/blob/V2.0/imgs/PresetManager.PNG" width="800">
+ <img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/PresetManager.PNG" width="800">
 
 ## Tutorials
 
