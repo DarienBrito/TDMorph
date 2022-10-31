@@ -117,10 +117,6 @@ and by the brilliant philosophy of Derivative https://derivative.ca/, as creator
 
 Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this [link with common questions](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered) if you wonder what it implies. This means that if at some point you would like to use any part of this toolbox in a **commercial endeavour for which you do not want to disclose the source code**, you will get in touch first, so a fair arrangement can be made. 
 
-## Support
-
-You can [support this project by making a donation](https://darienbrito.com/support/). Any contribution is appreciated!
-
 Enjoy!
 
 Darien Brito
