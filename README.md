@@ -108,6 +108,14 @@ https://github.com/DarienBrito/TDMorph/issues
 
 You are more than welcome to propose additions to the toolkit. Feel free to build your own tools based on TDMorph and get in touch if you want to propose making them part of the official distribution. Please make sure to check carefully the obligations in the license if you plan to make your work available to others.
 
+## Support
+
+Thank you for your interest in my work! Is nice already if you can follow me on [Instagram](https://www.instagram.com/darien.brito/) and [Twitter](https://twitter.com/DarienBrito)
+
+If you would like to go one step further with your support, I highly encourage you to make a donation to one of the following organizations. They are doing important and urgent work and need your donation more than I do:
+
+[Refugees International](https://www.refugeesinternational.org/)|[Coalition for Rainforest Nations](https://www.rainforestcoalition.org/)|[Amazon Frontlines](https://amazonfrontlines.org/)|[Wikipedia](https://donate.wikimedia.org/w/index.php?title=Special:LandingPage&country=NL&uselang=en&utm_medium=spontaneous&utm_source=fr-redir&utm_campaign=spontaneous)
+
 ## Final thoughts
 
 The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has
