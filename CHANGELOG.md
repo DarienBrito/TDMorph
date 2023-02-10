@@ -4,6 +4,81 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [Beta release]
+## [3.0.0] (1st quarter of 2023)
+
+### PresetManager
+
+#### New features
+
+- New node addition mechanism via UI drag and drop
+- Paths can now be updated automatically 
+- Paths can be edited manually too, although the automatic method is recommended
+- Each node can now have its own wildcard to capture specific parameters
+- Capturing wildcard support has been extended to regular expressions
+- Added interpolation output to PresetMorpher
+- Added blending possibilities on the COMP level
+
+#### Bug fixes
+
+- An inconsistency that prevented adding new parameters after creating some presets
+- An error caused by the new Header parameter type
+- An inefficiency that made settings jump when interpolating large data-sets
+- A redundancy that unnecessarily extra data for each parameter
+- An excess of dependable storage has been removed 
+- Completion signal for morphings is now reliable.
+
+#### Changes
+
+- Replaced all calls of getattr and setattr, which are slow, with direct dictionary calls
+- The input table to specify paths has been removed
+- PresetManager now relies on the internal Path component for node paths
+- Interpolation curves have been changed to CPU-based, to ensure frame-by-frame synchronicity
+- RandomMorph method was renamed to MorphRandom
+- Randomize method renamed to SetRandom
+- SetPreset method renamed to MorphPreset
+- JumpToPreset method renamed to SetPreset
+- Saw, Step, Perlin and Simplex interpolations have been removed
+- Removed paths specification via a table, which should be done now via de given UI
+- Renamed and re-structured various parameters in the Base
+- Two new parameters as A and B targets for blending have been added at the Base level
+- All extUI extension classes have been removed (better design)
+
+### ParameterMorpher 
+
+#### New features
+
+- It will soon be possible to move the ParameterMorpher and perform an update for paths (not yet)
+
+#### Bug fixes
+
+- Many inefficiencies have been resolved and the UI should feel lighter.
+- File size is greatly reduced.
+- A lot of other things I did not keep track of :P 
+
+#### Changes
+
+- Replaced all calls of getattr and setattr, which are slow, with direct dictionary calls
+- Previously this was the whole library, which now has been rebuilt to be a UI front-end only
+- Because of that change this is now called the Parameter Morpher
+- Internal path allocation has been completely revamped
+- All extUI extension classes have been removed (better design)
+
+#### Workflows
+
+- If you delete all elements in a container and there were presets saved,
+if you recreate the elements and use global mode the presets will still 
+be there and functional for available elements. To make them work locally
+as well resave the presets in global mode one by one and voila.
+
+### Scene Launcher
+
+#### Changes	
+
+- Callbacks system has been refactored to a simpler model
+- System-wide refactor of UIs. Should be faster and smoother.
+
+
 # [Released]
 
 ## [2.0.0] (2nd quarter of 2020)
