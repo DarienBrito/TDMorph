@@ -4,7 +4,7 @@
 
 Please note a lot of things still need work, including documentation and such. So **do not use this beta version in a very serious project yet**. I greatly appreciate your input in helping me find all left over bugs so I can move to an official release soon. 
 
-There are some differences with previous versions. Please refer to this (video demonstration)[https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner] from minute 37 on, that explains what those are.
+There are some differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) from minute 37 on, that explains what those are.
 
 TDMorph is a toolbox for enhanced parametric exploration, preset storage, composition and cueing in the TouchDesigner platform. It is meant to help in creating and performing generative content via various methods and archiving of interesting parameter configurations using a JSON format. Furthermore, the library provides a set of tools that developers can use to create their own custom systems. 
 
