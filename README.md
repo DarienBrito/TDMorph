@@ -1,6 +1,6 @@
 # TDMorph
 
-BETA RELEASE OF TDMORPH 3 IS OUT!
+*BETA RELEASE OF TDMORPH 3 IS OUT!*
 
 Please note a lot of things still need work, including documentation and such. I greatly appreciate your input in helping me find all left over bugs so I can move to an official release soon.
 
