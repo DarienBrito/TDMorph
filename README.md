@@ -1,4 +1,4 @@
-# TDMorph
+# TDMorph 3 (BETA)
 
 **BETA RELEASE OF TDMORPH 3 IS OUT!**
 
