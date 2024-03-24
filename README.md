@@ -1,5 +1,7 @@
 # TDMorph 3.0.0 (BETA)
 
+# TDMorph 3.1.0 (Coming out very soon!)
+
 **BETA RELEASE OF TDMORPH 3 IS OUT!**
 
 Please note a lot of things still need work, including documentation and such. So **do not use this beta version in a very serious project yet**. I greatly appreciate your input in helping me find all left over bugs so I can move to an official release soon. 
