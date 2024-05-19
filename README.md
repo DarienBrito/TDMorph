@@ -1,10 +1,10 @@
 # TDMorph 3.1.0
 
-**BETA RELEASE OF TDMORPH 3.1.0 IS OUT!**
+Please note that some things still need work, including documentation and such. This release is still a beta, although very close to an official version. I greatly appreciate your input in helping me find all left over bugs, so I can move to an official release as soon as possible. 
 
-Please note a lot of things still need work, including documentation and such. So **do not use this beta version in a very serious project yet**. I greatly appreciate your input in helping me find all left over bugs so I can move to an official release soon. 
+Note that there are some differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) in TouchDesigner's channel from minute 37 on, where I explain in detail what those are.
 
-There are some differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) from minute 37 on, that explains what those are.
+## What is TDMorph?
 
 TDMorph is a toolbox for enhanced parametric exploration, preset storage, composition and cueing in the TouchDesigner platform. It is meant to help in creating and performing generative content via various methods and archiving of interesting parameter configurations using a JSON format. Furthermore, the library provides a set of tools that developers can use to create their own custom systems. 
 
