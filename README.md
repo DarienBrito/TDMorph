@@ -1,8 +1,6 @@
-# TDMorph 3.0.0 (BETA)
+# TDMorph 3.1.0
 
-# TDMorph 3.1.0 (Coming out very soon!)
-
-**BETA RELEASE OF TDMORPH 3 IS OUT!**
+**BETA RELEASE OF TDMORPH 3.1.0 IS OUT!**
 
 Please note a lot of things still need work, including documentation and such. So **do not use this beta version in a very serious project yet**. I greatly appreciate your input in helping me find all left over bugs so I can move to an official release soon. 
 
@@ -61,44 +59,9 @@ Please check the [full collection of tutorials](https://vimeo.com/showcase/66825
 
 TDMorph uses a number of shortcuts to perform various actions which you need to be aware of. Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
 
-## Code architecture  
+## Code documentation
 
-The philosophy behind the construction of TDMorph is that the UI is "dumb". This means that it is completely decoupled from core functionality, so when you interact with it you are invoking lower level commands that do not know what a button or a slider is, at least not implicitely. There is a plethora of high and low level set of commands that you can pass to control all objects in TDMorph, using Python. 
-
-In general, a node in TDMorph has always 2 extensions:
-
-+ Core extension (Core UI-less functionality)
-+ UI extension (deals exclusively with operations for UI elements)
-
-### UI extension methods
-
-This category of commands are to control TDMorph via the UI. These do not talk with the core nodes in the system but with the widgets. To give an example: you could locate an *ElementsContainer* in TDMorph and then target a specific element of the UI you want to control, that being a button, a parameter or a widget.
-
-To access an *ElementsContainer* you need to invoke it by number (counting from 1), so assuming you have only 1 *ElementsContainer* in your TDMorph workspace, you can invoke that element using:
-
-```python
-elementsContainer = op('TDMorph').GetContainer(1)
-```
-Now, you can control all the UI elements of that object. So if you would like to change its morphing time via the UI you can do:
-
-```python
-elementsContainer.SetUITime(SomeTimeValue)
-```
-
-### Core extension methods
-
-The second category of commands are to communicate directly with the objects, not with the UI. These methods are the ones used by the system under the hood, so you can do much more with them. These are meant for more advanced developers that want to build  systems on top of the toolbox. To give an example: you could locate an *ElementsContainer* and then delete it, by doing this:
-
-```python
-elementsContainer = op('TDMorph').GetContainer(1)
-elementsContainer.Delete()
-```
-
-## Documentation
-
-Please refer to the [help files with all available methods](https://github.com/DarienBrito/TDMorph/blob/master/Help/) in the archive.
- 
-If you plan to extend or use TDMorph as a bedrock for your own implementations, please read carefully the instructions about architecture in the source code, so you create programs that adhere to its philosophy. This is important because will make things easier to mantain as TDMorph evolves.
+To be done...
 
 ## Patterns
 
