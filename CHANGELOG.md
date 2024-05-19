@@ -5,6 +5,54 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 # [Beta release]
+## [3.1.0] (2st quarter of 2024)
+
+This release was mainly focused in solving things that got broken along the way with TD updates. It has a better implementation of nodes, a cleaner and update UI and an overall smaller memory footprint. So should be lighter and faster.
+
+### PresetManager
+
+#### New features
+
+- Added pulse to "overwrite" current target preset, which speeds up workflow. Before one had to change the name of preset and store. Now this is done in a single click under the "Actions" header.
+
+- Added callback functions to trigger events on completion:
+	onMorphingStart()
+	onMorphingEnd()
+	onPresetCall()
+
+#### Bug fixes
+
+- Timing possibilites were broken in latest TD versions, due to a change in timer's "Active" parameter from a toggle to a menu
+- Various issues apperared on cloning with latest version, not sure why precisely... but these have been fixed.
+- Fixed a bunch of broken functionality in quantization
+
+### Parameter Morpher
+
+#### Bug fixes
+
+- All PresetManager-related issues
+
+#### Changes
+
+- Re-designed the way UI elements are created
+- All code is now moved to a "Modules" base and all classes now reference the code with selects. This reduces file size and is dramatically easier to mantain.
+- Updated certain UI elements to use current standards, such as replacement of dropdown menu's and text operators with latest optimized versions.
+- Removed a lot of unnecessary parameters and code on low level, which made things lighter and easier to understand for developers.
+
+### Scene Launcher
+
+#### New features
+
+- Added callback functions to trigger events on completion:
+	onMorphingStart()
+	onMorphingEnd()
+	onPresetCall()
+
+#### Changes
+
+- Similar UI and code enhancements as with "Parameter Morpher"
+
+# [Beta release]
 ## [3.0.0] (1st quarter of 2023)
 
 ### PresetManager
@@ -48,7 +96,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### New features
 
-- It will soon be possible to move the ParameterMorpher and perform an update for paths (not yet)
+- Added "Freeze" mode, which disables all interaction for sliders and randomizations to avoid unwanted changes when a set of desired parameters is found.
 
 #### Bug fixes
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDMorph</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .header, .footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #222;
+            color: white;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>TDMorph</h1>
+        <h2>version 3.0</h2>
+    </header>
+
+    <div class="container">
+        <h2>About</h2>
+        <p>
+        I made TDMorph to enhance parametric exploration, preset storage, composition, and cueing in the TouchDesigner platform. It helps create generative content via various methods and archiving interesting parametric configurations. Furthermore, the library provides a set of tools that developers can use to create their custom systems. The project showcases a possible way of working when creating and exploring computer graphics systems.
+        </p>
+
+        <p>
+        The inspiration comes from my background in algorithmic music composition, taking from ideas found in Gottfried Michael Koenig's <i>Project 1</i> and <i>Project 2</i>, Paul Berg's <i>AC Toolbox</i>, Alberto di Campo's <i>CloudGenMini</i> and my own <i>NLC toolbox</i>, in the SuperCollider programming language.
+        </p>    
+
+        <h2>What can I do with it?</h2>
+
+        <p>
+            <ul>
+                <li>A random search of states for parameters on any node or number of nodes.</li>
+                <li>Random morphing between states using various interpolation curves.</li>
+                <li>Storing and retrieval of any arbitrary number of presets.</li>
+                <li>Control of parameters and transitions with automatically generated UIs.
+                <li>Automatic storing, randomization and transformation of all parameters of arbitrary nodes.</li>
+                <li>Auto-learn MIDI and OSC for every control in the generated UI.</li>
+                <li>Scripting control of all features via high-level commands.</li>
+                <li>Global and local timing controls for every single parameter.</li>
+                <li>Automatic creation of animations from stored presets.</li>
+                <li>Flexible cueing system with follow actions and quantization.</li>
+                <li>Pattern generation via scripting with the Patterns library.</li>
+                <li>Algorithmic cueing via scripts.</li>
+            </ul>
+        And much more!
+        </p>
+
+        <h2>How does it work?</h2>
+
+        <p>
+        The architecture of TDMorph is modular, allowing you to access the core functionality as a whole or as separate building blocks. The package consists of three different objects:
+        <ul>
+            <li>The <b>PresetManager</b> node. A powerful object to control any arbitrary number of nodes and parameters at once. You can manage their states with a minimal UI or directly with code. The <i>PresetManager</i> is the backbone of the <i>TDMorph</i> engine, suitable for advanced developers who want to make custom systems.</li>
+            <li>The <b>ParametersMorpher</b> node. A high-level UI where you can drag and drop parameters from any node and create controls automatically, along with a large set of controls for presets and transformations.</li>
+            <li>The <b>SceneLauncher</b> node. A high-level UI where you can connect any <i>PresetManager</i> and control scenes and presets similar to cue systems like CueLab or the Scene Launcher system in Ableton Live.</li>
+        </ul>
+        </p>
+
+        <h2>Ok, I want to use it!</h2>
+
+        Great! Please check the <a href="full collection of tutorials" target=""_blank>full collection of tutorials</a> to learn everything <i>TDMorph</i> has to offer in a structured manner, or refer to <a href="https://github.com/DarienBrito/TDMorph" target="_blank">the Github repository</a> for more detailed information.
+
+        <h2>Motivation</h2>
+
+        <p>
+        The motivation to share this tool stems from the wonderful sense of comradery that the TouchDesigner community in general has and by the brilliant philosophy of Derivative https://derivative.ca/, as creators of the TouchDesigner software. I hope that the ethos that characterizes TD continues and that this system helps you in expanding your capabilities as a maker.
+        </p>
+
+        <h2>Credits</h2>
+
+        <p>
+        The UX design in TDMorph has greatly benefited from the fantastic eye of <a href="https://www.yfxlab.com" target="_blank"> Roy Gerritsen</a>, who since version 2 helped me with great tips and advice on how to present thinks to the general user. Thank you again Roy! 
+
+        Shout out to everyone in the community who contributed with requests and suggestions over the last couple years. Your bug reports and requests of enhancements have advanced the project a lot. Thank you! 
+        </p>
+
+        <h2>About the license</h2>
+
+        <p>
+        Since we are artists/programmers and not lawyers, I trust you will give credit where credit is due and respect the licence: GNU General Public License v3 (GPL-3). See this link with common questions if you wonder what it implies. This means that if at some point you would like to use any part of this toolbox in a commercial endeavour for which you do not want to disclose the source code, you will get in touch first, so a fair arrangement can be made.
+
+        Enjoy!
+        </p>
+
+        <div>Darien Brito, 2024</div>
+        <a href="https://www.darienbrito.com">https://www.darienbrito.com</a><br> 
+        <a href="info@darienbrito.com">info@darienbrito.com</a><br>
+        <a href="https://www.instagram.com/darien.brito/">instagram: darien.brito</a><br> 
+        <a href="https://twitter.com/DarienBrito">x: @DarienBrito</a><br> 
+
+    </div>
+
+    <footer class="footer">
+        <p>Darien Brito &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
