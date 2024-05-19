@@ -29,35 +29,70 @@ And much more!
 
 The architecture of TDMorph is fully modular, allowing you to access the core functionality as a whole or as separate building blocks. There are therefore various approaches you may take, which can be also interchangeably used. Here the most obvious:
 
-+ You can create an **ElementsContainer** UI, from where to control your parameters, using widgets and a set of buttons to perform various functions.
-+ You can create a **PresetManager** node, which is a UI-less object that allows you to control any arbitrary amount of nodes at once and is the backbone of the engine, suitable for advanced developers who want to make their own systems.
-+ You can create a **SceneLauncher** node, which is a UI that lets you create and control presets with follow actions.
++ You can create a **PresetManager** which is a UI-less object that allows you to control any arbitrary amount of nodes at once and is the backbone of the engine, suitable for advanced developers who want to make their own systems.
++ You can create a **ParameterMorpher** node, and use widgets and a set of buttons to perform various functions over any amount of parameters with ease.
++ You can create a **SceneLauncher** node, which is a UI that lets you create and control scenes and presets with follow actions, suitable for show control.
 
 ## Ok, I want to use it!
 
-Great! TDMorph is a rather deep tool and requires some exploration to master but the basic functionality should be self-evident. Here a quick overview of the general controls to give you an idea. 
+Great! TDMorph is a rather deep tool and requires some exploration to master but the basic functionality should be self-evident. Please check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner.
 
-### Controls overview
+### Overview
 
-#### TDMorph basic UI
-
-![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorph%20header.svg)
-
-#### Scene launcher UI
-
-![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.svg)
+Here a quick overview of the general controls to give you a quick idea. 
 
 #### Preset Manager
 
  <img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/PresetManager.PNG" width="800">
 
-## Tutorials
+#### ParameterMorpher
 
-Please check the [full collection of tutorials](https://vimeo.com/showcase/6682501) to learn everything TDMorph has to offer in a structured manner.
+![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorph%20header.svg)
 
-## Shortcuts
+#### Scene launcher
 
-TDMorph uses a number of shortcuts to perform various actions which you need to be aware of. Please see here the [full list of shortcuts](https://github.com/DarienBrito/TDMorph/blob/master/Help/Shortcuts.md).
+![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.svg)
+
+# Shortcuts
+
+There are various shortcuts in the TDMorph ecosystem. I have tried to keep them as simple as possible, so the only keys you will ever have to remember are <kbd>Shift</kbd> or <kbd>Ctrl</kbd> + <kbd>Mouse button</kbd>.
+
+## ElementsContainer
+
+### When pressing over a preset slot
+
+* <kbd>shift</kbd> + <kbd>left click</kbd> = store a preset
+* <kbd>shift</kbd> + <kbd>right click</kbd> = delete a preset
+* <kbd>shift</kbd> + <kbd>middle click</kbd> = freeze a preset
+* <kbd>ctrl</kbd> + <kbd>left click</kbd> = jump to preset (no interpolation)
+* <kbd>ctrl</kbd> + <kbd>righ click</kbd> = morph to preset in 1 second (meant for quick transition check)
+
+### When pressing over an element's name 
+
+* <kbd>shift</kbd> + <kbd>left click</kbd> = set the element to value found on creation
+* <kbd>shift</kbd> + <kbd>right click</kbd> = change element's name
+
+### When pressing over an container's name 
+
+* <kbd>shift</kbd> + <kbd>right click</kbd> = change element's name
+
+### When pressing on an element's container empty space
+
+* <kbd>right click</kbd> = reveal menu with various actions to take
+
+## ScenesLauncher
+
+### When pressing on a Scenes Launhcer empty space
+
+* <kbd>right click</kbd> = reveal menu with various actions to take
+
+## MIDI and OSC
+
+### When either is enabled
+
+* <kbd>left click</kbd> = activate auto-learning (expects a MIDI or OSC change to map it)
+* <kbd>right click</kbd> = sets the parameter to the learned MIDI or OSC signal
+* <kbd>middle click</kbd> = deletes the MIDI or OSC mapping
 
 ## Code documentation
 
