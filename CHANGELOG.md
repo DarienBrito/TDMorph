@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [Beta release]
+# [Alpha release]
+## [3.1.1] (3st quarter of 2024)
+
+#### Bug fixes
+
+- Fixed font issue discrepancy on Mac that showed empty text on components. Default is now Verdana and Material Design Icons, which work on both systems.
+
+# [Alpha release]
 ## [3.1.0] (2st quarter of 2024)
 
 This release was mainly focused in solving things that got broken along the way with TD updates. It has a better implementation of nodes, a cleaner and update UI and an overall smaller memory footprint. So should be lighter and faster.
