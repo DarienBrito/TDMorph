@@ -1,4 +1,4 @@
-# TDMorph 3.1.0 (alpha)
+# TDMorph 3.1.1 (alpha)
 
 Please note that some things still need work, including documentation and such. This release is in alpha version, very close to an official release. I greatly appreciate your input in helping me find all left over bugs, so I can move to an official version as soon as possible. 
 
