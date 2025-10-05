@@ -1,8 +1,6 @@
-# TDMorph 3.1.1 (alpha)
+# TDMorph 3.2
 
-Please note that some things still need work, including documentation and such. This release is in alpha version, very close to an official release. I greatly appreciate your input in helping me find all left over bugs, so I can move to an official version as soon as possible. 
-
-Note that there are some differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) from minute 37, where I explain in detail what those are.
+Note that there are various differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) from minute 37, where I explain in detail what those are.
 
 ## What is TDMorph?
 
