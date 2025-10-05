@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [Release]
+## [3.2] (4th quarter of 2024)
+
+#### Bug fixes
+
+### PresetManager
+
+- Improved help for filtering patterns (right click filter column to get suggestions)
+- Improved README help for regular expressions (right click filter column and choose help)
+- Improved PresetManager callbacks system. Fixed a bug that prevented consistent triggering.
+
+- New Inspector utility node with support to manually edit preset values, using text. Point to your PresetManager on the inspector input to fetch all presets and overwrite them as needed.
+
+### Parameter Morpher
+
+- Fixed dependable dictionaries error that came up on saving in most recent versions of TD. Made the code leaner as well, removing manual editing table possibilities. This will be handled with an Inspector logic as well in the future.
+
+
+#### New features
+
+
+
+
+
 # [Alpha release]
 ## [3.1.1] (3st quarter of 2024)
 
