@@ -7,23 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Release]
 ## [3.2] (4th quarter of 2024)
 
-#### Bug fixes
 
 ### PresetManager
+
+#### Bug fixes
 
 - Improved help for filtering patterns (right click filter column to get suggestions)
 - Improved README help for regular expressions (right click filter column and choose help)
 - Improved PresetManager callbacks system. Fixed a bug that prevented consistent triggering.
 
+#### New features
+
 - New Inspector utility node with support to manually edit preset values, using text. Point to your PresetManager on the inspector input to fetch all presets and overwrite them as needed.
 
 ### Parameter Morpher
 
-- Fixed dependable dictionaries error that came up on saving in most recent versions of TD. Made the code leaner as well, removing manual editing table possibilities. This will be handled with an Inspector logic as well in the future.
+#### Bug fixes
 
+- Fixed dependable dictionaries error that came up on saving in most recent versions of TD. Made the code leaner as well, removing manual editing table possibilities. This will be handled with an Inspector logic as well in the future.
+- Fixed MIDI and OSC mapping mechanism that got broken in latest TD. Also, refactored the code to make it more compact and deleted a bunch of unnecessary stuff.
 
 #### New features
 
+- Improved Inspector functionality for MIDI and OSC mappings
 
 
 
