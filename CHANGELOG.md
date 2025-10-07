@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed dependable dictionaries error that came up on saving in most recent versions of TD. Made the code leaner as well, removing manual editing table possibilities. This will be handled with an Inspector logic as well in the future.
 - Fixed MIDI and OSC mapping mechanism that got broken in latest TD. Also, refactored the code to make it more compact and deleted a bunch of unnecessary stuff.
+- Simplified drop down menus. Code is now smaller and cleaner.
 
 #### New features
 
