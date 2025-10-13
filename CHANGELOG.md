@@ -37,6 +37,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New "Perform mode" to minimize memory usage when done setting presets
 - TDMorph now supports all parameter types, except for "Header" "Sequence", and "Python". That refers to custom parameters. Notice that you can still launch scripts per preset by right clicking and selecting "Add script" in an ElementsContainer.
 
+### Scene Launcher
+
+#### Bug fixes
+
+- Fixed numerous issues caused by latest TD updates
+
+#### New features
+
+- Removed transport functionality. Does not make sense given the purpose of the tool.
+
 
 # [Alpha release]
 ## [3.1.1] (3st quarter of 2024)
