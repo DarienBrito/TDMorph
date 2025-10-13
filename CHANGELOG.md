@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 # [Release]
-## [3.2] (4th quarter of 2024)
+## [3.2] (4th quarter of 2025)
 
 
 ### PresetManager
@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### New features
 
 - New Inspector utility node with support to manually edit preset values, using text. Point to your PresetManager on the inspector input to fetch all presets and overwrite them as needed.
+- MorphType property is now dependable
 
 ### Parameter Morpher
 
@@ -26,14 +27,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed dependable dictionaries error that came up on saving in most recent versions of TD. Made the code leaner as well, removing manual editing table possibilities. This will be handled with an Inspector logic as well in the future.
 - Fixed MIDI and OSC mapping mechanism.
-- Refactored the code to make it more compact and deleted a bunch of unnecessary stuff.
+- Fixed numerous issues caused by latest TD updates
 - Simplified drop down menus. Code is now smaller and cleaner.
+- Refactored the code to make it more compact and deleted a bunch of unnecessary stuff.
 
 #### New features
 
 - Improved Inspector functionality for MIDI and OSC mappings
-
-
+- New "Perform mode" to minimize memory usage when done setting presets
+- TDMorph now supports all parameter types, except for "Header" "Sequence", and "Python". That refers to custom parameters. Notice that you can still launch scripts per preset by right clicking and selecting "Add script" in an ElementsContainer.
 
 
 # [Alpha release]
