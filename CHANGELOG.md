@@ -30,12 +30,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed numerous issues caused by latest TD updates
 - Simplified drop down menus. Code is now smaller and cleaner.
 - Refactored the code to make it more compact and deleted a bunch of unnecessary stuff.
+- Fixed an issue that prevented toggles and menus to randomize in some cases
+- Fixed an issue that ignored the lock for non-interpolatable parameters when invoking presets 
 
 #### New features
 
 - Improved Inspector functionality for MIDI and OSC mappings
 - New "Perform mode" to minimize memory usage when done setting presets
 - TDMorph now supports all parameter types, except for "Header" "Sequence", and "Python". That refers to custom parameters. Notice that you can still launch scripts per preset by right clicking and selecting "Add script" in an ElementsContainer.
+- Added randomization and locking capabilities for non-interpolatable elements.
 
 ### Scene Launcher
 
