@@ -1,4 +1,4 @@
-# TDMorph 3.2
+# TDMorph 3.2 (BUILD IN PROGRESS... TO BE OFFICIALLY RELEASED VERY SOON)
 
 Note that there are various differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) from minute 37, where I explain in detail what those are.
 
