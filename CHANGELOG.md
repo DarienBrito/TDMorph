@@ -12,33 +12,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Bug fixes
 
-- Improved help for filtering patterns (right click filter column to get suggestions)
-- Improved README help for regular expressions (right click filter column and choose help)
-- Improved PresetManager callbacks system. Fixed a bug that prevented consistent triggering.
+- Improved help for filtering patterns (right-click the filter column to get suggestions).
+- Expanded README help for regular expressions (right-click the filter column and select Help).
+- Improved PresetManager callback system and fixed a bug that caused inconsistent triggering.
 
 #### New features
 
-- New Inspector utility node with support to manually edit preset values, using text. Point to your PresetManager on the inspector input to fetch all presets and overwrite them as needed.
-- MorphType property is now dependable
+- Added new Inspector utility node with text-based preset editing. Connect it to your PresetManager to fetch and manually overwrite presets as needed.
+- Made MorphType property dependable.
 
 ### Parameter Morpher
 
 #### Bug fixes
 
-- Fixed dependable dictionaries error that came up on saving in most recent versions of TD. Made the code leaner as well, removing manual editing table possibilities. This will be handled with an Inspector logic as well in the future.
-- Fixed MIDI and OSC mapping mechanism.
-- Fixed numerous issues caused by latest TD updates
-- Simplified drop down menus. Code is now smaller and cleaner.
-- Refactored the code to make it more compact and deleted a bunch of unnecessary stuff.
-- Fixed an issue that prevented toggles and menus to randomize in some cases
-- Fixed an issue that ignored the lock for non-interpolatable parameters when invoking presets 
+- Fixed dependable dictionary error occurring on save in recent TD versions.
+- Streamlined code by removing unnecessary manual table editing options.
+- Fixed MIDI and OSC mapping mechanisms.
+- Resolved multiple issues introduced by recent TD updates.
+- Simplified dropdown menus; codebase is now smaller and cleaner.
+- Refactored several components for improved simplicity and compactness.
+- Fixed an issue preventing toggles and menus from randomizing in certain cases.
+- Fixed an issue where locks for non-interpolatable parameters were ignored when ivoking presets.
 
 #### New features
 
-- Improved Inspector functionality for MIDI and OSC mappings
-- New "Perform mode" to minimize memory usage when done setting presets
-- TDMorph now supports all parameter types, except for "Header" "Sequence", and "Python". That refers to custom parameters. Notice that you can still launch scripts per preset by right clicking and selecting "Add script" in an ElementsContainer.
-- Added randomization and locking capabilities for non-interpolatable elements.
+- Improved Inspector functionality for MIDI and OSC mappings.
+- Added Perform Mode to reduce memory usage after preset setup.
+- TDMorph now supports all parameter types except Header, Sequence, and Python.
+- Scripts can still be launched per preset via Add Script in an ElementsContainer.
+- Added randomization and locking for non-interpolatable elements.
+- Global and Local modes are now stored independently, enabling separate timelines, cuves, and distributions per preset.
 
 ### Scene Launcher
 
@@ -48,8 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### New features
 
-- Removed transport functionality. Does not make sense given the purpose of the tool.
-
+- Removed transport functionality, as it does not align with the tool's purpose.
 
 # [Alpha release]
 ## [3.1.1] (3st quarter of 2024)
