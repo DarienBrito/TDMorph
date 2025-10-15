@@ -162,16 +162,14 @@ If you’d like to go one step further in supporting what I do, consider subscri
 
 The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
 
-I hope the *ethos* that defines the TouchDesigner world continues to thrive —  
-and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
+I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
 
 
 ## About the License
 
 Since we are artists and programmers — not lawyers — I trust you’ll give credit where it’s due and respect the license: **GNU General Public License v3 (GPL-3)**.
 
-If you’re unsure what this implies, you can read this helpful overview:  
-[**Top 10 GPL License Questions Answered**](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered)
+If you’re unsure what this implies, you can read this helpful overview: [**Top 10 GPL License Questions Answered**](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered)
 
 In short, if you wish to use any part of this toolbox in a **commercial project** where you **do not intend to disclose the source code**, please get in touch first so we can agree on a **fair arrangement**. 🤝
 
