@@ -32,13 +32,11 @@ And much more!
 
 ## How does it work?
 
-The architecture of **TDMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components.  
-This flexibility lets you combine different approaches depending on your needs.  
+The architecture of **TDMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components. This flexibility lets you combine different approaches depending on your needs.  
 The three main modes of operation are:
 
 - **PresetManager**  
-  A UI-less core component that manages any number of nodes simultaneously.  
-  It serves as the backbone of the engine—ideal for advanced developers who want to build their own systems from scratch.
+  A UI-less core component that manages any number of nodes simultaneously. It serves as the backbone of the engine—ideal for advanced developers who want to build their own systems from scratch.
 
 - **ParameterMorpher**  
   A node with an interactive interface that includes widgets and control buttons, allowing you to easily perform morphing, randomization, and parameter operations across multiple nodes.
@@ -73,8 +71,7 @@ Here a quick overview of the general controls to give you a quick idea.
 
 # Shortcuts
 
-The **TDMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow.  
-You only need to remember a few combinations — all built around the keys:
+The **TDMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow. You only need to remember a few combinations — all built around the keys:
 
 <kbd>Shift</kbd> or <kbd>Ctrl</kbd> + <kbd>Mouse Button</kbd>
 
@@ -126,21 +123,17 @@ To be done...
 
 ## Patterns
 
-Since version 2, **TDMorph** includes a **Patterns** library — inspired by the *homonymous* system in the **SuperCollider** language.  
-Originally, *Patterns* were conceived in SuperCollider as *“a rich and concise score language for music.”*  
+Since version 2, **TDMorph** includes a **Patterns** library — inspired by the *homonymous* system in the **SuperCollider** language. Originally, *Patterns* were conceived in SuperCollider as *“a rich and concise score language for music.”*  
 You can read more about this concept here: [SuperCollider Practical Guide](https://doc.sccode.org/Tutorials/A-Practical-Guide/)
 
-The motivation behind this library was the need for a powerful **value generation system** within TouchDesigner.  
-Rather than a direct port, this implementation is a **reverse-engineered adaptation** of SuperCollider’s original Patterns system — built from the ground up using Python’s **generators** and **lazy evaluation** capabilities.
+The motivation behind this library was the need for a powerful **value generation system** within TouchDesigner. Rather than a direct port, this implementation is a **reverse-engineered adaptation** of SuperCollider’s original Patterns system — built from the ground up using Python’s **generators** and **lazy evaluation** capabilities.
 
 The result is a flexible and expressive framework for **algorithmic pattern generation**, designed to integrate seamlessly with the **TDMorph** toolkit and the **TouchDesigner** environment.
 
 
 ## Bug Reports
 
-Feedback and contributions are always welcome! 🙌  
-If you notice anything that could be improved — whether in the networks, the UI, or the underlying code — please don’t hesitate to let me know.  
-And if you spot something that looks off (which is bound to happen here and there), I’d really appreciate your input.
+Feedback and contributions are always welcome! If you notice anything that could be improved — whether in the networks, the UI, or the underlying code — please don’t hesitate to let me know. And if you spot something that looks off (which is bound to happen here and there), I’d really appreciate your input.
 
 To report bugs or suggest improvements, please use the official issue tracker:
 
@@ -149,10 +142,10 @@ To report bugs or suggest improvements, please use the official issue tracker:
 
 ## Contributions
 
-Contributions are highly encouraged! 💡  
-You’re welcome to build your own tools on top of **TDMorph** and share your ideas or improvements with the community.
+Contributions are highly encouraged! You’re welcome to build your own tools on top of **TDMorph** and share your ideas or improvements with the community.
 
 If you’d like to propose integrating your work into the official distribution, feel free to **get in touch**.  
+
 Before sharing or publishing your work, please make sure to **review the license terms** to ensure compliance with its requirements.
 
 Together, we can keep expanding and refining the TDMorph ecosystem. 🚀
@@ -167,24 +160,20 @@ If you’d like to go one step further in supporting what I do, consider subscri
 
 ## Final Thoughts
 
-The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community,  
-and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
+The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
 
 I hope the *ethos* that defines the TouchDesigner world continues to thrive —  
-and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker. ✨
+and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
 
 
 ## About the License
 
-Since we are artists and programmers — not lawyers — I trust you’ll give credit where it’s due and respect the license:  
-**GNU General Public License v3 (GPL-3)**.
+Since we are artists and programmers — not lawyers — I trust you’ll give credit where it’s due and respect the license: **GNU General Public License v3 (GPL-3)**.
 
 If you’re unsure what this implies, you can read this helpful overview:  
 [**Top 10 GPL License Questions Answered**](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered)
 
-In short, if you wish to use any part of this toolbox in a **commercial project** where you **do not intend to disclose the source code**,  
-please get in touch first so we can agree on a **fair arrangement**. 🤝
-
+In short, if you wish to use any part of this toolbox in a **commercial project** where you **do not intend to disclose the source code**, please get in touch first so we can agree on a **fair arrangement**. 🤝
 
 Enjoy!
 
