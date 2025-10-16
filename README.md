@@ -44,14 +44,12 @@ The three main modes of operation are:
 - **SceneLauncher**  
   A high-level UI designed for show control. It enables you to organize and trigger scenes and presets, supports follow actions, and integrates seamlessly with cue-based workflows.
 
+## Tutorials
 
-## Ok, I want to use it!
-
-Great! 🎉 **TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
+**TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
 
 To get started and learn everything TDMorph has to offer, check out the  
 👉 [**Full Collection of Tutorials** on Vimeo](https://vimeo.com/showcase/6682501)
-
 
 ### Overview
 
