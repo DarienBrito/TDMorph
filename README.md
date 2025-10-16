@@ -48,8 +48,7 @@ The three main modes of operation are:
 
 **TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
 
-To get started and learn everything TDMorph has to offer, check out the  
-👉 [**Full Collection of Tutorials** on Vimeo](https://vimeo.com/showcase/6682501)
+To get started and learn everything TDMorph has to offer, check out this 👉 [**Tutorial series** on Vimeo](https://vimeo.com/showcase/6682501)
 
 ### Overview
 
