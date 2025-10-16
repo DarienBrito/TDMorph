@@ -57,11 +57,11 @@ To get started and learn everything TDMorph has to offer, check out the
 
 Here a quick overview of the main tools to give you a quick idea. 
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/PresetManager.JPG" width="800">
+<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/PresetManager.jpg" width="800">
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/ParameterMorpher.JPG" width="800">
+<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/ParameterMorpher.jpg" width="800">
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.JPG" width="800">
+<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.jpg" width="800">
 
 # Shortcuts
 
