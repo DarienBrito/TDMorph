@@ -55,19 +55,13 @@ To get started and learn everything TDMorph has to offer, check out the
 
 ### Overview
 
-Here a quick overview of the general controls to give you a quick idea. 
+Here a quick overview of the main tools to give you a quick idea. 
 
-#### Preset Manager
+<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/PresetManager.PNG" width="800">
 
- <img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/PresetManager.PNG" width="800">
+<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/ParameterMorpher.PNG" width="800">
 
-#### ParameterMorpher
-
-![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/TDMorph%20header.svg)
-
-#### Scene launcher
-
-![Header](https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.svg)
+<img src="https://github.com/DarienBrito/TDMorph/blob/master/imgs/SceneLauncher.PNG" width="800">
 
 # Shortcuts
 
