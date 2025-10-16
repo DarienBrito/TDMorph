@@ -10,7 +10,6 @@ It facilitates the creation and performance of **generative content** through va
 
 In addition, TDMorph includes a set of **developer tools** for building **custom systems**, making it a versatile resource for artists and technical creators alike.
 
-
 ## What can I do with it?
 
 With **TDMorph**, you can perform a wide range of operations for creative exploration, performance, and system design in **TouchDesigner**, including:
@@ -113,7 +112,6 @@ That’s it! Every shortcut in TDMorph is derived from these two simple modifier
 ### When clicking on empty space within the Scene Launcher
 
 - <kbd>Right Click</kbd> — Open a context menu with various available actions
-
 
 ## MIDI and OSC
 
