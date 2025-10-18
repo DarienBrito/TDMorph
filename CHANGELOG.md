@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Scripts can still be launched per preset via Add Script in an ElementsContainer.
 - Added randomization and locking for non-interpolatable elements.
 - Global and Local modes are now stored independently, enabling separate timelines, cuves, and distributions per preset.
+- Int sliders do not try to interpolate anymore, therefore behaving more consistently.
 
 ### Scene Launcher
 
