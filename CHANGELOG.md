@@ -49,6 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Bug fixes
 
 - Fixed numerous issues caused by latest TD updates
+- Fixed an issue that prevented scripts from being triggered on "Sequence" action.
+- Fiex an issue that computed delay times erronously on "Sequence" action.
 
 #### New features
 
