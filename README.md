@@ -91,14 +91,6 @@ That’s it! Every shortcut in TDMorph is derived from these two simple modifier
 
 To be done...
 
-## Patterns
-
-Since version 2, **TDMorph** includes a **Patterns** library — inspired by the *homonymous* system in the **SuperCollider** language. Originally, *Patterns* were conceived in SuperCollider as *“a rich and concise score language for music.”*  You can read more about this concept here: [SuperCollider Practical Guide](https://doc.sccode.org/Tutorials/A-Practical-Guide/)
-
-The motivation behind this library was the need for a powerful **value generation system** within TouchDesigner. Rather than a direct port, this implementation is a **reverse-engineered adaptation** of SuperCollider’s original Patterns system — built from the ground up using Python’s **generators** and **lazy evaluation** capabilities.
-
-The result is a flexible and expressive framework for **algorithmic pattern generation**, designed to integrate seamlessly with the **TDMorph** toolkit and the **TouchDesigner** environment.
-
 ## Bug Reports
 
 Feedback and contributions are always welcome! If you notice anything that could be improved — whether in the networks, the UI, or the underlying code — please don’t hesitate to let me know. And if you spot something that looks off (which is bound to happen here and there), I’d really appreciate your input.
@@ -117,7 +109,7 @@ Together, we can keep expanding and refining the TDMorph ecosystem. 🚀
 
 ## About the License
 
-Since version 3.2, TDMorph has moved to an MIT license, which means that you can 
+Since version 3.2, TDMorph has moved to an [**MIT license**](https://opensource.org/license/mit), which means that you can 
 
 - Use it for personal or commercial projects
 - Modify the code freely
@@ -130,7 +122,7 @@ But you must:
 - Include the license text
 - Accept that there is no warranty or liability
 
-If you’re unsure what this implies, you can read this helpful in depth description [**What is the MIT License**](https://memgraph.com/blog/what-is-mit-license)
+If you’re unsure what this implies, you can read [**what is the MIT License.**](https://memgraph.com/blog/what-is-mit-license)
 
 ## Final Thoughts
 
