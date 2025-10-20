@@ -52,6 +52,7 @@ The following modules are paid:
   - **SceneLauncher**
 
 You can get them through my Patreon 👇:
+
 https://www.patreon.com/c/darienbrito
 
 ## Tutorials
