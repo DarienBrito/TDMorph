@@ -178,12 +178,10 @@ I hope the *ethos* that defines the TouchDesigner world continues to thrive, and
 
 ## Support
 
-Thank you for your interest in my work! 🙏 You can follow me on [**Instagram**](https://www.instagram.com/darien.brito/).
+Thank you for your interest in my work! 🙏 You can visit my [**website**(https://darienbrito.com/) and follow me on [**Instagram**](https://www.instagram.com/darien.brito/).
 
 If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito). Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
 
 Enjoy!
 
 Darien Brito
-
-https://darienbrito.com/
