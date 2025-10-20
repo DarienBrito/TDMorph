@@ -1,101 +1,216 @@
 # Preset Manager
 
-## Stored properties
+**Part of the TDMorph Toolkit**  
+Copyright © 2020–2025  
+**Author:** [Darien Brito](https://www.darienbrito.com)  
+**License:** [MIT License](https://opensource.org/license/mit)
 
-| **Property**          | **Type** | **Description**                                                                 |
-|------------------------|----------|---------------------------------------------------------------------------------|
-| `Presets`              | `dict`   | Dictionary of stored presets. Each preset contains parameter states, morph time, curve, and random distribution. |
-| `AutoMode`             | `bool`   | Enables automatic randomization or morphing.                                   |
-| `CurrentPresetName`    | `str`    | The currently selected preset name.                                            |
-| `CurrentMorphCounter`  | `int`    | The current morph iteration count.                                             |
-| `LoopSequenceStatus`   | `bool`   | Enables looping through preset sequences.                                      |
-| `RandomDistribution`   | `str`    | The random distribution function used by the morpher.                          |
-| `NumMorphs`            | `int`    | Number of morph steps per transition.                                          |
-| `MorphTime`            | `float`  | Time (in seconds) for a morph transition.                                      |
-| `MorphCurve`           | `str`    | Type of interpolation curve used.                                              |
-| `Blend`                | `float`  | Blend factor for mixing presets.                                               |
-| `BlendingActive`       | `bool`   | Indicates if blending between presets is active.                               |
-| `Lock`                 | `bool`   | Prevents editing of presets when active.                                       |
+---
 
+## Overview
 
-## Core Methods
+`extPresetManager` is the **core engine** of the TDMorph system for **TouchDesigner**.  
+It manages the storage, retrieval, morphing, and randomization of parameter presets across multiple operators.
 
-### Preset Storage and Retrieval
+Unlike the UI components (`extUIExtension`, `extElementsContainer`, `extSceneLauncher`),  
+this class operates entirely at the **data and logic level**, following a **Model–View–Controller (MVC)** structure — it acts as the **Model**, maintaining the preset data and communication with the `PresetMorpher` and `RandomGenerator`.
+
+---
+
+## Table of Contents
+
+- [Architecture](#architecture)
+- [Initialization](#initialization)
+- [Stored Properties](#stored-properties)
+- [Properties](#properties)
+- [Private Methods](#private-methods)
+- [Public Methods](#public-methods)
+  - [Preset Management](#preset-management)
+  - [Import and Export](#import-and-export)
+  - [Morphing and Randomization](#morphing-and-randomization)
+  - [State Retrieval](#state-retrieval)
+  - [Path and Key Handling](#path-and-key-handling)
+  - [Utility Methods](#utility-methods)
+- [Design Philosophy](#design-philosophy)
+- [Dependencies](#dependencies)
+
+---
+
+## Architecture
+
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Class** | `extPresetManager` |
+| **Role** | Core preset logic for saving, recalling, morphing, and randomizing TouchDesigner parameters. |
+| **Type** | Data Model |
+| **Design Pattern** | Part of the TDMorph MVC system (acts as the Model). |
+| **Usage Context** | Used for parameter management in presets, morphing systems, and automated transitions. |
+
+---
+
+## Initialization
+
+```python
+manager = op('PresetManager')
+```
+## Stored Properties
+
+| **Property** | **Type** | **Description** |
+|---------------|----------|-----------------|
+| `Presets` | `dict` | Dictionary of stored presets. Each preset contains parameter states, morph time, curve, and random distribution. |
+| `AutoMode` | `bool` | Enables automatic randomization or morphing when toggled. |
+| `CurrentPresetName` | `str` | The currently active preset name. |
+| `CurrentMorphCounter` | `int` | The current morph iteration count. |
+| `LoopSequenceStatus` | `bool` | Whether preset sequence looping is active. |
+| `RandomDistribution` | `str` | The random distribution method used for morphing. |
+| `NumMorphs` | `int` | Number of morph steps per transition. |
+| `MorphTime` | `float` | Duration (in seconds) of a morph transition. |
+| `MorphCurve` | `str` | Type of interpolation curve used for morphing. |
+| `ActivityStatus` | `bool` | Indicates if a morphing process is currently active. |
+| `MorphingType` | `str` | Describes the current morphing method (linear, exponential, etc.). |
+| `Blend` | `float` | Blend factor for interpolating between presets. |
+| `BlendingActive` | `bool` | Whether preset blending mode is active. |
+| `Lock` | `bool` | Prevents editing of presets when active. |
+
+---
+
+### Preset Management
+
 - **`StorePreset(name=None)`**  
-  Creates a new preset from the current state of all linked operators.
+  Creates a new preset from the current state of all linked operators.  
+  If no name is provided, uses the *Presetname* parameter.
+
+- **`StorePresetWithData(name, data)`**  
+  Stores a preset using provided data instead of reading live parameter states.
 
 - **`DeletePreset(name=None)`**  
-  Removes a preset from memory.
-
-- **`ClearPresets(overwriteWarning=False)`**  
-  Deletes all presets, optionally skipping confirmation prompts.
+  Deletes a preset from storage.
 
 - **`OverwriteCurrentPreset()`**  
-  Replaces the currently selected preset with current parameter values.
+  Overwrites the currently selected preset with new parameter values.
 
----
+- **`OverwriteSinglePresetValue(name, item, val)`**  
+  Overwrites a specific field in an existing preset.
 
-### Preset Application and Morphing
+- **`OverwritePresetsValue(item, val)`**  
+  Overwrites a specific key/value pair across all presets.
+
+- **`ClearPresets(overwriteWarning=False)`**  
+  Clears all presets after confirmation.
+
 - **`SetPreset(name=None)`**  
-  Applies a preset immediately (without interpolation).
-
-- **`MorphPreset(presetName, morphTime=None, morphCurve=None)`**  
-  Smoothly interpolates parameters to the given preset using the specified curve and duration.
-
-- **`StopMorphing()`**  
-  Stops any ongoing morph process.
-
-- **`PlayMorphing(play=True)`**  
-  Starts or pauses morphing playback.
-
-- **`PresetsSequence(sortKeys=False, keysSequence=None)`**  
-  Plays a defined sequence of presets in order.
-
-- **`SetBlendingPresets(presetName, targetName)`**  
-  Sets up two presets to blend between.
-
----
-
-### Randomization
-- **`SetRandom(mode=None)`**  
-  Applies random parameter values to all linked operators.
-
-- **`MorphRandom(mode=None)`**  
-  Interpolates between the current state and random values.
-
-- **`RandomizeGivenParameters(operatorIndex, names, mode=None)`**  
-  Randomizes a specific subset of parameters on a given operator.
-
-- **`MorphGivenParameters(operatorIndex, names, mode=None)`**  
-  Morphs a specific subset of parameters on a given operator.
+  Applies a preset immediately without morphing.  
+  Automatically removes invalid nodes or parameters when encountered.
 
 ---
 
 ### Import and Export
+
 - **`ExportJSON()`**  
-  Exports all presets to a JSON file via a save dialog.
+  Exports all stored presets to a `.json` file for sharing or backup.
 
 - **`ImportJSON()`**  
-  Imports presets from a JSON file.
+  Imports presets from a `.json` file.
 
 - **`InjectPresets(presets)`**  
-  Overwrites existing presets with an externally provided dictionary.
-
-
-### Path and Preset Management
-- **`GetPresetsKeys()`**  
-  Returns a list of stored preset names.
-
-- **`GetNumPresets()`**  
-  Returns the total number of presets.
-
-- **`GetMorphCurvesNames()`**  
-  Lists available morph curves from the PresetMorpher.
-
-- **`GetRandomDistributionNames()`**  
-  Lists available random distribution types.
-
-- **`GetElementsPaths()`**  
-  Retrieves paths to all linked operator elements.
+  Replaces all current presets with an externally provided dictionary.
 
 ---
+
+### Morphing and Randomization
+
+- **`MorphPreset(presetName, morphTime=None, morphCurve=None)`**  
+  Morphs from the current state to the given preset using the specified curve and time.
+
+- **`SetRandom(mode=None)`**  
+  Randomizes parameter values, either automatically or on demand.
+
+- **`MorphRandom(mode=None)`**  
+  Morphs parameters toward randomized target values.
+
+- **`StopMorphing()`**  
+  Stops all ongoing morphing processes.
+
+- **`PlayMorphing(play=True)`**  
+  Starts or pauses morph playback.
+
+- **`PresetsSequence(sortKeys=False, keysSequence=None)`**  
+  Plays presets sequentially, in order or via custom key sequences.
+
+- **`SetBlendingPresets(presetName, targetName)`**  
+  Sets up two presets for blending.
+
+- **`RandomizeGivenParameters(operatorIndex, names, mode=None)`**  
+  Randomizes only the specified parameters on a given operator.
+
+- **`MorphGivenParameters(operatorIndex, names, mode=None)`**  
+  Morphs only the specified parameters on a given operator.
+
+---
+
+### State Retrieval
+
+- **`GetStates(customWarning=None)`**  
+  Returns a dictionary of all current parameter states for linked operators.
+
+- **`GetEssentialStates()`**  
+  Retrieves minimal morphing data for all linked operators.
+
+- **`GetEssentialStatesFrom(presetName)`**  
+  Retrieves morphing data from a specific preset.
+
+---
+
+### Path and Key Handling
+
+- **`GetPresetsKeys()`**  
+  Returns a list of all stored preset names.
+
+- **`GetNumPresets()`**  
+  Returns the total number of stored presets.
+
+- **`GetMorphCurvesNames()`**  
+  Returns available morph curve names from the `PresetMorpher`.
+
+- **`GetRandomDistributionNames()`**  
+  Returns all available random distribution modes from `RandomGenerator`.
+
+- **`GetElementsPaths()`**  
+  Retrieves paths to all linked operators.
+
+- **`UpdatePath(oldPath, newPath)`**  
+  Updates stored operator paths when components are renamed or moved.
+
+---
+
+### Utility Methods
+
+- **`ReportResult(msg, title)`**  
+  Displays a message box and prints debug output for user feedback.
+
+---
+
+## Design Philosophy
+
+- **UI Independence:** Core logic is fully detached from any user interface.  
+- **Data Transparency:** Presets stored as clean, JSON-serializable dictionaries.  
+- **Extensibility:** Designed for subclassing and integration with various UI controllers.  
+- **Robust Error Handling:** Validates operator paths and parameters dynamically.  
+- **MVC Architecture:** Acts as the *Model* component, used by controllers like `extUIExtension` and `extSceneLauncher`.
+
+---
+
+## Dependencies
+
+### TouchDesigner Components
+- `PresetMorpher`  
+- `Paths`  
+- `RandomGenerator`  
+- `TDResources`
+
+### Python Libraries
+- `TDStoreTools.StorageManager`  
+- `re`  
+- `json`  
+- `itertools`  
+- `sys`

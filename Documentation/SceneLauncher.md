@@ -38,7 +38,6 @@ This class acts as an **alternative UI** for the PresetManager, allowing users t
   - [Animation](#animation)
 - [Design Philosophy](#design-philosophy)
 - [Dependencies](#dependencies)
-- [See Also](#see-also)
 
 ---
 
