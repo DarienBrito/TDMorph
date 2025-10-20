@@ -94,7 +94,7 @@ That’s it! Every shortcut in TDMorph is derived from these two simple modifier
 
 ## Code documentation
 
-To be done...
+You can find documentation for relevant TDMorph modules [here](https://github.com/DarienBrito/TDMorph/tree/master/Documentation).
 
 ## Bug Reports and contributions
 
