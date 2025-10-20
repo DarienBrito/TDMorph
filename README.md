@@ -91,21 +91,13 @@ That’s it! Every shortcut in TDMorph is derived from these two simple modifier
 
 To be done...
 
-## Bug Reports
+## Bug Reports and contributions
 
 Feedback and contributions are always welcome! If you notice anything that could be improved — whether in the networks, the UI, or the underlying code — please don’t hesitate to let me know. And if you spot something that looks off (which is bound to happen here and there), I’d really appreciate your input.
 
 To report bugs or suggest improvements, please use the official issue tracker:
 
 🔗 [**TDMorph GitHub Issues**](https://github.com/DarienBrito/TDMorph/issues)
-
-## Contributions
-
-Contributions are highly encouraged! You’re welcome to build your own tools on top of **TDMorph** and share your ideas or improvements with the community.
-
-If you’d like to propose integrating your work into the official distribution, feel free to **get in touch**.  
-
-Together, we can keep expanding and refining the TDMorph ecosystem. 🚀
 
 ## About the License
 
