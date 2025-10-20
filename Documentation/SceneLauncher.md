@@ -73,8 +73,8 @@ launcher = op('SceneLauncher')
 
 ### Scene Management
 
-- **`WritePresets()`**  
-  Writes the current list of presets into the internal presets table.
+- **`LaunchScene(target)`**  
+  Launches a scene by its table index number.
 
 - **`CreateScene(name, target='None')`**  
   Creates a new scene entry with default parameters (length, delay, curve, color, etc.).
@@ -96,6 +96,9 @@ launcher = op('SceneLauncher')
 
 - **`EnableDelays(enable=True)`**  
   Enables or hides the *Delay* column in the scene list.
+
+- **`WritePresets()`**  
+  Writes the current list of presets into the internal presets table.
 
 ---
 
@@ -128,9 +131,6 @@ They allow stepping through, randomizing, or looping scenes.
 
 - **`SequentialLaunch(data)`**  
   Handles the timing and triggering of sequential scene transitions.
-
-- **`LaunchScene(target)`**  
-  Launches a scene by its table index number.
 
 - **`PerformAction(action, value=None)`**  
   Triggers an action from the transport menu (e.g., *Next*, *Stop*, *Repeat*).
