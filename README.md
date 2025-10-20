@@ -51,7 +51,7 @@ The following modules are paid:
   - **ParameterMorpher**
   - **SceneLauncher**
 
-You can obtain them individually, as a bundle, or through a subscription on my Patreon 👇:
+You can get them through my Patreon 👇:
 https://www.patreon.com/c/darienbrito
 
 ## Tutorials
