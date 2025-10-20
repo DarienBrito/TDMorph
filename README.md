@@ -47,7 +47,7 @@ Starting with version 3.2, TDMorph has been divided into free and paid component
 
 The **PresetManager** remains completely free. You can download it by grabbing the TDMorph3.2 folder from this repository or the corresponding build from the Releases section.
 
-Modules are available through my <a href="https://www.patreon.com/c/darienbrito" target="_blank">Patreon</a>:
+Modules are available through my Patreon 👉 https://www.patreon.com/c/darienbrito:
   - Parameter Morpher
   - Scene Launcher
 
@@ -55,7 +55,7 @@ Modules are available through my <a href="https://www.patreon.com/c/darienbrito"
 
 **TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
 
-To get started and learn everything TDMorph has to offer, check out this 👉 [**Tutorial series** on Vimeo](https://vimeo.com/showcase/6682501){:target="_blank"}
+To get started and learn everything TDMorph has to offer, check out this 👉 [**Tutorial series** on Vimeo](https://vimeo.com/showcase/6682501)
 
 ### Overview
 
@@ -98,11 +98,11 @@ Feedback and contributions are always welcome! If you notice anything that could
 
 To report bugs or suggest improvements, please use the official issue tracker:
 
-🔗 [**TDMorph GitHub Issues**](https://github.com/DarienBrito/TDMorph/issues){:target="_blank"}
+🔗 [**TDMorph GitHub Issues**](https://github.com/DarienBrito/TDMorph/issues)
 
 ## About the License
 
-Since version 3.2, TDMorph has moved to an [**MIT license**](https://opensource.org/license/mit){:target="_blank"}, which means that you can 
+Since version 3.2, TDMorph has moved to an [**MIT license**](https://opensource.org/license/mit), which means that you can 
 
 - Use it for personal or commercial projects
 - Modify the code freely
@@ -115,19 +115,19 @@ But you must:
 - Include the license text
 - Accept that there is no warranty or liability
 
-If you’re unsure what this implies, you can read [**what is the MIT License.**](https://memgraph.com/blog/what-is-mit-license){:target="_blank"}
+If you’re unsure what this implies, you can read [**what is the MIT License.**](https://memgraph.com/blog/what-is-mit-license)
 
 ## Final Thoughts
 
-The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/){:target="_blank"}.
+The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
 
 I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
 
 ## Support
 
-Thank you for your interest in my work! 🙏 You can visit my [**website**](https://darienbrito.com/) and follow me on [**Instagram**](https://www.instagram.com/darien.brito/){:target="_blank"}.
+Thank you for your interest in my work! 🙏 You can visit my [**website**](https://darienbrito.com/) and follow me on [**Instagram**](https://www.instagram.com/darien.brito/).
 
-If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito){:target="_blank"}. Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
+If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito). Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
 
 Enjoy!
 
