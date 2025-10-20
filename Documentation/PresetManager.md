@@ -1,5 +1,7 @@
 # Preset Manager
 
+## Stored properties
+
 | **Property**          | **Type** | **Description**                                                                 |
 |------------------------|----------|---------------------------------------------------------------------------------|
 | `Presets`              | `dict`   | Dictionary of stored presets. Each preset contains parameter states, morph time, curve, and random distribution. |
