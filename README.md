@@ -43,12 +43,12 @@ The three main modes of operation are:
 
 ## Installation
 
-Since version 3.2, TDMorph has been splitted into free and payed components. This is so because mantainaing and improving such a tool and learning resources for a community takes a lot of effort, which I'm able to undertake if I can compensate the time put into it.
+Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
 
-The PresetManager remains to be free. To get it, simply download the TDMorph3.2 folder from this repository, or the TDMorph3.2 build from the *Releases* section.
+The PresetManager remains completely free. You can download it by grabbing the TDMorph3.2 folder from this repository or the corresponding build from the Releases section.
 
-The ParameterMorpher and SceneLauncher modules can be purchased via my Patreon:
-https://www.patreon.com/c/darienbrito
+The ParameterMorpher and SceneLauncher modules are available through my Patreon:
+👉 https://www.patreon.com/c/darienbrito
 
 ## Tutorials
 
@@ -153,18 +153,6 @@ If you’d like to propose integrating your work into the official distribution,
 
 Together, we can keep expanding and refining the TDMorph ecosystem. 🚀
 
-## Support
-
-Thank you for your interest in my work! 🙏 You can follow me on [**Instagram**](https://www.instagram.com/darien.brito/).
-
-If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito). Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
-
-## Final Thoughts
-
-The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
-
-I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
-
 ## About the License
 
 Since version 3.2, TDMorph has moved to an MIT license, which means that you can 
@@ -181,6 +169,18 @@ But you must:
 - Accept that there is no warranty or liability
 
 If you’re unsure what this implies, you can read this helpful in depth description [**What is the MIT License**](https://memgraph.com/blog/what-is-mit-license)
+
+## Final Thoughts
+
+The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
+
+I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
+
+## Support
+
+Thank you for your interest in my work! 🙏 You can follow me on [**Instagram**](https://www.instagram.com/darien.brito/).
+
+If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito). Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
 
 Enjoy!
 
