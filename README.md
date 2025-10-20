@@ -41,14 +41,15 @@ The three main modes of operation are:
 - **SceneLauncher**  
   A high-level UI designed for show control. It enables you to organize and trigger scenes and presets, supports follow actions, and integrates seamlessly with cue-based workflows.
 
-## Installation
+## Download
 
 Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
 
-The PresetManager remains completely free. You can download it by grabbing the TDMorph3.2 folder from this repository or the corresponding build from the Releases section.
+The **PresetManager** remains completely free. You can download it by grabbing the TDMorph3.2 folder from this repository or the corresponding build from the Releases section.
 
-The ParameterMorpher and SceneLauncher modules are available through my Patreon:
-👉 https://www.patreon.com/c/darienbrito
+Modules are available through my Patreon 👉 https://www.patreon.com/c/darienbrito:
+  - Parameter Morpher
+  - Scene Launcher
 
 ## Tutorials
 
