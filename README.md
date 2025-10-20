@@ -1,7 +1,5 @@
 # TDMorph 3.2 (BUILD IN PROGRESS... TO BE OFFICIALLY RELEASED VERY SOON)
 
-Note that there are various differences with previous versions. Please refer to this [video demonstration](https://www.youtube.com/watch?v=qIXt53QVFt8&ab_channel=TouchDesigner) from minute 37, where I explain in detail what those are.
-
 ## What is TDMorph?
 
 **TDMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
@@ -45,7 +43,12 @@ The three main modes of operation are:
 
 ## Installation
 
-To get the components. Download the TDMorph3.2 folder from this repository, or the TDMorph3.2 build from the *Releases* section.
+Since version 3.2, TDMorph has been splitted into free and payed components. This is so because mantainaing and improving such a tool and learning resources for a community takes a lot of effort, which I'm able to undertake if I can compensate the time put into it.
+
+The PresetManager remains to be free. To get it, simply download the TDMorph3.2 folder from this repository, or the TDMorph3.2 build from the *Releases* section.
+
+The ParameterMorpher and SceneLauncher modules can be purchased via my Patreon:
+https://www.patreon.com/c/darienbrito
 
 ## Tutorials
 
@@ -128,13 +131,11 @@ To be done...
 
 ## Patterns
 
-Since version 2, **TDMorph** includes a **Patterns** library — inspired by the *homonymous* system in the **SuperCollider** language. Originally, *Patterns* were conceived in SuperCollider as *“a rich and concise score language for music.”*  
-You can read more about this concept here: [SuperCollider Practical Guide](https://doc.sccode.org/Tutorials/A-Practical-Guide/)
+Since version 2, **TDMorph** includes a **Patterns** library — inspired by the *homonymous* system in the **SuperCollider** language. Originally, *Patterns* were conceived in SuperCollider as *“a rich and concise score language for music.”*  You can read more about this concept here: [SuperCollider Practical Guide](https://doc.sccode.org/Tutorials/A-Practical-Guide/)
 
 The motivation behind this library was the need for a powerful **value generation system** within TouchDesigner. Rather than a direct port, this implementation is a **reverse-engineered adaptation** of SuperCollider’s original Patterns system — built from the ground up using Python’s **generators** and **lazy evaluation** capabilities.
 
 The result is a flexible and expressive framework for **algorithmic pattern generation**, designed to integrate seamlessly with the **TDMorph** toolkit and the **TouchDesigner** environment.
-
 
 ## Bug Reports
 
@@ -144,17 +145,13 @@ To report bugs or suggest improvements, please use the official issue tracker:
 
 🔗 [**TDMorph GitHub Issues**](https://github.com/DarienBrito/TDMorph/issues)
 
-
 ## Contributions
 
 Contributions are highly encouraged! You’re welcome to build your own tools on top of **TDMorph** and share your ideas or improvements with the community.
 
 If you’d like to propose integrating your work into the official distribution, feel free to **get in touch**.  
 
-Before sharing or publishing your work, please make sure to **review the license terms** to ensure compliance with its requirements.
-
 Together, we can keep expanding and refining the TDMorph ecosystem. 🚀
-
 
 ## Support
 
@@ -162,21 +159,28 @@ Thank you for your interest in my work! 🙏 You can follow me on [**Instagram**
 
 If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito). Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
 
-
 ## Final Thoughts
 
 The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
 
 I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
 
-
 ## About the License
 
-Since we are artists and programmers — not lawyers — I trust you’ll give credit where it’s due and respect the license: **GNU General Public License v3 (GPL-3)**.
+Since version 3.2, TDMorph has moved to an MIT license, which means that you can 
 
-If you’re unsure what this implies, you can read this helpful overview: [**Top 10 GPL License Questions Answered**](https://resources.whitesourcesoftware.com/blog-whitesource/top-10-gpl-license-questions-answered)
+- Use it for personal or commercial projects
+- Modify the code freely
+- Redistribute or sell derived works
+- Combine it with closed-source software
 
-In short, if you wish to use any part of this toolbox in a **commercial project** where you **do not intend to disclose the source code**, please get in touch first so we can agree on a **fair arrangement**. 🤝
+But you must:
+
+- Include the copyright notice
+- Include the license text
+- Accept that there is no warranty or liability
+
+If you’re unsure what this implies, you can read this helpful in depth description [**What is the MIT License**](https://memgraph.com/blog/what-is-mit-license)
 
 Enjoy!
 
