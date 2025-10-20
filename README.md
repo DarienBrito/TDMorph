@@ -51,8 +51,8 @@ The following modules are paid:
   - **ParameterMorpher**
   - **SceneLauncher**
 
-You can obtain them individually, as a bundle, or through a subscription on my Patreon:
-👉 https://www.patreon.com/c/darienbrito
+You can obtain them individually, as a bundle, or through a subscription on my Patreon 👇:
+https://www.patreon.com/c/darienbrito
 
 ## Tutorials
 
@@ -88,7 +88,7 @@ The **TDMorph** ecosystem includes a set of simple, intuitive shortcuts designed
 
 <kbd>Shift</kbd> or <kbd>Ctrl</kbd> + <kbd>Mouse Button</kbd>
 
-That’s it! Every shortcut in TDMorph is derived from these two simple modifiers. [Click here]() to see all functions 
+That’s it! Every shortcut in TDMorph is derived from these two simple modifiers. [Click here](https://github.com/DarienBrito/TDMorph/blob/master/SHORTCUTS.md) to see all functions 
 
 
 ## Code documentation
