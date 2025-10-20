@@ -47,7 +47,7 @@ Starting with version 3.2, TDMorph has been divided into free and paid component
 
 The **PresetManager** remains completely free. You can download it by grabbing the TDMorph3.2 folder from this repository or the corresponding build from the Releases section.
 
-Modules are available through my [Patreon](https://www.patreon.com/c/darienbrito){:target="_blank"}:
+Modules are available through my <a href="https://www.patreon.com/c/darienbrito" target="_blank">Patreon</a>:
   - Parameter Morpher
   - Scene Launcher
 
