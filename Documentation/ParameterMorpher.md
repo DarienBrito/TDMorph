@@ -135,3 +135,14 @@
 
 - **`GlobalTime`** *(property)*  
   Toggles global morph/randomization mode for this container.
+
+
+# Example
+
+# --- Trigger a stored preset ---
+
+# Fetch the current (first) container in the ParameterMorpher
+container = op('ParameterMorpher').GetContainer(1)
+
+# Set it to the preset stored in slot 2
+container.SetPreset(2)
