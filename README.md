@@ -45,7 +45,7 @@ The three main modes of operation are:
 
 Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
 
-The **PresetManager** remains completely free. You can download it by grabbing the TDMorph3.2 folder from this repository or the corresponding build from the Releases section.
+The **PresetManager** remains completely free. You can download it by grabbing the PresetManager folder from this repository or the corresponding build from the Releases section.
 
 The following modules are paid:
   - **ParameterMorpher**
