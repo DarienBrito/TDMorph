@@ -1,5 +1,3 @@
-# TDMorph 3.2 (BUILD IN PROGRESS... TO BE OFFICIALLY RELEASED VERY SOON)
-
 ## What is TDMorph?
 
 **TDMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
