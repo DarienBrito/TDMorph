@@ -57,7 +57,7 @@ https://www.patreon.com/c/darienbrito
 
 **TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
 
-To get started and learn everything TDMorph has to offer, check out this 👉 [**Tutorial series** on Vimeo](https://vimeo.com/showcase/6682501)
+To get started and learn everything TDMorph has to offer, check out the tutorial series on [Vimeo](https://vimeo.com/showcase/6682501) or [YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz)
 
 ### Overview
 
