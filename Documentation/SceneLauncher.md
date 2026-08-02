@@ -1,9 +1,18 @@
-# extSceneLauncher.py
+# Scene Launcher
 
 **Part of the TDMorph Toolkit**  
-Copyright © 2020–2025  
+Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
-**License:** [MIT License](https://opensource.org/license/mit)
+**License:** **PROPRIETARY. Licensed, not sold.**  
+**Version:** 4.2.2
+
+> SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
+> SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
+> resale, sublicensing or sharing. No warranty.
+>
+> It is **not** MIT licensed and is not distributed from this repository. It is available
+> through [Patreon](https://www.patreon.com/c/darienbrito). This page is reference
+> documentation only.
 
 ---
 
@@ -19,6 +28,20 @@ This class acts as an **alternative UI** for the PresetManager, allowing users t
 - Create follow actions (like *Next*, *Repeat*, *Random*, etc.).
 - Export and import full scenes and presets as `.json` files.
 - Automatically build animations from existing scenes.
+
+### What changed in 4.x
+
+- **It attaches an external PresetManager** through the `Presetmanager` parameter, and so
+  inherits the shared multi-track engine: per-track timing, end modes, curve shapes and
+  preset schema v2. See [PresetManager](PresetManager.md).
+- **The scene and preset lists are owned `ListView` instances**, replacing the palette
+  Listers. The MIDI and OSC mapping inspectors are an owned `listCOMP` editor. SceneLauncher
+  carries no third-party content.
+- **The ControlsMenu is fully themeable** from an 18-parameter `ControlsMenu` page on
+  `Lib/Look`, with the root Colors page driving the accent and row colours.
+- The OSC and MIDI header buttons appear only when the matching `Osc` and `Midi` CHOP
+  parameters resolve, so the component ships showing four header icons rather than six.
+- Ships **empty**: no scenes, no presets, `Presetmanager` blank.
 
 ---
 
@@ -183,12 +206,12 @@ They allow stepping through, randomizing, or looping scenes.
 ## Dependencies
 
 ### TouchDesigner Components
-- `PresetManager`  
-- `listPresets/lister`  
-- `listScenes/lister`  
+- `PresetManager` *(external, attached through the `Presetmanager` parameter)*  
+- `listScenes` and `listPresets` *(owned `ListView` instances, with `listScenesCallbacks` and `listPresetsCallbacks` supplying their behaviour)*  
 - `Utils/ColorPicker2`  
 - `Actions/chopexec1`  
-- `TDResources` *(for popups and dialogs)*
+- `Lib/Look` *(the ControlsMenu theme)*  
+- `op.TDResources` *(TouchDesigner's own pop-up menu and dialog host)*
 
 ### Python Libraries
 - `TDStoreTools.StorageManager`  

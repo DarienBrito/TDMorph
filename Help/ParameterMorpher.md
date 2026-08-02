@@ -1,0 +1,91 @@
+# Parameter Morpher
+
+The root of the ParameterMorpher component. Manages the internal library and the tools built
+from it.
+
+Class: `extParameterMorpher`. Version 4.3.2.
+
+> **PROPRIETARY. Licensed, not sold.** A commercial component governed by the
+> ParameterMorpher EULA (see the `LICENSE` operator inside the component). Available through
+> [Patreon](https://www.patreon.com/c/darienbrito), not from this repository.
+
+This file was previously named `TDMorph.md`, from the era when the whole toolkit was one
+node. It has always documented the ParameterMorpher root.
+
+For the element containers, which is where most of the day-to-day API lives, see
+[Documentation/ParameterMorpher.md](../Documentation/ParameterMorpher.md).
+
+## Core Methods
+
+### Public
+
+```python
+CreateContainer()
+```
+Creates an empty container for elements in the ParameterMorpher node.
+
+```python
+CreateFromLibrary(item, x=250, y=150, viewer=False)
+```
+Copies "item" out of the internal `Lib/` at the given coordinates. Enables the viewer if viewer=True. Items are the children of `Lib/`, the useful ones being:
+  * 'PresetManager'
+  * 'PresetGrabber'
+  * 'PresetAnimator'
+  * 'ElementsContainer'
+  * 'MorphingTimers'
+  * 'MorphingChannels'
+  * 'Patterns'
+
+```python
+ExposeChannels(x=0, y=0)
+```
+Creates a node containing par CHOPs for the inner parameter channels of each container.
+
+```python
+ExposeTimers(x=0, y=0)
+```
+Creates a node containing select CHOPs for the inner timers of each container.
+
+```python
+GetContainer(n)
+```
+Get the container at n position.
+
+```python
+SelectObject(name, x=250, y=0)
+```
+A convenience method to create items from the library at default locations. This is what the component calls when a new item is invoked.
+
+### Private
+
+```python
+containersExist()
+```
+True if there are containers, false if not.
+
+## UI Methods
+
+### Public
+
+```python
+ChangeOrientation(horizontal=False)
+```
+Changes the layout from vertical to horizontal. Only useful when there is more than one container in the window.
+
+## Custom parameters
+
+| Page | Parameters |
+|---|---|
+| Dimensions | `Width`, `Height`, `Horizontal` |
+| Inputs | `Midi`, `Osc`, `Transport` (CHOP references) |
+| Mappings | `Managemidimappings`, `Manageoscmappings`, `Clearmidimappings`, `Clearoscmappings`, `Togglelocationmidi`, `Togglelocationosc` |
+| Info | `Containers` (read only) |
+| About | `Author`, `Version`, and the `Readme`, `Help`, `Support`, `Website` pulses |
+
+## Removed
+
+`createBase` is gone. `'SceneLauncher'` is no longer a `CreateFromLibrary` item: it is a
+separate product with its own component.
+
+`ReportResult(msg, title)` is defined on `extElementsContainer`, not here. Reach it through a
+container, for example `op('ParameterMorpher').GetContainer(1).ReportResult(msg, title)`.

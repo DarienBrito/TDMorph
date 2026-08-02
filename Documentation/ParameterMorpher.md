@@ -1,15 +1,39 @@
 # ParameterMorpher
 
 **Part of the TDMorph Toolkit**  
-Copyright © 2020–2025  
+Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
-**License:** [MIT License](https://opensource.org/license/mit)
+**License:** **PROPRIETARY. Licensed, not sold.**  
+**Version:** 4.3.2
+
+> ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
+> ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
+> redistribution, resale, sublicensing or sharing. No warranty.
+>
+> It is **not** MIT licensed and is not distributed from this repository. It is available
+> through [Patreon](https://www.patreon.com/c/darienbrito). This page is reference
+> documentation only.
+>
+> The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
+> keep their own MIT licence.
 
 ---
 
 ## Overview
 
-The ParameterMorpher is comprised of various components. To access full functionality, you need to interact with bot the `extParameterMorpher` class and the `extElementsContainer` class.
+The ParameterMorpher is comprised of various components. To access full functionality you
+need to interact with both the `extParameterMorpher` class and the `extElementsContainer`
+class.
+
+### What changed in 4.x
+
+- **The embedded PresetManager engine is the shared multi-track engine.** ParameterMorpher
+  embeds four copies of it, so per-track timing, end modes, curve shapes and preset schema
+  v2 are all available here. See [PresetManager](PresetManager.md).
+- **The MIDI and OSC mapping inspectors are an owned `listCOMP` editor**, replacing the
+  previous palette TreeListers. ParameterMorpher carries no third-party content.
+- **The four embedded PresetManager paths editors are owned `ListView` instances.**
+- Ships **empty**: no demo content, no stored presets, no bound paths.
 
 ## exParameterMorpher
 
@@ -193,9 +217,6 @@ This class is primarily used to create and manage **parameter-linked sliders** f
 - **`ResetParameters()`**  
   Resets all UI elements to their default stored values.  
 
-- **`RewritePresetsOrder()`**  
-  Updates preset button labels to match the internal preset manager order.  
-
 - **`RenamePresetsOrder()`**  
   Renames and reorders presets based on current UI order.  
 
@@ -238,9 +259,6 @@ This class is primarily used to create and manage **parameter-linked sliders** f
 
 - **`PresetsSequence(sortKeys=False, keysSequence=None)`**  
   Traverses presets sequentially across all linked elements.  
-
-- **`SequencePresets()`**  
-  Executes a preset sequence defined by the order in the UI buttons.  
 
 ---
 
