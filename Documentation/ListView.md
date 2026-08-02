@@ -109,7 +109,7 @@ That renders a working, editable, reorderable grid. To react to edits and clicks
 
 ### Colors page
 
-Eight RGBA parameters override the theme without editing code: `Rowcolor` and `Rowcoloralt` (a zebra pair, match them to flatten), `Headercolor`, `Headertextcolor`, `Textcolor`, `Valuecolor`, `Selectcolor`, `Hovercolor` and `Dividercolor`.
+Nine RGBA parameters override the theme without editing code: `Rowcolor` and `Rowcoloralt` (a zebra pair, match them to flatten), `Headercolor`, `Headertextcolor`, `Textcolor`, `Valuecolor`, `Selectcolor`, `Hovercolor` and `Dividercolor`.
 
 ### About page
 
@@ -190,6 +190,9 @@ The column header rename and align menu is **built in**. You only need `ListView
 Keep the Callbacks DAT outside the widget itself, as a sibling or a child of the host.
 
 ### A minimal Callbacks module
+
+`MyNames`, `Rename` and `Delete` below are methods on **your own** host component, not part
+of the ListView API. Everything else is the real contract.
 
 ```python
 def ListViewColumns(lister):

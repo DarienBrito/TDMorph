@@ -66,7 +66,7 @@ The preset viewer and value editor, previously bundled, now ships here as its ow
 
 ### JSONTree (new)
 
-A reusable collapsible JSON tree viewer and inline editor at **1.5.0** through **1.5.4**, built on the native `listCOMP`. Search, expand and collapse, type-coloured values, editable leaves, and schema-aware rendering that collapses a TDMorph parameter dict into a single readable row. This is the viewer embedded in PresetInspector, released standalone so it can be used for any JSON inside TouchDesigner.
+A reusable collapsible JSON tree viewer and inline editor at **1.5.4**, built on the native `listCOMP`. Search, expand and collapse, type-coloured values, editable leaves, and schema-aware rendering that collapses a TDMorph parameter dict into a single readable row. This is the viewer embedded in PresetInspector, released standalone so it can be used for any JSON inside TouchDesigner.
 
 ### ListView (new)
 

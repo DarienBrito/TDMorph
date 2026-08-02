@@ -500,7 +500,9 @@ Curves are registered in `PresetMorpher/curveLib`, which also holds each curve's
 
 `Linear`, `Scurve`, `Doubleoddpolynomial`, `Quadraticviapoint`, `Exponentialeasing`, `Easein`, `Easeout`.
 
-The library implements more shapes than the menu lists, including circular easings, sine, rect, tri, snap and random. They are reachable from the registry by name.
+The registry holds **16** shapes, so the library implements more than the menu exposes. The
+nine extras are `Sigmoid`, `Circulareasein`, `Circulareaseout`, `Sine`, `Rect`, `Tri`,
+`Random`, `SnapIn` and `SnapOut`. They are reachable from the registry by name.
 
 Distributions come from `RandomGenerator`: `Uniform`, `Normal`, `Beta`.
 
