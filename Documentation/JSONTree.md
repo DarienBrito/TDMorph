@@ -83,7 +83,7 @@ Both set `Source` to `Data` for you.
 
 ### About page
 
-`Author`, `Version`, and the `Support` and `Website` pulse buttons.
+The `Support` and `Website` pulse buttons, then `Author` and `Version`, which are **read only**.
 
 ---
 

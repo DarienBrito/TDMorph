@@ -20,6 +20,12 @@ If you need something dependable for a show next week, stay on
 PresetInspector, JSONTree and ListView have never been released here before. PresetManager
 jumps from 3.2.1 to 4.1.2.
 
+> **Rebuilt 2026-08-02.** The PresetManager, PresetInspector and ListView downloads were
+> replaced after the first upload. `Author` and `Version` are now read only and sit below a
+> section break on every component's About page, matching each other. Component versions are
+> unchanged because nothing functional changed. JSONTree already had it and its download was
+> not touched. If you grabbed the files in the first few hours, re-download those three.
+
 ParameterMorpher and SceneLauncher are **not** part of this release. They remain available
 through [Patreon](https://www.patreon.com/c/darienbrito).
 

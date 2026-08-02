@@ -80,7 +80,7 @@ Changes the layout from vertical to horizontal. Only useful when there is more t
 | Inputs | `Midi`, `Osc`, `Transport` (CHOP references) |
 | Mappings | `Managemidimappings`, `Manageoscmappings`, `Clearmidimappings`, `Clearoscmappings`, `Togglelocationmidi`, `Togglelocationosc` |
 | Info | `Containers` (read only) |
-| About | `Author`, `Version`, and the `Readme`, `Help`, `Support`, `Website` pulses |
+| About | The `Readme`, `Help`, `Support`, `Website` pulses, then `Author` and `Version`, which are read only |
 
 ## Removed
 

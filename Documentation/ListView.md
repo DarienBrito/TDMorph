@@ -113,7 +113,7 @@ Nine RGBA parameters override the theme without editing code: `Rowcolor` and `Ro
 
 ### About page
 
-`Author`, `Version` and the `Readme`, `Help`, `Support` and `Website` pulse buttons.
+The `Readme`, `Help`, `Support` and `Website` pulse buttons, then `Author` and `Version`, which are **read only**.
 
 ---
 

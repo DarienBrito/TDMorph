@@ -70,7 +70,7 @@ The tree fills with the stored presets. Double-click a value to edit it.
 
 ### About page
 
-`Author`, `Version`, and the `Readme`, `Help`, `Support` and `Website` pulse buttons.
+The `Readme`, `Help`, `Support` and `Website` pulse buttons, then `Author` and `Version`, which are **read only**.
 
 ---
 
