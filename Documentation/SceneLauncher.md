@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.2.2
+**Version:** 4.2.5
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -41,7 +41,86 @@ This class acts as an **alternative UI** for the PresetManager, allowing users t
   `Lib/Look`, with the root Colors page driving the accent and row colours.
 - The OSC and MIDI header buttons appear only when the matching `Osc` and `Midi` CHOP
   parameters resolve, so the component ships showing four header icons rather than six.
-- Ships **empty**: no scenes, no presets, `Presetmanager` blank.
+- Ships **empty**: no scenes, no presets, `Presetmanager` blank. Attaching a PresetManager is
+  the first step under [Getting started](#getting-started) below.
+
+---
+
+## Installation
+
+1. Download `SceneLauncher.tox` from [Patreon](https://www.patreon.com/c/darienbrito).
+2. Drag the `.tox` into your TouchDesigner network, or use **File > Import > Component**.
+3. Click the component's viewer to open the panel.
+
+**SceneLauncher needs a PresetManager.** It is a user interface for an engine it deliberately
+does not contain, so on its own it has nothing to launch. PresetManager is free and MIT
+licensed, from [this repository](../PresetManager/). Any component that already embeds one
+works too, including a ParameterMorpher container's internal manager.
+
+The licence terms are in the `LICENSE` operator inside the component.
+
+## Getting started
+
+The component opens **empty**: no scenes, and the `Presetmanager` parameter blank.
+
+### 1. Give it a PresetManager with presets in it
+
+Drop a PresetManager into your network, point it at the parameters you want, and store at
+least two presets. A SceneLauncher attached to a manager with no presets will show an empty
+target list and there will be nothing to cue.
+
+### 2. Attach it
+
+Set **`Presetmanager`** on the **Config** page to that component. The preset list on the right
+of the panel fills in immediately.
+
+If you attach a manager and the lists look stale, pulse **`Refresh`** on the same page.
+
+### 3. Create a scene
+
+<kbd>Right Click</kbd> empty space in the scene list and choose **New scene**.
+
+The same menu holds the rest of the scene-level actions: *Duplicate*, *Clear scenes*,
+*Clear actions*, *Clear scripts*, *Export presets*, *Import presets* and *Refresh*.
+
+### 4. Point the scene at a preset
+
+<kbd>Right Click</kbd> the scene's **Target** cell. A menu opens listing the preset names in
+the attached manager. Pick one.
+
+**Curve** and **Action** open on <kbd>Right Click</kbd> the same way: Curve chooses the
+interpolation shape, Action chooses the follow action (*Next*, *Repeat*, *Random* and so on)
+that fires when the scene finishes.
+
+**Scene**, **Length**, **Delay** and **Script** are inline text cells instead: click and type.
+The **color** swatch and the trash icon are left-click buttons.
+
+A row reads, left to right: `#`, colour swatch, Scene, launch icon, Length, Delay, Target,
+Curve, Action, Script, delete icon. Delay and Script are hidden unless `Enabledelays` and
+`Enablescripting` are on, both of which ship enabled.
+
+Note that editing a scene's **Length** or **Curve** also overwrites that value in the target
+preset's own stored data. This is destructive and deliberate, matching the behaviour of
+earlier versions: the scene is the authority on its own timing.
+
+### 5. Launch it
+
+Click the **launch icon** in the scene's row, the fourth column, just right of the scene name.
+
+That icon is the only thing that launches a scene. Double-clicking any other cell is
+deliberately inert, so editing a Curve or Action can never fire the scene by accident.
+
+Build up a few scenes, give them follow actions, and the launcher will run them as a cue
+list. `Totaldurationf` and `Totaldurations` on the **Info** page report the total.
+
+### 6. Where to go next
+
+The `Osc` and `Midi` parameters on the **Config** page take CHOP references. Wire either one
+and the matching header icon appears, six icons instead of the four it ships with, giving you
+auto-learn mapping for the transport controls.
+
+Full key and mouse reference: [SHORTCUTS.md](../SHORTCUTS.md). Everything below this point is
+the Python API.
 
 ---
 
@@ -50,8 +129,6 @@ This class acts as an **alternative UI** for the PresetManager, allowing users t
 - [Initialization](#initialization)
 - [Architecture](#architecture)
 - [Stored Properties](#stored-properties)
-- [Private Methods](#private-methods)
-- [Properties](#properties)
 - [Public Methods](#public-methods)
   - [Scene Management](#scene-management)
   - [Preset and Morph Handling](#preset-and-morph-handling)
