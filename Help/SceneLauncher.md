@@ -56,15 +56,9 @@ DelayedPresetTrigger(target, length, curve)
 Trigger a preset with a delay.
 
 ```python
-DuplicatePreset(name, target)
-```
-Duplicate target preset.
-
-```python
 DuplicateScene(name, sourceName)
 ```
 Duplicate sourceName scene with given name.
-
 
 ```python
 EnableFollowActions(enable=True)
@@ -122,11 +116,6 @@ SetCellColor()
 Overlay color for lister's cells.
 
 ```python
-SetLengthMode()
-```
-This sets the time according to a define time unit, this can be seconds, sixteenths, beats or bars.
-
-```python
 WritePresets()
 ```
 Write the found presets into the table in this component. This gets recalled automaticall everytime the presets changed.
@@ -139,7 +128,7 @@ Write the found scenes into the table in this component. This gets recalled auto
 ### Private
 
 ```python
-assembleLaunchInfo()
+assembleData()
 ```
 Manually recreate a minimal info dictionary to be used with the lister callbacks.
 
@@ -228,4 +217,3 @@ Creates an animation from the set of scenes in the SceneLauncher.
 createAnimationCOMP( x=250, y=0, viewer=True)
 ```
 Creates a copy of the requested item on the location  of TDMorph. Possible objects are:PresetManager, PresetsGrabber, PresetsAnimator
-
