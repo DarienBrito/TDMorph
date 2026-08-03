@@ -12,19 +12,25 @@ If you need something dependable for a show next week, stay on
 
 | Component | Version | What it is |
 |---|---|---|
-| **PresetManager** | 4.1.2 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
+| **PresetManager** | 4.1.3 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
 | **PresetInspector** | 1.5.4 | Preset JSON viewer and value editor. Attaches to a PresetManager. |
 | **JSONTree** | 1.5.4 | Reusable collapsible JSON tree viewer with inline editing. |
 | **ListView** | 1.0.3 | Reusable flat-columnar list widget built on the native `listCOMP`. |
 
 PresetInspector, JSONTree and ListView have never been released here before. PresetManager
-jumps from 3.2.1 to 4.1.2.
+jumps from 3.2.1 to 4.1.3.
 
 > **Rebuilt 2026-08-02.** The PresetManager, PresetInspector and ListView downloads were
 > replaced after the first upload. `Author` and `Version` are now read only and sit below a
 > section break on every component's About page, matching each other. Component versions are
 > unchanged because nothing functional changed. JSONTree already had it and its download was
 > not touched. If you grabbed the files in the first few hours, re-download those three.
+
+> **Rebuilt again 2026-08-03.** PresetManager is now **4.1.3** and its download was
+> replaced. A comment inside the preset format module wrongly said version 2 was a clean
+> break with no migration from version 1. Presets written by 3.2 have always been
+> migrated on load; only the comment was wrong. Nothing else changed and the other three
+> downloads were not touched. The beta line itself is still 4.1.2.
 
 ParameterMorpher and SceneLauncher are **not** part of this release. They remain available
 through [Patreon](https://www.patreon.com/c/darienbrito).
@@ -56,7 +62,7 @@ idempotent, so nothing breaks if it runs twice. It has been tested here, but not
 the variety of real projects you have.
 
 **Please back up your project and export your presets to JSON before opening them with
-4.1.2.** If a migration goes wrong, that export is what lets you recover, and it is what
+4.1.3.** If a migration goes wrong, that export is what lets you recover, and it is what
 makes the bug report actionable.
 
 Worth checking specifically:

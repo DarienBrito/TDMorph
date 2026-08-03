@@ -10,7 +10,7 @@ toolkit version, because they now ship and update independently.
 # [Beta]
 ## [4.1.2 beta] (3rd quarter of 2026)
 
-PresetManager **4.1.2**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
+PresetManager **4.1.3**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
 
 This is a **beta**. The engine was substantially rewritten and the free tier grew from one
 component to four, so it needs testing on real projects before it becomes the stable

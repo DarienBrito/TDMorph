@@ -1,6 +1,6 @@
 > ### 🧪 This is the 4.1.2 beta branch
 >
-> PresetManager **4.1.2**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
+> PresetManager **4.1.3**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
 >
 > The morphing engine was substantially rewritten and the free tier grew from one component
 > to four, so this needs testing on real projects before it becomes the stable release.
@@ -73,7 +73,7 @@ build from the Releases section:
 
 | Component | Version | What it is |
 |---|---|---|
-| [**PresetManager**](PresetManager/) | 4.1.2 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
+| [**PresetManager**](PresetManager/) | 4.1.3 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
 | [**PresetInspector**](PresetInspector/) | 1.5.4 | Preset viewer and value editor. |
 | [**JSONTree**](JSONTree/) | 1.5.4 | Reusable JSON tree viewer with inline editing. |
 | [**ListView**](ListView/) | 1.0.3 | Reusable flat-columnar list widget. |

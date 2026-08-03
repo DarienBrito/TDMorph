@@ -4,7 +4,7 @@ The morphing engine inside the PresetManager. It owns the clock, the per-track t
 the parameter writeback, and it drives all state changes of linked parameters: transitions
 and randomization.
 
-Version 4.1.2. Capitalized methods are promoted and are the supported API. Lowercase
+Version 4.1.3. Capitalized methods are promoted and are the supported API. Lowercase
 methods are internal and may change between versions.
 
 The engine runs one chain whether the multi-track engine is on or off. With it off there is

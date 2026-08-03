@@ -6,7 +6,7 @@ The database of operators the PresetManager tracks, and their per-path settings.
 Nodes are marked with the manager's `Trackingtag` value (`TDMorphPath` by default), which is
 how a node that has been moved is found again.
 
-Version 4.1.2. Capitalized methods are promoted and are the supported API.
+Version 4.1.3. Capitalized methods are promoted and are the supported API.
 
 Full reference: [Documentation/PresetManager.md](../Documentation/PresetManager.md#tracked-paths).
 

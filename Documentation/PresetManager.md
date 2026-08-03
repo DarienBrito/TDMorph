@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 4.1.2
+**Version:** 4.1.3
 
 ---
 
@@ -541,7 +541,7 @@ The component carries its own harness. Pulse **Run Tests** on the `Tests` base a
 op('PresetManager/Tests/tests').module.RunAndReport()
 ```
 
-171 checks ship in 4.1.2, covering the multi-track chain, per-track completion, writeback, auto cadences, per-track capture and mute, plus regression guards for every defect fixed in the 4.1 series. `RunAndReport()` blocks the cook thread, so when driving it from a script, fire it deferred and read `testResults` in a separate call.
+171 checks ship in 4.1.3, covering the multi-track chain, per-track completion, writeback, auto cadences, per-track capture and mute, plus regression guards for every defect fixed in the 4.1 series. `RunAndReport()` blocks the cook thread, so when driving it from a script, fire it deferred and read `testResults` in a separate call.
 
 ---
 
