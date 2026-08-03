@@ -104,7 +104,7 @@ To report bugs or suggest improvements, please use the official issue tracker:
 
 ## About the License
 
-Since version 3.2, TDMorph has moved to an [**MIT license**](https://opensource.org/license/mit), which means that you can 
+Since version 3.2, the **free** TDMorph components have been under an [**MIT license**](https://opensource.org/license/mit), which means that you can 
 
 - Use it for personal or commercial projects
 - Modify the code freely
@@ -118,6 +118,11 @@ But you must:
 - Accept that there is no warranty or liability
 
 If you’re unsure what this implies, you can read [**what is the MIT License.**](https://memgraph.com/blog/what-is-mit-license)
+
+This covers the free components only. **ParameterMorpher** and **SceneLauncher** are commercial
+modules, licensed and not sold, each governed by its own EULA rather than by MIT: no
+redistribution, resale, sublicensing or sharing. Their terms are in the `LICENSE` operator
+inside each component.
 
 ## Final Thoughts
 
