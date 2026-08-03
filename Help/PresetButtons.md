@@ -1,5 +1,9 @@
 # Preset Buttons
 
+> **PROPRIETARY. Licensed, not sold.** Part of the commercial ParameterMorpher and
+> SceneLauncher components, available through
+> [Patreon](https://www.patreon.com/c/darienbrito), not from this repository.
+
 ## Core-level methods
 
 ### Promoted
