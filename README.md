@@ -1,15 +1,3 @@
-> ### 🧪 This is the 4.1.2 beta branch
->
-> PresetManager **4.1.2**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
->
-> The morphing engine was substantially rewritten and the free tier grew from one component
-> to four, so this needs testing on real projects before it becomes the stable release.
-> **Back up your project and export your presets before upgrading.**
->
-> Read [**BETA.md**](BETA.md) first: it covers what to test, what changed and how to report.
-> For something dependable right now, use
-> [**3.2.1**](https://github.com/DarienBrito/TDMorph/releases/tag/v3.2.1) instead.
-
 ## What is TDMorph?
 
 **TDMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
@@ -51,35 +39,11 @@ The three main modes of operation are:
 - **SceneLauncher**  
   A high-level UI designed for show control. It enables you to organize and trigger scenes and presets, supports follow actions, and integrates seamlessly with cue-based workflows.
 
-Alongside these, TDMorph ships a set of **developer components**: small, self-contained,
-reusable widgets that the tools themselves are built on, released so you can build with them
-too.
-
-- **PresetInspector**  
-  A viewer and value editor for preset data. Attach it to a PresetManager to browse every stored preset as a tree, or point it at any JSON file.
-
-- **JSONTree**  
-  A reusable collapsible JSON tree viewer with search and inline editing, built on the native `listCOMP`.
-
-- **ListView**  
-  A reusable flat-columnar list widget: declarative columns, inline editing, resizable columns, reorderable rows and a pluggable behaviour module.
-
 ## Download
 
-Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community, work that requires significant time and effort, which I can sustain only with proper support.
+Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
 
-These components are **free and MIT licensed**. Grab the folder from this repository, or the
-build from the Releases section:
-
-| Component | Version | What it is |
-|---|---|---|
-| [**PresetManager**](PresetManager/) | 4.1.2 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
-| [**PresetInspector**](PresetInspector/) | 1.5.4 | Preset viewer and value editor. |
-| [**JSONTree**](JSONTree/) | 1.5.4 | Reusable JSON tree viewer with inline editing. |
-| [**ListView**](ListView/) | 1.0.3 | Reusable flat-columnar list widget. |
-
-Because they are MIT licensed you can use them in personal and commercial work, including
-closed-source projects.
+The **PresetManager** remains completely free. You can download it by grabbing the PresetManager folder from this repository or the corresponding build from the Releases section.
 
 The following modules are paid:
   - **ParameterMorpher**
@@ -128,18 +92,7 @@ That’s it! Every shortcut in TDMorph is derived from these two simple modifier
 
 ## Code documentation
 
-Full reference for each component:
-
-- [**PresetManager**](Documentation/PresetManager.md) parameters, preset schema, the multi-track engine and the Python API
-- [**PresetInspector**](Documentation/PresetInspector.md)
-- [**JSONTree**](Documentation/JSONTree.md)
-- [**ListView**](Documentation/ListView.md)
-
-Terse per-module API references live in [Help](Help/), and documentation for the paid
-modules is in [Documentation](Documentation/) alongside the above.
-
-Every component carries its own test harness. Pulse **Run Tests** on its `Tests` base and
-read `Tests/testResults` to check the component is healthy in your project.
+You can find documentation for relevant TDMorph modules [here](https://github.com/DarienBrito/TDMorph/tree/master/Documentation).
 
 ## Bug Reports and contributions
 

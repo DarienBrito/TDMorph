@@ -1,73 +1,55 @@
 # Preset Morpher
 
-The morphing engine inside the PresetManager. It owns the clock, the per-track table and
-the parameter writeback, and it drives all state changes of linked parameters: transitions
-and randomization.
-
-Version 4.1.2. Capitalized methods are promoted and are the supported API. Lowercase
-methods are internal and may change between versions.
-
-The engine runs one chain whether the multi-track engine is on or off. With it off there is
-a single `_all` track, which reproduces the 3.2 behaviour. See
-[Documentation/PresetManager.md](../Documentation/PresetManager.md) for the full picture.
-
 ## Core-level methods
 
 ### Properties
 
 ```python
-IsActive = bool
+ActivityStatus = bool (read only) 
 ```
-True while the morpher is active. Replaces the old ActivityStatus.
+Returns true if morpher is active
+
+```python
+BlendingActive = bool 
+```
+Get/Set blending behaviour
 
 ```python
 Blend = float
 ```
-Get/Set blending factor.
-
-```python
-BlendingActive = bool
-```
-Get/Set blending behaviour. Turning it on stops any running morph and seats the two chosen presets into the value tables.
+Get/Set blending factor
 
 ```python
 MorphCurve = str
 ```
-Get/set morph curve.
+Get/set morph curve
 
 ```python
 MorphTime = float
 ```
-Get/set morph time.
+Get/set morph time  
 
+```python
+MorphingType = str (read only)
+```
+Return current morphing type. This can be:
+
+  * Autorand
+  * Automorph
+  * Autopresets
+  * None
+ 
 ```python
 NumMorphs = int
 ```
-Amount of morphings.
+Amount of morphings
 
 ```python
 RandomDistribution = str
 ```
-Get/set random distribution.
-
-The morphing type is reported by the PresetManager's `MorphingType` property. Its values are:
-
-  * `singleRandom`
-  * `singleMorph`
-  * `singlePreset`
-  * `autoRandom`
-  * `autoMorph`
-  * `autoPresets`
-  * `autoRandomWithRanges`
-  * `autoMorphWithRanges`
-  * `None`
+Get/set random distribution 
 
 ### Promoted
-
-```python
-AutoRandomize(mode=None)
-```
-Move to N random states jumping.
 
 ```python
 AutoRandomMorph(mode=None)
@@ -75,35 +57,40 @@ AutoRandomMorph(mode=None)
 Move to N random states using morphing.
 
 ```python
-GetRandomizableParameters()
-GetStandardParameters()
+AutoRandomize(mode=None)
 ```
-The parameters the engine considers randomizable, and the ones it considers interpolatable.
+Move to N random states jumping.
 
 ```python
-MorphPreset(presetName, overrideTypeFlag=False, morphTime=None, morphCurve=None)
+MorphGivenParameters(operatorIndex, names, mode=None)
 ```
-Morph from the current values to the named preset. If morphTime or morphCurve is passed, the stored preset value is ignored and the passed value is used instead, for that call only. Replaces the old SetPreset on this class.
-
-```python
-MorphRandom(mode=None)
-```
-Morph all targeted parameters toward a new random state. Replaces the old RandomMorph.
-
-```python
-PlayMorphing(play=True)
-```
-Play or pause the morph by running or freezing the master clock.
+Morph specific parameters only.
 
 ```python
 PresetsSequence(sortKeys=False, keysSequence=None)
 ```
-Move across all stored presets. Keys can be passed in an arbitrary order. If no keys are passed, the sequence plays in the order the items were entered.
+Move across all stored presets. One can pass the keys in an arbitrary order if wanted. If no keys are passed, then the sequence is played in the 
+order on which the items were entered.
+
+```python
+RandomMorph(mode=None)
+```
+Morph to a random state GLOBALLY.
+
+```python
+Randomize(mode=None)
+```
+Move to a random state GLOBALLY.
+
+```python
+RandomizeGivenParameters(operatorIndex, names, mode=None)
+```
+Randomize specific parameters only.
 
 ```python
 Refresh(timerActive=False)
 ```
-Sync the value tables and idle the engine.
+Update tables here to make sure order of execution is correct and disable clock, to make sure nothing cooks when idle.
 
 ```python
 SetBlendingPresets(presetName, targetName)
@@ -113,175 +100,162 @@ Allows for arbitrary blending between two presets.
 ```python
 SetCuedSpecialValues()
 ```
-Executes the special parameters that were saved for "end" interpolation execution, and runs any queued preset scripts when scripts are allowed.
+Executes the special parameters that were saved for "end" interpolation execution.
 
 ```python
 SetCurrentPresetName(name)
 ```
-Sets current morpher preset name to the given one, here and on the PresetManager.
+Sets current morpher preset name to given one.
 
 ```python
-SetRandom(mode=None)
+SetPreset(presetName, overrideTypeFlag=False, morphTime=None, morphCurve=None)
 ```
-Jump all targeted parameters to a new random state, with no interpolation. Replaces the old Randomize.
+Sets a preset with an arbitrary name. If morphTime is passed, then stored preset time is ignored and passed value is used instead.
 
 ```python
 SetSpecialValues()
 ```
-Sets non-interpolatable values to the given state. Used only for preset setting, since one cannot interpolate str, ops and similar.
-
-```python
-StopMorphing()
-```
-Halt the morph. Disarms every per-track cadence and resets the clock so the chain stops cooking.
+Sets non-interpolatable values to given state. Used only for preset setting, since one cannot have random transformation for str, ops, etc.
 
 ```python
 UpdateTables()
 ```
-Updates the target tables so values stay in sync. Typically called on completion of a timer.
+This method updates the target tables so that values are properly in sync. Typically this method will be called when on completion of a timer.
 
-### Multi-track
-
-These exist in both modes but only do interesting work with the multi-track engine on.
+### Private
 
 ```python
-SetTrackConfig(config)
+checkPresetCycle(funcOn, funcOff=None)
 ```
-Set per-track timing and curve overrides, as `track id -> {dur, curve, a, b, c, group, endmode}`. This is a per-trigger input, not session state: the host pushes it just before each morph and MorphPreset restores the previous value when the call finishes.
-
-```python
-MorphTrack(track, mode=None)
-```
-Morph a SINGLE track to a fresh random target, leaving other tracks untouched.
-
-```python
-RandomizeTrack(track, mode=None)
-```
-Instantly randomize ONE track's parameters in place, with no morph, using its stored ranges.
-
-```python
-MuteTrack(path, on=True)
-```
-Freeze or un-freeze a single track's morph progress in place. Transient: the mute is not stored in the preset.
-
-```python
-StartTrackAuto(track, mode, keys=None, randmode=None)
-```
-Begin a per-track auto sequence, so one track can walk its own preset or random cadence while its neighbours do something else.
-
-```python
-OnTrackComplete(track)
-```
-Finish one track when its morph reaches the end, leaving neighbours alone. Called by the engine.
-
-### Callback dispatch
-
-```python
-OnMorphingStart()
-OnMorphingEnd()
-OnPresetCall(isMorphed)
-```
-Fire the corresponding user callbacks. `OnMorphingEnd` also resets the morphing type and idles the timer clock.
-
-### UI-level
-
-```python
-AutoRandomizeWithStoredRanges(mode=None)
-```
-Move to N random states jumping, using each element's UI-stored ranges.
-
-```python
-AutoRandomMorphWithStoredRanges(mode=None)
-```
-Move to N random states using morphing, with each element's UI-stored ranges.
-
-## Private
-
-```python
-_buildTrackTable(triggered)
-```
-Ensure a trackTable row per active track and restart the triggered ones at the current clock value.
-
-```python
-_rebaseTrackStarts()
-```
-Shift every trackTable start by the clock value about to be zeroed, so a stop or an end does not leave starts in the future of a new epoch.
-
-```python
-_seatTrack(track, paramValues)
-```
-Rebuild the value tables preserving other tracks, seating the given one fresh.
+Keep track of inner morphing count and perform actions based on that count.
 
 ```python
 enableInterpolation(enabled)
 ```
-Retained for callers. Inert since the cross-blend chain was removed.
+Enable/disable interpolation.
 
 ```python
-getParameterValue(data)
+getParameterValue(data, decimals=8)
 ```
-Return a random value for the parameter described by data.
+Return a random value for the given parameter.
 
 ```python
-getRandomValue(minMax, paramType, decimalPoints=8)
+getRandomValue(mode, minMax, paramType, decimals=8)
 ```
-Gets random values with different distributions from the RandomGenerator module. Certain parameter types need only certain values, such as two integer states.
+Gets random values with different distributions from the RandomGenerator module. Certain parameter types need only  certain values, such as two integer states, for instance.
+
+```python
+getStatesFromGivenParameters(operatorIndex, names, essential=False)
+```
+Get states only from the user specified operator by index from the operator finder and given parameter names.
+
+```python
+inferRandMode(mode)
+```
+Get a random mode from arg, if non exists, take the one set in the custom Parameters field. Mode is a str as 'uniform', 'normal' or 'beta'.
 
 ```python
 keepCount(funcOn=None, funcOff=None)
 ```
-Run funcOn each step until NumMorphs is reached, then funcOff, then reset.
+Keep track of inner morphing count and perform actions based on that count.
 
 ```python
-setAttributeParameterProperties(states)
+setAttributeParameterProperties(states, decimals=8)
 ```
 Low level method to write parameters directly.
 
 ```python
-setComputedParameterProperties(states, target)
+setComputedParameterProperties(states, target=None, decimals=8)
 ```
 Low level method to write computed parameters.
 
 ```python
-setOriginalParameterProperties(states, target)
+setOriginalParameterProperties(states, target=None, decimals=8)
 ```
-Low level method to write original parameters.
+Low level method to write originatl parameters.
 
 ```python
 setRandomVals(states=None)
 ```
-Randomizes values using the defined random distribution, writing directly to the parameters. Used by SetRandom.
+Randomizes values using a defined random distribution. This method writes directly to the parameters. It is used by Randomize().
 
 ```python
-setTimer(active=True, cycle=False, morphTime=None, triggeredTracks=None)
+setTimer(active=True, cycle=False, morphTime=None)
 ```
-Rebuild the per-track progress table and set the active flag.
+Sets the morphing timer to specified properties.
 
 ```python
-writeEssentialValues(presetName)
+signalCompletion()
 ```
-Fill currentValues with the start state. Returns whether any state existed.
+Used to signal when the morphing is done. It flips the state of a constant so that the signal can be used to control things outside this node. I do not use a pulse because that will always cook. This cooks only once, when needed.
 
 ```python
-writePresetToChannels(target, preset)
+writeEssentialValues(target, states=None)
 ```
-Write a preset's interpolatable values to the target and stack the rest as specials. Non-interpolatable parameters go to the Special table.
+Writes all found states if there are any to be found.
+
+```python
+writePresetToChannels(target, states)
+```
+Writes data for preset morphing in the tables. This method handles special parameters too, that get written in the "Special" table. Those are parameters that cannot be interpolated. This accounts exclusively for presets setting.
 
 ```python
 writePresetValues(target, presetName, withSpecial=True)
 ```
-Load a preset into the target. Returns False if the preset does not exist.
+Writes presets if there are values to be found.
 
 ```python
 writeRandomVals(states=None)
 ```
-Fill newValues with random morph targets, according to the selected random distribution.
+Generates random values according to selected random distribution, in random morphing.
 
-## Removed since 3.2
+## UI-level methods
 
-`ActivityStatus` is now `IsActive`. `Randomize` is now `SetRandom`, `RandomMorph` is now
-`MorphRandom`, and `SetPreset` on this class is now `MorphPreset`.
-`MorphGivenParameters`, `RandomizeGivenParameters`, `RandomizeWithStoredRanges`,
-`RandomMorphWithStoredRanges`, `getStatesFromGivenParameters`, `inferRandMode` and
-`signalCompletion` are gone. Completion is now signalled through the trackDone chain rather
-than by flipping a constant.
+### Promoted
+
+```python
+AutoRandomMorphWithStoredRanges(mode=None)
+```
+Move to N random states using morphing.
+
+```python
+AutoRandomizeWithStoredRanges(mode=None)
+```
+Move to N random states jumping.
+
+```python
+RandomMorphWithStoredRanges(mode=None)
+```
+Move to a random state using morphing GLOBALLY using a defined set of ranges (useful for dynamic UI's).
+
+```python
+RandomizeWithStoredRanges(mode=None)
+```
+Move to a random state GLOBALLY, using a define set of ranges (useful for dynamic UI's).
+
+### Private
+
+```python
+getParameterValue(master, data, decimals=8)
+```
+Unlike the core version, this functions gets the minMax ranges from the found UI operator. This is an important distinction. It also reads from the master operator to fetch some data.
+
+```python
+setAttributeParameterProperties(master, states, decimals=8)
+```
+Set UI's local properties states.
+
+```python
+setComputedParameterProperties(master, states, target=None, decimals=8)
+```
+Set UI's local computed properties.
+
+```python
+setRandomValsWithStoredRanges()
+```
+Randomizes values using a defined random distribution. This method writes directly to the parameters. It is used by UI's with dynamic ranges.
+
+```python
+writeRandomValsWithStoredRanges()
+```
+Generates random values according to selected random distribution to be used by random morphing. It is used by RandomMorph(). To see the function used by the method Randomize() see "setRandomVals".
