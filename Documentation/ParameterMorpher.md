@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.1.0
+**Version:** 5.1.1
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,19 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 5.1.1
+
+- **The pattern editor follows the pattern type again.** Changing an element's pattern type
+  stopped switching the editor below it, so picking a type like Pwhite still showed the
+  sequence field belonging to the previous type, and any value edited in that state was saved
+  into the previous type's slot. Playback was never affected: the signal always played the
+  type you selected. Introduced in 5.1.0, where moving the signal engines into one shared
+  service removed the part that told the editor which type was selected.
+- **If you edited a pattern on 5.1.0**, check the values on each type, since an edit made
+  after switching type may have landed on the wrong one.
 
 ---
 
