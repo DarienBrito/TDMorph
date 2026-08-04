@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.0.1
+**Version:** 5.0.2
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -13,6 +13,17 @@ Copyright © 2020–2026
 > It is **not** MIT licensed and is not distributed from this repository. It is available
 > through [Patreon](https://www.patreon.com/c/darienbrito). This page is reference
 > documentation only.
+
+---
+
+## 5.0.2
+
+- **Mapping a menu parameter now reaches its last item.** A learned menu mapping spans the
+  full 0 to N range. Previously it stopped at N-1, and because TouchDesigner floors a menu
+  value to an index, the last item was reachable from only 1 of 128 raw MIDI values while
+  every other item got 8 or 9.
+- **The header map icon is a crosshairs**, replacing the MIDI DIN plug it had inherited. One
+  icon covers both protocols, so a MIDI connector was the wrong picture.
 
 ---
 

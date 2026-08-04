@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.0.0
+**Version:** 5.0.1
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,16 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 5.0.1
+
+- **The header map icon is a crosshairs**, replacing the MIDI DIN plug it had inherited. One
+  icon covers both protocols, so a MIDI connector was the wrong picture.
+- **Fixes MIDI input being ignored.** The mapping service had stopped following the
+  component's `MIDI` parameter, so a wired MIDI CHOP never reached it and nothing could be
+  learned or routed. OSC was unaffected.
 
 ---
 
