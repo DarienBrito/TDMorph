@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.2.8
+**Version:** 5.0.0
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -13,6 +13,23 @@ Copyright © 2020–2026
 > It is **not** MIT licensed and is not distributed from this repository. It is available
 > through [Patreon](https://www.patreon.com/c/darienbrito). This page is reference
 > documentation only.
+
+---
+
+## 5.0.0: the MIDI/OSC mapping rebuild (breaking)
+
+Version 5.0.0 replaces the MIDI/OSC mapping subsystem outright. **Mappings made in 4.x are not carried forward**, and a few parameters changed name, which is why this is a major version.
+
+What changes for you:
+
+- **One map mode, not two.** The separate MIDI and OSC icons in the header are now a single **Map** icon, shown whenever either a MIDI or an OSC input is wired on the Config page. Click it, click any control, then move a fader, knob or key to bind it. Both protocols share one list.
+- **One mapping list.** The `Mappings` parameter page is now **Manage Mappings** and **Clear All Mappings** (previously four pulses split across MIDI and OSC sections). The editor shows every mapping in one table.
+- **Per-mapping range.** Each mapping carries its own **Min** and **Max**, editable in the list. Previously all MIDI mappings shared one global input range.
+- **Soft takeover.** Each mapping can be set to `pickup`, which waits until the incoming control reaches the parameter's current value before taking over, instead of jumping to wherever the fader happens to sit. `jump` is the default and matches the old behaviour.
+- **Dead mappings are visible.** If a mapped control is renamed or removed, the row is marked `(missing)` in the list rather than silently doing nothing, and can be cleared with **Prune dead mappings**.
+- **Retired parameters:** `Clearmidimappings`, `Managemidimappings`, `Clearoscmappings`, `Manageoscmappings`, `Togglelocationmidi`, `Togglelocationosc`.
+
+Anything can now be a mapping target, not just the built-in controls: a mapping stores a control and a parameter name, so any custom parameter can be driven.
 
 ---
 

@@ -3,7 +3,7 @@
 The root of the SceneLauncher component. Manages scenes, their preset lists and the
 playback of both, driving an external PresetManager.
 
-Class: `extSceneLauncher`. Version 4.2.8.
+Class: `extSceneLauncher`. Version 5.0.0.
 
 > **PROPRIETARY. Licensed, not sold.** A commercial component governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). Available
@@ -44,6 +44,16 @@ v is current target
 ClearActions()
 ```
 Clear all actions listed in the Scene launcher.
+
+```python
+RegisterMapTargets()
+```
+Tell the ControlMapper which controls are mappable, and return how many were registered. A control is mappable when it carries a `MapTarget` child. Library templates are skipped, and any widget with `Ignoreprotocols` on is left out, which is how the header chrome stays out of the map. Called on init; call it again after adding controls at runtime.
+
+```python
+SetMapMode(state)
+```
+Enter or leave map mode, revealing a click target on every mappable control. Re-registers first, so a control added since load still gets a target. This is what the header **Map** icon drives.
 
 ```python
 CreateScene(name, target='None')
