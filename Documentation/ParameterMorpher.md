@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.4.4
+**Version:** 5.0.0
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -19,6 +19,40 @@ Copyright © 2020–2026
 
 ---
 
+## 5.0.0: the MIDI/OSC mapping rebuild (breaking)
+
+Version 5.0.0 replaces the MIDI/OSC mapping subsystem outright. **Mappings made in 4.x are not
+carried forward**, and eight parameters were retired, which is why this is a major version.
+
+What changes for you:
+
+- **One map mode, not two.** The separate MIDI and OSC controls are now a single **Map** icon in
+  the header, shown whenever either a MIDI or an OSC input is wired on the Inputs page. Click it,
+  click any control, then move a fader, knob or key to bind it. Both protocols share one list.
+- **One mapping list.** The `Mappings` page is now **Manage Mappings** and **Clear Mappings**,
+  replacing four pulses split across MIDI and OSC sections plus two location toggles. The editor
+  shows every mapping in one table.
+- **Per-mapping range.** Each mapping carries its own **Min** and **Max**, editable in the list.
+  Previously all MIDI mappings shared one global input range.
+- **Soft takeover.** Each mapping can be set to `pickup`, which waits until the incoming control
+  reaches the parameter's current value before taking over, instead of jumping to wherever the
+  fader happens to sit. `jump` is the default and matches the old behaviour.
+- **Dead mappings are visible.** If a mapped control is renamed or removed, the row is marked
+  `(missing)` in the list rather than silently doing nothing, and can be cleared with **Prune Dead
+  Mappings**.
+- **Retired parameters:** `Managemidimappings`, `Manageoscmappings`, `Clearmidimappings`,
+  `Clearoscmappings`, `Togglelocationmidi`, `Togglelocationosc`, plus the two per-protocol section
+  headers on the Mappings page.
+
+Anything can now be a mapping target, not just the built-in controls: a mapping stores a control
+and a parameter name, so any custom parameter can be driven.
+
+The rebuild is also most of why the component dropped from 8853 to 4574 operators. The old system
+gave every mappable widget its own learn overlay, so an interpolatable element cost 572 operators
+in overlays alone; it is now one shared service plus a single marker operator per control.
+
+---
+
 ## Overview
 
 The ParameterMorpher is comprised of various components. To access full functionality you
@@ -28,11 +62,12 @@ class.
 ### What changed in 4.x
 
 - **The embedded PresetManager engine is the shared multi-track engine.** ParameterMorpher
-  embeds four copies of it, so per-track timing, end modes, curve shapes and preset schema
+  embeds three copies of it, so per-track timing, end modes, curve shapes and preset schema
   v2 are all available here. See [PresetManager](PresetManager.md).
-- **The MIDI and OSC mapping inspectors are an owned `listCOMP` editor**, replacing the
-  previous palette TreeListers. ParameterMorpher carries no third-party content.
-- **The four embedded PresetManager paths editors are owned `ListView` instances.**
+- **The mapping editor is an owned `listCOMP`**, replacing the previous palette TreeListers.
+  ParameterMorpher carries no third-party content. As of 5.0.0 it is the shared ControlMapper
+  editor described above.
+- **The three embedded PresetManager paths editors are owned `ListView` instances.**
 - Ships **empty**: no demo content, no stored presets, no bound paths, and **no container**.
   You create the first one yourself, which is the first step under
   [Getting started](#getting-started) below.
