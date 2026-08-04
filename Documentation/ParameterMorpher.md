@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.0.1
+**Version:** 5.0.2
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,16 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 5.0.2
+
+- **Test coverage only. Nothing in the component behaves differently** and your projects
+  are unaffected. The bundled test suite now presses each button and checks what actually
+  happened, rather than only checking that the method the button should call exists. That
+  gap is what allowed the two dead buttons fixed in 4.4.4 to ship while every test passed.
+  The suite grows from 150 checks to 190.
 
 ---
 

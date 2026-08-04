@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.0.2
+**Version:** 5.0.3
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -13,6 +13,16 @@ Copyright © 2020–2026
 > It is **not** MIT licensed and is not distributed from this repository. It is available
 > through [Patreon](https://www.patreon.com/c/darienbrito). This page is reference
 > documentation only.
+
+---
+
+## 5.0.3
+
+- **Test coverage only. Nothing in the component behaves differently** and your scenes and
+  mappings are unaffected. The bundled test suite now presses each control in the menu and
+  checks what actually happened (the row the transport moved to, the curve the selector
+  seated, the map mode the icon entered), rather than only checking that the method behind
+  it exists. The suite grows from 216 checks to 238.
 
 ---
 
