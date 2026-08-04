@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.0.2
+**Version:** 5.1.0
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,19 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 5.1.0
+
+- **Signals now run from one shared service instead of a copy inside every element.** A
+  project with twenty elements used to run twenty signal engines; there is now a single
+  service in the component that elements feed. Every element drops from 441 operators to
+  399, and the component from 4574 to 4455.
+- **Your existing projects carry forward.** The parameters holding your signal setup
+  (source, LFO, pattern, frequency, sync mode, range, smoothing) have not moved or changed,
+  the controls behave exactly as before, and nothing needs re-entering. With no signal
+  running the service clock stays stopped, so idle cost is unchanged.
 
 ---
 
