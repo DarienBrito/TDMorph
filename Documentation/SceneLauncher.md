@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.2.7
+**Version:** 4.2.8
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -212,6 +212,18 @@ launcher = op('SceneLauncher')
 
 - **`GetMorphCurves()`**  
   Returns a list of available morph curves from the attached `PresetManager`.
+
+- **`SyncMorphCurveMenu()`**  
+  Rebuilds the ControlsMenu CURVE selector from the attached `PresetManager`'s curve
+  registry, so the two can never drift apart. Does nothing when no `PresetManager` is
+  attached, leaving the existing menu in place.
+
+- **`SetMorphCurve(index)`**  
+  Applies a curve selection to the attached `PresetManager`. No-op when none is attached.
+
+- **`SetRandomDistribution(index)`**  
+  Applies a random-distribution selection to the attached `PresetManager`. No-op when none
+  is attached.
 
 - **`GetCueActions()`**  
   Returns a list of available follow actions (`None`, `Next`, `Repeat`, etc.).
