@@ -220,6 +220,78 @@ the Python API.
 
 ---
 
+## Signals and patterns
+
+Any interpolatable element can drive its parameter continuously, independently of preset
+morphing. A signal is either an **LFO** (a periodic wave) or a **pattern** (a stepped sequence
+of values). It is chosen per element and runs on the component's own clock.
+
+### Where the controls live
+
+The signal and pattern controls are not built into each element. One inspector is docked at
+the bottom of the container and follows the element's expand toggle, so the pane shows
+whichever element you last expanded. Expanding a second element moves the pane to it;
+collapsing leaves it where it is. Only one element's signals are visible at a time, which is
+the deliberate trade for the size saving: an element is now roughly half the operators it was.
+
+Every element keeps running its own signal whether or not the inspector is pointed at it. The
+pane is a view, not the engine.
+
+### The model
+
+Signal state lives on the element's `MorphSettings` operator as fifteen custom parameters, and
+the engine reads only those. Setting them from Python does exactly what the pane does.
+
+| Parameter | Meaning |
+|---|---|
+| `Enablesignal` | Turns the element's signal on. Nothing runs while this is off. |
+| `Signalsource` | Selects `LFO` or `Pattern`. |
+| `Lfo` | Wave shape, used when the source is `LFO`. |
+| `Pattern` | Pattern type, used when the source is `Pattern`. |
+| `Frequency` | Rate in Hz, used when the syncing mode is free running. |
+| `Syncingmode` | Free running, or locked to beats, bars or sixteenths. |
+| `Manualtrigger` | Advances a pattern by one step. |
+| `Beatfactor`, `Barfactor`, `Sixteenthsfactor` | Multipliers for the locked syncing modes. |
+| `Rangex`, `Rangey` | Output range. The raw signal is remapped into it. |
+| `Smoothingactive` | Turns output smoothing on. |
+| `Smoothrange`, `Smoothlength` | Smoothing amount and window length. |
+
+Pattern values are stored separately, as JSON on the element's `Patterndata` parameter. Each
+pattern type keeps its own entry, so switching type and switching back preserves what you
+entered. Projects made before 4.7.0 migrate automatically the first time they load.
+
+### Pattern types
+
+Nine methods on an element select a pattern type and set its values in one call. They are the
+supported way to script patterns; writing `Patterndata` by hand is not.
+
+| Method | Produces |
+|---|---|
+| `SetPseq(sequence)` | The sequence in order, looping. |
+| `SetPrand(sequence)` | Random picks from the sequence. |
+| `SetPxrand(sequence)` | Random picks with no immediate repeats. |
+| `SetPshuffle(sequence)` | The sequence shuffled once, then looping. |
+| `SetPwrand(sequence, weights)` | Random picks biased by `weights`. |
+| `SetPseries(start, step, length)` | An arithmetic series. |
+| `SetPgeom(start, grow, length)` | A geometric series. |
+| `SetPwhite(lo, hi)` | Uniform random values between `lo` and `hi`. |
+| `SetPbrown(lo, hi, step)` | Brownian motion bounded by `lo` and `hi`. |
+
+`SetPseries` and `SetPgeom` are finite by definition, so the engine wraps them to repeat
+rather than letting the signal run dry and freeze.
+
+### Under the hood
+
+One `SignalEngine` service at the component root drives every element, rather than each
+element carrying its own engine. Only active signals occupy the service's table, and its clock
+runs only while that table has a row, so a component with no signals enabled costs nothing
+when idle.
+
+The service API is documented in [Help/SignalEngine.md](../Help/SignalEngine.md). To resync
+every LFO in a container to a common phase, call `HardSyncLFOs()` on the container.
+
+---
+
 ## exParameterMorpher
 
 The `extParameterMorpher` class is part of the **TDMorph** system for **TouchDesigner**.  
