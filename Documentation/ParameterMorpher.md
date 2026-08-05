@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.6.1
+**Version:** 4.7.0
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -18,6 +18,23 @@ Copyright © 2020–2026
 > keep their own MIT licence.
 
 ---
+
+## 4.7.0
+
+The signal and pattern controls are no longer built into every element. They now live in one
+inspector docked at the bottom of the container, and an element's expand toggle chooses which
+element it edits. Every interpolatable element drops from 399 operators to 202, and the
+component from 4455 to 4270, so a project with twenty elements saves roughly 3,900 operators.
+
+**Your existing projects carry forward.** The parameters holding your signal and pattern setup
+have not moved or changed, so nothing needs re-entering. The one difference in use is that two
+elements' signals can no longer be shown at the same time, since there is a single inspector
+rather than one per element.
+
+The nine pattern scripting methods (`SetPseq` through `SetPbrown`) used to set values by
+driving the on-screen widgets. They now write the element's stored pattern data directly, so
+they keep working with the controls moved, and each pattern type is given the number of values
+it actually takes.
 
 ## 4.6.1
 
