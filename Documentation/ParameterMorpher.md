@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.1.1
+**Version:** 4.6.1
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -19,20 +19,20 @@ Copyright © 2020–2026
 
 ---
 
-## 5.1.1
+## 4.6.1
 
 - **The pattern editor follows the pattern type again.** Changing an element's pattern type
   stopped switching the editor below it, so picking a type like Pwhite still showed the
   sequence field belonging to the previous type, and any value edited in that state was saved
   into the previous type's slot. Playback was never affected: the signal always played the
-  type you selected. Introduced in 5.1.0, where moving the signal engines into one shared
+  type you selected. Introduced in 4.6.0, where moving the signal engines into one shared
   service removed the part that told the editor which type was selected.
-- **If you edited a pattern on 5.1.0**, check the values on each type, since an edit made
+- **If you edited a pattern on 4.6.0**, check the values on each type, since an edit made
   after switching type may have landed on the wrong one.
 
 ---
 
-## 5.1.0
+## 4.6.0
 
 - **Signals now run from one shared service instead of a copy inside every element.** A
   project with twenty elements used to run twenty signal engines; there is now a single
@@ -45,7 +45,7 @@ Copyright © 2020–2026
 
 ---
 
-## 5.0.2
+## 4.5.2
 
 - **Test coverage only. Nothing in the component behaves differently** and your projects
   are unaffected. The bundled test suite now presses each button and checks what actually
@@ -55,7 +55,7 @@ Copyright © 2020–2026
 
 ---
 
-## 5.0.1
+## 4.5.1
 
 - **The header map icon is a crosshairs**, replacing the MIDI DIN plug it had inherited. One
   icon covers both protocols, so a MIDI connector was the wrong picture.
@@ -65,10 +65,11 @@ Copyright © 2020–2026
 
 ---
 
-## 5.0.0: the MIDI/OSC mapping rebuild (breaking)
+## 4.5.0: the MIDI/OSC mapping rebuild (breaking)
 
-Version 5.0.0 replaces the MIDI/OSC mapping subsystem outright. **Mappings made in 4.x are not
-carried forward**, and eight parameters were retired, which is why this is a major version.
+Version 4.5.0 replaces the MIDI/OSC mapping subsystem outright. **Mappings made in earlier
+versions are not carried forward**, and eight parameters were retired, so any mappings you
+already have need to be made again.
 
 What changes for you:
 
@@ -111,7 +112,7 @@ class.
   embeds three copies of it, so per-track timing, end modes, curve shapes and preset schema
   v2 are all available here. See [PresetManager](PresetManager.md).
 - **The mapping editor is an owned `listCOMP`**, replacing the previous palette TreeListers.
-  ParameterMorpher carries no third-party content. As of 5.0.0 it is the shared ControlMapper
+  ParameterMorpher carries no third-party content. As of 4.5.0 it is the shared ControlMapper
   editor described above.
 - **The three embedded PresetManager paths editors are owned `ListView` instances.**
 - Ships **empty**: no demo content, no stored presets, no bound paths, and **no container**.

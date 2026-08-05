@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 5.0.3
+**Version:** 4.3.3
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -16,7 +16,7 @@ Copyright © 2020–2026
 
 ---
 
-## 5.0.3
+## 4.3.3
 
 - **Test coverage only. Nothing in the component behaves differently** and your scenes and
   mappings are unaffected. The bundled test suite now presses each control in the menu and
@@ -26,7 +26,7 @@ Copyright © 2020–2026
 
 ---
 
-## 5.0.2
+## 4.3.2
 
 - **Mapping a menu parameter now reaches its last item.** A learned menu mapping spans the
   full 0 to N range. Previously it stopped at N-1, and because TouchDesigner floors a menu
@@ -37,9 +37,9 @@ Copyright © 2020–2026
 
 ---
 
-## 5.0.0: the MIDI/OSC mapping rebuild (breaking)
+## 4.3.0: the MIDI/OSC mapping rebuild (breaking)
 
-Version 5.0.0 replaces the MIDI/OSC mapping subsystem outright. **Mappings made in 4.x are not carried forward**, and a few parameters changed name, which is why this is a major version.
+Version 4.3.0 replaces the MIDI/OSC mapping subsystem outright. **Mappings made in earlier versions are not carried forward**, and a few parameters changed name, so any mappings you already have need to be made again.
 
 What changes for you:
 

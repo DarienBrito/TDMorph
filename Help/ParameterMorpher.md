@@ -3,7 +3,7 @@
 The root of the ParameterMorpher component. Manages the internal library and the tools built
 from it.
 
-Class: `extParameterMorpher`. Version 5.1.1.
+Class: `extParameterMorpher`. Version 4.6.1.
 
 > **PROPRIETARY. Licensed, not sold.** A commercial component governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). Available through
@@ -88,13 +88,13 @@ Changes the layout from vertical to horizontal. Only useful when there is more t
 |---|---|
 | Dimensions | `Width`, `Height`, `Horizontal` |
 | Inputs | `Midi`, `Osc`, `Transport` (CHOP references) |
-| Mappings | `Managemappings`, `Clearmappings` (both protocols share one list since 5.0.0) |
+| Mappings | `Managemappings`, `Clearmappings` (both protocols share one list since 4.5.0) |
 | Info | `Containers` (read only) |
 | About | The `Readme`, `Help`, `Support`, `Website` pulses, then `Author` and `Version`, which are read only |
 
 ## Removed
 
-Retired in 5.0.0 with the mapping rebuild: `Managemidimappings`, `Manageoscmappings`,
+Retired in 4.5.0 with the mapping rebuild: `Managemidimappings`, `Manageoscmappings`,
 `Clearmidimappings`, `Clearoscmappings`, `Togglelocationmidi`, `Togglelocationosc`, and the two
 per-protocol section headers on the Mappings page. Mappings made in 4.x are not carried forward.
 

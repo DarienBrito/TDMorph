@@ -9,7 +9,7 @@ Class: `extControlMapper`. Version 0.1.2.
 > SceneLauncher components, which are available through
 > [Patreon](https://www.patreon.com/c/darienbrito), not from this repository.
 
-Introduced in ParameterMorpher 5.0.0 and SceneLauncher 5.0.0, replacing the per-widget MIDI and
+Introduced in ParameterMorpher 4.5.0 and SceneLauncher 4.3.0, replacing the per-widget MIDI and
 OSC learn overlays and the separate `Mapper` and `MapperSatellite` classes. Mappings made before
 those versions are not carried forward.
 
