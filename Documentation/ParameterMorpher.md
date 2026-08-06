@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.7.0
+**Version:** 4.7.1
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -18,6 +18,28 @@ Copyright © 2020–2026
 > keep their own MIT licence.
 
 ---
+
+## 4.7.1
+
+Five fixes to the shared signals inspector introduced in 4.7.0.
+
+- **The inspector cut off its own pattern editor.** It ignored the height the container gave it,
+  so its controls rendered about three times too tall and the pattern section sat below the fold
+  with no way to scroll to it. It also stopped short of the right edge instead of filling the
+  width. Both are corrected, so the whole editor is visible.
+- **Retargeting left the menus reading the previous element.** Expanding a second element moved
+  the inspector, but the signal source, LFO and pattern menus still showed the first element's
+  choices. They now follow the element being shown, including on the first retarget in a newly
+  created container.
+- **Deleting the element the inspector was showing** left it pointing at nothing, which raised
+  errors across the panel until another element was expanded.
+- **The two sequence fields did not commit what you typed.** A sequence entered in the inspector
+  was displayed but never reached the element, so playback kept the previous values.
+- **An element's interpolation curve and random distribution menus did not follow their
+  parameter.** Changing either by script, by a MIDI or OSC mapping, or through a preset left the
+  on-screen menu showing the old choice while the element morphed with the new one.
+
+No parameters or stored data changed, so projects saved on 4.7.0 carry forward untouched.
 
 ## 4.7.0
 
