@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.7.1
+**Version:** 4.8.0
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -18,6 +18,35 @@ Copyright © 2020–2026
 > keep their own MIT licence.
 
 ---
+
+## 4.8.0
+
+The signal and pattern controls are back inside each element, so several elements can show
+their signals at once. They are now **built when you enable a signal and removed when you
+disable it**, which is what keeps the size saving: an element with no signal costs the same as
+it did in 4.7.x, and only the controls actually on screen exist.
+
+- **Every element with a signal shows its own editor.** In expert mode each element carries a
+  `sig` checkbox; ticking it opens that element's signal and pattern rows in place. Comparing
+  two elements no longer means expanding one, reading it, then expanding the other.
+- **Only what is visible is built.** The sync-step field follows the syncing mode (free running
+  builds none at all), and the pattern editor is whichever of the two families your pattern
+  type uses. Switching either swaps one control rather than rebuilding the row.
+- **Disabling a signal frees the controls and keeps every value.** Your source, wave, pattern
+  type, rate, range, smoothing and each pattern type's own values live on the element's
+  parameters, not in the controls, so re-enabling restores exactly what you had.
+
+**Sizes to plan a rig around.** An element without a signal is 218 operators. Enabling one adds
+106 on the default free-running sequence pattern and at most 140 in the heaviest combination,
+so twenty elements with every signal enabled land near 7,900 operators and nothing enabled
+stays where it is today. Fifty all-enabled would be around 19,000, which is large enough to
+slow the network editor: enable what you use.
+
+**Fixed in the same release:** switching an element's signal source between LFO and Pattern
+reset the saved choice for the source you switched to, so an LFO set to Square came back as
+Sine. It now keeps both.
+
+**Your existing projects carry forward.** No parameter or stored data changed.
 
 ## 4.7.1
 
@@ -250,14 +279,17 @@ of values). It is chosen per element and runs on the component's own clock.
 
 ### Where the controls live
 
-The signal and pattern controls are not built into each element. One inspector is docked at
-the bottom of the container and follows the element's expand toggle, so the pane shows
-whichever element you last expanded. Expanding a second element moves the pane to it;
-collapsing leaves it where it is. Only one element's signals are visible at a time, which is
-the deliberate trade for the size saving: an element is now roughly half the operators it was.
+Each element carries its own controls, and they are built on demand. In expert mode an
+element shows a `sig` checkbox; enabling it builds that element's signal and pattern rows,
+disabling it removes them again. Several elements can therefore show their signals at once.
 
-Every element keeps running its own signal whether or not the inspector is pointed at it. The
-pane is a view, not the engine.
+Only the controls that are visible exist: the sync-step field matches the syncing mode (free
+running has none), and the pattern editor is the family your pattern type uses. Changing
+either swaps that one control.
+
+The controls are a view, not the engine. Every element runs its signal whether or not its
+controls are built, and every value you set lives on the element's parameters below, which is
+why disabling and re-enabling restores exactly what you had.
 
 ### The model
 

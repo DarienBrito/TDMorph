@@ -37,7 +37,7 @@ Set the slider to the range and value found on creation (original value on dragg
 
 Each method selects the element's pattern type and sets that type's values in one call. Values
 are kept per type on the element's `Patterndata` parameter, so switching type and back
-preserves what you entered. Written to the model, never to the inspector pane, so they work
+preserves what you entered. Written to the model, never to the controls, so they work
 whether or not the pane is pointed at this element.
 
 ```python
