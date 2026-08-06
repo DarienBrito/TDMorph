@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.8.0
+**Version:** 4.8.1
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -18,6 +18,21 @@ Copyright © 2020–2026
 > keep their own MIT licence.
 
 ---
+
+## 4.8.1
+
+Three fixes, all found by mapping real hardware to the signal controls.
+
+- **Deleting an element now stops its signal.** The element went but the signal kept running
+  for the rest of the session, holding the transport clock on. With an LFO source it also
+  logged an error every frame; with a pattern source it was silent, which is why it went
+  unnoticed. Deleting a whole container was already handled in 4.8.0.
+- **Mapping MIDI or OSC to a menu control now works.** Learning a knob onto the signal
+  source, the sync mode, the interpolation curve or the random distribution looked like it
+  worked and then did nothing: the control moved internally while the visible dropdown and
+  the value it feeds stayed put. Sliders were never affected.
+- **The signal enable checkbox can be mapped.** Its mapping marker sat on a part of the
+  control that carries no value, so a mapping to it had nothing to write.
 
 ## 4.8.0
 

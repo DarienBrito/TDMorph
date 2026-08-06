@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.3.3
+**Version:** 4.3.4
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -15,6 +15,14 @@ Copyright © 2020–2026
 > documentation only.
 
 ---
+
+## 4.3.4
+
+- **Mapping MIDI or OSC to the morph curve or random distribution selector now works.**
+  Learning a knob onto either looked like it worked and then had no effect: the selector
+  moved internally while the visible dropdown and the value it sets stayed put. Every other
+  mapped control was unaffected. ParameterMorpher 4.8.1 fixes the same fault; the two
+  components carried identical code.
 
 ## 4.3.3
 
