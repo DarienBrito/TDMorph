@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.9.2
+**Version:** 4.10.0
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -18,6 +18,23 @@ Copyright © 2020–2026
 > keep their own MIT licence.
 
 ---
+
+## 4.10.0
+
+A signal can now run on the project timeline instead of on its own clock.
+
+- **New `Timeline` signal source.** Instead of a wave or a pattern, the element plays an
+  envelope over a length you set in seconds. `Timelinemode` picks the shape: `Loop` ramps and
+  restarts, `Bounce` rises and falls, `Once` runs a single pass and holds.
+- **New `Timeline` syncing mode, available to every source.** The signal's phase becomes a
+  function of the project timeline position rather than an accumulating clock, so scrubbing the
+  playhead scrubs the signal, and an offline render is frame exact.
+- **A timeline signal chooses between two lengths and nothing else.** `Project` spans the whole
+  project range, `Custom` uses the element's own `Duration` in seconds. The four step and
+  transport modes never applied to a timeline signal and are no longer offered for one. LFO and
+  Pattern sources keep all six modes.
+- `Repetitions` sets how many cycles fit across the project range, which is the unit that means
+  something against a fixed length, where a rate in Hz does not.
 
 ## 4.8.1
 
@@ -308,22 +325,25 @@ why disabling and re-enabling restores exactly what you had.
 
 ### The model
 
-Signal state lives on the element's `MorphSettings` operator as fifteen custom parameters, and
+Signal state lives on the element's `MorphSettings` operator as eighteen custom parameters, and
 the engine reads only those. Setting them from Python does exactly what the pane does.
 
 | Parameter | Meaning |
 |---|---|
 | `Enablesignal` | Turns the element's signal on. Nothing runs while this is off. |
-| `Signalsource` | Selects `LFO` or `Pattern`. |
+| `Signalsource` | Selects `LFO`, `Pattern` or `Timeline`. |
 | `Lfo` | Wave shape, used when the source is `LFO`. |
 | `Pattern` | Pattern type, used when the source is `Pattern`. |
 | `Frequency` | Rate in Hz, used when the syncing mode is free running. |
-| `Syncingmode` | Free running, or locked to beats, bars or sixteenths. |
+| `Syncingmode` | Free running, locked to beats, bars or sixteenths, or locked to the project timeline. A `Timeline` source offers `Project` and `Custom` only. |
 | `Manualtrigger` | Advances a pattern by one step. |
 | `Beatfactor`, `Barfactor`, `Sixteenthsfactor` | Multipliers for the locked syncing modes. |
 | `Rangex`, `Rangey` | Output range. The raw signal is remapped into it. |
 | `Smoothingactive` | Turns output smoothing on. |
 | `Smoothrange`, `Smoothlength` | Smoothing amount and window length. |
+| `Timelinemode` | Envelope shape for a `Timeline` source: `Loop`, `Bounce` or `Once`. |
+| `Duration` | Length of one pass in seconds, used when a timeline signal runs on `Custom`. |
+| `Repetitions` | How many cycles fit across the project range under `Timeline` syncing. |
 
 Pattern values are stored separately, as JSON on the element's `Patterndata` parameter. Each
 pattern type keeps its own entry, so switching type and switching back preserves what you
