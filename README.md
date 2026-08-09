@@ -1,6 +1,6 @@
 > ### TDMorph Open Toolkit 4.1.3
 >
-> PresetManager **4.1.3**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
+> PresetManager **4.1.6**, ControlMapper **1.0.0**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.4**.
 >
 > The morphing engine was substantially rewritten and the free tier grew from one component
 > to four. Presets written by older versions migrate automatically, but
@@ -60,6 +60,9 @@ too.
 - **ListView**  
   A reusable flat-columnar list widget: declarative columns, inline editing, resizable columns, reorderable rows and a pluggable behaviour module.
 
+- **ControlMapper**  
+  MIDI and OSC mapping for any custom parameter, with a per-mapping range, soft takeover and an editor. One service handles both protocols, and mappings live in a table you can read and edit.
+
 ## Download
 
 Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community, work that requires significant time and effort, which I can sustain only with proper support.
@@ -69,10 +72,11 @@ build from the Releases section:
 
 | Component | Version | What it is |
 |---|---|---|
-| [**PresetManager**](PresetManager/) | 4.1.3 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
+| [**PresetManager**](PresetManager/) | 4.1.6 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
 | [**PresetInspector**](PresetInspector/) | 1.5.4 | Preset viewer and value editor. |
 | [**JSONTree**](JSONTree/) | 1.5.4 | Reusable JSON tree viewer with inline editing. |
-| [**ListView**](ListView/) | 1.0.3 | Reusable flat-columnar list widget. |
+| [**ListView**](ListView/) | 1.0.4 | Reusable flat-columnar list widget. |
+| [**ControlMapper**](ControlMapper/) | 1.0.0 | MIDI and OSC mapping for any custom parameter. |
 
 Because they are MIT licensed you can use them in personal and commercial work, including
 closed-source projects.
@@ -130,6 +134,7 @@ Full reference for each component:
 - [**PresetInspector**](Documentation/PresetInspector.md)
 - [**JSONTree**](Documentation/JSONTree.md)
 - [**ListView**](Documentation/ListView.md)
+- [**ControlMapper**](Help/ControlMapper.md) class reference
 
 Terse per-module API references live in [Help](Help/), and documentation for the paid
 modules is in [Documentation](Documentation/) alongside the above.

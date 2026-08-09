@@ -7,6 +7,68 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Since version 4, the free components carry their own version numbers rather than a single
 toolkit version, because they now ship and update independently.
 
+## [Open Toolkit 4.1.6] (3rd quarter of 2026)
+
+PresetManager **4.1.6**, ControlMapper **1.0.0**, PresetInspector **1.5.4**, JSONTree **1.5.4**,
+ListView **1.0.4**.
+
+ControlMapper joins the free tier as a component in its own right. PresetManager's harness is now
+**172 checks**.
+
+### ControlMapper 1.0.0
+
+First release as a standalone component. It has been part of ParameterMorpher and SceneLauncher for
+some time; this is the same mapping service, packaged so you can drop it into any project.
+
+- **One service for MIDI and OSC.** Both protocols normalise into a single channel namespace, so a
+  mapping does not care which one it came from.
+- **Any custom parameter is mappable.** A control needs no special wrapper, only a small marker
+  operator that catches the click while map mode is on.
+- **Mappings live in a table you can read.** They are not buried in storage, so they can be
+  inspected, edited and diffed like anything else.
+- **Per-mapping range**, taken from the parameter itself when the mapping is learned, rather than one
+  global range shared by everything.
+- **Soft takeover.** A control can be set to write only once it crosses where the parameter already
+  sits, which removes the jump the first time you touch a fader. The default stays immediate.
+- **Dead mappings are shown and can be pruned**, rather than silently skipped.
+- **An editor** with inline editing, re-learn, delete and drag-reorder.
+- Bundled harness: 123 checks.
+
+### PresetManager 4.1.6, 4.1.5 and 4.1.4
+
+#### Bug fixes
+
+- **The morph curve ships at Linear again.** Running the bundled tests left the engine parked on an
+  ease, and that state was captured into the released component, so a fresh PresetManager morphed on
+  an Easein curve with a curve coefficient of 0.75 rather than the documented Linear. (4.1.4)
+- **A deleted element no longer raises an error every frame.** The engine held a cached parameter
+  belonging to an element that had been destroyed and wrote to it without checking it was still
+  valid. (4.1.5)
+- **The Paths editor's list background follows its row colour.** The empty area of the list, and the
+  band below the last row, stayed on a fixed grey when the row colour changed. (4.1.6)
+
+#### Changed
+
+- **The blend amount drives the engine through the cook chain.** Moving the blend used to force a
+  cook from Python. The value now propagates by the normal dependency path, and nothing cooks while
+  the blend sits still. (4.1.5)
+
+#### Housekeeping
+
+- Running the bundled tests can no longer open a dialog that blocks the application. One test
+  deliberately feeds the importer an unreadable file, and the resulting dialog could land off-screen
+  with no way to dismiss it. (4.1.4)
+
+### ListView 1.0.4
+
+#### Bug fixes
+
+- **The list background follows the row colour.** The underlying list operator carried a fixed
+  background that happened to match the default row colour, so any list given a different row colour
+  kept the old grey in its empty area and below the last row.
+
+Bundled harness: 131 checks.
+
 ## [Open Toolkit 4.1.3] (3rd quarter of 2026)
 
 PresetManager **4.1.3**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
