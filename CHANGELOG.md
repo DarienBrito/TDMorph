@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Since version 4, the free components carry their own version numbers rather than a single
 toolkit version, because they now ship and update independently.
 
+## [Open Toolkit 4.1.7] (3rd quarter of 2026)
+
+PresetManager **4.1.7**, ControlMapper **1.0.1**, PresetInspector **1.5.5**, JSONTree **1.5.5**,
+ListView **1.0.5**.
+
+Smaller downloads, nothing else. Each component used to carry its own test suite inside the
+`.tox`; the tests now run on the export copy and are removed from the file you download.
+PresetManager drops from 119.5 KB to 86.6 KB, PresetInspector 21.9 to 13.8, JSONTree 17.9 to
+11.9, ListView 26.7 to 18.8 and ControlMapper 46.8 to 30.5. No behaviour, parameter or API
+changed in any of them. The only thing you lose is the ability to run the bundled tests from a
+released component.
+
 ## [Open Toolkit 4.1.6] (3rd quarter of 2026)
 
 PresetManager **4.1.6**, ControlMapper **1.0.0**, PresetInspector **1.5.4**, JSONTree **1.5.4**,

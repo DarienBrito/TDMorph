@@ -4,7 +4,7 @@
 Copyright © 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 1.5.4
+**Version:** 1.5.5
 
 ---
 
@@ -154,4 +154,4 @@ Everything else the Inspector does is driven from its parameters, and the tree's
 op('PresetInspector/Tests/tests').module.RunAndReport()
 ```
 
-39 checks ship in 1.5.4, covering source selection, the editable mirror and every write-back guard listed above. The embedded tree carries its own 111 checks.
+39 checks run against 1.5.5 at release, covering source selection, the editable mirror and every write-back guard listed above. The embedded tree carries its own 111 checks. From 1.5.5 both suites run on the export copy and are removed from the component you download.

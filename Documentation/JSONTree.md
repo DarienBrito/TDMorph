@@ -4,7 +4,7 @@
 Copyright © 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 1.5.4
+**Version:** 1.5.5
 
 ---
 
@@ -206,4 +206,4 @@ def onPulse(par):
 op('JSONTree/Tests/tests').module.RunAndReport()
 ```
 
-111 checks ship in 1.5.4, covering the node model, rendering, filtering, expand and collapse, edit coercion and the persist-failure reporting path.
+111 checks run against 1.5.5 at release, covering the node model, rendering, filtering, expand and collapse, edit coercion and the persist-failure reporting path. From 1.5.5 the suite runs on the export copy and is removed from the component you download.

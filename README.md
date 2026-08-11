@@ -1,6 +1,6 @@
 > ### TDMorph Open Toolkit 4.1.3
 >
-> PresetManager **4.1.6**, ControlMapper **1.0.0**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.4**.
+> PresetManager **4.1.7**, ControlMapper **1.0.1**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.5**.
 >
 > The morphing engine was substantially rewritten and the free tier grew from one component
 > to four. Presets written by older versions migrate automatically, but
@@ -72,11 +72,11 @@ build from the Releases section:
 
 | Component | Version | What it is |
 |---|---|---|
-| [**PresetManager**](PresetManager/) | 4.1.6 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
-| [**PresetInspector**](PresetInspector/) | 1.5.4 | Preset viewer and value editor. |
-| [**JSONTree**](JSONTree/) | 1.5.4 | Reusable JSON tree viewer with inline editing. |
-| [**ListView**](ListView/) | 1.0.4 | Reusable flat-columnar list widget. |
-| [**ControlMapper**](ControlMapper/) | 1.0.0 | MIDI and OSC mapping for any custom parameter. |
+| [**PresetManager**](PresetManager/) | 4.1.7 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
+| [**PresetInspector**](PresetInspector/) | 1.5.5 | Preset viewer and value editor. |
+| [**JSONTree**](JSONTree/) | 1.5.5 | Reusable JSON tree viewer with inline editing. |
+| [**ListView**](ListView/) | 1.0.5 | Reusable flat-columnar list widget. |
+| [**ControlMapper**](ControlMapper/) | 1.0.1 | MIDI and OSC mapping for any custom parameter. |
 
 Because they are MIT licensed you can use them in personal and commercial work, including
 closed-source projects.
