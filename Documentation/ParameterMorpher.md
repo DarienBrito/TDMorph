@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.13.0
+**Version:** 4.14.2
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -18,6 +18,44 @@ Copyright © 2020–2026
 > keep their own MIT licence.
 
 ---
+
+## 4.14.2
+
+- **The help sheet opens centred on the monitor TouchDesigner is running on.** It used to open
+  at the mouse pointer, against a fixed display index, so on a two-monitor desk it landed under
+  the cursor and often on the screen you were not working on. The window now finds
+  TouchDesigner's own display every time it opens, and centres there.
+
+---
+
+## 4.14.1
+
+Presets carry their own timing, and the signal row is rebuilt around controls that describe themselves.
+
+- **Each preset stores its own morph time, curve and distribution.** Alongside the per-element
+  values it already kept, a preset now records the global settings that were live when you stored
+  it. With global timing on, recalling a preset runs on those stored values instead of borrowing
+  the timing of whichever element happened to be first in the preset. Two presets can hold
+  genuinely different global timings, and neither depends on element order. With global timing
+  off, each element still uses its own stored time, exactly as before.
+- **Ctrl and right-click on a preset morphs on the global morph time** instead of a fixed one
+  second. The old gesture also wrote that 1 into your global morph time and left it there. That
+  side effect is gone.
+- **Existing presets are safe in both directions.** A preset stored by an older version keeps
+  behaving exactly as it did, and a preset saved here still loads in an older version.
+- **A Timeline signal now opens on `Project` rather than `Custom`.** `Duration` is what `Custom`
+  means, so it no longer appears until you pick `Custom`. A source you set to `Custom` yourself
+  stays there.
+- Elements got lighter, and the row layout no longer shifts its columns as controls appear and
+  disappear.
+
+**Breaking:**
+
+- **A saved MIDI or OSC mapping on a signal row's source or sync control goes dormant.** The
+  source menu became three separate menus, one per source, and the sync controls moved one level
+  down. Re-map the control once and it stays mapped.
+- `Lib/ParametersUI` and `Lib/SignalsUI` merged into `Lib/ElementUI`. `CreateFromLibrary()`
+  reaches any child of `Lib/`, so the item set changed. Both old names still resolve.
 
 ## 4.10.0
 
@@ -284,8 +322,8 @@ using its interpolation curve.
 Two variants are useful while you are still building:
 
 - <kbd>Ctrl</kbd> + <kbd>Left Click</kbd> jumps straight to the preset with no interpolation.
-- <kbd>Ctrl</kbd> + <kbd>Right Click</kbd> morphs in one second, for a quick transition check
-  regardless of the configured time.
+- <kbd>Ctrl</kbd> + <kbd>Right Click</kbd> morphs over the container's global **Morph Time**
+  rather than the time stored in the preset, for a quick transition check.
 
 If you click a preset before adding any elements, the component tells you there is nothing to
 apply it to. That is the expected message, not an error.

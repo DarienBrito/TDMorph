@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.4.1
+**Version:** 4.7.1
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -15,6 +15,55 @@ Copyright © 2020–2026
 > documentation only.
 
 ---
+
+## 4.7.1
+
+- **The help sheet opens centred on the monitor TouchDesigner is running on.** It used to open
+  at the mouse pointer, against a fixed display index, so on a two-monitor desk it landed under
+  the cursor and often on the screen you were not working on. The window now finds
+  TouchDesigner's own display every time it opens, and centres there.
+
+---
+
+## 4.7.0
+
+- **DIST and CURVE in the controls strip are readouts now, not pickers.** They show what the
+  attached PresetManager is set to, and they follow it live as scenes and presets launch. They
+  were pickers before, but nothing kept the choice: every preset morph rewrites both values
+  from the preset's own global block, and a scene row's curve overrides on top, so a manual
+  pick was discarded by the next launch while the label went on showing it. The curve plot
+  already read the engine directly, so the label and the plot beside it could disagree.
+- **The distribution menu is built from the attached PresetManager**, the way the curve menu
+  already was. It used to be a fixed list of three applied by position.
+- **The component's Colors page is gone, and Look is the single place to change the skin.**
+  All four of its colour groups live on the Looks popup, which the header icon opens and which
+  already showed every other page. Row colours are the **Listerrow** and **Listerrowalt**
+  tokens on the Listers page; the other three were already there as **Highlight**,
+  **Menubackground** and **Menubuttonface**.
+- **A saved MIDI or OSC mapping on the DIST or CURVE selector stops doing anything.** Both are
+  out of the mapping map now, because they are readouts. Nothing else in your mappings is
+  touched, and a stray write from an old mapping corrects itself on the next launch.
+- `SetMorphCurve()` and `SetRandomDistribution()` are removed. They wrote PresetManager values
+  that the next launch overwrote, so neither changed anything durable.
+
+---
+
+## 4.6.1
+
+- **A mouse and key reference now opens inside the panel.** The header gains a **?** icon
+  beside Look and Settings. It opens a single page covering every mouse action in the
+  component: the scene list, the preset list, what the two lists share, the header itself and
+  the four steps of map mode. The same sheet is on the component's own parameters as the
+  **Shortcuts** pulse, at the bottom of the Config page.
+- The sheet spells out several behaviours that were previously only discoverable by trying
+  them. A scene launches from its Go icon and from nowhere else, so a stray click on another
+  cell can never fire a transition. Editing a scene's **Length**, or picking a **Curve**,
+  also overwrites that value inside the scene's Target preset. Renaming a preset carries
+  every scene aiming at it, and deleting one drops those scenes back to **None**. Rows
+  re-order by pressing one and releasing on another, with no modifier key.
+- The About page's **Help** button is unchanged and still opens the tutorial showcase.
+- The help browser starts switched off and only starts the first time you open the sheet, so
+  a project that never opens it never pays for it.
 
 ## 4.3.4
 
@@ -84,7 +133,8 @@ This class acts as an **alternative UI** for the PresetManager, allowing users t
   Listers. The MIDI and OSC mapping inspectors are an owned `listCOMP` editor. SceneLauncher
   carries no third-party content.
 - **The ControlsMenu is fully themeable** from an 18-parameter `ControlsMenu` page on
-  `Lib/Look`, with the root Colors page driving the accent and row colours.
+  `Lib/Look`, which is also where the accent and the row colours live. The component has no
+  separate Colors page: the Looks icon in the header opens every page of the skin.
 - The OSC and MIDI header buttons appear only when the matching `Osc` and `Midi` CHOP
   parameters resolve, so the component ships showing four header icons rather than six.
 - Ships **empty**: no scenes, no presets, `Presetmanager` blank. Attaching a PresetManager is
@@ -162,8 +212,12 @@ list. `Totaldurationf` and `Totaldurations` on the **Info** page report the tota
 ### 6. Where to go next
 
 The `Osc` and `Midi` parameters on the **Config** page take CHOP references. Wire either one
-and the matching header icon appears, six icons instead of the four it ships with, giving you
+and the **Map** header icon appears, six icons instead of the five it ships with, giving you
 auto-learn mapping for the transport controls.
+
+The **?** icon at the right of the header opens a one page mouse and key reference for the
+whole component, without leaving TouchDesigner. The same sheet is on the **Shortcuts** pulse
+at the bottom of the Config page.
 
 Full key and mouse reference: [SHORTCUTS.md](../SHORTCUTS.md). Everything below this point is
 the Python API.
@@ -264,12 +318,24 @@ launcher = op('SceneLauncher')
   registry, so the two can never drift apart. Does nothing when no `PresetManager` is
   attached, leaving the existing menu in place.
 
-- **`SetMorphCurve(index)`**  
-  Applies a curve selection to the attached `PresetManager`. No-op when none is attached.
+- **`GetRandomDistributions()`**  
+  Returns a list of available random distributions from the attached `PresetManager`.
 
-- **`SetRandomDistribution(index)`**  
-  Applies a random-distribution selection to the attached `PresetManager`. No-op when none
-  is attached.
+- **`SyncRandomDistributionMenu()`**  
+  The twin of `SyncMorphCurveMenu()` for the DIST readout. Does nothing when no
+  `PresetManager` is attached, leaving the existing menu in place.
+
+- **`SeatScopeReadouts(parName='')`**  
+  Mirrors the attached `PresetManager` onto the DIST and CURVE readouts and returns how many
+  moved. Pass a single parameter name to seat just that one. No-op when none is attached.
+
+- **`OnSourceAttached()`**  
+  Re-derives both menus from the attached `PresetManager` and seats both readouts. Called when
+  you set the `Presetmanager` parameter, and safe to call yourself after attaching one in
+  script.
+
+> `SetMorphCurve()` and `SetRandomDistribution()` were removed in 4.7.0. They wrote
+> `PresetManager` values that the next launch overwrote.
 
 - **`GetCueActions()`**  
   Returns a list of available follow actions (`None`, `Next`, `Repeat`, etc.).

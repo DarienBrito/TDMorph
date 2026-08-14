@@ -1,6 +1,6 @@
 > ### TDMorph Open Toolkit 4.1.3
 >
-> PresetManager **4.1.7**, ControlMapper **1.0.1**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.5**.
+> PresetManager **4.2.0**, PresetSnap **1.0.0**, ControlMapper **1.0.2**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.6**.
 >
 > The morphing engine was substantially rewritten and the free tier grew from one component
 > to four. Presets written by older versions migrate automatically, but
@@ -63,6 +63,9 @@ too.
 - **ControlMapper**  
   MIDI and OSC mapping for any custom parameter, with a per-mapping range, soft takeover and an editor. One service handles both protocols, and mappings live in a table you can read and edit.
 
+- **PresetSnap**  
+  Plain store and recall for any COMP. Drop it in and a `Presets` page appears on that component: store captures the live parameter values, recall snaps them back. It does not interpolate at all, which is the point. Zero setup, and the whole data layer is one table you can read and edit by hand.
+
 ## Download
 
 Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community, work that requires significant time and effort, which I can sustain only with proper support.
@@ -72,11 +75,12 @@ build from the Releases section:
 
 | Component | Version | What it is |
 |---|---|---|
-| [**PresetManager**](PresetManager/) | 4.1.7 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
+| [**PresetManager**](PresetManager/) | 4.2.0 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
+| [**PresetSnap**](PresetSnap/) | 1.0.0 | Plain store and recall for any COMP. No morphing, no setup. |
 | [**PresetInspector**](PresetInspector/) | 1.5.5 | Preset viewer and value editor. |
 | [**JSONTree**](JSONTree/) | 1.5.5 | Reusable JSON tree viewer with inline editing. |
-| [**ListView**](ListView/) | 1.0.5 | Reusable flat-columnar list widget. |
-| [**ControlMapper**](ControlMapper/) | 1.0.1 | MIDI and OSC mapping for any custom parameter. |
+| [**ListView**](ListView/) | 1.0.6 | Reusable flat-columnar list widget. |
+| [**ControlMapper**](ControlMapper/) | 1.0.2 | MIDI and OSC mapping for any custom parameter. |
 
 Because they are MIT licensed you can use them in personal and commercial work, including
 closed-source projects.
@@ -131,6 +135,7 @@ That’s it! Every shortcut in TDMorph is derived from these two simple modifier
 Full reference for each component:
 
 - [**PresetManager**](Documentation/PresetManager.md) parameters, preset schema, the multi-track engine and the Python API
+- [**PresetSnap**](Documentation/PresetSnap.md) the model table, capture rules and the Python API
 - [**PresetInspector**](Documentation/PresetInspector.md)
 - [**JSONTree**](Documentation/JSONTree.md)
 - [**ListView**](Documentation/ListView.md)

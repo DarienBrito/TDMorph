@@ -7,6 +7,58 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Since version 4, the free components carry their own version numbers rather than a single
 toolkit version, because they now ship and update independently.
 
+## [Open Toolkit 4.2.0] (3rd quarter of 2026)
+
+PresetManager **4.2.0**, PresetSnap **1.0.0**, ControlMapper **1.0.2**, PresetInspector **1.5.5**,
+JSONTree **1.5.5**, ListView **1.0.6**.
+
+A new free component, per-preset timing in PresetManager, and a text rendering fix in ListView
+that reaches every component embedding it.
+
+### PresetSnap 1.0.0
+
+First release. Plain store and recall for any COMP, with no morph engine at all.
+
+- **Zero setup.** Drop it into a base or container and a `Presets` page appears on that component.
+  Every custom parameter on the host is tracked from the start.
+- **It does not interpolate**, which is the point of it. PresetManager moves between states over
+  time; this one snaps. Use whichever the moment calls for.
+- **Real parameters on the host**, so storing and recalling are MIDI and OSC mappable and work
+  with the panel closed. Changing the `Preset` menu recalls, so there is no separate Recall button.
+- **A 16 pad grid.** Click STORE to arm, then a pad to capture into it. A filled pad recalls with
+  one click.
+- **The whole data layer is one table** you can read, hand edit and diff. Rows are parameters,
+  columns are presets. No hidden storage, no JSON blob.
+- **A recall never overwrites an expression, an export or a bind.** Assigning a value in
+  TouchDesigner also forces the parameter into constant mode, so a naive recall would silently
+  freeze your expression into a number. The mode is checked live at recall time, so a row starts
+  working again by itself once you remove the expression.
+- **Capture parameters of operators inside the host** by dragging the operator onto the editor.
+- **Presets export as JSON in the PresetManager shape**, so a project that outgrows plain snapping
+  can move its presets to the bigger tools.
+
+Note that deleting the component does not remove the page it injected: pulse **Remove Page** first,
+or turn `Injectpage` off. An Execute operator has no destroy event, and the one in question lives
+inside the thing being deleted.
+
+Full guide: [PresetSnap](Documentation/PresetSnap.md).
+
+### PresetManager 4.2.0
+
+Each preset now carries its own morph time, curve and distribution. Global mode used to borrow the
+first element's timing, which meant a preset could not describe how long it should take to arrive.
+Existing presets are migrated on load.
+
+### ListView 1.0.6
+
+Right-aligned cell text no longer loses its last character. The horizontal text offset always
+displaces to the right, so the padding has to follow the justify edge rather than being applied in
+one direction.
+
+### ControlMapper 1.0.2
+
+Picks up the ListView fix above, which its mapping editor renders through. No other change.
+
 ## [Open Toolkit 4.1.7] (3rd quarter of 2026)
 
 PresetManager **4.1.7**, ControlMapper **1.0.1**, PresetInspector **1.5.5**, JSONTree **1.5.5**,

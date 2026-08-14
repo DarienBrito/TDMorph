@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 4.1.7
+**Version:** 4.2.0
 
 ---
 
@@ -167,12 +167,18 @@ Tracked paths live in their own storage on the `Paths` node, not inside `Presets
 
 ## Preset format
 
-`PRESET_FORMAT_VERSION = 2`. The version is written into exported JSON so future loaders can detect older files.
+`PRESET_FORMAT_VERSION = 3`. The version is written into exported JSON so future loaders can detect older files.
 
-A preset is a dict with a single `states` key, mapping each tracked operator path to its captured parameters plus that track's own morph settings:
+A preset is a dict with two keys. `global` holds the settings that were live on the component when the preset was stored, and `states` maps each tracked operator path to its captured parameters plus that track's own morph settings:
 
 ```python
 {
+  'global': {                     # captured from the live pars at store time
+    'time': 2.0,                  # morph duration used when Multitrack is OFF
+    'curve': 'Linear',
+    'a': 0.0, 'b': 1.0, 'c': 1.0,
+    'distr': 'Uniform',
+  },
   'states': {
     '/project1/noise1': {
       'params': [ {...}, {...} ],   # one entry per captured parameter
@@ -197,15 +203,34 @@ Each entry in `params` is a serialized `ParamState`:
 
 The four range keys are present only for a **full** capture (`StorePreset`). Transient *essential* captures, used for the start state of a morph, leave them out.
 
-### Migrating from v1
+### Which timing a recall uses
 
-Version 1 presets kept the timing at the top of the preset rather than per track:
+Both sets are always stored. Which one drives a morph depends on the `Multitrack` gate:
+
+| `Multitrack` | Morph runs on | Ignores |
+|---|---|---|
+| OFF (global) | the preset's `global` block | the per-track values |
+| ON (per track) | each track's own `time`, `curve`, `distr` | the `global` block |
+
+Because the global values are stored with the preset, a global-mode recall runs on the timing that was live **when you stored it**, not the timing that happens to be set now, and two presets can carry different global timings. Nothing reads track order.
+
+### Reserved key
+
+Do not add a top-level `time` key to a preset. It is how a v1 preset is detected, and the animation builder gives a top-level `time` precedence over the per-state value. The preset-level settings are nested under `global` for exactly that reason.
+
+### Migrating from older versions
+
+Version 1 kept the timing at the top of the preset rather than per track:
 
 ```python
 {'states': {path: [params]}, 'time': 2.0, 'curve': 'Linear', 'distr': 'Uniform'}
 ```
 
-`MigratePresets()` upgrades them in place and is **idempotent**, so calling it twice is harmless. v1 is detected by a top-level `time` key. Each track inherits the preset's old global time, curve and distribution, `a`/`b`/`c` are seeded from that curve's defaults, and the new fields take their defaults (`group` empty, `endmode` `hold`, `quantize` 0).
+Version 2 moved it per track but had no preset-level block at all, so a global-mode recall fell back to whichever track came first.
+
+`MigratePresets()` upgrades both in place and is **idempotent**, so calling it twice is harmless. v1 is detected by a top-level `time` key: each track inherits the preset's old global time, curve and distribution, `a`/`b`/`c` are seeded from that curve's defaults, and the new fields take their defaults (`group` empty, `endmode` `hold`, `quantize` 0). A v2 preset gains a `global` block seeded from its first track, which is exactly what a v2 build morphed on, so **a migrated preset behaves identically** until you re-store it.
+
+Compatibility runs both ways. A v3 preset loaded by a v2 build has no top-level `time`, so that build skips migration, reads `states` as before and ignores the block it does not recognise.
 
 ```python
 n = op('PresetManager').MigratePresets()
