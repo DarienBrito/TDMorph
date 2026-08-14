@@ -19,6 +19,11 @@ EditCustomName(name)
 Change the name of the slider in the custom entry (maintains original name intact).
 
 ```python
+EnableSignal(v)
+```
+Enables or disables this element's signal, and builds or tears down its controls with it. Prefer this over writing Enablesignal directly when scripting: a parameter execute DAT does not fire in the frame its element was created, so a create-then-enable would leave a running signal with no controls. Idempotent.
+
+```python
 GetPresetsManager()
 ```
 Returns the deply dependable dictionary that holds presets.

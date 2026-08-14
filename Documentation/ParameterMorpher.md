@@ -387,6 +387,8 @@ Pattern values are stored separately, as JSON on the element's `Patterndata` par
 pattern type keeps its own entry, so switching type and switching back preserves what you
 entered. Projects made before 4.7.0 migrate automatically the first time they load.
 
+Enabling a signal from Python has one wrinkle worth knowing. A parameter execute DAT does not fire in the frame its element was created, so setting `Enablesignal` straight after creating an element starts the signal but builds no controls, and the element then has to be toggled twice by hand. Call `EnableSignal(True)` on the element instead: it writes the same parameter and drives the build directly. It is idempotent, so the execute DAT firing a frame later is a no-op.
+
 ### Pattern types
 
 Nine methods on an element select a pattern type and set its values in one call. They are the
@@ -425,7 +427,7 @@ The `extParameterMorpher` class is part of the **TDMorph** system for **TouchDes
 It manages **container creation**, **library tool instantiation**, and **parameter exposure** within the TDMorph module.  
 
 This class serves as a **high-level manager** for creating interface elements, preset-related tools, and morphing utilities from the internal library.  
-It adheres to a **Model–View–Controller (MVC)** structure, functioning as the *Model*—that is, the logic and data layer independent of UI interactions.
+It adheres to a **Model–View–Controller (MVC)** structure, functioning as the *Model*, that is, the logic and data layer independent of UI interactions.
 
 ---
 
@@ -630,6 +632,12 @@ This class is primarily used to create and manage **parameter-linked sliders** f
 
 - **`MorphRandom(mode=None)`**  
   Performs a morph transition toward randomized target values.  
+
+- **`MorphAll(mode=None)`**  
+  Morphs every element at once, each on its own timing and curve from its `MorphSettings`. This is the multi-track counterpart of `MorphRandom`, and it behaves single-track unless the engine's `Multitrack` gate is on.  
+
+- **`MorphGroup(tag, mode=None)`**  
+  Morphs only the interpolatable elements whose `MorphSettings.Group` matches `tag`, each to a fresh random target on its own timing and curve. It forces the engine's per-track gate on, because a group is inherently multi-track, and elements outside the group keep their absolute start, so a morph already in flight is undisturbed.  
 
 ---
 

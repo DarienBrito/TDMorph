@@ -81,6 +81,16 @@ ImportPresetsJSON()
 Import stored presets to a JSON file in disk. Notice that this is a special method of ElementsContainer, since it can have bindings. The method from PresetManager is different, and does not contain bindings information.
 
 ```python
+MorphAll(mode=None)
+```
+Morphs every element at once, each on its own timing and curve from its MorphSettings. Multi-track counterpart of MorphRandom; behaves single-track unless the engine's Multitrack gate is on.
+
+```python
+MorphGroup(tag, mode=None)
+```
+Morphs only the interpolatable elements whose MorphSettings.Group matches tag, each to a fresh random target on its own timing and curve. Forces the engine's per-track gate on, and elements outside the group keep their absolute start.
+
+```python
 RenamePresetsOrder()
 ```
 Renames the found presets in the order which they visually have.
