@@ -3,7 +3,7 @@
 The root of the SceneLauncher component. Manages scenes, their preset lists and the
 playback of both, driving an external PresetManager.
 
-Class: `extSceneLauncher`. Version 4.7.1.
+Class: `extSceneLauncher`. Version 4.8.0.
 
 > **PROPRIETARY. Licensed, not sold.** A commercial component governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). Available
@@ -54,6 +54,106 @@ Tell the ControlMapper which controls are mappable, and return how many were reg
 SetMapMode(state)
 ```
 Enter or leave map mode, revealing a click target on every mappable control. Re-registers first, so a control added since load still gets a target. This is what the header **Map** icon drives.
+
+```python
+SelectRow(row)
+```
+Set the active scene row and highlight it on the scene list. `row` is the 1-based display row. Promoted in 4.8.0 (it was `selectRow`), because it is transport feedback a host may want to drive.
+
+#### Scripting API (4.8.0)
+
+Seventeen methods for driving scenes and presets from a script, a MIDI/OSC handler or
+another component, without going through the lists. None of them opens a dialog: a call
+that cannot be honoured returns `False`, `[]` or `None`, so an automated path can never
+block waiting for a click.
+
+`GetScene` and `GetPreset` hand back **copies**. Mutating what they return does not touch
+the stored model.
+
+```python
+GetScenes()
+```
+Scene names, in display order.
+
+```python
+GetScene(name)
+```
+A copy of one scene's data, or `None` if there is no such scene.
+
+```python
+RenameScene(old, new)
+```
+Rename a scene, keeping its row position. `False` if `old` is unknown, or `new` is blank or already taken.
+
+```python
+SetSceneField(name, field, value)
+```
+Set one editable field: `name`, `length`, `delay`, `target`, `curve`, `action`, `script`, `color`. `False` on an unknown scene or an unsupported field. Setting `length` or `curve` also overwrites that value inside the scene's target preset, exactly as editing the cell by hand does.
+
+```python
+SetSceneTarget(name, target)
+```
+Point a scene at a preset; `'None'` detaches it. `False` if the scene is unknown or the preset does not exist on the attached PresetManager.
+
+```python
+SetSceneCurve(name, curve)
+```
+Set a scene's morph curve. `False` on an unknown scene, or a curve the attached engine does not offer.
+
+```python
+DeleteScene(name)
+```
+Delete one scene. `False` if there is no such scene.
+
+```python
+ClearScenes()
+```
+Delete every scene. Returns `True` even when the list was already empty.
+
+```python
+ReorderScenes(order)
+```
+Reorder scenes by current 0-based row indices, where `order[newRow] = oldRow`. Refuses anything that is not a full permutation of the existing rows, so a partial list cannot silently drop scenes. The transport cue follows the row it was on.
+
+```python
+LaunchSceneByName(name)
+```
+Launch a scene by name. `False` if there is no such scene, so a mistyped name cannot fire the wrong one.
+
+```python
+GetPresetNames()
+```
+Preset names from the attached PresetManager, in order. Empty when nothing is attached.
+
+```python
+GetPreset(name)
+```
+A copy of one preset's stored data, or `None` if it is unknown or nothing is attached.
+
+```python
+StorePreset(name)
+```
+Capture the current parameter state into `name`, creating or overwriting it. `False` when nothing is attached, when the name is blank, or when the PresetManager has no parameters to capture, which includes the case where one of its stored paths no longer resolves.
+
+```python
+RenamePreset(old, new)
+```
+Rename a preset, keeping its position, and update every scene aiming at it.
+
+```python
+DeletePreset(name)
+```
+Delete a preset, and reset every scene aiming at it to `'None'`.
+
+```python
+ClearPresets()
+```
+Delete every preset, and reset every scene target to `'None'`. The cascade is new in 4.8.0; before it, clearing left scenes pointing at names that no longer existed.
+
+```python
+ReorderPresets(order)
+```
+Reorder presets by current 0-based row indices. Same permutation rule as `ReorderScenes`.
 
 ```python
 CreateScene(name, target='None')
@@ -121,9 +221,9 @@ SequentialLaunch(data)
 This is a special method used exclusively by the "Sequence" action. See SceneLauncher/Actions to understand the logic.
 
 ```python
-SetCellColor()
+SetCellColor(row, col, color)
 ```
-Overlay color for lister's cells.
+Re-render the scene list after a colour change. The colour itself is written to the scene by the caller.
 
 ```python
 WritePresets()
@@ -137,40 +237,49 @@ Write the found scenes into the table in this component. This gets recalled auto
 
 ### Private
 
-```python
-assembleData()
-```
-Manually recreate a minimal info dictionary to be used with the lister callbacks.
+> Renamed in 4.8.0. Six of these gained a leading underscore to mark them private, and
+> `selectRow` was promoted to `SelectRow` (documented above). If you called any of them
+> from your own code, update the name: the old spellings no longer exist.
 
 ```python
-getRandomColor()
+_assembleData()
 ```
-Returns a random color for the cells.
+Manually recreate a minimal info dictionary to be used with the lister callbacks. Was `assembleData`.
 
 ```python
-launchCell(row)
+_randomColor()
 ```
-Triggers the "Launch" cell at given row.
+Returns a random color for the cells. Was `getRandomColor`.
 
 ```python
-onAny()
+_launchCell(row)
 ```
-Execute homonimus action.
+Triggers the "Launch" cell at given row. Was `launchCell`.
 
 ```python
-onFirst()
+_disableBlending()
 ```
-Execute homonimus action.
+Turn blending off on the attached PresetManager. Blending and morphing are mutually exclusive there, and a scene launch always triggers a morph. No-op when nothing is attached.
 
 ```python
-onLast()
+onAny(info)
 ```
-Execute homonimus action.
+Execute homonimus action. info is lister callback info object.
 
 ```python
-onNext(info, isSequence=False)
+onFirst(info)
 ```
-Execute homonimus action. info is lister callback info object. If sequence then continues until no cells left.
+Execute homonimus action. info is lister callback info object.
+
+```python
+onLast(info)
+```
+Execute homonimus action. info is lister callback info object.
+
+```python
+onNext(info)
+```
+Execute homonimus action. info is lister callback info object.
 
 ```python
 onOther(info)
@@ -203,14 +312,9 @@ onStop(info)
 Execute homonimus action.
 
 ```python
-selectRow(row)
+_updateTimeInfo(totalDuration)
 ```
-Note that when this gets executed, the onSelectRow() callback inside the lister is activated, so we update there the currently selected row for the SceneLauncher.
-
-```python
-updateTimeInfo(totalDuration)
-```
-Updates the COMP with total duration calculated from the sum of all scenes, including delays.
+Updates the COMP with total duration calculated from the sum of all scenes, including delays. Was `updateTimeInfo`.
 
 ## UI level methods
 
@@ -224,6 +328,6 @@ Creates an animation from the set of scenes in the SceneLauncher.
 ### Private
 
 ```python
-createAnimationCOMP( x=250, y=0, viewer=True)
+_createAnimationCOMP(x=250, y=0, viewer=True)
 ```
-Creates a copy of the requested item on the location  of TDMorph. Possible objects are:PresetManager, PresetsGrabber, PresetsAnimator
+Creates a copy of the requested item at the location of TDMorph. Possible objects are PresetManager, PresetsGrabber and PresetsAnimator. Was `createAnimationCOMP`.

@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.7.1
+**Version:** 4.8.0
 
 > SceneLauncher is a **commercial** component of the TDMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -13,6 +13,63 @@ Copyright © 2020–2026
 > It is **not** MIT licensed and is not distributed from this repository. It is available
 > through [Patreon](https://www.patreon.com/c/darienbrito). This page is reference
 > documentation only.
+
+---
+
+## 4.8.0: a scripting API (breaking)
+
+**You can now drive Scene Launcher from a script.** Seventeen methods let a script, a
+MIDI/OSC handler or another component create, edit, reorder and launch scenes, and manage
+the presets in the attached PresetManager, without clicking through the lists.
+
+```python
+sl = op('SceneLauncher')
+
+sl.CreateScene('Intro', target='PresetA')
+sl.SetSceneField('Intro', 'length', 4.0)
+sl.SetSceneCurve('Intro', 'Easein')
+sl.LaunchSceneByName('Intro')
+
+sl.GetScenes()          # ['Intro', ...] in display order
+sl.GetPresetNames()     # presets in the attached PresetManager
+sl.ReorderScenes([2, 0, 1])
+```
+
+Scenes: `GetScenes`, `GetScene`, `RenameScene`, `SetSceneField`, `SetSceneTarget`,
+`SetSceneCurve`, `DeleteScene`, `ClearScenes`, `ReorderScenes`, `LaunchSceneByName`.
+Presets: `GetPresetNames`, `GetPreset`, `StorePreset`, `RenamePreset`, `DeletePreset`,
+`ClearPresets`, `ReorderPresets`.
+
+Three things worth knowing:
+
+- **Nothing pops up a dialog.** A call that cannot be honoured returns `False`, `[]` or
+  `None`. That matters if you are triggering these from a MIDI controller or a timeline:
+  an automated path can never end up waiting for someone to click a button.
+- **`GetScene` and `GetPreset` return copies.** Editing what you get back does not change
+  what is stored; use the setters for that.
+- **`ReorderScenes` and `ReorderPresets` want a full permutation** of the current row
+  indices, as `order[newRow] = oldRow`. A partial list is refused rather than applied,
+  because applying one would silently drop the rows you left out.
+
+**Clearing your presets now clears the scene targets too.** Deleting or renaming a preset
+already updated every scene pointing at it. Clearing them all did not, so scenes were left
+aiming at presets that no longer existed and launching them quietly did nothing.
+
+**Breaking: seven internal methods were renamed.** This only affects you if you were
+calling them from your own scripts, which was never documented as supported:
+
+| Old | New |
+|---|---|
+| `selectRow(row)` | `SelectRow(row)` — now a supported public method |
+| `launchCell(row)` | `_launchCell(row)` |
+| `assembleData()` | `_assembleData()` |
+| `getRandomColor()` | `_randomColor()` |
+| `updateTimeInfo(t)` | `_updateTimeInfo(t)` |
+| `createAnimationCOMP(...)` | `_createAnimationCOMP(...)` |
+| `disableBlending()` | `_disableBlending()` |
+
+Nothing inside the component was wired to the old names, so buttons, menus and mappings
+are unaffected.
 
 ---
 
@@ -299,6 +356,62 @@ launcher = op('SceneLauncher')
 
 - **`WritePresets()`**  
   Writes the current list of presets into the internal presets table.
+
+---
+
+### Scripting API (4.8.0)
+
+Added in 4.8.0 for driving the component from a script, a MIDI/OSC handler or another
+component. None of these opens a dialog; a call that cannot be honoured returns `False`,
+`[]` or `None`.
+
+- **`GetScenes()`**  
+  Scene names, in display order.
+
+- **`GetScene(name)`**  
+  A **copy** of one scene's data, or `None` if there is no such scene.
+
+- **`RenameScene(old, new)`**  
+  Renames a scene, keeping its row position. `False` if `old` is unknown, or `new` is blank
+  or already taken.
+
+- **`SetSceneField(name, field, value)`**  
+  Sets one editable field: `name`, `length`, `delay`, `target`, `curve`, `action`, `script`,
+  `color`. Setting `length` or `curve` also overwrites that value inside the scene's target
+  preset, exactly as editing the cell by hand does.
+
+- **`SetSceneTarget(name, target)`**  
+  Points a scene at a preset; `'None'` detaches it. `False` if the preset does not exist on
+  the attached `PresetManager`.
+
+- **`SetSceneCurve(name, curve)`**  
+  Sets a scene's morph curve. `False` on a curve the attached engine does not offer.
+
+- **`DeleteScene(name)`** / **`ClearScenes()`**  
+  Delete one scene, or all of them. `ClearScenes()` returns `True` even on an empty list.
+
+- **`ReorderScenes(order)`**  
+  Reorders scenes by current 0-based row indices, as `order[newRow] = oldRow`. Refuses
+  anything that is not a full permutation. The transport cue follows the row it was on.
+
+- **`LaunchSceneByName(name)`**  
+  Launches a scene by name. `False` if there is no such scene.
+
+- **`GetPresetNames()`** / **`GetPreset(name)`**  
+  Preset names in order, and a **copy** of one preset's stored data. Empty or `None` when
+  no `PresetManager` is attached.
+
+- **`StorePreset(name)`**  
+  Captures the current parameter state into `name`. `False` when nothing is attached, the
+  name is blank, or the `PresetManager` has no parameters to capture, which includes the
+  case where one of its stored paths no longer resolves.
+
+- **`RenamePreset(old, new)`** / **`DeletePreset(name)`** / **`ClearPresets()`**  
+  Rename, delete, or delete all. Each one updates every scene aiming at the affected
+  preset: a rename follows, a delete or a clear resets the target to `'None'`.
+
+- **`ReorderPresets(order)`**  
+  Same permutation rule as `ReorderScenes`.
 
 ---
 
