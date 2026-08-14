@@ -1,14 +1,5 @@
 # SceneLauncher
 
-The root of the SceneLauncher component. Manages scenes, their preset lists and the
-playback of both, driving an external PresetManager.
-
-Class: `extSceneLauncher`. Version 4.4.1.
-
-> **PROPRIETARY. Licensed, not sold.** A commercial component governed by the
-> SceneLauncher EULA (see the `LICENSE` operator inside the component). Available
-> through [Patreon](https://www.patreon.com/c/darienbrito), not from this repository.
-
 ## Core level methods
 
 ### Properties (read/write)
@@ -46,16 +37,6 @@ ClearActions()
 Clear all actions listed in the Scene launcher.
 
 ```python
-RegisterMapTargets()
-```
-Tell the ControlMapper which controls are mappable, and return how many were registered. A control is mappable when it carries a `MapTarget` child. Library templates are skipped, and any widget with `Ignoreprotocols` on is left out, which is how the header chrome stays out of the map. Called on init; call it again after adding controls at runtime.
-
-```python
-SetMapMode(state)
-```
-Enter or leave map mode, revealing a click target on every mappable control. Re-registers first, so a control added since load still gets a target. This is what the header **Map** icon drives.
-
-```python
 CreateScene(name, target='None')
 ```
 Create a new Scene with optional target.
@@ -66,9 +47,15 @@ DelayedPresetTrigger(target, length, curve)
 Trigger a preset with a delay.
 
 ```python
+DuplicatePreset(name, target)
+```
+Duplicate target preset.
+
+```python
 DuplicateScene(name, sourceName)
 ```
 Duplicate sourceName scene with given name.
+
 
 ```python
 EnableFollowActions(enable=True)
@@ -126,6 +113,11 @@ SetCellColor()
 Overlay color for lister's cells.
 
 ```python
+SetLengthMode()
+```
+This sets the time according to a define time unit, this can be seconds, sixteenths, beats or bars.
+
+```python
 WritePresets()
 ```
 Write the found presets into the table in this component. This gets recalled automaticall everytime the presets changed.
@@ -138,7 +130,7 @@ Write the found scenes into the table in this component. This gets recalled auto
 ### Private
 
 ```python
-assembleData()
+assembleLaunchInfo()
 ```
 Manually recreate a minimal info dictionary to be used with the lister callbacks.
 
@@ -227,3 +219,4 @@ Creates an animation from the set of scenes in the SceneLauncher.
 createAnimationCOMP( x=250, y=0, viewer=True)
 ```
 Creates a copy of the requested item on the location  of TDMorph. Possible objects are:PresetManager, PresetsGrabber, PresetsAnimator
+

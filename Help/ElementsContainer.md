@@ -1,9 +1,5 @@
 # ElementsContainer 
 
-> **PROPRIETARY. Licensed, not sold.** Part of the commercial ParameterMorpher
-> component, available through [Patreon](https://www.patreon.com/c/darienbrito), not from
-> this repository.
-
 ## Core-level methods
 
 ### Properties
@@ -24,6 +20,11 @@ Stores useful references from all created bindings, so that later on we can use 
 AddScript()
 ```
 Scripts are a special type of elements that execute on the given snap action.
+
+```python
+BindingsTableEdited()
+```
+Recreates the bindings table based on the edits from user.
 
 ```python
 ChangePresetsNum(newVal)
@@ -81,6 +82,11 @@ ImportPresetsJSON()
 Import stored presets to a JSON file in disk. Notice that this is a special method of ElementsContainer, since it can have bindings. The method from PresetManager is different, and does not contain bindings information.
 
 ```python
+OpenBindingsTable()
+```
+Invoke table with all written bindings.
+
+```python
 RenamePresetsOrder()
 ```
 Renames the found presets in the order which they visually have.
@@ -96,7 +102,7 @@ ResetParameters()
 Reset all elements to the values found on drop in the ElementsContainer.
 
 ```python
-RenamePresetsOrder()
+RewritePresetsOrder()
 ```
 Updates the labels in the buttons to the changed order/naming in the preset manager. Handy for when writing to the internal preset manager from outside, like with the SceneLauncher. 
 
@@ -104,6 +110,11 @@ Updates the labels in the buttons to the changed order/naming in the preset mana
 UpdateSize()
 ```
 Re-scale based on elements content.
+
+```python
+WriteBindingsTable()
+```
+Writes a table with all current binding so the user can access an edit the data in a comfortable way.
 
 ### Private
 
@@ -149,7 +160,31 @@ All following methods set the elements on the UI level. These should be self exp
 ### Promoted
 
 ```python
-ClearPresets()
+ClickUIAddPreset()
+```
+
+```python
+ClickUIClearPresets()
+```
+
+```python
+ClickUIMorph()
+```
+
+```python
+ClickUIRandomize()
+```
+
+```python
+ClickUISequence()
+```
+
+```python
+ClickUISubPreset()
+```
+
+```python
+ClickUISync()
 ```
 
 ```python
@@ -163,26 +198,93 @@ GetElement(elementNum)
 Returns element in position elementNum in ElementsContainer.
 
 ```python
-HardSyncLFOs()
+SetUIAuto(False)
+```
+Sets automatic random and morphing status for the ElementsContainer.
+
+```python
+SetUIDistribution(str)
+```
+Sets the random distribution in the UI element.
+
+```python
+SetUIGlobal(bool)
+```
+Sets the global status in the UI element.
+
+```python
+SetUIHardSyncLFOs()
 ```
 Hard syncs LFO's in the Container from the UI level.
 
 ```python
-SetPreset(int)
+SetUIInterpolation(str)
+```
+Sets the morphing curve in the UI element.
+
+```python
+SetUIMorphs(int)
+```
+Sets the number of automatic morphs that should take place.
+
+```python
+SetUINumPresets(int)
+```
+Sets number of preset slots available.
+
+```python
+SetUISetPreset(int)
 ```
 Sets the targetted preset from the UI level.
 
 ```python
-StorePreset(int)
+SetUIStorePreset(int)
 ```
 Stores the targetted preset from the UI level.
 
 ```python
-ExportPresetsJSON()
+SetUITime(float)
+```
+Sets the targetted time from the UI level.
+
+```python
+SetUIUnstorePreset(int)
+```
+Unstores the targetted preset from the UI level.
+
+```python
+UIExportPresets()
 ```
 Exports presets to JSON.
 
 ```python
-ImportPresetsJSON()
+UIFreezeState()
+```
+Freezes the sliders in the current state, so that editing cannot happen by accident. This method does nothing to the presets themselves, it simply disables interaction with the elements.
+
+```python
+UIImportPresets()
 ```
 Import presets to JSON.
+
+### Private
+
+```python
+clickUIWidgetButton()
+```
+Clicks UI with given name. "name" is a local alias defined in the class.
+
+```python
+getUIElement()
+```
+Returns UI with given name. "name" is a local alias defined in the class.
+
+```python
+getUIWidgetCheckbox()
+```
+Clicks checkbox with given name. "name" is a local alias defined in the class.
+
+```python
+setUIWidgetValue()
+```
+Supports for Widget's and TDMorph's buttons. Any controller added to TDMorph's internal widgets has to have "Value" or "Value0" as name for its main parameter, otherwise it will not be able to perform all features.
