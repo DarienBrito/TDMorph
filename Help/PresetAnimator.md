@@ -21,7 +21,7 @@ Launches a TDMorph-formatted pop up window with the given message and title.
 ### Private
 
 ```python
-checkIfFromTDMorphUI(target_owner, param)
+checkIfFromTDXMorphUI(target_owner, param)
 ```
 We check and acquire the true target if the input comes from sliders, else performance will be greatly impacted by drawing UI from animation and, even worse, controllingof parameters would depend on having a TDMorph active. We control directly parameters, not UI elements! In this manner users dont' need a TDMorph to run their animation.
 
