@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.14.2
+**Version:** 4.15.2
 
 > ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -54,8 +54,8 @@ Presets carry their own timing, and the signal row is rebuilt around controls th
 - **A saved MIDI or OSC mapping on a signal row's source or sync control goes dormant.** The
   source menu became three separate menus, one per source, and the sync controls moved one level
   down. Re-map the control once and it stays mapped.
-- `Lib/ParametersUI` and `Lib/SignalsUI` merged into `Lib/ElementUI`. `CreateFromLibrary()`
-  reaches any child of `Lib/`, so the item set changed. Both old names still resolve.
+- `Lib/ParametersUI` and `Lib/SignalsUI` merged into `Lib/ElementUI`. Both old names still resolve
+  in `CreateFromLibrary()`, though neither is a listed item.
 
 ## 4.10.0
 

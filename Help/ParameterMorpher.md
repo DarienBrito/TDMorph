@@ -27,7 +27,7 @@ Creates an empty container for elements in the ParameterMorpher node.
 ```python
 CreateFromLibrary(item, x=250, y=150, viewer=False)
 ```
-Copies "item" out of the internal `Lib/` at the given coordinates. Enables the viewer if viewer=True. Items are the children of `Lib/`, the useful ones being:
+Copies "item" out of the internal `Lib/` at the given coordinates. Enables the viewer if viewer=True. The items are:
   * 'PresetManager'
   * 'PresetGrabber'
   * 'PresetAnimator'
@@ -35,6 +35,9 @@ Copies "item" out of the internal `Lib/` at the given coordinates. Enables the v
   * 'MorphingTimers'
   * 'MorphingChannels'
   * 'Patterns'
+
+Everything else under `Lib/` is internal structure (widget masters, element templates, the look and
+module libraries) rather than a library item. Copying one is unsupported and may break on any update.
 
 ```python
 ExposeChannels(x=0, y=0)
