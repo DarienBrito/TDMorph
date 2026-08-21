@@ -1,4 +1,4 @@
-> ### TDMorph Open Toolkit 4.1.3
+> ### TDXMorph Open Toolkit 4.1.3
 >
 > PresetManager **4.2.0**, PresetSnap **1.0.0**, ControlMapper **1.0.2**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.6**.
 >
@@ -6,17 +6,17 @@
 > to four. Presets written by older versions migrate automatically, but
 > **back up your project and export your presets before upgrading** from 3.2.1.
 
-## What is TDMorph?
+## What is TDXMorph?
 
-**TDMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
+**TDXMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
 
 It facilitates the creation and performance of **generative content** through various methods, while allowing you to **archive and recall parameter configurations** using a flexible **JSON-based format**.
 
-In addition, TDMorph includes a set of **developer tools** for building **custom systems**, making it a versatile resource for artists and technical creators alike.
+In addition, TDXMorph includes a set of **developer tools** for building **custom systems**, making it a versatile resource for artists and technical creators alike.
 
 ## What can I do with it?
 
-With **TDMorph**, you can perform a wide range of operations for creative exploration, performance, and system design in **TouchDesigner**, including:
+With **TDXMorph**, you can perform a wide range of operations for creative exploration, performance, and system design in **TouchDesigner**, including:
 
 1. **Random search** for parameter states across one or multiple nodes.  
 2. **Morphing between states** using various interpolation curves.  
@@ -35,7 +35,7 @@ And much more!
 
 ## How does it work?
 
-The architecture of **TDMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components. This flexibility lets you combine different approaches depending on your needs.  
+The architecture of **TDXMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components. This flexibility lets you combine different approaches depending on your needs.  
 The three main modes of operation are:
 
 - **PresetManager**  
@@ -47,7 +47,7 @@ The three main modes of operation are:
 - **SceneLauncher**  
   A high-level UI designed for show control. It enables you to organize and trigger scenes and presets, supports follow actions, and integrates seamlessly with cue-based workflows.
 
-Alongside these, TDMorph ships a set of **developer components**: small, self-contained,
+Alongside these, TDXMorph ships a set of **developer components**: small, self-contained,
 reusable widgets that the tools themselves are built on, released so you can build with them
 too.
 
@@ -68,19 +68,19 @@ too.
 
 ## Download
 
-Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community, work that requires significant time and effort, which I can sustain only with proper support.
+Starting with version 3.2, TDXMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community, work that requires significant time and effort, which I can sustain only with proper support.
 
 These components are **free and MIT licensed**. Grab the folder from this repository, or the
 build from the Releases section:
 
 | Component | Version | What it is |
 |---|---|---|
-| [**PresetManager**](PresetManager/) | 4.2.0 | Preset storage plus the multi-track morphing engine. The core of TDMorph. |
-| [**PresetSnap**](PresetSnap/) | 1.0.0 | Plain store and recall for any COMP. No morphing, no setup. |
+| [**PresetManager**](PresetManager/) | 4.2.2 | Preset storage plus the multi-track morphing engine. The core of TDXMorph. |
+| [**PresetSnap**](PresetSnap/) | 1.1.0 | Plain store and recall for any COMP. No morphing, no setup. |
 | [**PresetInspector**](PresetInspector/) | 1.5.5 | Preset viewer and value editor. |
 | [**JSONTree**](JSONTree/) | 1.5.5 | Reusable JSON tree viewer with inline editing. |
-| [**ListView**](ListView/) | 1.0.6 | Reusable flat-columnar list widget. |
-| [**ControlMapper**](ControlMapper/) | 1.0.2 | MIDI and OSC mapping for any custom parameter. |
+| [**ListView**](ListView/) | 1.0.7 | Reusable flat-columnar list widget. |
+| [**ControlMapper**](ControlMapper/) | 1.0.3 | MIDI and OSC mapping for any custom parameter. |
 
 Because they are MIT licensed you can use them in personal and commercial work, including
 closed-source projects.
@@ -95,9 +95,9 @@ https://www.patreon.com/c/darienbrito
 
 ## Tutorials
 
-**TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
+**TDXMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
 
-To get started and learn everything TDMorph has to offer, check out the tutorial series on [Vimeo](https://vimeo.com/showcase/6682501) or [YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz)
+To get started and learn everything TDXMorph has to offer, check out the tutorial series on [Vimeo](https://vimeo.com/showcase/6682501) or [YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz)
 
 ### Overview
 
@@ -105,29 +105,29 @@ Here a quick overview of the main tools to give you a quick idea.
 
 #### Preset Manager
 
-UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDMorph architecture.
+UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDXMorph architecture.
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/Assets/1.jpg" width="800">
+<img src="https://github.com/DarienBrito/TDXMorph/blob/master/Assets/1.jpg" width="800">
 
 #### Parameter Morpher
 
 A powerful drag-and-drop front end for generating automatic UIs, enabling morphing, preset management, and aleatoric parameter exploration — fully
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/Assets/2.jpg" width="800">
+<img src="https://github.com/DarienBrito/TDXMorph/blob/master/Assets/2.jpg" width="800">
 
 #### Scene Launcher
 
 A minimalistic controller for cueing and managing scenes from arbitrary presets, featuring follow actions, randomization, and versatile tools for intuitive scene sequencing. 
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/Assets/3.jpg" width="800">
+<img src="https://github.com/DarienBrito/TDXMorph/blob/master/Assets/3.jpg" width="800">
 
 # Shortcuts
 
-The **TDMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow. You only need to remember a few combinations — all built around the keys:
+The **TDXMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow. You only need to remember a few combinations — all built around the keys:
 
 <kbd>Shift</kbd> or <kbd>Ctrl</kbd> + <kbd>Mouse Button</kbd>
 
-That’s it! Every shortcut in TDMorph is derived from these two simple modifiers. [Click here](https://github.com/DarienBrito/TDMorph/blob/master/SHORTCUTS.md) to see all functions 
+That’s it! Every shortcut in TDXMorph is derived from these two simple modifiers. [Click here](https://github.com/DarienBrito/TDXMorph/blob/master/SHORTCUTS.md) to see all functions 
 
 
 ## Code documentation
@@ -153,11 +153,11 @@ Feedback and contributions are always welcome! If you notice anything that could
 
 To report bugs or suggest improvements, please use the official issue tracker:
 
-🔗 [**TDMorph GitHub Issues**](https://github.com/DarienBrito/TDMorph/issues)
+🔗 [**TDXMorph GitHub Issues**](https://github.com/DarienBrito/TDXMorph/issues)
 
 ## About the License
 
-Since version 3.2, the **free** TDMorph components have been under an [**MIT license**](https://opensource.org/license/mit), which means that you can 
+Since version 3.2, the **free** TDXMorph components have been under an [**MIT license**](https://opensource.org/license/mit), which means that you can 
 
 - Use it for personal or commercial projects
 - Modify the code freely
@@ -181,7 +181,7 @@ inside each component.
 
 The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
 
-I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
+I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDXMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
 
 ## Support
 

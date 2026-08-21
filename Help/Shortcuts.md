@@ -1,6 +1,6 @@
 # Shortcuts
 
-There are various shortcuts in the TDMorph ecosystem. I have tried to keep them as simple as possible, so the only keys you will ever have to remember are <kbd>Shift</kbd>, <kbd>Ctrl</kbd> or <kbd>Alt</kbd> + <kbd>Mouse button</kbd>.
+There are various shortcuts in the TDXMorph ecosystem. I have tried to keep them as simple as possible, so the only keys you will ever have to remember are <kbd>Shift</kbd>, <kbd>Ctrl</kbd> or <kbd>Alt</kbd> + <kbd>Mouse button</kbd>.
 
 > **PROPRIETARY. Licensed, not sold.** Part of the commercial ParameterMorpher and
 > SceneLauncher components, available through

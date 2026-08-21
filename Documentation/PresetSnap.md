@@ -1,6 +1,6 @@
 # PresetSnap
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  

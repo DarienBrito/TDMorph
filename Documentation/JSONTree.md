@@ -1,6 +1,6 @@
 # JSONTree
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
@@ -72,7 +72,7 @@ Both set `Source` to `Data` for you.
 | `Expandall` | Pulse | | Expand every branch. |
 | `Collapseall` | Pulse | | Collapse every branch. |
 | `Editable` | Toggle | `On` | Allow inline editing of leaf values. |
-| `Schemaaware` | Toggle | `On` | Render TDMorph parameter dicts as single rows. See below. |
+| `Schemaaware` | Toggle | `On` | Render TDXMorph parameter dicts as single rows. See below. |
 | `Showtoolbar` | Toggle | `On` | Show the in-panel toolbar. |
 
 ### Callbacks page
@@ -99,11 +99,11 @@ The `Support` and `Website` pulse buttons, then `Author` and `Version`, which ar
 
 ## Schema-aware parameter rows
 
-With `Schemaaware` on (the default), a dict that looks like a TDMorph parameter state, meaning it carries `paramName`, `value` and `type` keys, collapses into **one row** rather than expanding into a four-key branch.
+With `Schemaaware` on (the default), a dict that looks like a TDXMorph parameter state, meaning it carries `paramName`, `value` and `type` keys, collapses into **one row** rather than expanding into a four-key branch.
 
 That row shows the parameter name, an inline attribute strip, the value and a type badge. Remaining keys such as `min`, `max`, `normMin` and `normMax` render as the attribute strip and are display-only. A `locked` parameter gets an amber lock in the gutter.
 
-This is what makes a TDMorph preset readable: a preset with thirty tracked parameters shows thirty rows instead of a hundred and twenty nested keys.
+This is what makes a TDXMorph preset readable: a preset with thirty tracked parameters shows thirty rows instead of a hundred and twenty nested keys.
 
 Turn `Schemaaware` off to see the raw structure, which is useful when debugging the stored shape itself.
 

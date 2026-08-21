@@ -9,7 +9,7 @@ Class: `extParameterMorpher`. Version 4.14.2.
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). Available through
 > [Patreon](https://www.patreon.com/c/darienbrito), not from this repository.
 
-This file was previously named `TDMorph.md`, from the era when the whole toolkit was one
+This file was previously named `TDXMorph.md`, from the era when the whole toolkit was one
 node. It has always documented the ParameterMorpher root.
 
 For the element containers, which is where most of the day-to-day API lives, see

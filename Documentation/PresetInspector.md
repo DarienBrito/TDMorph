@@ -1,6 +1,6 @@
 # Preset Inspector
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
@@ -84,7 +84,7 @@ Reads `Presets` from the component named in `Presetmanager` and renders it live.
 
 Reads the file in `Json`. The file input is bypassed while the parameter is empty, so an unset path does not raise a warning.
 
-This mode works on any JSON, not only TDMorph exports, which makes the Inspector a general-purpose JSON browser inside TouchDesigner.
+This mode works on any JSON, not only TDXMorph exports, which makes the Inspector a general-purpose JSON browser inside TouchDesigner.
 
 ---
 
@@ -117,7 +117,7 @@ Note the PresetManager `Lock` guard: locking the manager also locks the Inspecto
 
 ## Reading a preset
 
-TDMorph presets use the v2 schema, so a stored preset looks like this in the tree:
+TDXMorph presets use the v2 schema, so a stored preset looks like this in the tree:
 
 ```
 intro

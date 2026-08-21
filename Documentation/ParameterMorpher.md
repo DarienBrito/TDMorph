@@ -1,12 +1,12 @@
 # ParameterMorpher
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
 **Version:** 4.15.2
 
-> ParameterMorpher is a **commercial** component of the TDMorph toolkit, governed by the
+> ParameterMorpher is a **commercial** component of the TDXMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
 > redistribution, resale, sublicensing or sharing. No warranty.
 >
@@ -423,8 +423,8 @@ every LFO in a container to a common phase, call `HardSyncLFOs()` on the contain
 
 ## exParameterMorpher
 
-The `extParameterMorpher` class is part of the **TDMorph** system for **TouchDesigner**.  
-It manages **container creation**, **library tool instantiation**, and **parameter exposure** within the TDMorph module.  
+The `extParameterMorpher` class is part of the **TDXMorph** system for **TouchDesigner**.  
+It manages **container creation**, **library tool instantiation**, and **parameter exposure** within the TDXMorph module.  
 
 This class serves as a **high-level manager** for creating interface elements, preset-related tools, and morphing utilities from the internal library.  
 It adheres to a **Model–View–Controller (MVC)** structure, functioning as the *Model*, that is, the logic and data layer independent of UI interactions.
@@ -451,7 +451,7 @@ It adheres to a **Model–View–Controller (MVC)** structure, functioning as th
 | **Class** | `extParameterMorpher` |
 | **Role** | Manages creation of containers, preset-related tools, and exposure of morphing data. |
 | **Type** | Model / Logic Controller |
-| **Design Pattern** | Part of the TDMorph MVC architecture. |
+| **Design Pattern** | Part of the TDXMorph MVC architecture. |
 | **Usage Context** | Used internally to instantiate morphing-related utilities and connect Preset Managers to UI containers. |
 
 ---
@@ -502,7 +502,7 @@ morpher = op('ParameterMorpher')
 - **Modularity:** Provides an interface layer for morphing and preset operations without visual dependencies.  
 - **Automation-Friendly:** Allows automatic generation of morphing tools and managers in project setups.  
 - **Extensibility:** Encourages addition of new library components without structural changes.  
-- **MVC Integrity:** Respects the TDMorph Model–View–Controller separation of concerns.
+- **MVC Integrity:** Respects the TDXMorph Model–View–Controller separation of concerns.
 
 ---
 
@@ -512,7 +512,7 @@ morpher = op('ParameterMorpher')
 
 ## Overview
 
-The `extElementsContainer` class manages **groups of UI elements** (sliders, toggles, menus, etc.) in **TDMorph**, providing a high-level interface between the user interface and the internal `PresetManager`.  
+The `extElementsContainer` class manages **groups of UI elements** (sliders, toggles, menus, etc.) in **TDXMorph**, providing a high-level interface between the user interface and the internal `PresetManager`.  
 
 It acts as a **UI-focused controller**, handling element creation, parameter binding, preset management, and synchronization between visual and logical layers.  
 
@@ -542,7 +542,7 @@ This class is primarily used to create and manage **parameter-linked sliders** f
 | **Class** | `extElementsContainer` |
 | **Role** | Manages groups of morphing UI elements for parameter control. |
 | **Type** | UI Controller / Manager |
-| **Design Pattern** | Part of the TDMorph MVC architecture. |
+| **Design Pattern** | Part of the TDXMorph MVC architecture. |
 | **Usage Context** | Used to create UI bindings, manage presets, randomization, and morph transitions. |
 
 ---
@@ -710,7 +710,7 @@ All callback functions look for an external module defined in
 - **Modularity:** Each container acts independently but can synchronize with others.  
 - **Non-Destructive:** Parameters can be freely created, rebound, or deleted. 
 - **Automation-Friendly:** Supports scripting, callback hooks, and sequenced morphing.  
-- **MVC Compliance:** Acts as a **Controller** in the TDMorph architecture, linking UI (View) and PresetManager (Model).
+- **MVC Compliance:** Acts as a **Controller** in the TDXMorph architecture, linking UI (View) and PresetManager (Model).
 
 ---
 

@@ -16,14 +16,14 @@ Make an animation with provided data.
 ```python
 ReportResult(msg, title)
 ```
-Launches a TDMorph-formatted pop up window with the given message and title.
+Launches a TDXMorph-formatted pop up window with the given message and title.
 
 ### Private
 
 ```python
 checkIfFromTDXMorphUI(target_owner, param)
 ```
-We check and acquire the true target if the input comes from sliders, else performance will be greatly impacted by drawing UI from animation and, even worse, controllingof parameters would depend on having a TDMorph active. We control directly parameters, not UI elements! In this manner users dont' need a TDMorph to run their animation.
+We check and acquire the true target if the input comes from sliders, else performance will be greatly impacted by drawing UI from animation and, even worse, controllingof parameters would depend on having a TDXMorph active. We control directly parameters, not UI elements! In this manner users dont' need a TDXMorph to run their animation.
 
 ```python
 createChannelAlias(chan)

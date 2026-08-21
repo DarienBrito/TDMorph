@@ -18,7 +18,7 @@ Get/set container name
 ```python
 AddBindingReference(source, bindedData, elementPath, customName=None)
 ```
-Stores useful references from all created bindings, so that later on we can use our presets. It stores this properties in a unique name that I call "cross-check name", which is used first to see if a parameter already exists in TDMorph. This is there because otherwise it would be possible to create two elements for the exact same parameter. Different nodes could also have the same paramter name, so we need the whole path as a key to discern from where we are grabbing data.
+Stores useful references from all created bindings, so that later on we can use our presets. It stores this properties in a unique name that I call "cross-check name", which is used first to see if a parameter already exists in TDXMorph. This is there because otherwise it would be possible to create two elements for the exact same parameter. Different nodes could also have the same paramter name, so we need the whole path as a key to discern from where we are grabbing data.
 
 ```python
 AddScript()
@@ -48,7 +48,7 @@ Deletes the ElementsContainer.
 ```python
 ExportPresetManager()
 ```
-Creates a copy of the local preset manager on the level of TDMorph for independent use, for instance with a preset composer or animator.
+Creates a copy of the local preset manager on the level of TDXMorph for independent use, for instance with a preset composer or animator.
 
 ```python
 ExportPresetsJSON()
@@ -120,7 +120,7 @@ Re-scale based on elements content.
 ```python
 constructBindingPackage(ccName, data)
 ```
-Very low level method that assembles a dictionary compatible with TDMorphs binding system.
+Very low level method that assembles a dictionary compatible with TDXMorphs binding system.
 
 ```python
 correctParameterType(element, uielement)
@@ -130,7 +130,7 @@ This function makes sure that the widget that we choose has the right parameter 
 ```python
 createUIElement(parameter, dataSource, style=None)
 ```
-This function allocates a particular UI from this lookup dictionary. All these are UI components that live in the UI library of TDMorph.
+This function allocates a particular UI from this lookup dictionary. All these are UI components that live in the UI library of TDXMorph.
 
 ```python
 deleteElements()

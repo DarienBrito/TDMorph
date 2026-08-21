@@ -139,7 +139,7 @@ PresetManager **4.1.3**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView
 
 The engine was substantially rewritten and the free tier grew from one component to four.
 Presets written by older versions migrate automatically. Please report anything you find on the
-[issue tracker](https://github.com/DarienBrito/TDMorph/issues).
+[issue tracker](https://github.com/DarienBrito/TDXMorph/issues).
 
 ### PresetManager
 

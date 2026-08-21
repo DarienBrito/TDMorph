@@ -1,10 +1,10 @@
 # ListView
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 1.0.6
+**Version:** 1.0.7
 
 ---
 
@@ -12,7 +12,7 @@ Copyright © 2026
 
 `ListView` is a reusable **flat-columnar list widget** built on TouchDesigner's built-in `listCOMP`. It gives you a data grid with a declarative column spec, inline editing, drag-to-resize columns, drag-to-reorder rows and a pluggable behaviour module, without any palette or third-party content.
 
-It is both a **standalone component** you can drop into your own projects and the widget the rest of TDMorph is built on: the PresetManager paths editor and the SceneLauncher scene and preset lists are all ListView instances.
+It is both a **standalone component** you can drop into your own projects and the widget the rest of TDXMorph is built on: the PresetManager paths editor and the SceneLauncher scene and preset lists are all ListView instances.
 
 Because it is MIT licensed, you are free to use it in commercial and closed-source work.
 

@@ -120,7 +120,7 @@ numeric entry is rejected rather than silently becoming a string.
 
 A persist that fails is reported rather than announced as a success.
 
-Schema-aware rows are what make a TDMorph preset readable: a preset with thirty tracked
+Schema-aware rows are what make a TDXMorph preset readable: a preset with thirty tracked
 parameters shows thirty rows instead of a hundred and twenty nested keys. Attributes such as
 min, max, normMin and normMax render as a display-only strip, and a locked parameter gets an
 amber lock in the gutter.

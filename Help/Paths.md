@@ -3,7 +3,7 @@
 The database of operators the PresetManager tracks, and their per-path settings. Lives at
 `PresetManager/Paths`.
 
-Nodes are marked with the manager's `Trackingtag` value (`TDMorphPath` by default), which is
+Nodes are marked with the manager's `Trackingtag` value (`TDXMorphPath` by default), which is
 how a node that has been moved is found again.
 
 Version 4.1.3. Capitalized methods are promoted and are the supported API.
@@ -29,7 +29,7 @@ Reconcile nodes that have moved by scanning for the tracking tag. Returns the pa
 ```python
 Clear(storedSettings=True, overwriteWarning=True)
 ```
-Remove all entries, cleaning up every tracked node's TDMorph data. Prompts for confirmation unless overwriteWarning is False.
+Remove all entries, cleaning up every tracked node's TDXMorph data. Prompts for confirmation unless overwriteWarning is False.
 
 ```python
 Create(path, addTrackingTag=True, settings=None)
@@ -39,7 +39,7 @@ Register a path: tag the node, store its tracking path and record its settings.
 ```python
 Delete(path, storedSettings=True, ignoreWarning=False)
 ```
-Remove a path from the database and strip its TDMorph tag and storage.
+Remove a path from the database and strip its TDXMorph tag and storage.
 
 ```python
 GetItem(path, item)
@@ -94,7 +94,7 @@ Move an entry's contents from one path to another.
 ```python
 ReportResult(msg, title)
 ```
-Launches a TDMorph-formatted pop up window with the given message and title.
+Launches a TDXMorph-formatted pop up window with the given message and title.
 
 ```python
 StandardPopDialog(text, title, buttons, callback, details=None, textEntry=None)

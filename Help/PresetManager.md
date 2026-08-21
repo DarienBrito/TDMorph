@@ -1,6 +1,6 @@
 # Preset Manager
 
-The heart of TDMorph. This class stores and retrieves presets, and drives the morpher and
+The heart of TDXMorph. This class stores and retrieves presets, and drives the morpher and
 random distribution nodes.
 
 Version 4.2.0. Capitalized methods are promoted and are the supported API. Lowercase
@@ -188,7 +188,7 @@ Performs the sequence of stored presets. If a keys sequence is provided it will 
 ```python
 ReportResult(msg, title)
 ```
-Launches a TDMorph-formatted pop up window with the given message and title, and writes to the debug log.
+Launches a TDXMorph-formatted pop up window with the given message and title, and writes to the debug log.
 
 ```python
 SetBlendingPresets(presetName, targetName)

@@ -1,16 +1,16 @@
 # Preset Manager
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 4.2.0
+**Version:** 4.2.2
 
 ---
 
 ## Overview
 
-`extPresetManager` is the **core engine** of the TDMorph system for **TouchDesigner**.  
+`extPresetManager` is the **core engine** of the TDXMorph system for **TouchDesigner**.  
 It manages the storage, retrieval, morphing and randomization of parameter presets across multiple operators.
 
 Unlike the UI components (`extElementsContainer`, `extSceneLauncher`), this class operates entirely at the **data and logic level**, following a **Model-View-Controller (MVC)** structure. It acts as the **Model**, holding the preset data and driving the `PresetMorpher` and `RandomGenerator` nodes.
@@ -70,7 +70,7 @@ Version 4 is a substantial rewrite of the morphing engine. If you are coming fro
 | **Class** | `extPresetManager` |
 | **Role** | Core preset logic for saving, recalling, morphing and randomizing TouchDesigner parameters. |
 | **Type** | Data Model |
-| **Design Pattern** | Part of the TDMorph MVC system (acts as the Model). |
+| **Design Pattern** | Part of the TDXMorph MVC system (acts as the Model). |
 | **Usage Context** | Parameter management in presets, morphing systems and automated transitions. |
 | **License** | MIT |
 
@@ -113,7 +113,7 @@ op('PresetManager').MorphPreset('intro')
 | `Searchoperator` | OP | `''` | The operator to search inside when `Searchin` is `Specificoperator`. |
 | `Pathseditor` | Pulse | | Open the paths editor. |
 | `Pathsupdate` | Pulse | | Re-scan for tracked nodes that have moved and re-key their presets. |
-| `Pathsclear` | Pulse | | Remove every tracked path and strip its TDMorph tag. |
+| `Pathsclear` | Pulse | | Remove every tracked path and strip its TDXMorph tag. |
 
 ### Triggering
 
@@ -146,7 +146,7 @@ op('PresetManager').MorphPreset('intro')
 | `Blendactive` | Toggle | `Off` | Enable manual blending between two presets. |
 | `Blenda` / `Blendb` | Menu | | The two presets to blend. |
 | `Blendfactor` | Float | `0.0` | Crossfade position between A and B. |
-| `Trackingtag` | Str | `TDMorphPath` | The tag written onto tracked nodes so they can be found after a move. |
+| `Trackingtag` | Str | `TDXMorphPath` | The tag written onto tracked nodes so they can be found after a move. |
 | `Importjson` / `Exportjson` | Pulse | | Load or save presets and paths as JSON. |
 
 ### Info (read only)
@@ -541,7 +541,7 @@ lib.defaults('Scurve')                     # that curve's (a, b, n) defaults
 
 ## Tracked paths
 
-The `Paths` node holds the database of operators the manager watches, along with each one's per-path settings. Nodes are marked with the `Trackingtag` value (`TDMorphPath` by default), which is how a moved node is found again.
+The `Paths` node holds the database of operators the manager watches, along with each one's per-path settings. Nodes are marked with the `Trackingtag` value (`TDXMorphPath` by default), which is how a moved node is found again.
 
 ```python
 paths = op('PresetManager/Paths')
