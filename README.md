@@ -1,14 +1,16 @@
-## What is TDMorph?
+## What is TDXMorph?
 
-**TDMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
+*Formerly TDMorph. The project was renamed in August 2026, and links to the old address redirect here.*
+
+**TDXMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
 
 It facilitates the creation and performance of **generative content** through various methods, while allowing you to **archive and recall parameter configurations** using a flexible **JSON-based format**.
 
-In addition, TDMorph includes a set of **developer tools** for building **custom systems**, making it a versatile resource for artists and technical creators alike.
+In addition, TDXMorph includes a set of **developer tools** for building **custom systems**, making it a versatile resource for artists and technical creators alike.
 
 ## What can I do with it?
 
-With **TDMorph**, you can perform a wide range of operations for creative exploration, performance, and system design in **TouchDesigner**, including:
+With **TDXMorph**, you can perform a wide range of operations for creative exploration, performance, and system design in **TouchDesigner**, including:
 
 1. **Random search** for parameter states across one or multiple nodes.  
 2. **Morphing between states** using various interpolation curves.  
@@ -27,7 +29,7 @@ And much more!
 
 ## How does it work?
 
-The architecture of **TDMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components. This flexibility lets you combine different approaches depending on your needs.  
+The architecture of **TDXMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components. This flexibility lets you combine different approaches depending on your needs.  
 The three main modes of operation are:
 
 - **PresetManager**  
@@ -55,9 +57,9 @@ https://www.patreon.com/c/darienbrito
 
 ## Tutorials
 
-**TDMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
+**TDXMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
 
-To get started and learn everything TDMorph has to offer, check out the tutorial series on [Vimeo](https://vimeo.com/showcase/6682501) or [YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz)
+To get started and learn everything TDXMorph has to offer, check out the tutorial series on [Vimeo](https://vimeo.com/showcase/6682501) or [YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz)
 
 ### Overview
 
@@ -65,34 +67,34 @@ Here a quick overview of the main tools to give you a quick idea.
 
 #### Preset Manager
 
-UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDMorph architecture.
+UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDXMorph architecture.
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/Assets/1.jpg" width="800">
+<img src="Assets/1.jpg" width="800">
 
 #### Parameter Morpher
 
 A powerful drag-and-drop front end for generating automatic UIs, enabling morphing, preset management, and aleatoric parameter exploration — fully
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/Assets/2.jpg" width="800">
+<img src="Assets/2.jpg" width="800">
 
 #### Scene Launcher
 
 A minimalistic controller for cueing and managing scenes from arbitrary presets, featuring follow actions, randomization, and versatile tools for intuitive scene sequencing. 
 
-<img src="https://github.com/DarienBrito/TDMorph/blob/master/Assets/3.jpg" width="800">
+<img src="Assets/3.jpg" width="800">
 
 # Shortcuts
 
-The **TDMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow. You only need to remember a few combinations — all built around the keys:
+The **TDXMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow. You only need to remember a few combinations — all built around the keys:
 
 <kbd>Shift</kbd> or <kbd>Ctrl</kbd> + <kbd>Mouse Button</kbd>
 
-That’s it! Every shortcut in TDMorph is derived from these two simple modifiers. [Click here](https://github.com/DarienBrito/TDMorph/blob/master/SHORTCUTS.md) to see all functions 
+That’s it! Every shortcut in TDXMorph is derived from these two simple modifiers. [Click here](SHORTCUTS.md) to see all functions 
 
 
 ## Code documentation
 
-You can find documentation for relevant TDMorph modules [here](https://github.com/DarienBrito/TDMorph/tree/master/Documentation).
+You can find documentation for relevant TDXMorph modules [here](Documentation).
 
 ## Bug Reports and contributions
 
@@ -100,7 +102,7 @@ Feedback and contributions are always welcome! If you notice anything that could
 
 To report bugs or suggest improvements, please use the official issue tracker:
 
-🔗 [**TDMorph GitHub Issues**](https://github.com/DarienBrito/TDMorph/issues)
+🔗 [**TDXMorph GitHub Issues**](https://github.com/DarienBrito/TDXMorph/issues)
 
 ## About the License
 
@@ -127,7 +129,7 @@ rather than from this repository. The pages for them here are reference document
 
 The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
 
-I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
+I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDXMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
 
 ## Support
 
