@@ -4,7 +4,7 @@
 Copyright (c) 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 1.0.3
+**Version:** 1.0.4
 
 ---
 
@@ -386,7 +386,7 @@ Both ParameterMorpher and SceneLauncher in this toolkit are worked examples.
 op('ControlMapper/Tests/tests').module.RunAndReport()
 ```
 
-127/127 checks run against 1.0.3 at release, covering structure, learn, relearn, routing, per-mapping range, all four takeover phases, fan-out, dead targets, prune, clear, unmap, the arm guards and the editor. The suite is **self contained**: each behavioural block builds its own fixture host and destroys it, snapshotting and restoring every parameter it touches, so it passes from the virgin component with nothing wired.
+134/134 checks run against 1.0.4 at release, covering structure, learn, relearn, routing, per-mapping range, all four takeover phases, fan-out, dead targets, prune, clear, unmap, the arm guards and the editor. The suite is **self contained**: each behavioural block builds its own fixture host and destroys it, snapshotting and restoring every parameter it touches, so it passes from the virgin component with nothing wired.
 
 The editor block is guarded on the editor being present, so a headless build of the service still runs green rather than failing on a UI it does not carry.
 
