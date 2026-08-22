@@ -76,7 +76,7 @@ build from the Releases section:
 
 | Component | Version | What it is |
 |---|---|---|
-| [**PresetManager**](PresetManager/) | 4.2.3 | Preset storage plus the multi-track morphing engine. The core of TDXMorph. |
+| [**PresetManager**](PresetManager/) | 4.2.4 | Preset storage plus the multi-track morphing engine. The core of TDXMorph. |
 | [**PresetSnap**](PresetSnap/) | 1.1.1 | Plain store and recall for any COMP. No morphing, no setup. |
 | [**PresetInspector**](PresetInspector/) | 1.5.5 | Preset viewer and value editor. |
 | [**JSONTree**](JSONTree/) | 1.5.5 | Reusable JSON tree viewer with inline editing. |
