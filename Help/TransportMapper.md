@@ -7,4 +7,4 @@
 ```python
 PrepareInput(val)
 ```
-val is time information operator, can be anything that has a beat, sixteenth, bar and bpm channel. TDMorph natively supports Beat CHOP and Ableton Link.
+val is time information operator, can be anything that has a beat, sixteenth, bar and bpm channel. TDXMorph natively supports Beat CHOP and Ableton Link.

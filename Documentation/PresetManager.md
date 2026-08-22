@@ -1,6 +1,6 @@
 # Preset Manager
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2020–2025  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)
@@ -9,7 +9,7 @@ Copyright © 2020–2025
 
 ## Overview
 
-`extPresetManager` is the **core engine** of the TDMorph system for **TouchDesigner**.  
+`extPresetManager` is the **core engine** of the TDXMorph system for **TouchDesigner**.  
 It manages the storage, retrieval, morphing, and randomization of parameter presets across multiple operators.
 
 Unlike the UI components (`extUIExtension`, `extElementsContainer`, `extSceneLauncher`),  
@@ -43,7 +43,7 @@ this class operates entirely at the **data and logic level**, following a **Mode
 | **Class** | `extPresetManager` |
 | **Role** | Core preset logic for saving, recalling, morphing, and randomizing TouchDesigner parameters. |
 | **Type** | Data Model |
-| **Design Pattern** | Part of the TDMorph MVC system (acts as the Model). |
+| **Design Pattern** | Part of the TDXMorph MVC system (acts as the Model). |
 | **Usage Context** | Used for parameter management in presets, morphing systems, and automated transitions. |
 
 ---

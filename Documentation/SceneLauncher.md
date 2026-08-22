@@ -1,6 +1,6 @@
 # extSceneLauncher.py
 
-**Part of the TDMorph Toolkit**  
+**Part of the TDXMorph Toolkit**  
 Copyright © 2020–2025  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** Proprietary. See the `LICENSE` operator inside the component.
@@ -14,7 +14,7 @@ Copyright © 2020–2025
 
 ## Overview
 
-`extSceneLauncher` is a **scene-based preset launcher** in the TDMorph system for **TouchDesigner**.  
+`extSceneLauncher` is a **scene-based preset launcher** in the TDXMorph system for **TouchDesigner**.  
 It provides a flexible and performance-oriented interface for triggering **“scenes”** — each representing a preset with its own duration, delay, morph curve, script, and follow action.
 
 This class acts as an **alternative UI** for the PresetManager, allowing users to:
@@ -59,7 +59,7 @@ launcher = op('SceneLauncher')
 | **Class**          | `extSceneLauncher` |
 | **Role**           | Scene-based interface for controlling and launching presets. |
 | **Type**           | UI Controller |
-| **Design Pattern** | Part of the TDMorph MVC system. |
+| **Design Pattern** | Part of the TDXMorph MVC system. |
 | **Usage Context**  | Used to trigger and manage timed preset transitions (“scenes”). |
 
 ## Stored Properties

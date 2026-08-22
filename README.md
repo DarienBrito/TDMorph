@@ -43,7 +43,7 @@ The three main modes of operation are:
 
 ## Download
 
-Starting with version 3.2, TDMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
+Starting with version 3.2, TDXMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
 
 The **PresetManager** remains completely free. You can download it by grabbing the PresetManager folder from this repository or the corresponding build from the Releases section.
 
@@ -106,7 +106,7 @@ To report bugs or suggest improvements, please use the official issue tracker:
 
 ## About the License
 
-Since version 3.2, TDMorph's free components have moved to an [**MIT license**](https://opensource.org/license/mit), which means that you can 
+Since version 3.2, TDXMorph's free components have moved to an [**MIT license**](https://opensource.org/license/mit), which means that you can 
 
 - Use it for personal or commercial projects
 - Modify the code freely

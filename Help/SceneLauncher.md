@@ -100,7 +100,7 @@ Trigger some action from the transport menu. Value is only useful for Play/Pause
 ```python
 ReportResult(msg, title)
 ```
-Creates a TDMorph-formatted pop-up window with given message and title.
+Creates a TDXMorph-formatted pop-up window with given message and title.
 
 ```python
 SequentialLaunch(data)
@@ -218,5 +218,5 @@ Creates an animation from the set of scenes in the SceneLauncher.
 ```python
 createAnimationCOMP( x=250, y=0, viewer=True)
 ```
-Creates a copy of the requested item on the location  of TDMorph. Possible objects are:PresetManager, PresetsGrabber, PresetsAnimator
+Creates a copy of the requested item on the location  of TDXMorph. Possible objects are:PresetManager, PresetsGrabber, PresetsAnimator
 

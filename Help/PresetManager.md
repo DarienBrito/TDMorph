@@ -1,6 +1,6 @@
 # Preset Manager
 
-The heart of TDMorph. This class is in charge of executing and manage all presets storage and retrieval as well as 
+The heart of TDXMorph. This class is in charge of executing and manage all presets storage and retrieval as well as 
 communicating with the morpher and random distribution nodes.
 
 ## Core level methods
@@ -166,7 +166,7 @@ Randomizes the specified parameters only. First argument is the row index from t
 ```python
 ReportResult(msg, title)
 ```
-Launches a TDMorph-formatted pop up window with the given message and title.
+Launches a TDXMorph-formatted pop up window with the given message and title.
 
 ```python
 SetBlendingPresets(presetName, targetName)

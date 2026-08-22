@@ -1,4 +1,4 @@
-# TDMorph 
+# TDXMorph 
 
 ## Core Methods
 
@@ -7,7 +7,7 @@
 ```python
 CreateContainer()
 ```
-Creates an empty container for elements in the TDMorph node.
+Creates an empty container for elements in the TDXMorph node.
 
 ```python
 CreateFromLibrary(item, x=250, y=150, viewer=False)
@@ -40,12 +40,12 @@ Get the container at n position.
 ```python
 ReportResult(msg, title)
 ```
-Launches a TDMorph-formatted pop up window with the given message and title.
+Launches a TDXMorph-formatted pop up window with the given message and title.
 
 ```python
 SelectObject(name, x=250, y=0)
 ```
-A convenience method to create items from library with default locations. This is what TDMorph calls when a new item is invoked.
+A convenience method to create items from library with default locations. This is what TDXMorph calls when a new item is invoked.
 
 ### Private
 
@@ -66,5 +66,5 @@ Creates a base on the parent() level with given properties.
 ```python
 ChangeOrientation(horizontal=False)
 ```
-Changes the look of TDMorph from vertical to horizontal. Only useful if there is more than a single container in the Window.
+Changes the look of TDXMorph from vertical to horizontal. Only useful if there is more than a single container in the Window.
 
