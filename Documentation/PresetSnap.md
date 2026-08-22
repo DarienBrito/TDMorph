@@ -32,7 +32,6 @@ Nothing in it cooks at rest: one table and two execute operators, all event driv
 - [Removing the tool](#removing-the-tool)
 - [Interchange with PresetManager](#interchange-with-presetmanager)
 - [Public methods](#public-methods)
-- [Testing](#testing)
 
 ---
 
@@ -268,14 +267,3 @@ FromJSON(text)
 ```
 Export and import in the PresetManager shape. `FromJSON` returns how many presets were read, and uniquifies any name that already exists.
 
----
-
-## Testing
-
-```python
-op('PresetSnap/Tests/tests').module.RunAndReport()
-```
-
-152 checks run against 1.1.0 at release, green both live and on a freshly loaded copy, covering the install and its idempotence, the capture rules, every recall skip path, every host parameter driven through the same entry point TouchDesigner uses, the editor, and the JSON round trip.
-
-The suite runs on the export copy and is removed from the component you download, so the `Tests` operator is not present in the released `.tox`.

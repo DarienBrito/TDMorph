@@ -33,7 +33,6 @@ MIT licensed, with no palette or third-party content.
 - [Callbacks](#callbacks)
 - [Public methods](#public-methods)
 - [Host integration](#host-integration)
-- [Testing](#testing)
 
 ---
 
@@ -378,16 +377,3 @@ Three things are worth knowing when embedding it:
 
 Both ParameterMorpher and SceneLauncher in this toolkit are worked examples.
 
----
-
-## Testing
-
-```python
-op('ControlMapper/Tests/tests').module.RunAndReport()
-```
-
-134/134 checks run against 1.0.4 at release, covering structure, learn, relearn, routing, per-mapping range, all four takeover phases, fan-out, dead targets, prune, clear, unmap, the arm guards and the editor. The suite is **self contained**: each behavioural block builds its own fixture host and destroys it, snapshotting and restoring every parameter it touches, so it passes from the virgin component with nothing wired.
-
-The editor block is guarded on the editor being present, so a headless build of the service still runs green rather than failing on a UI it does not carry.
-
-From 1.0.0 the suite runs on the export copy and is removed from the component you download.

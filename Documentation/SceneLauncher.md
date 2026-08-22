@@ -163,11 +163,8 @@ are unaffected.
 
 ## 4.3.3
 
-- **Test coverage only. Nothing in the component behaves differently** and your scenes and
-  mappings are unaffected. The bundled test suite now presses each control in the menu and
-  checks what actually happened (the row the transport moved to, the curve the selector
-  seated, the map mode the icon entered), rather than only checking that the method behind
-  it exists. The suite grows from 216 checks to 238.
+- **Internal quality work only. Nothing in the component behaves differently** and your scenes and
+  mappings are unaffected.
 
 ---
 

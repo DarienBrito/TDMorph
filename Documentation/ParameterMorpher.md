@@ -222,11 +222,8 @@ it actually takes.
 
 ## 4.5.2
 
-- **Test coverage only. Nothing in the component behaves differently** and your projects
-  are unaffected. The bundled test suite now presses each button and checks what actually
-  happened, rather than only checking that the method the button should call exists. That
-  gap is what allowed the two dead buttons fixed in 4.4.4 to ship while every test passed.
-  The suite grows from 150 checks to 190.
+- **Internal quality work only. Nothing in the component behaves differently** and your projects
+  are unaffected.
 
 ---
 

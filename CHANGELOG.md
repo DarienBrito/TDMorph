@@ -64,20 +64,17 @@ Picks up the ListView fix above, which its mapping editor renders through. No ot
 PresetManager **4.1.7**, ControlMapper **1.0.1**, PresetInspector **1.5.5**, JSONTree **1.5.5**,
 ListView **1.0.5**.
 
-Smaller downloads, nothing else. Each component used to carry its own test suite inside the
-`.tox`; the tests now run on the export copy and are removed from the file you download.
+Smaller downloads, nothing else.
 PresetManager drops from 119.5 KB to 86.6 KB, PresetInspector 21.9 to 13.8, JSONTree 17.9 to
 11.9, ListView 26.7 to 18.8 and ControlMapper 46.8 to 30.5. No behaviour, parameter or API
-changed in any of them. The only thing you lose is the ability to run the bundled tests from a
-released component.
+changed in any of them.
 
 ## [Open Toolkit 4.1.6] (3rd quarter of 2026)
 
 PresetManager **4.1.6**, ControlMapper **1.0.0**, PresetInspector **1.5.4**, JSONTree **1.5.4**,
 ListView **1.0.4**.
 
-ControlMapper joins the free tier as a component in its own right. PresetManager's harness is now
-**172 checks**.
+ControlMapper joins the free tier as a component in its own right.
 
 ### ControlMapper 1.0.0
 
@@ -96,15 +93,14 @@ some time; this is the same mapping service, packaged so you can drop it into an
   sits, which removes the jump the first time you touch a fader. The default stays immediate.
 - **Dead mappings are shown and can be pruned**, rather than silently skipped.
 - **An editor** with inline editing, re-learn, delete and drag-reorder.
-- Bundled harness: 123 checks.
 
 ### PresetManager 4.1.6, 4.1.5 and 4.1.4
 
 #### Bug fixes
 
-- **The morph curve ships at Linear again.** Running the bundled tests left the engine parked on an
-  ease, and that state was captured into the released component, so a fresh PresetManager morphed on
-  an Easein curve with a curve coefficient of 0.75 rather than the documented Linear. (4.1.4)
+- **The morph curve ships at Linear again.** An ease and a curve coefficient of 0.75 had been
+  captured into the released component, so a fresh PresetManager morphed on an Easein curve rather
+  than the documented Linear. (4.1.4)
 - **A deleted element no longer raises an error every frame.** The engine held a cached parameter
   belonging to an element that had been destroyed and wrote to it without checking it was still
   valid. (4.1.5)
@@ -117,12 +113,6 @@ some time; this is the same mapping service, packaged so you can drop it into an
   cook from Python. The value now propagates by the normal dependency path, and nothing cooks while
   the blend sits still. (4.1.5)
 
-#### Housekeeping
-
-- Running the bundled tests can no longer open a dialog that blocks the application. One test
-  deliberately feeds the importer an unreadable file, and the resulting dialog could land off-screen
-  with no way to dismiss it. (4.1.4)
-
 ### ListView 1.0.4
 
 #### Bug fixes
@@ -130,8 +120,6 @@ some time; this is the same mapping service, packaged so you can drop it into an
 - **The list background follows the row colour.** The underlying list operator carried a fixed
   background that happened to match the default row colour, so any list given a different row colour
   kept the old grey in its empty area and below the last row.
-
-Bundled harness: 131 checks.
 
 ## [Open Toolkit 4.1.3] (3rd quarter of 2026)
 
@@ -152,7 +140,6 @@ Presets written by older versions migrate automatically. Please report anything 
 - **Manual blending.** Load two presets and crossfade them by hand with a single factor, through the existing morph chain, with no clock running.
 - **Curve-shape authoring.** Global `Curvea`, `Curveb` and `Curven` plus per-path columns in the paths editor. Coefficients reset to each curve's own defaults when the curve changes.
 - **A View column in the paths editor** that opens or reuses one floating network pane on the tracked operator, selects it and frames it.
-- **A test harness ships inside the component.** 171 checks. Pulse **Run Tests** on the `Tests` base.
 
 #### Bug fixes
 

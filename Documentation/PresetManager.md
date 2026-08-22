@@ -30,7 +30,6 @@ Version 4 is a substantial rewrite of the morphing engine. If you are coming fro
 - **Curve shapes.** Curves take three shape coefficients (`a`, `b`, `n`), stored per track and seeded from each curve's own defaults.
 - **Blending.** Two presets can be loaded into the engine and crossfaded manually with a single factor, independently of the timed morph.
 - **Owned Paths editor.** The paths list is now the MIT `ListView` widget rather than a palette Lister, so the component carries no third-party content.
-- **Test harness.** 171 self-contained checks ship inside the `.tox`.
 
 ### Removed since 3.2
 
@@ -57,7 +56,6 @@ Version 4 is a substantial rewrite of the morphing engine. If you are coming fro
 - [Callbacks](#callbacks)
 - [Curves and distributions](#curves-and-distributions)
 - [Tracked paths](#tracked-paths)
-- [Testing](#testing)
 - [Design philosophy](#design-philosophy)
 - [Dependencies](#dependencies)
 
@@ -81,7 +79,6 @@ Internal nodes:
 | `PresetMorpher` | The morphing engine. Owns the clock, the per-track table and the parameter writeback. |
 | `RandomGenerator` | Random value generation across selectable distributions. |
 | `Paths` | The database of tracked operator paths and their per-path settings. |
-| `Tests` | Self-contained test harness. Pulse **Run Tests** to write `Tests/testResults`. |
 
 ---
 
@@ -555,20 +552,6 @@ paths.OpenUI()                       # open the paths editor
 Drag an operator onto the paths editor to register it. Double-click a row to open that node in the View pane. Right-click a column header to rename or realign it, and right-click empty space for the general Update and Clear menu.
 
 The editor is a `ListView` instance (the same MIT widget shipped standalone in this repository), so the per-path Time, Curve, a, b and n columns appear only when the multi-track engine is on.
-
----
-
-## Testing
-
-The component carries its own harness. Pulse **Run Tests** on the `Tests` base and read `Tests/testResults`:
-
-```python
-op('PresetManager/Tests/tests').module.RunAndReport()
-```
-
-171 checks ship in 4.1.3, covering the multi-track chain, per-track completion, writeback, auto cadences, per-track capture and mute, plus regression guards for every defect fixed in the 4.1 series. `RunAndReport()` blocks the cook thread, so when driving it from a script, fire it deferred and read `testResults` in a separate call.
-
----
 
 ## Design Philosophy
 

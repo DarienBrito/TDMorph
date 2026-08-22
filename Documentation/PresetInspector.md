@@ -27,7 +27,6 @@ Use it to check what a preset actually captured, to fix a value by hand without 
 - [Editing and write-back](#editing-and-write-back)
 - [Reading a preset](#reading-a-preset)
 - [Public methods](#public-methods)
-- [Testing](#testing)
 
 ---
 
@@ -146,12 +145,3 @@ Persist an edit to the active source. `keys` is the key chain from the root of t
 
 Everything else the Inspector does is driven from its parameters, and the tree's own API is available on the embedded `JSONTree` component. See [JSONTree](JSONTree.md).
 
----
-
-## Testing
-
-```python
-op('PresetInspector/Tests/tests').module.RunAndReport()
-```
-
-39 checks run against 1.5.5 at release, covering source selection, the editable mirror and every write-back guard listed above. The embedded tree carries its own 111 checks. From 1.5.5 both suites run on the export copy and are removed from the component you download.

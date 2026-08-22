@@ -145,9 +145,6 @@ Full reference for each component:
 Terse per-module API references live in [Help](Help/), and documentation for the paid
 modules is in [Documentation](Documentation/) alongside the above.
 
-Every component carries its own test harness. Pulse **Run Tests** on its `Tests` base and
-read `Tests/testResults` to check the component is healthy in your project.
-
 ## Bug Reports and contributions
 
 Feedback and contributions are always welcome! If you notice anything that could be improved — whether in the networks, the UI, or the underlying code — please don’t hesitate to let me know. And if you spot something that looks off (which is bound to happen here and there), I’d really appreciate your input.

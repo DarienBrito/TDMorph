@@ -29,7 +29,6 @@ MIT licensed, with no palette or third-party content.
 - [The toolbar](#the-toolbar)
 - [Public methods](#public-methods)
 - [Host integration](#host-integration)
-- [Testing](#testing)
 
 ---
 
@@ -198,12 +197,3 @@ def onPulse(par):
 
 `PresetInspector` in this repository is a worked example: it embeds a JSONTree, owns the source selection itself, and implements `WriteBack` to push edits into an attached PresetManager or a JSON file.
 
----
-
-## Testing
-
-```python
-op('JSONTree/Tests/tests').module.RunAndReport()
-```
-
-114/114 checks run against 1.5.5 at release, covering the node model, rendering, filtering, expand and collapse, edit coercion and the persist-failure reporting path. From 1.5.5 the suite runs on the export copy and is removed from the component you download.

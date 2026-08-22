@@ -30,7 +30,6 @@ Because it is MIT licensed, you are free to use it in commercial and closed-sour
 - [Theming](#theming)
 - [Interaction reference](#interaction-reference)
 - [Reuse recipe](#reuse-recipe)
-- [Testing](#testing)
 
 ---
 
@@ -301,12 +300,3 @@ For per-instance tweaks, prefer the Colors and Look parameter pages over editing
 
 A new column `kind` means adding a renderer branch to the shared engine, which touches every copy. A new interaction is just a new hook in your own Callbacks DAT, which touches only that instance.
 
----
-
-## Testing
-
-```python
-op('ListView/Tests/tests').module.RunAndReport()
-```
-
-127 checks ship in 1.0.3, covering rendering, the column spec, edit coercion, reorder, the double-click detector and row identity.
