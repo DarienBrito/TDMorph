@@ -1,9 +1,10 @@
-> ### TDXMorph Open Toolkit 4.1.3
+> ### TDXMorph Open Toolkit 4
 >
-> PresetManager **4.2.0**, PresetSnap **1.0.0**, ControlMapper **1.0.2**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.6**.
+> Version 4 is a line, not a release number. Each component carries its own version and ships
+> on its own schedule, so the table under [Download](#download) is the only current list.
 >
 > The morphing engine was substantially rewritten and the free tier grew from one component
-> to four. Presets written by older versions migrate automatically, but
+> to six. Presets written by older versions migrate automatically, but
 > **back up your project and export your presets before upgrading** from 3.2.1.
 
 ## What is TDXMorph?
@@ -139,7 +140,7 @@ Full reference for each component:
 - [**PresetInspector**](Documentation/PresetInspector.md)
 - [**JSONTree**](Documentation/JSONTree.md)
 - [**ListView**](Documentation/ListView.md)
-- [**ControlMapper**](Help/ControlMapper.md) class reference
+- [**ControlMapper**](Documentation/ControlMapper.md) parameters, the mapping table, learning and the Python API
 
 Terse per-module API references live in [Help](Help/), and documentation for the paid
 modules is in [Documentation](Documentation/) alongside the above.

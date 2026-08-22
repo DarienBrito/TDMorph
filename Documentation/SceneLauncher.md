@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.9.0
+**Version:** 4.9.1
 
 > SceneLauncher is a **commercial** component of the TDXMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -15,6 +15,13 @@ Copyright © 2020–2026
 > documentation only.
 
 ---
+
+## 4.9.1
+
+- **The mapping editor follows the skin.** Its rows and its selected row were fixed at Carbon's
+  colours, so switching `Lib/Look.Skin` to Verdigris or Mono repainted the scene and preset lists
+  and left the MIDI/OSC mapping list behind. Row, alternate row and selected row now read the same
+  Look tokens the other two lists read, and the selected row takes the accent.
 
 ## 4.9.0
 

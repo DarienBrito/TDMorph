@@ -3,11 +3,13 @@
 The MIDI/OSC mapping service. One instance sits inside ParameterMorpher and SceneLauncher and
 serves both protocols from a single list of mappings.
 
-Class: `extControlMapper`. Version 1.0.2.
+Class: `extControlMapper`. Version 1.0.3.
 
-> **MIT licensed**, but distributed only inside the commercial ParameterMorpher and
-> SceneLauncher components, which are available through
-> [Patreon](https://www.patreon.com/c/darienbrito), not from this repository.
+> **MIT licensed.** It ships from this repository as a standalone component, and also
+> travels embedded inside the commercial ParameterMorpher and SceneLauncher, which are
+> available through [Patreon](https://www.patreon.com/c/darienbrito).
+>
+> Full reference: [Documentation/ControlMapper.md](../Documentation/ControlMapper.md).
 
 Introduced in ParameterMorpher 4.5.0 and SceneLauncher 4.3.0, replacing the per-widget MIDI and
 OSC learn overlays and the separate `Mapper` and `MapperSatellite` classes. Mappings made before
