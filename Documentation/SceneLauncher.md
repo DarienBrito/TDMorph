@@ -16,6 +16,30 @@ Copyright © 2020–2026
 
 ---
 
+## 4.9.0
+
+- **Follow actions, Repeat and Sequence fire again.** They had been dead since the multi-track
+  engine rewrite, along with three further defects behind that one. Selecting a scene row now seats
+  the transport on that row, so Previous, Next and Repeat step from the row you pressed rather than
+  from whatever launched last.
+- **The DIST and CURVE selectors are clickable and mappable again.** This reverses the 4.7.0 note
+  below that a mapping on either goes dormant. Picking a value writes the attached `PresetManager`,
+  and MIDI or OSC reaches them by the same path a click does. They still show what the engine is
+  running, so launching a preset re-seats them from that preset's own stored curve.
+- **Three skins.** `Lib/Look.Skin` picks between **Carbon**, **Verdigris** and **Mono**; Carbon is
+  the default, and the whole panel follows it.
+- **The scene colour swatch is ParameterMorpher's picker.** The pick is the click: the window is
+  borderless at the pointer and closes on the pick or on a click outside, and its palette follows
+  the skin. **`Lib/Look.Scenecolouring` turns the swatch column off.**
+- **The MORPH and FOLLOW ACTION toggles read correctly again.** Their lit state had gone dark on a
+  dark ground, which looked switched off. They light near-white now, matching ParameterMorpher's
+  container toggles.
+- **The mapping editor is wider** and no longer clips the target path.
+- `FOLLOW ACTION` reads `ACTION`, and the DIST and CURVE grounds match the buttons above them. The
+  version bar changed colour and typeface, the panel gained a 4 px frame, and the progress bar is
+  ParameterMorpher's GLSL bar, so its groove is visible at rest.
+
+---
 ## 4.8.0: a scripting API (breaking)
 
 **You can now drive Scene Launcher from a script.** Seventeen methods let a script, a
@@ -447,8 +471,17 @@ component. None of these opens a dialog; a call that cannot be honoured returns 
   you set the `Presetmanager` parameter, and safe to call yourself after attaching one in
   script.
 
-> `SetMorphCurve()` and `SetRandomDistribution()` were removed in 4.7.0. They wrote
-> `PresetManager` values that the next launch overwrote.
+- **`SetMorphCurve(name)`**  
+  Writes the attached `PresetManager`'s morph curve by name. Returns `True` when the value moved,
+  `False` when it was already there, when the engine cannot hold that name, or when no
+  `PresetManager` is attached. Restored in 4.9.0, along with the CURVE selector that calls it.
+
+- **`SetRandomDistribution(name)`**  
+  The twin of `SetMorphCurve` for the random distribution.
+
+> Both write the engine by NAME, not by menu index, so a curve inserted upstream cannot silently
+> remap them. Bear in mind that a preset carries its own morph time and curve, so launching a preset
+> re-seats these from that preset's stored values.
 
 - **`GetCueActions()`**  
   Returns a list of available follow actions (`None`, `Next`, `Repeat`, etc.).

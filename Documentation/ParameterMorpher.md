@@ -19,6 +19,43 @@ Copyright © 2020–2026
 
 ---
 
+## 4.15.2
+
+- **The Support link opens Patreon again.** Six places in the component still pointed at a
+  support page that no longer exists, including the one behind the component's own About panel.
+
+---
+
+## 4.15.1
+
+- **Setting a preset outright now records which preset was applied.** Setting rather than morphing
+  never updated that record, so the Current Preset readout and the `onPresetCall` callback both kept
+  naming the last preset you morphed to. Stepping a preset sequence never advanced the morph counter
+  either. Both come from the shared PresetManager engine, so PresetManager 4.2.2 carries the same fix.
+
+---
+
+## 4.15.0
+
+- **An element carries a colour of its own.** Right-click its chip to set one. The colour paints a
+  2 px stripe down the element and a 5 px chip, both sized from `Lib/Look` (`Elementstripewidth`,
+  `Elementchipsize`). Randomizing no longer overwrites an element's colour.
+- **The sixteen colours on offer are derived from the current skin's accent**, so the palette follows
+  `Lib/Look.Skin` and a new element seeds from it. The four neutrals (white, grey, dark, black) stay
+  put, for marking something uncoloured on purpose.
+- **`Lib/Look.Elementcolouring` turns the whole feature off.** Off also retires the picker, since the
+  chip is the only way into it. Colours you have already stored survive the switch in either
+  direction.
+- **Three skins.** `Lib/Look.Skin` picks between **Carbon**, **Verdigris** and **Mono**; Carbon is the
+  default. The skin drives every widget colour in the panel, and the element colour palette with it.
+- **The morph progress bar is the one under the presets, and only that one.** The second bar is gone.
+- **A colour pick writes the exact palette value.** It used to be quantised to 1/255, so a picked
+  colour could land a step off the swatch you clicked.
+- **Fixed: the Readme button raised an error on every press** on TransportMapper, PresetAnimator and
+  PresetGrabber. All three open the repository page now.
+- **Fixed: the DIST and CURVE readouts mirror an attached PresetManager again.**
+
+---
 ## 4.14.2
 
 - **The help sheet opens centred on the monitor TouchDesigner is running on.** It used to open
