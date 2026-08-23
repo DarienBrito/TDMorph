@@ -9,8 +9,10 @@ toolkit version, because they now ship and update independently.
 
 ## [Open Toolkit 4.2.0] (3rd quarter of 2026)
 
-PresetManager **4.2.0**, PresetSnap **1.0.0**, ControlMapper **1.0.2**, PresetInspector **1.5.5**,
-JSONTree **1.5.5**, ListView **1.0.6**.
+Current component versions on this line: PresetManager **4.2.4**, PresetSnap **1.1.1**,
+ControlMapper **1.0.4**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.8**.
+This list tracks what the line ships today, so it moves with every component release
+rather than recording what 4.2.0 contained.
 
 A new free component, per-preset timing in PresetManager, and a text rendering fix in ListView
 that reaches every component embedding it.
