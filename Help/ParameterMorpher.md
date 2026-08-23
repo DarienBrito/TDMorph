@@ -3,7 +3,7 @@
 The root of the ParameterMorpher component. Manages the internal library and the tools built
 from it.
 
-Class: `extParameterMorpher`. Version 4.15.4.
+Class: `extParameterMorpher`. Version 4.16.0.
 
 > **PROPRIETARY. Licensed, not sold.** A commercial component governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). Available through

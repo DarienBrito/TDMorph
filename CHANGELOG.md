@@ -9,13 +9,28 @@ toolkit version, because they now ship and update independently.
 
 ## [Open Toolkit 4.2.0] (3rd quarter of 2026)
 
-Current component versions on this line: PresetManager **4.2.4**, PresetSnap **1.1.1**,
+Current component versions on this line: PresetManager **4.3.0**, PresetSnap **1.2.0**,
 ControlMapper **1.0.4**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.8**.
 This list tracks what the line ships today, so it moves with every component release
 rather than recording what 4.2.0 contained.
 
 A new free component, per-preset timing in PresetManager, and a text rendering fix in ListView
 that reaches every component embedding it.
+
+### PresetManager 4.3.0 and PresetSnap 1.2.0
+
+Exported preset files now say what wrote them, and imports check it.
+
+- **Every export carries `version`, `tool`, `toolVersion` and `exported`** beside the preset data.
+  The schema version answers "what shape is this file"; `toolVersion` answers "which build wrote
+  it", which the schema version cannot, since one schema spans many releases.
+- **Imports refuse a file from a newer TDXMorph** rather than reading it as far as it happens to
+  parse, and say so naming both versions. Nothing is touched when a file is refused. Older files,
+  and files written before the stamp existed, import exactly as before.
+- **Pointing Import at a file that is not a TDXMorph export now tells you so** instead of failing
+  with a raw error.
+- PresetSnap's file format is its own and is not interchangeable with PresetManager's. Its version
+  number is now named to say so, and the two are free to diverge.
 
 ### PresetSnap 1.0.0
 
