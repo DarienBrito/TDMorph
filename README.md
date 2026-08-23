@@ -1,3 +1,5 @@
+![TDXMorph 4, preset and parameter morphing system](Assets/tdxmorph4-hero.png)
+
 > ### TDXMorph Open Toolkit 4
 >
 > Version 4 is a line, not a release number. Each component carries its own version and ships
