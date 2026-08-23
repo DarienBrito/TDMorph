@@ -2,7 +2,7 @@
 
 > ### TDXMorph Open Toolkit 4
 >
-> Version 4 is a line, not a release number. Each component carries its own version and ships
+> Version 4 is a major released comprised of various tools. Each component carries its own version and ships
 > on its own schedule, so the table under [Download](#download) is the only current list.
 >
 > The morphing engine was substantially rewritten and the free tier grew from one component
