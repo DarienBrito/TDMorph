@@ -110,19 +110,19 @@ Here a quick overview of the main tools to give you a quick idea.
 
 UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDXMorph architecture.
 
-<img src="https://github.com/DarienBrito/TDXMorph/blob/master/Assets/1.jpg" width="800">
+<img src="Assets/1.jpg" width="800">
 
 #### Parameter Morpher
 
 A powerful drag-and-drop front end for generating automatic UIs, enabling morphing, preset management, and aleatoric parameter exploration — fully
 
-<img src="https://github.com/DarienBrito/TDXMorph/blob/master/Assets/2.jpg" width="800">
+<img src="Assets/parametermorpher.png" width="550">
 
 #### Scene Launcher
 
 A minimalistic controller for cueing and managing scenes from arbitrary presets, featuring follow actions, randomization, and versatile tools for intuitive scene sequencing. 
 
-<img src="https://github.com/DarienBrito/TDXMorph/blob/master/Assets/3.jpg" width="800">
+<img src="Assets/scenelauncher.png" width="900">
 
 # Shortcuts
 
