@@ -29,37 +29,6 @@ Three ways in. Pick the one that matches how you work.
 | **ParameterMorpher** | Drag and drop | Drop parameters onto the panel and get a generated UI for morphing, randomizing and exploring. The engine is built in. |
 | **SceneLauncher** | Show control | Organize and trigger scenes and presets, with follow actions and cue-based workflow. Attaches a PresetManager that you place yourself. |
 
-## How the pieces fit
-
-```mermaid
-flowchart LR
-    PMorph["ParameterMorpher<br/>generated morph UI"]
-    SL["SceneLauncher<br/>scenes, cues, follow actions"]
-    PSnap["PresetSnap<br/>plain store and recall"]
-
-    PM["PresetManager<br/>storage and<br/>multi-track morph engine"]
-
-    PMorph -- "engine embedded" --> PM
-    SL -. "attaches one you place" .-> PM
-
-    subgraph blocks ["built from these, each also shipped on its own"]
-        LV["ListView"]
-        CM["ControlMapper"]
-        JT["JSONTree"]
-        PI["PresetInspector"]
-    end
-
-    PM --> blocks
-    PSnap --> blocks
-
-    classDef core stroke:#E2A33F,stroke-width:2px
-    class PM core
-```
-
-ParameterMorpher carries the engine inside it, so it works alone. SceneLauncher points at a
-PresetManager you drop in yourself, which is what lets several launchers share one preset store.
-PresetSnap ignores the engine entirely: it stores and recalls, with no interpolation.
-
 ## Download
 
 These components are **free and MIT licensed**. Take the folder from this repository, or the build
@@ -101,36 +70,12 @@ ordinary parameters and stay MIDI and OSC mappable.
 | **Perform** | Cue with follow actions and quantization. Auto-learn MIDI and OSC onto every UI control. |
 | **Script** | Drive the whole UI from high-level Python, including algorithmic cueing systems. |
 
-## See it
+## See it in practice
 
-### PresetManager
+<img src="Assets/tools-at-a-glance.png" width="900">
 
-The core of the architecture. A UI-less node that stores, recalls and morphs parameter states across
-any number of TouchDesigner nodes.
-
-<img src="Assets/1.jpg" width="800">
-
-### ParameterMorpher
-
-A drag-and-drop front end that generates its own UI, for morphing, preset management and aleatoric
-parameter exploration.
-
-<img src="Assets/parametermorpher.png" width="550">
-
-### SceneLauncher
-
-A minimal controller for cueing and managing scenes built from arbitrary presets, with follow
-actions, randomization and tools for intuitive scene sequencing.
-
-<img src="Assets/scenelauncher.png" width="900">
-
-### PresetSnap
-
-Plain store and recall for any COMP, with no morph engine at all, which is the point. Headless: drop
-it in and a `Presets` page appears on the host. Its editor lists every tracked parameter with its
-mode and value.
-
-<img src="Assets/presetsnap.png" width="700">
+PresetManager is not in that picture because it has no panel of its own. It is driven from its
+parameters and its Python API, which is exactly what makes it the piece you build on.
 
 ## Tutorials
 
