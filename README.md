@@ -106,6 +106,10 @@ To get started and learn everything TDXMorph has to offer, check out the tutoria
 
 Here a quick overview of the main tools to give you a quick idea. 
 
+All eight components at a glance:
+
+<img src="Assets/component-index.png" width="900">
+
 #### Preset Manager
 
 UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDXMorph architecture.
@@ -123,6 +127,12 @@ A powerful drag-and-drop front end for generating automatic UIs, enabling morphi
 A minimalistic controller for cueing and managing scenes from arbitrary presets, featuring follow actions, randomization, and versatile tools for intuitive scene sequencing. 
 
 <img src="Assets/scenelauncher.png" width="900">
+
+#### PresetSnap
+
+Plain store and recall for any COMP, with no morph engine. It is headless: drop it in and a `Presets` page appears on the host, so storing and recalling are ordinary parameters and stay MIDI and OSC mappable. Its editor lists every tracked parameter with its mode and value.
+
+<img src="Assets/presetsnap.png" width="700">
 
 # Shortcuts
 
