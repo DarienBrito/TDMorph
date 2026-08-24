@@ -1,5 +1,7 @@
 ![TDXMorph 4, preset and parameter morphing system](Assets/tdxmorph4-hero.png)
 
+*Formerly TDMorph. The project was renamed in August 2026, and links to the old address redirect here.*
+
 > ### Version 4
 >
 > Version 4 is a major release comprised of various tools. Each component carries its own version and
