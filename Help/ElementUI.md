@@ -1,5 +1,9 @@
 # Element UI
 
+> **PROPRIETARY. Licensed, not sold.** Part of the commercial ParameterMorpher
+> component, available through [Patreon](https://www.patreon.com/c/darienbrito), not from
+> this repository.
+
 ## Core-level methods
 
 ### Promoted
@@ -15,19 +19,14 @@ EditCustomName(name)
 Change the name of the slider in the custom entry (maintains original name intact).
 
 ```python
+EnableSignal(v)
+```
+Enables or disables this element's signal, and builds or tears down its controls with it. Prefer this over writing Enablesignal directly when scripting: a parameter execute DAT does not fire in the frame its element was created, so a create-then-enable would leave a running signal with no controls. Idempotent.
+
+```python
 GetPresetsManager()
 ```
 Returns the deply dependable dictionary that holds presets.
-
-```python
-GetRandomDistribution()
-```
-Returns current random distribution.
-
-```python
-HardSync()
-```
-Resync the LFO using a high level control.
 
 ```python
 Reorder(name, source, receiver)
@@ -39,140 +38,56 @@ SetDefaultValue()
 ```
 Set the slider to the range and value found on creation (original value on dragging of parameter).
 
+### Pattern selection
+
+Each method selects the element's pattern type and sets that type's values in one call. Values
+are kept per type on the element's `Patterndata` parameter, so switching type and back
+preserves what you entered. Written to the model, never to the controls, so they work
+whether or not the pane is pointed at this element.
+
 ```python
-SetSliderDecimalPoints(val)
+SetPseq(sequence=[0.25, 0.5, 1.0])
 ```
-Sets the floating point precision for sliders.
+Play the sequence in order, looping.
+
+```python
+SetPrand(sequence=[0.25, 0.5, 1.0])
+```
+Pick from the sequence at random.
+
+```python
+SetPxrand(sequence=[0.25, 0.5, 1.0])
+```
+Pick at random with no immediate repeats.
+
+```python
+SetPshuffle(sequence=[0.25, 0.5, 1.0])
+```
+Shuffle the sequence once, then loop it.
+
+```python
+SetPwrand(sequence=[0.25, 0.5, 1.0], weights=[0.33, 0.33, 0.33])
+```
+Pick at random, biased by the weights.
+
+```python
+SetPseries(start, step=1, length=10)
+```
+Arithmetic series. Finite, so the engine wraps it to repeat.
+
+```python
+SetPgeom(start, grow=2, length=10)
+```
+Geometric series. Finite, so the engine wraps it to repeat.
+
+```python
+SetPwhite(lo=0.0, hi=1.0)
+```
+Uniform random values between `lo` and `hi`.
+
+```python
+SetPbrown(lo=0.0, hi=1.0, step=0.01)
+```
+Brownian motion bounded by `lo` and `hi`.
 
 ### Private
-
-## UI-level methods
-
-All following methods set the elements on the UI level. These should be self explanatory.
-
-### Promoted
-
-```python
-ClickUIElementDestroy()
-```
-
-```python
-ClickUIElementInterpolate()
-```
-
-```python
-ClickUIElementManualTrigger()
-```
-
-```python
-ClickUIElementRandomize()
-```
-
-```python
-SetUIElementBarFactor(int)
-```
-
-```python
-SetUIElementBeatFactor(int)
-```
-
-```python
-SetUIElementDistribution(str)
-```
-
-```python
-SetUIElementInterpolation(str)
-```
-
-```python
-SetUIElementLock(bool)
-```
-
-```python
-SetUIElementPbrown(lo=0.0, hi=1.0, step=0.01)
-```
-
-```python
-SetUIElementPgeom(start, grow=2, length=10)
-```
-
-```python
-SetUIElementPrand(sequence=[0.25, 0.5, 1.0])
-```
-
-```python
-SetUIElementPseq(sequence=[0.25, 0.5, 1.0])
-```
-
-```python
-SetUIElementPseries(start, step=1, length=10)
-```
-
-```python
-SetUIElementPshuffle(sequence=[0.25, 0.5, 1.0])
-```
-
-```python
-SetUIElementPwhite(lo=0.0, hi=1.0)
-```
-
-```python
-SetUIElementPwrand(sequence=[0.25, 0.5, 1.0], weights=[0.33, 0.33, 0.33])
-```
-
-```python
-SetUIElementPxrand(sequence=[0.25, 0.5, 1.0])
-```
-
-```python
-SetUIElementRange(minVal, maxVal)
-```
-
-```python
-SetUIElementReveal()
-```
-
-```python
-SetUIElementSignalEnable()
-```
-
-```python
-SetUIElementSignalSource(source='LFO')
-```
-
-```python
-SetUIElementSyncMode(mode='Internal')
-```
-
-```python
-SetUIElementTime(float)
-```
-
-```python
-SetUIElementValue(float)
-```
-
-```python
-SetUISnap(int)
-```
-
-### Private
-
-```python
-clickUIWidgetButton()
-```
-
-```python
-getUIElement(name)
-```
-Returns element with given name.
-
-```python
-getUIWidgetCheckbox(name)
-```
-Returns checkbox with given name.
-
-```python
-setUIWidgetValue(name, float)
-```
-Sets given widget with value.

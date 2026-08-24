@@ -4,6 +4,202 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+Since version 4, the free components carry their own version numbers rather than a single
+toolkit version, because they now ship and update independently.
+
+## [Open Toolkit 4.2.0] (3rd quarter of 2026)
+
+Current component versions on this line: PresetManager **4.3.0**, PresetSnap **1.2.0**,
+ControlMapper **1.0.4**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.8**.
+This list tracks what the line ships today, so it moves with every component release
+rather than recording what 4.2.0 contained.
+
+A new free component, per-preset timing in PresetManager, and a text rendering fix in ListView
+that reaches every component embedding it.
+
+### PresetManager 4.3.0 and PresetSnap 1.2.0
+
+Exported preset files now say what wrote them, and imports check it.
+
+- **Every export carries `version`, `tool`, `toolVersion` and `exported`** beside the preset data.
+  The schema version answers "what shape is this file"; `toolVersion` answers "which build wrote
+  it", which the schema version cannot, since one schema spans many releases.
+- **Imports refuse a file from a newer TDXMorph** rather than reading it as far as it happens to
+  parse, and say so naming both versions. Nothing is touched when a file is refused. Older files,
+  and files written before the stamp existed, import exactly as before.
+- **Pointing Import at a file that is not a TDXMorph export now tells you so** instead of failing
+  with a raw error.
+- PresetSnap's file format is its own and is not interchangeable with PresetManager's. Its version
+  number is now named to say so, and the two are free to diverge.
+
+### PresetSnap 1.0.0
+
+First release. Plain store and recall for any COMP, with no morph engine at all.
+
+- **Zero setup.** Drop it into a base or container and a `Presets` page appears on that component.
+  Every custom parameter on the host is tracked from the start.
+- **It does not interpolate**, which is the point of it. PresetManager moves between states over
+  time; this one snaps. Use whichever the moment calls for.
+- **Real parameters on the host**, so storing and recalling are MIDI and OSC mappable and work
+  with the panel closed. Changing the `Preset` menu recalls, so there is no separate Recall button.
+- **A 16 pad grid.** Click STORE to arm, then a pad to capture into it. A filled pad recalls with
+  one click.
+- **The whole data layer is one table** you can read, hand edit and diff. Rows are parameters,
+  columns are presets. No hidden storage, no JSON blob.
+- **A recall never overwrites an expression, an export or a bind.** Assigning a value in
+  TouchDesigner also forces the parameter into constant mode, so a naive recall would silently
+  freeze your expression into a number. The mode is checked live at recall time, so a row starts
+  working again by itself once you remove the expression.
+- **Capture parameters of operators inside the host** by dragging the operator onto the editor.
+- **Presets export as JSON in the PresetManager shape**, so a project that outgrows plain snapping
+  can move its presets to the bigger tools.
+
+Note that deleting the component does not remove the page it injected: pulse **Remove Page** first,
+or turn `Injectpage` off. An Execute operator has no destroy event, and the one in question lives
+inside the thing being deleted.
+
+Full guide: [PresetSnap](Documentation/PresetSnap.md).
+
+### PresetManager 4.2.0
+
+Each preset now carries its own morph time, curve and distribution. Global mode used to borrow the
+first element's timing, which meant a preset could not describe how long it should take to arrive.
+Existing presets are migrated on load.
+
+### ListView 1.0.6
+
+Right-aligned cell text no longer loses its last character. The horizontal text offset always
+displaces to the right, so the padding has to follow the justify edge rather than being applied in
+one direction.
+
+### ControlMapper 1.0.2
+
+Picks up the ListView fix above, which its mapping editor renders through. No other change.
+
+## [Open Toolkit 4.1.7] (3rd quarter of 2026)
+
+PresetManager **4.1.7**, ControlMapper **1.0.1**, PresetInspector **1.5.5**, JSONTree **1.5.5**,
+ListView **1.0.5**.
+
+Smaller downloads, nothing else.
+PresetManager drops from 119.5 KB to 86.6 KB, PresetInspector 21.9 to 13.8, JSONTree 17.9 to
+11.9, ListView 26.7 to 18.8 and ControlMapper 46.8 to 30.5. No behaviour, parameter or API
+changed in any of them.
+
+## [Open Toolkit 4.1.6] (3rd quarter of 2026)
+
+PresetManager **4.1.6**, ControlMapper **1.0.0**, PresetInspector **1.5.4**, JSONTree **1.5.4**,
+ListView **1.0.4**.
+
+ControlMapper joins the free tier as a component in its own right.
+
+### ControlMapper 1.0.0
+
+First release as a standalone component. It has been part of ParameterMorpher and SceneLauncher for
+some time; this is the same mapping service, packaged so you can drop it into any project.
+
+- **One service for MIDI and OSC.** Both protocols normalise into a single channel namespace, so a
+  mapping does not care which one it came from.
+- **Any custom parameter is mappable.** A control needs no special wrapper, only a small marker
+  operator that catches the click while map mode is on.
+- **Mappings live in a table you can read.** They are not buried in storage, so they can be
+  inspected, edited and diffed like anything else.
+- **Per-mapping range**, taken from the parameter itself when the mapping is learned, rather than one
+  global range shared by everything.
+- **Soft takeover.** A control can be set to write only once it crosses where the parameter already
+  sits, which removes the jump the first time you touch a fader. The default stays immediate.
+- **Dead mappings are shown and can be pruned**, rather than silently skipped.
+- **An editor** with inline editing, re-learn, delete and drag-reorder.
+
+### PresetManager 4.1.6, 4.1.5 and 4.1.4
+
+#### Bug fixes
+
+- **The morph curve ships at Linear again.** An ease and a curve coefficient of 0.75 had been
+  captured into the released component, so a fresh PresetManager morphed on an Easein curve rather
+  than the documented Linear. (4.1.4)
+- **A deleted element no longer raises an error every frame.** The engine held a cached parameter
+  belonging to an element that had been destroyed and wrote to it without checking it was still
+  valid. (4.1.5)
+- **The Paths editor's list background follows its row colour.** The empty area of the list, and the
+  band below the last row, stayed on a fixed grey when the row colour changed. (4.1.6)
+
+#### Changed
+
+- **The blend amount drives the engine through the cook chain.** Moving the blend used to force a
+  cook from Python. The value now propagates by the normal dependency path, and nothing cooks while
+  the blend sits still. (4.1.5)
+
+### ListView 1.0.4
+
+#### Bug fixes
+
+- **The list background follows the row colour.** The underlying list operator carried a fixed
+  background that happened to match the default row colour, so any list given a different row colour
+  kept the old grey in its empty area and below the last row.
+
+## [Open Toolkit 4.1.3] (3rd quarter of 2026)
+
+PresetManager **4.1.3**, PresetInspector **1.5.4**, JSONTree **1.5.4**, ListView **1.0.3**.
+
+The engine was substantially rewritten and the free tier grew from one component to four.
+Presets written by older versions migrate automatically. Please report anything you find on the
+[issue tracker](https://github.com/DarienBrito/TDXMorph/issues).
+
+### PresetManager
+
+#### New features
+
+- **Multi-track morphing engine.** Every tracked node can morph on its own clock, with its own duration, curve, shape coefficients, end mode, group and distribution. Enabled by the **Multi-Track Engine** toggle on the Options page, and **off by default**, so existing projects keep the 3.2 single-track behaviour unchanged.
+- **Preset schema v2.** Timing moved from the top of a preset down into each tracked path, which is what makes per-track timing possible. Presets written by older versions migrate automatically and idempotently, with no data loss.
+- **End modes per track:** hold, loop, ping-pong or advance.
+- **Per-track auto sequences.** One node can walk its own preset or random cadence while its neighbours do something else.
+- **Manual blending.** Load two presets and crossfade them by hand with a single factor, through the existing morph chain, with no clock running.
+- **Curve-shape authoring.** Global `Curvea`, `Curveb` and `Curven` plus per-path columns in the paths editor. Coefficients reset to each curve's own defaults when the curve changes.
+- **A View column in the paths editor** that opens or reuses one floating network pane on the tracked operator, selects it and frames it.
+
+#### Bug fixes
+
+- **Stop now actually stops.** Stopping left the per-track auto cadences and both deferred queues armed, so a Stop issued while a track was completing was undone a frame later, restarting the clock.
+- **Stopping no longer makes an untriggered track replay itself.** Track start times are absolute clock seconds, but stopping zeroed the clock, leaving stored starts in the future of the new epoch. A neighbouring track would freeze and later run a morph nobody asked for.
+- **A deleted parameter no longer aborts the whole morph.** A stored parameter the user had since removed took down every other track with it. Missing names are now skipped, with one message per target naming them.
+- **The blend menus cannot hijack a running morph.** Changing preset A or B while blending was off still overwrote the values of a morph in progress.
+- **Loading a preset no longer rewrites your session defaults.** A loaded preset permanently replaced the session morph time, curve and distribution, so a later random morph ran at the preset's duration and ignored your global setting. Preset timing is now scoped to its own trigger. An explicit `morphTime` or `morphCurve` you pass in is still deliberate and still persists.
+- **A morph time you pass in now wins over the times stored in the preset.** With multi-track on, an override was accepted and then ignored because each track fell back to its own stored duration.
+- **A morph of zero seconds never finished.** It reached the target and left the engine running and cooking at rest, and the next morph started from stale state.
+- **Importing a preset file written by an older version could not be morphed.** Import and inject now migrate the file instead of storing it as-is.
+- **Migration no longer drops the curve shape.** A preset carried over from v1 lost its shape coefficients, so an Easein curve reached its target about a quarter of the way through.
+- **Importing presets held by another component works.** The validation guarding against malformed payloads rejected TouchDesigner's own stored dictionaries.
+- Re-storing a preset no longer flattens its per-track end mode, group and quantize settings.
+- A preset sequence with an explicit key list no longer raises an index error.
+- Malformed data passed to `InjectPresets` is now rejected on the way in, rather than surfacing much later as an unrelated error.
+- Resetting the morph time no longer gives an instant morph. The value and the default were 2 and 0; both are 2.0 now.
+- The shipped file no longer carries a leftover development path in its `Paths` storage.
+- The morph count no longer ships at 2 with a default of 0.
+
+#### Performance
+
+- **Nothing cooks when idle.** The master clock is now a Timer CHOP that runs only while morphing, replacing an always-dirty Speed CHOP and a force-cook keep-alive. A stopped timer is clean, so the whole chain idles.
+- **Cached parameter writeback** and **in-place channel updates**: about 4.6x faster on the hot path (351 µs to 75 µs for 400 channels).
+
+#### Changed
+
+- **The paths editor is now the owned MIT ListView**, replacing the Derivative Paths Lister. **PresetManager carries zero third-party content.** Every column it had is kept.
+- Curves are consolidated into `curveLib` (16 functions plus their defaults). The legacy `CurvesGenerator` chain is gone.
+- Several methods were removed or renamed. See the [API reference](Documentation/PresetManager.md#removed-since-32) for the full list and its replacements.
+
+### PresetInspector (new to this repository)
+
+The preset viewer and value editor, previously bundled, now ships here as its own MIT component at **1.5.4**. Attach it to a PresetManager to browse every stored preset as a tree, or point it at a JSON file. Values are editable, and write-back is guarded so a refused write is reported rather than silently dropped.
+
+### JSONTree (new)
+
+A reusable collapsible JSON tree viewer and inline editor at **1.5.4**, built on the native `listCOMP`. Search, expand and collapse, type-coloured values, editable leaves, and schema-aware rendering that collapses a TDMorph parameter dict into a single readable row. This is the viewer embedded in PresetInspector, released standalone so it can be used for any JSON inside TouchDesigner.
+
+### ListView (new)
+
+A reusable flat-columnar list widget at **1.0.3**, built on the native `listCOMP`. Declarative column spec, inline editing with type coercion, drag-to-resize columns, drag-to-reorder rows, and a pluggable Callbacks module. It is the widget the PresetManager paths editor and the SceneLauncher lists are built on, released standalone and MIT so it can be used in commercial and closed-source work.
+
 # [Release]
 ## [3.2] (4th quarter of 2025)
 

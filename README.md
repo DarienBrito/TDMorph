@@ -1,141 +1,132 @@
-## What is TDXMorph?
+![TDXMorph 4, preset and parameter morphing system](Assets/tdxmorph4-hero.png)
 
-*Formerly TDMorph. The project was renamed in August 2026, and links to the old address redirect here.*
+> ### Version 4
+>
+> Version 4 is a major release comprised of various tools. Each component carries its own version and
+> ships on its own schedule, so the [Download](#download) table is the only current list.
+>
+> The morphing engine was substantially rewritten and the free tier grew from one component to six.
+> Presets written by older versions migrate automatically, but **back up your project and export your
+> presets before upgrading** from 3.2.1.
 
-**TDXMorph** is a toolbox designed to enhance **parametric exploration**, **preset storage**, **composition**, and **cueing** within the **TouchDesigner** platform.
+## What it is
 
-It facilitates the creation and performance of **generative content** through various methods, while allowing you to **archive and recall parameter configurations** using a flexible **JSON-based format**.
+TDXMorph is a TouchDesigner toolbox for parametric exploration, preset storage, composition and
+cueing. Capture the parameter state of any node, morph between states over time, drive it from
+generated UIs, and keep it all in a readable JSON format.
 
-In addition, TDXMorph includes a set of **developer tools** for building **custom systems**, making it a versatile resource for artists and technical creators alike.
+It also ships the widgets it is built from, so you can put them in your own systems.
 
-## What can I do with it?
+<img src="Assets/component-index.png" width="900">
 
-With **TDXMorph**, you can perform a wide range of operations for creative exploration, performance, and system design in **TouchDesigner**, including:
+## Start here
 
-1. **Random search** for parameter states across one or multiple nodes.  
-2. **Morphing between states** using various interpolation curves.  
-3. **Store and retrieve** an unlimited number of presets.  
-4. **Control parameters and transitions** through automatically generated UIs.  
-5. **Automatically store, randomize, and transform** parameters of any node.  
-6. **Auto-learn MIDI and OSC** mappings for every UI control.  
-7. **Script full UI behavior** via high-level Python commands.  
-8. **Set global and local timing** for each parameter independently.  
-9. **Automatically generate animations** from stored presets.  
-10. **Build flexible cueing systems** with follow actions and quantization.  
-11. **Generate parameter patterns** programmatically using the *Patterns* library.  
-12. **Create algorithmic cueing systems** through scripting.
+Three ways in. Pick the one that matches how you work.
 
-And much more!
-
-## How does it work?
-
-The architecture of **TDXMorph** is fully modular, allowing you to use its core functionality either as a unified system or as individual components. This flexibility lets you combine different approaches depending on your needs.  
-The three main modes of operation are:
-
-- **PresetManager**  
-  A UI-less core component that manages any number of nodes simultaneously. It serves as the backbone of the engine—ideal for advanced developers who want to build their own systems from scratch.
-
-- **ParameterMorpher**  
-  A node with an interactive interface that includes widgets and control buttons, allowing you to easily perform morphing, randomization, and parameter operations across multiple nodes.
-
-- **SceneLauncher**  
-  A high-level UI designed for show control. It enables you to organize and trigger scenes and presets, supports follow actions, and integrates seamlessly with cue-based workflows.
+| Component | Shape | What it gives you |
+|---|---|---|
+| **PresetManager** | No UI, all engine | Manages any number of nodes at once from parameters and Python. The backbone, and where to start if you are building your own system. |
+| **ParameterMorpher** | Drag and drop | Drop parameters onto the panel and get a generated UI for morphing, randomizing and exploring. The engine is built in. |
+| **SceneLauncher** | Show control | Organize and trigger scenes and presets, with follow actions and cue-based workflow. Attaches a PresetManager that you place yourself. |
 
 ## Download
 
-Starting with version 3.2, TDXMorph has been divided into free and paid components. This change allows me to continue maintaining and improving the tool, as well as creating learning resources for the community — work that requires significant time and effort, which I can sustain only with proper support.
+These components are **free and MIT licensed**. Take the folder from this repository, or the build
+from [Releases](https://github.com/DarienBrito/TDXMorph/releases).
 
-The **PresetManager** remains completely free. You can download it by grabbing the PresetManager folder from this repository or the corresponding build from the Releases section.
+| Component | Version | What it is |
+|---|---|---|
+| [**PresetManager**](PresetManager/) | 4.3.0 | Preset storage plus the multi-track morphing engine. The core of TDXMorph. |
+| [**PresetSnap**](PresetSnap/) | 1.2.0 | Plain store and recall for any COMP. No morphing, no setup. |
+| [**PresetInspector**](PresetInspector/) | 1.5.5 | Preset viewer and value editor. |
+| [**JSONTree**](JSONTree/) | 1.5.5 | Reusable JSON tree viewer with inline editing. |
+| [**ListView**](ListView/) | 1.0.8 | Reusable flat-columnar list widget. |
+| [**ControlMapper**](ControlMapper/) | 1.0.4 | MIDI and OSC mapping for any custom parameter. |
 
-The following modules are paid:
-  - **ParameterMorpher**
-  - **SceneLauncher**
+**ParameterMorpher** and **SceneLauncher** are paid components, available through
+[Patreon](https://www.patreon.com/c/darienbrito).
 
-You can get them through my Patreon 👇:
+## Install
 
-https://www.patreon.com/c/darienbrito
+Built and tested on TouchDesigner 2025.33070.
+
+1. Drag the `.tox` into your TouchDesigner network, or use **File > Import > Component**.
+2. Click the component's viewer to open its panel.
+
+That is the whole install. Each `.tox` is self-contained and carries everything it needs, so keep it
+in your project folder or wherever you keep your components.
+
+Two of them have no panel by design. PresetManager is driven from its parameters and its Python API.
+PresetSnap adds a `Presets` page to whatever COMP you drop it into, so storing and recalling are
+ordinary parameters and stay MIDI and OSC mappable.
+
+## What you can do
+
+| | |
+|---|---|
+| **Explore** | Randomly search parameter states across one node or many. Generate patterns programmatically with the *Patterns* library. Build animations automatically out of stored presets. |
+| **Morph** | Interpolate between states using a choice of curves, with global timing and per-parameter timing side by side. |
+| **Store** | Keep an unlimited number of presets in a readable JSON format, recalled from any node. |
+| **Perform** | Cue with follow actions and quantization. Auto-learn MIDI and OSC onto every UI control. |
+| **Script** | Drive the whole UI from high-level Python, including algorithmic cueing systems. |
+
+## See it in practice
+
+<img src="Assets/tools-at-a-glance.png" width="900">
+
+PresetManager is not in that picture because it has no panel of its own. It is driven from its
+parameters and its Python API, which is exactly what makes it the piece you build on.
 
 ## Tutorials
 
-**TDXMorph** is a powerful and versatile tool — while it may take some time to explore its depth, the basic functionality is intuitive and easy to grasp.
+The basics are quick to pick up, and there is a lot of depth underneath. The tutorial series covers
+both, on [Vimeo](https://vimeo.com/showcase/6682501) and on
+[YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz).
 
-To get started and learn everything TDXMorph has to offer, check out the tutorial series on [Vimeo](https://vimeo.com/showcase/6682501) or [YouTube](https://www.youtube.com/playlist?list=PLVApwo2lw34NfygPlNyqXkV_Zi2HD-hBz)
+## Shortcuts
 
-### Overview
+Every shortcut in TDXMorph is <kbd>Shift</kbd> or <kbd>Ctrl</kbd> plus a mouse button. That is the
+whole system. Full list in [SHORTCUTS.md](SHORTCUTS.md).
 
-Here a quick overview of the main tools to give you a quick idea. 
+## Documentation
 
-#### Preset Manager
+Full reference per component: [PresetManager](Documentation/PresetManager.md) ·
+[PresetSnap](Documentation/PresetSnap.md) · [PresetInspector](Documentation/PresetInspector.md) ·
+[JSONTree](Documentation/JSONTree.md) · [ListView](Documentation/ListView.md) ·
+[ControlMapper](Documentation/ControlMapper.md)
 
-UI-less node to store, recall, and morph parameter states across multiple TouchDesigner nodes. The core of the TDXMorph architecture.
+Paid components: [ParameterMorpher](Documentation/ParameterMorpher.md) ·
+[SceneLauncher](Documentation/SceneLauncher.md). These are reference pages for products distributed
+through Patreon rather than from this repository.
 
-<img src="Assets/1.jpg" width="800">
+Terse per-class API notes live in [Help](Help/).
 
-#### Parameter Morpher
+## License
 
-A powerful drag-and-drop front end for generating automatic UIs, enabling morphing, preset management, and aleatoric parameter exploration — fully
+Since version 3.2, TDXMorph has been split into free and paid components. The paid side is what funds
+the maintenance, the free side and the learning resources.
 
-<img src="Assets/2.jpg" width="800">
+| | |
+|---|---|
+| **The six components above** | [MIT](https://opensource.org/license/mit). Use them in personal and commercial projects, modify them freely, redistribute or sell derived works, combine them with closed-source software. You must include the copyright notice and the licence text, and accept that there is no warranty or liability. |
+| **ParameterMorpher and SceneLauncher** | Commercial. Licensed, not sold, each governed by its own EULA rather than by MIT: no redistribution, resale, sublicensing or sharing. The terms are in the `LICENSE` operator inside each component. |
 
-#### Scene Launcher
+Unsure what MIT implies? [Here is a plain explanation](https://memgraph.com/blog/what-is-mit-license).
 
-A minimalistic controller for cueing and managing scenes from arbitrary presets, featuring follow actions, randomization, and versatile tools for intuitive scene sequencing. 
+## Support and feedback
 
-<img src="Assets/3.jpg" width="800">
+Bugs and suggestions go to the [issue tracker](https://github.com/DarienBrito/TDXMorph/issues). If
+you spot something off in the networks, the UI or the code, and you will here and there, I would
+really appreciate hearing about it.
 
-# Shortcuts
+You can find me at [darienbrito.com](https://darienbrito.com/) and on
+[Instagram](https://www.instagram.com/darien.brito/). If you want to go one step further, my
+[Patreon](https://www.patreon.com/c/darienbrito) is where the paid components live and where the
+funding for all of this comes from. 💛
 
-The **TDXMorph** ecosystem includes a set of simple, intuitive shortcuts designed to streamline your workflow. You only need to remember a few combinations — all built around the keys:
-
-<kbd>Shift</kbd> or <kbd>Ctrl</kbd> + <kbd>Mouse Button</kbd>
-
-That’s it! Every shortcut in TDXMorph is derived from these two simple modifiers. [Click here](SHORTCUTS.md) to see all functions 
-
-
-## Code documentation
-
-You can find documentation for relevant TDXMorph modules [here](Documentation).
-
-## Bug Reports and contributions
-
-Feedback and contributions are always welcome! If you notice anything that could be improved — whether in the networks, the UI, or the underlying code — please don’t hesitate to let me know. And if you spot something that looks off (which is bound to happen here and there), I’d really appreciate your input.
-
-To report bugs or suggest improvements, please use the official issue tracker:
-
-🔗 [**TDXMorph GitHub Issues**](https://github.com/DarienBrito/TDXMorph/issues)
-
-## About the License
-
-Since version 3.2, TDXMorph's free components have moved to an [**MIT license**](https://opensource.org/license/mit), which means that you can 
-
-- Use it for personal or commercial projects
-- Modify the code freely
-- Redistribute or sell derived works
-- Combine it with closed-source software
-
-But you must:
-
-- Include the copyright notice
-- Include the license text
-- Accept that there is no warranty or liability
-
-If you’re unsure what this implies, you can read [**what is the MIT License.**](https://memgraph.com/blog/what-is-mit-license)
-
-**ParameterMorpher and SceneLauncher are not covered by this.** They are commercial
-components under their own EULA, distributed through my [**Patreon**](https://www.patreon.com/c/darienbrito)
-rather than from this repository. The pages for them here are reference documentation only.
-
-## Final Thoughts
-
-The motivation to share this tool comes from the wonderful sense of **camaraderie** within the **TouchDesigner** community, and from the inspiring philosophy of its creators at [**Derivative**](https://derivative.ca/).
-
-I hope the *ethos* that defines the TouchDesigner world continues to thrive, and that **TDXMorph** helps you expand your creative possibilities as an artist, technologist, and maker.
-
-## Support
-
-Thank you for your interest in my work! 🙏 You can visit my [**website**](https://darienbrito.com/) and follow me on [**Instagram**](https://www.instagram.com/darien.brito/).
-
-If you’d like to go one step further in supporting what I do, consider subscribing to my [**Patreon**](https://www.patreon.com/c/darienbrito). Your support helps me keep creating, maintaining tools, and sharing knowledge with the community. 💛
+This tool exists because of the sense of camaraderie in the TouchDesigner community and the
+philosophy of its creators at [Derivative](https://derivative.ca/). I hope it expands what you can
+make.
 
 Enjoy!
 
