@@ -105,10 +105,14 @@ That renders a working, editable, reorderable grid. To react to edits and clicks
 | `Cellpadding` | Int | `10` | Horizontal padding inside a cell. |
 | `Rowseparators` | Toggle | `On` | Draw a line between rows. |
 | `Separators` | Toggle | `Off` | Draw a line between columns. |
+| `Skin` | Menu | `Carbon` | Colour skin: `Carbon`, `Verdigris` or `Mono`. Picking one repaints the Colors page. |
+| `Applyskin` | Pulse | | Re-apply the current skin. This is the way back after hand-editing a colour. |
 
 ### Colors page
 
 Nine RGBA parameters override the theme without editing code: `Rowcolor` and `Rowcoloralt` (a zebra pair, match them to flatten), `Headercolor`, `Headertextcolor`, `Textcolor`, `Valuecolor`, `Selectcolor`, `Hovercolor` and `Dividercolor`.
+
+A skin change writes all nine, so a hand-edited colour holds until you pulse `Applyskin`. A parameter left in expression mode is skipped, which is how an embedded lister keeps its host's own colour bridge.
 
 ### About page
 
@@ -260,6 +264,11 @@ ReorderDict(d, order)
 ```
 A static helper that reorders an ordered dependable dict in place, for use inside `ListViewReorder`.
 
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin and redraw, returning the name that took effect. With no name it reads the `Skin` parameter, and an unknown name falls back to the theme default. A theme exposing no skins is left alone.
+
 ---
 
 ## Theming
@@ -271,6 +280,8 @@ Theming is **fail-soft**: a missing render symbol falls back to a neutral defaul
 `HOVER_BG`, `HEADER_DIVIDER` and `ROW_DIVIDER` are feature-gated. Leave one out and that hover or separator is simply off.
 
 Fonts must be an **installed OS family**; a `.ttf` path is ignored by `listCOMP`. Verdana, Courier New and Material Design Icons ship with both macOS and Windows, which is why the default theme uses them.
+
+The shipped `listViewTheme` also exposes **skins**: `SKINS`, `DEFAULT_SKIN` and a `use(name)` that swaps the palette in place. Carbon, Verdigris and Mono ship with it, and `ApplySkin` is what drives them. A flat theme carrying no `use` is left untouched, so a host's own theme keeps working.
 
 For per-instance tweaks, prefer the Colors and Look parameter pages over editing the theme module.
 

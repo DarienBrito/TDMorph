@@ -103,6 +103,13 @@ Both ranges normalise their protocol to 0..1 before anything downstream sees it,
 | `Prunedead` | Pulse | Delete every mapping whose target no longer resolves. |
 | `Clearmappings` | Pulse | Drop every mapping. Asks first. |
 
+### Look page
+
+| **Parameter** | **Type** | **Description** |
+|---|---|---|
+| `Skin` | Menu | Colour skin: `Carbon`, `Verdigris` or `Mono`, default `Carbon`. Forwarded to the mapping editor's list, which owns the colours. |
+| `Applyskin` | Pulse | Re-apply the current skin. This is the way back after hand-editing a colour. |
+
 ### Info page
 
 | **Parameter** | **Type** | **Description** |
@@ -356,6 +363,11 @@ OpenEditor()
 OnBlink(val)
 ```
 Open the mapping editor, and the blink driver for the armed target. One execute operator serves the whole host.
+
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin, returning the name that took effect. The mapping list is a ListView clone and owns the colours, so the service only forwards. It returns an empty string when no editor is present, because the service also runs headless.
 
 ---
 

@@ -38,7 +38,17 @@ Search = str
 ```
 Filter the tree. Forwarded to the tree's own filter.
 
+```python
+Skin = str
+```
+Colour skin: Carbon, Verdigris or Mono. Handed down to the embedded tree.
+
 ### Promoted
+
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin. Returns the name the embedded tree reports back. The Inspector owns no colours itself: it sets the tree's Skin and hands the call down.
 
 ```python
 WriteBack(keys, newVal, oldVal=None)

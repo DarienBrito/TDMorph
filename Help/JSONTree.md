@@ -43,7 +43,17 @@ Showtoolbar = bool
 ```
 Show the in-panel toolbar (search field plus expand and collapse).
 
+```python
+Skin = str
+```
+Colour skin: Carbon, Verdigris or Mono. Setting it repaints the colour parameters.
+
 ### Promoted
+
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin and redraw. Returns the name that took effect. With no name it reads the Skin parameter; an unknown name falls back to the theme default.
 
 ```python
 CollapseAll()

@@ -84,6 +84,13 @@ Both set `Source` to `Data` for you.
 
 The `Support` and `Website` pulse buttons, then `Author` and `Version`, which are **read only**.
 
+### Look page
+
+| **Parameter** | **Type** | **Default** | **Description** |
+|---|---|---|---|
+| `Skin` | Menu | `Carbon` | Colour skin: `Carbon`, `Verdigris` or `Mono`. Repaints the tree and the toolbar. |
+| `Applyskin` | Pulse | | Re-apply the current skin. This is the way back after hand-editing a colour. |
+
 ---
 
 ## Sources
@@ -169,6 +176,11 @@ Copy a cell's value to the clipboard.
 EditCell(row, col, val)
 ```
 Commit an edit programmatically, with the same coercion and persistence as a manual edit.
+
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin and redraw, returning the name that took effect. With no name it reads the `Skin` parameter, and an unknown name falls back to the theme default.
 
 ---
 

@@ -190,3 +190,8 @@ Open the mapping editor.
 OnBlink(val)
 ```
 Blink driver for the armed target. One execute operator serves the whole host.
+
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin. Returns the name that took effect. The mapping list is a ListView clone and owns the colours, so the service only forwards. Returns an empty string when no editor is present, because the service also runs headless.

@@ -71,6 +71,13 @@ The tree fills with the stored presets. Double-click a value to edit it.
 
 The `Readme`, `Help`, `Support` and `Website` pulse buttons, then `Author` and `Version`, which are **read only**.
 
+### Look page
+
+| **Parameter** | **Type** | **Default** | **Description** |
+|---|---|---|---|
+| `Skin` | Menu | `Carbon` | Colour skin: `Carbon`, `Verdigris` or `Mono`. Handed down to the embedded tree, which owns the colours. |
+| `Applyskin` | Pulse | | Re-apply the current skin. |
+
 ---
 
 ## Modes
@@ -142,6 +149,11 @@ Turn the tree's own `Schemaaware` toggle off if you want to see the raw nested s
 WriteBack(keys, newVal, oldVal=None)
 ```
 Persist an edit to the active source. `keys` is the key chain from the root of the data to the leaf. Called by the embedded tree on a committed edit; you rarely need to call it yourself.
+
+```python
+ApplySkin(name=None)
+```
+Switch the colour skin, returning the name the embedded tree reports back. The Inspector owns no colours itself: it sets the tree's `Skin` and hands the call down.
 
 Everything else the Inspector does is driven from its parameters, and the tree's own API is available on the embedded `JSONTree` component. See [JSONTree](JSONTree.md).
 
