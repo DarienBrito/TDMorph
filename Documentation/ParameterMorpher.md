@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.16.0
+**Version:** 4.17.0
 
 > ParameterMorpher is a **commercial** component of the TDXMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,19 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 4.17.0
+
+- **Page between Element Containers.** Past two containers the stacked layout gets hard to work
+  in, so the header now carries a pager: a single-container view that shows one container at a
+  time at full height, stepped with the arrows, picked by name from the menu, or driven from the
+  `Page` parameter. The arrows stop at the first and last container rather than wrapping, and both
+  are mappable, so a MIDI button can flip pages during a show.
+- Paging only changes what you see. A container you have paged away from keeps morphing, keeps its
+  timers and keeps answering its mapped controls.
+- `Single container view` is off by default, so an existing project opens exactly as before.
 
 ---
 
@@ -522,6 +535,19 @@ morpher = op('ParameterMorpher')
 
 - **`ChangeOrientation(horizontal=False)`**  
   Changes the alignment of UI containers between horizontal and vertical layouts.  
+
+- **`ShowPage(n)`**  
+  Switches to single-container view and shows the n-th container, 1 based. Returns that
+  container, or `None` when none exist.  
+
+- **`NextPage()` / `PreviousPage()`**  
+  Steps one container forward or back. Both stop at the ends of the set rather than wrapping.  
+
+- **`PageCount`**  
+  How many containers there are, which is the upper bound on the `Page` parameter.  
+
+- **`PageLabel()`**  
+  The name and position of the current container, as shown in the header.  
 
 ### Reporting
 
