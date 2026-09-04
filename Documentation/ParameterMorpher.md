@@ -28,9 +28,9 @@ Copyright © 2020–2026
   are mappable, so a MIDI button can flip pages during a show.
 - Paging only changes what you see. A container you have paged away from keeps morphing, keeps its
   timers and keeps answering its mapped controls.
-- `Single container view` is off by default, so an existing project opens exactly as before. While
-  it is off the arrows and the menu are greyed out: they are controls of that view, not a way into
-  it, so the toggle is the one way in.
+- `Pages mode` is off by default, so an existing project opens exactly as before. While it is off
+  the arrows and the menu are greyed out: they are controls of that mode, not a way into it, so
+  the toggle is the one way in.
 
 ---
 
@@ -539,12 +539,12 @@ morpher = op('ParameterMorpher')
   Changes the alignment of UI containers between horizontal and vertical layouts.  
 
 - **`ShowPage(n)`**  
-  Switches to single-container view and shows the n-th container, 1 based. Returns that
-  container, or `None` when none exist.  
+  Turns `Pages mode` on and shows the n-th container, 1 based. Returns that container, or
+  `None` when none exist.  
 
 - **`NextPage()` / `PreviousPage()`**  
   Steps one container forward or back. Both stop at the ends of the set rather than wrapping, and
-  both are inert while single container view is off.  
+  both are inert while `Pages mode` is off.  
 
 - **`PageCount`**  
   How many containers there are, which is the upper bound on the `Page` parameter.  
