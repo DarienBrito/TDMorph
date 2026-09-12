@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.17.4
+**Version:** 4.17.5
 
 > ParameterMorpher is a **commercial** component of the TDXMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,16 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 4.17.5
+
+- **A menu parameter keeps its expression too.** In 4.17.4 the menu element was the one style that still
+  replaced an expression with a plain value, so the fix below did not actually reach it.
+- **Deleting an element leaves a driven parameter driven.** Removing an element used to reset the
+  parameter to a plain value, which threw away the expression or export that 4.17.4 had preserved. A
+  parameter that really was a plain value still goes back to the value it had before the element.
 
 ---
 
