@@ -7,12 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Since version 4, the free components carry their own version numbers rather than a single
 toolkit version, because they now ship and update independently.
 
-## [Open Toolkit 4.2.0] (3rd quarter of 2026)
+## [Open Toolkit 4.2.1] (3rd quarter of 2026)
 
 Current component versions on this line: PresetManager **4.3.0**, PresetSnap **1.2.1**,
 ControlMapper **1.0.5**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.8**.
 This list tracks what the line ships today, so it moves with every component release
-rather than recording what 4.2.0 contained.
+rather than recording what any one toolkit release contained.
 
 A new free component, per-preset timing in PresetManager, and a text rendering fix in ListView
 that reaches every component embedding it.
