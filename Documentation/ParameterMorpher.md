@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.17.5
+**Version:** 4.17.6
 
 > ParameterMorpher is a **commercial** component of the TDXMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,12 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 4.17.6
+
+- Maintenance re-export. No change to how the component behaves.
 
 ---
 
