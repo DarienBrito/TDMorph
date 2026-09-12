@@ -4,7 +4,7 @@
 Copyright (c) 2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** [MIT License](https://opensource.org/license/mit)  
-**Version:** 1.0.4
+**Version:** 1.0.5
 
 ---
 
@@ -167,6 +167,8 @@ Arming the same target twice disarms it. `Cancel` disarms without changing the m
 
 While something is armed the service blinks it, driven by one LFO and one execute DAT for the whole host rather than a blink chain inside every control.
 
+A parameter **driven by an expression or an export** cannot be mapped, and neither can one bound to such a parameter. A mapping writes a value, and writing one would replace the expression for good. `Arm` refuses it, and clicking it in map mode opens a short note naming the driven parameter instead of arming.
+
 ---
 
 ## Ranges and takeover
@@ -205,6 +207,8 @@ PruneDead()
 ```
 
 The editor shows a dead target as `(missing)`. A renamed control therefore reads as broken instead of quietly doing nothing, which is what the previous engine did on every message.
+
+A parameter that becomes driven after it was mapped is **skipped** by `Route`, never overwritten, and reported by `DrivenRows()`. The editor marks it `(driven)`. `PruneDead` leaves it alone, because the mapping still resolves and works again as soon as the parameter is constant.
 
 ---
 
@@ -270,17 +274,17 @@ Enter or leave map mode. Reveals every registered target and cancels any pending
 ```python
 Arm(widget, parName='Value')
 ```
-Arm `widget.par[parName]` so the next incoming channel binds to it.
+Arm `widget.par[parName]` so the next incoming channel binds to it. Returns False, and arms nothing, when the parameter is driven by an expression or an export.
 
 ```python
 OnTargetClick(target)
 ```
-Handle a click on a `MapTarget`. Arms its widget, or disarms it if it was already armed.
+Handle a click on a `MapTarget`. Arms its widget, or disarms it if it was already armed. On a driven parameter it explains why instead of arming, and cancels any control that was armed before, so the next knob cannot land on it.
 
 ```python
 Map(chan)
 ```
-Bind the armed target to `chan`. Consumes the arm. Returns True when a row was written.
+Bind the armed target to `chan`. Consumes the arm. Returns True when a row was written, and False when nothing is armed or the armed parameter has since become driven.
 
 ```python
 Unmap(chan, target, parName='')
@@ -298,7 +302,7 @@ Disarm, ask whether anything is armed, and read back the armed widget or None.
 ArmRow(rowIndex)
 ArmedRowIndex()
 ```
-Arm an existing mapping for re-learn by 1-based table row, and read back which row is armed, or -1.
+Arm an existing mapping for re-learn by 1-based table row, and read back which row is armed, or -1. A row whose parameter is driven is refused with the same note as a click.
 
 ### Editing mappings
 
@@ -332,6 +336,11 @@ PruneDead()
 ```
 The 1-based indices of mappings that no longer resolve, and a delete of all of them. `PruneDead` returns how many went.
 
+```python
+DrivenRows()
+```
+The 1-based indices of mappings whose parameter is driven by an expression or an export, directly or through a bind. `Route` skips them and `PruneDead` does not remove them.
+
 ### Registration
 
 ```python
@@ -349,7 +358,7 @@ Find targets by tag under `Maproot` and register them. Type filtered on purpose,
 ```python
 Route(chan, val)
 ```
-Send one normalised channel value, in the range 0 to 1, to every target bound to it. Returns how many targets were written.
+Send one normalised channel value, in the range 0 to 1, to every target bound to it. Returns how many targets were written. A driven parameter is skipped, never overwritten.
 
 ```python
 Recompile()

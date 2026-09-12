@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.17.0
+**Version:** 4.17.4
 
 > ParameterMorpher is a **commercial** component of the TDXMorph toolkit, governed by the
 > ParameterMorpher EULA (see the `LICENSE` operator inside the component). No
@@ -16,6 +16,53 @@ Copyright © 2020–2026
 >
 > The MIT parts embedded inside it, the PresetManager engine and the `Lib/Patterns` library,
 > keep their own MIT licence.
+
+---
+
+## 4.17.4
+
+- **An element on a parameter that is already driven keeps it driven.** Creating an element on a
+  parameter carrying an expression or an export replaced it with a plain value, so whatever was
+  driving that parameter stopped reaching it. The element now leaves the expression or the export in
+  place. Driving the element still takes the parameter, which is what it is for. Mappings must be
+  re-learned after updating.
+
+---
+
+## 4.17.3
+
+- **A reopened project keeps its morph targets.** After saving a project and opening it again, a
+  container had lost the list of parameters it morphs, although every element was still on the
+  panel. Randomize did nothing, storing a preset reported that there were no associated parameters
+  to make presets from, and adding one element after the reopen made the next Store capture that
+  element alone. Containers now keep the list across a save and reopen, and a project already saved
+  with the fault repairs itself the first time you open it in this version.
+
+---
+
+## 4.17.2
+
+- **An import no longer empties a container it cannot rebuild.** Importing a container file whose
+  source nodes have since been deleted destroyed the elements and left the container empty. The
+  import now resolves every parameter the file refers to before it touches anything, and refuses
+  the file naming what is missing. Nothing is destroyed.
+- **A file imported into a second container lands on that container.** Element order and stored
+  preset states were keyed to the container that exported them, so importing elsewhere drove the
+  original's elements instead. Both now follow the elements just rebuilt, and an element outside
+  the importing container is never written.
+
+---
+
+## 4.17.1
+
+- **MIDI and OSC reach your parameters from the sliders again.** Mapping a knob or fader to a
+  Float, Int or XYZ element moved the slider in the panel but never the parameter it controls, and
+  learning it again did not help. The mapping now lands on the element itself, the way menus and
+  toggles always did, so the knob, the slider and your parameter move together. The Blending slider
+  had the same fault and is fixed as well.
+- **A parameter driven by an expression or an export can no longer be mapped.** A mapping writes
+  values, which would have replaced the expression for good. Clicking such a control in map mode now
+  tells you which parameter is driven. This comes from the embedded ControlMapper, now 1.0.5.
 
 ---
 

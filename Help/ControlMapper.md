@@ -3,7 +3,7 @@
 The MIDI/OSC mapping service. One instance sits inside ParameterMorpher and SceneLauncher and
 serves both protocols from a single list of mappings.
 
-Class: `extControlMapper`. Version 1.0.4.
+Class: `extControlMapper`. Version 1.0.5.
 
 > **MIT licensed.** It ships from this repository as a standalone component, and also
 > travels embedded inside the commercial ParameterMorpher and SceneLauncher, which are
@@ -46,17 +46,21 @@ Enter or leave map mode. Reveals every registered target and cancels any pending
 ```python
 Arm(widget, parName='Value')
 ```
-Arm `widget.par[parName]` so the next incoming channel binds to it.
+Arm `widget.par[parName]` so the next incoming channel binds to it. Returns False, and arms nothing,
+when the parameter is driven by an expression or an export, directly or through a bind: a mapping
+writes a value, which would replace the expression for good.
 
 ```python
 OnTargetClick(target)
 ```
-Handle a click on a `MapTarget`. Arms its widget, or disarms it if it was already armed.
+Handle a click on a `MapTarget`. Arms its widget, or disarms it if it was already armed. On a driven
+parameter it explains why instead of arming, and cancels any control that was armed before.
 
 ```python
 Map(chan)
 ```
-Bind the armed target to `chan`. Consumes the arm. Returns True when a row was written.
+Bind the armed target to `chan`. Consumes the arm. Returns True when a row was written, and False
+when nothing is armed or the armed parameter has since become driven.
 
 ```python
 Unmap(chan, target, parName='')
@@ -82,7 +86,8 @@ The widget currently armed for learning, or None.
 ```python
 ArmRow(rowIndex)
 ```
-Arm an existing mapping for re-learn, so the next channel re-keys that row.
+Arm an existing mapping for re-learn, so the next channel re-keys that row. A row whose parameter is
+driven is refused with the same note as a click.
 
 ```python
 ArmedRowIndex()
@@ -95,7 +100,7 @@ The 1-based table row currently armed, or -1.
 Route(chan, val)
 ```
 Send one normalized channel value, in the range 0 to 1, to every target bound to it. Returns how
-many targets were written.
+many targets were written. A driven parameter is skipped, never overwritten.
 
 ```python
 Recompile()
@@ -150,6 +155,13 @@ of quietly doing nothing.
 PruneDead()
 ```
 Delete every dead mapping. Returns how many went.
+
+```python
+DrivenRows()
+```
+The 1-based indices of mappings whose parameter is driven by an expression or an export, directly
+or through a bind. `Route` skips them, the editor marks them `(driven)`, and `PruneDead` leaves them
+alone because they still resolve.
 
 ## Clearing
 

@@ -9,13 +9,32 @@ toolkit version, because they now ship and update independently.
 
 ## [Open Toolkit 4.2.0] (3rd quarter of 2026)
 
-Current component versions on this line: PresetManager **4.3.0**, PresetSnap **1.2.0**,
-ControlMapper **1.0.4**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.8**.
+Current component versions on this line: PresetManager **4.3.0**, PresetSnap **1.2.1**,
+ControlMapper **1.0.5**, PresetInspector **1.5.5**, JSONTree **1.5.5**, ListView **1.0.8**.
 This list tracks what the line ships today, so it moves with every component release
 rather than recording what 4.2.0 contained.
 
 A new free component, per-preset timing in PresetManager, and a text rendering fix in ListView
 that reaches every component embedding it.
+
+### PresetSnap 1.2.1
+
+It ships with an empty parameter list again.
+
+- **The 1.2.0 download carried seven leftover rows**, one per parameter of the project it was
+  exported from, each marked `missing` with `include` off. A fresh drop-in opened Edit Params on
+  dead rows that `Rescan` cannot clear, since a vanished parameter is marked rather than deleted
+  by design. No values were exposed. The export now clears the table to its header.
+
+### ControlMapper 1.0.5
+
+A mapping never overwrites a parameter that something else is driving.
+
+- **A parameter driven by an expression or an export is refused**, and so is one bound to such a
+  parameter: a mapping writes values, which would replace the expression for good. `Arm` returns
+  False, and clicking the control in map mode says which parameter is driven.
+- **A parameter that becomes driven after it was mapped is skipped**, never overwritten, and
+  reported by the new `DrivenRows()`. The editor marks it `(driven)`, and `PruneDead` leaves it alone.
 
 ### PresetManager 4.3.0 and PresetSnap 1.2.0
 

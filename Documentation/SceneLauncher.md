@@ -4,7 +4,7 @@
 Copyright © 2020–2026  
 **Author:** [Darien Brito](https://www.darienbrito.com)  
 **License:** **PROPRIETARY. Licensed, not sold.**  
-**Version:** 4.10.0
+**Version:** 4.10.1
 
 > SceneLauncher is a **commercial** component of the TDXMorph toolkit, governed by the
 > SceneLauncher EULA (see the `LICENSE` operator inside the component). No redistribution,
@@ -15,6 +15,13 @@ Copyright © 2020–2026
 > documentation only.
 
 ---
+
+## 4.10.1
+
+- **A parameter driven by an expression or an export can no longer be mapped.** A mapping writes
+  values, which would replace the expression for good, so the embedded ControlMapper (now 1.0.5)
+  refuses such a parameter and, in map mode, tells you which one is driven. SceneLauncher's own
+  controls are all constant, so every one of them stays mappable. No other change.
 
 ## 4.9.1
 
